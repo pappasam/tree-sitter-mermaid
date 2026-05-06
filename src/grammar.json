@@ -539,15 +539,15 @@
             },
             {
               "type": "STRING",
+              "value": "graph"
+            },
+            {
+              "type": "STRING",
               "value": "gantt"
             },
             {
               "type": "STRING",
               "value": "gitGraph"
-            },
-            {
-              "type": "STRING",
-              "value": "graph"
             },
             {
               "type": "STRING",

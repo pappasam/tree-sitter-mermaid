@@ -4,99 +4,256 @@ const PREC = {
   flow_statement: 2,
 };
 
-const diagramTypes = [
-  'architecture-beta',
-  'block',
-  'block-beta',
-  'c4',
-  'C4Component',
-  'C4Container',
-  'C4Context',
-  'C4Deployment',
-  'classDiagram',
-  'classDiagram-v2',
-  'cynefin-beta',
-  'erDiagram',
-  'eventmodeling',
-  'flowchart',
-  'flowchart-elk',
-  'flowchart-v2',
-  'gantt',
-  'gitGraph',
-  'graph',
-  'info',
-  'journey',
-  'kanban',
-  'kanban-beta',
-  'mindmap',
-  'packet',
-  'packet-beta',
-  'pie',
-  'quadrantChart',
-  'radar-beta',
-  'requirementDiagram',
-  'sequenceDiagram',
-  'stateDiagram',
-  'stateDiagram-v2',
-  'timeline',
-  'treeView-beta',
-  'treemap',
-  'treemap-beta',
-  'wardley-beta',
-  'xychart-beta',
-  'zenuml',
-];
-
-const flowDiagramTypes = ['flowchart', 'flowchart-elk', 'flowchart-v2', 'graph'];
-const architectureDiagramTypes = ['architecture-beta'];
-const classDiagramTypes = ['classDiagram', 'classDiagram-v2'];
-const cynefinDiagramTypes = ['cynefin-beta'];
-const erDiagramTypes = ['erDiagram'];
-const eventModelingDiagramTypes = ['eventmodeling'];
-const ganttDiagramTypes = ['gantt'];
-const gitGraphDiagramTypes = ['gitGraph'];
-const infoDiagramTypes = ['info'];
-const journeyDiagramTypes = ['journey'];
-const mindmapDiagramTypes = ['mindmap'];
-const packetDiagramTypes = ['packet', 'packet-beta'];
-const pieDiagramTypes = ['pie'];
-const quadrantDiagramTypes = ['quadrantChart'];
-const radarDiagramTypes = ['radar-beta'];
-const requirementDiagramTypes = ['requirementDiagram'];
-const sequenceDiagramTypes = ['sequenceDiagram'];
-const stateDiagramTypes = ['stateDiagram', 'stateDiagram-v2'];
-const timelineDiagramTypes = ['timeline'];
-const treeDiagramTypes = ['treeView-beta'];
-const wardleyDiagramTypes = ['wardley-beta'];
-const genericDiagramTypes = diagramTypes.filter(
-  (type) =>
-    ![
-      ...flowDiagramTypes,
-      ...architectureDiagramTypes,
-      ...classDiagramTypes,
-      ...cynefinDiagramTypes,
-      ...erDiagramTypes,
-      ...eventModelingDiagramTypes,
-      ...ganttDiagramTypes,
-      ...gitGraphDiagramTypes,
-      ...infoDiagramTypes,
-      ...journeyDiagramTypes,
-      ...mindmapDiagramTypes,
-      ...packetDiagramTypes,
-      ...pieDiagramTypes,
-      ...quadrantDiagramTypes,
-      ...radarDiagramTypes,
-      ...requirementDiagramTypes,
-      ...sequenceDiagramTypes,
-      ...stateDiagramTypes,
-      ...timelineDiagramTypes,
-      ...treeDiagramTypes,
-      ...wardleyDiagramTypes,
-    ].includes(type),
-);
-
 const typeChoice = (types) => (types.length === 1 ? types[0] : choice(...types));
 const bodyItem = ($, rule) => choice(prec(1, seq($.indentation, rule)), rule);
+
+const diagramDefinitions = [
+  {
+    name: 'architecture',
+    types: ['architecture-beta'],
+    statements: ($) => [$.architecture_statement],
+    topLevelStatements: ($) => [$.architecture_statement],
+  },
+  {name: 'block', types: ['block', 'block-beta'], support: 'baseline'},
+  {name: 'c4', types: ['c4', 'C4Component', 'C4Container', 'C4Context', 'C4Deployment'], support: 'baseline'},
+  {
+    name: 'class',
+    types: ['classDiagram', 'classDiagram-v2'],
+    statements: ($) => [
+      choice(
+        $.class_note_statement,
+        $.class_relationship_statement,
+        $.class_member_statement,
+        $.class_block,
+        $.class_entity_statement,
+      ),
+    ],
+  },
+  {
+    name: 'cynefin',
+    types: ['cynefin-beta'],
+    statements: ($) => [$.cynefin_statement],
+    topLevelStatements: ($) => [$.cynefin_statement],
+  },
+  {
+    name: 'er',
+    types: ['erDiagram'],
+    statements: ($) => [choice($.er_relationship_statement, $.er_attribute_statement)],
+  },
+  {
+    name: 'event_modeling',
+    types: ['eventmodeling'],
+    statements: ($) => [$.event_modeling_statement],
+    topLevelStatements: ($) => [$.event_modeling_statement],
+  },
+  {
+    name: 'flow',
+    types: ['flowchart', 'flowchart-elk', 'flowchart-v2', 'graph'],
+    header: {direction: true},
+    statements: ($) => [$.flow_statement],
+    topLevelStatements: ($) => [$.flow_statement],
+  },
+  {
+    name: 'gantt',
+    types: ['gantt'],
+    statements: ($) => [
+      choice(
+        $.gantt_date_format_statement,
+        $.gantt_section_statement,
+        $.gantt_task_statement,
+      ),
+    ],
+  },
+  {
+    name: 'git_graph',
+    types: ['gitGraph'],
+    header: {direction: true},
+    statements: ($) => [$.git_graph_statement],
+    topLevelStatements: ($) => [$.git_graph_statement],
+  },
+  {
+    name: 'info',
+    types: ['info'],
+    statements: ($) => [$.info_statement],
+    topLevelStatements: ($) => [$.info_statement],
+  },
+  {
+    name: 'journey',
+    types: ['journey'],
+    statements: ($) => [choice($.journey_section_statement, $.journey_task_statement)],
+  },
+  {name: 'kanban', types: ['kanban', 'kanban-beta'], support: 'baseline'},
+  {
+    name: 'mindmap',
+    types: ['mindmap'],
+    statements: ($) => [$.mindmap_statement],
+  },
+  {
+    name: 'packet',
+    types: ['packet', 'packet-beta'],
+    statements: ($) => [$.packet_statement],
+    topLevelStatements: ($) => [$.packet_statement],
+  },
+  {
+    name: 'pie',
+    types: ['pie'],
+    header: {showData: true},
+    statements: ($) => [$.pie_statement],
+    topLevelStatements: ($) => [$.pie_statement],
+  },
+  {
+    name: 'quadrant',
+    types: ['quadrantChart'],
+    statements: ($) => [$.quadrant_axis_statement, $.quadrant_section_statement, $.quadrant_point_statement],
+  },
+  {
+    name: 'radar',
+    types: ['radar-beta'],
+    statements: ($) => [$.radar_statement],
+    topLevelStatements: ($) => [$.radar_statement],
+  },
+  {
+    name: 'requirement',
+    types: ['requirementDiagram'],
+    statements: ($) => [$.requirement_statement],
+  },
+  {
+    name: 'sequence',
+    types: ['sequenceDiagram'],
+    statements: ($) => [
+      choice(
+        $.sequence_autonumber_statement,
+        $.sequence_loop_statement,
+        $.sequence_note_statement,
+        $.sequence_message_statement,
+        $.end_statement,
+      ),
+    ],
+  },
+  {
+    name: 'state',
+    types: ['stateDiagram', 'stateDiagram-v2'],
+    statements: ($) => [
+      choice(
+        $.flow_direction_statement,
+        $.class_def_statement,
+        $.class_statement,
+        $.state_declaration_statement,
+        $.state_transition_statement,
+      ),
+    ],
+  },
+  {
+    name: 'timeline',
+    types: ['timeline'],
+    statements: ($) => [$.timeline_statement],
+  },
+  {
+    name: 'tree',
+    types: ['treeView-beta'],
+    statements: ($) => [$.tree_statement],
+    indentStatements: false,
+    topLevelStatements: ($) => [$.tree_statement],
+  },
+  {name: 'treemap', types: ['treemap', 'treemap-beta'], support: 'baseline'},
+  {
+    name: 'wardley',
+    types: ['wardley-beta'],
+    statements: ($) => [$.wardley_statement],
+    topLevelStatements: ($) => [$.wardley_statement],
+  },
+  {name: 'xychart', types: ['xychart-beta'], support: 'baseline'},
+  {name: 'zenuml', types: ['zenuml'], support: 'baseline'},
+];
+
+const diagramParseOrder = [
+  'flow',
+  'architecture',
+  'class',
+  'cynefin',
+  'er',
+  'event_modeling',
+  'gantt',
+  'git_graph',
+  'info',
+  'journey',
+  'mindmap',
+  'packet',
+  'pie',
+  'quadrant',
+  'radar',
+  'requirement',
+  'sequence',
+  'state',
+  'timeline',
+  'tree',
+  'wardley',
+];
+
+const scopedDiagramDefinitions = diagramParseOrder.map((name) =>
+  diagramDefinitions.find((definition) => definition.name === name)
+);
+const diagramTypes = diagramDefinitions.flatMap((definition) => definition.types);
+const genericDiagramTypes = diagramDefinitions
+  .filter((definition) => definition.support === 'baseline')
+  .flatMap((definition) => definition.types);
+
+const diagramRuleName = (definition) => `${definition.name}_diagram`;
+const diagramHeaderRuleName = (definition) => `${definition.name}_diagram_header`;
+const diagramItemRuleName = (definition) => `_${definition.name}_diagram_item`;
+const diagramTypeRuleName = (definition) => `${definition.name}_diagram_type`;
+
+const diagramHeader = ($, typeRule, options = {}) =>
+  seq(
+    field('type', alias(typeRule, $.diagram_type)),
+    ...(options.direction ? [optional(field('direction', $.direction))] : []),
+    ...(options.showData ? [optional('showData')] : []),
+    optional(':'),
+    $._terminator,
+  );
+
+const diagramItem = ($, definition) => {
+  const statementRules = definition.statements($);
+  const bodyRules = definition.indentStatements === false
+    ? statementRules
+    : statementRules.map((rule) => bodyItem($, rule));
+
+  return choice(
+    $.directive,
+    $.comment,
+    bodyItem($, $.common_statement),
+    ...bodyRules,
+    $._terminator,
+  );
+};
+
+const diagramRules = Object.fromEntries(scopedDiagramDefinitions.flatMap((definition) => [
+  [
+    diagramRuleName(definition),
+    ($) => prec.right(seq($[diagramHeaderRuleName(definition)], repeat($[diagramItemRuleName(definition)]))),
+  ],
+  [
+    diagramHeaderRuleName(definition),
+    ($) => diagramHeader($, $[diagramTypeRuleName(definition)], definition.header),
+  ],
+  [
+    diagramTypeRuleName(definition),
+    (_) => token(prec(20, typeChoice(definition.types))),
+  ],
+  [
+    diagramItemRuleName(definition),
+    ($) => diagramItem($, definition),
+  ],
+]));
+
+const topLevelStatementRules = ($) =>
+  scopedDiagramDefinitions.flatMap((definition) => {
+    if (!definition.topLevelStatements) return [];
+
+    return definition.topLevelStatements($).map((rule) =>
+      definition.indentStatements === false ? rule : bodyItem($, rule)
+    );
+  });
 
 module.exports = grammar({
   name: 'mermaid',
@@ -121,44 +278,14 @@ module.exports = grammar({
         $.comment,
         $.diagram,
         bodyItem($, $.common_statement),
-        bodyItem($, $.flow_statement),
-        bodyItem($, $.architecture_statement),
-        bodyItem($, $.cynefin_statement),
-        bodyItem($, $.event_modeling_statement),
-        bodyItem($, $.git_graph_statement),
-        bodyItem($, $.info_statement),
-        bodyItem($, $.packet_statement),
-        bodyItem($, $.pie_statement),
-        bodyItem($, $.radar_statement),
-        $.tree_statement,
-        bodyItem($, $.wardley_statement),
+        ...topLevelStatementRules($),
         $.generic_statement,
         $._terminator,
       ),
 
     diagram: ($) =>
       choice(
-        $.flow_diagram,
-        $.architecture_diagram,
-        $.class_diagram,
-        $.cynefin_diagram,
-        $.er_diagram,
-        $.event_modeling_diagram,
-        $.gantt_diagram,
-        $.git_graph_diagram,
-        $.info_diagram,
-        $.journey_diagram,
-        $.mindmap_diagram,
-        $.packet_diagram,
-        $.pie_diagram,
-        $.quadrant_diagram,
-        $.radar_diagram,
-        $.requirement_diagram,
-        $.sequence_diagram,
-        $.state_diagram,
-        $.timeline_diagram,
-        $.tree_diagram,
-        $.wardley_diagram,
+        ...scopedDiagramDefinitions.map((definition) => $[diagramRuleName(definition)]),
         $.generic_diagram,
       ),
 
@@ -170,380 +297,7 @@ module.exports = grammar({
 
     diagram_type: (_) => token(prec(20, typeChoice(diagramTypes))),
 
-    flow_diagram: ($) => prec.right(seq($.flow_diagram_header, repeat($._flow_diagram_item))),
-
-    flow_diagram_header: ($) =>
-      seq(
-        field('type', alias($.flow_diagram_type, $.diagram_type)),
-        optional(field('direction', $.direction)),
-        optional(':'),
-        $._terminator,
-      ),
-
-    flow_diagram_type: (_) => token(prec(20, typeChoice(flowDiagramTypes))),
-
-    _flow_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.flow_statement),
-        $._terminator,
-      ),
-
-    architecture_diagram: ($) => prec.right(seq($.architecture_diagram_header, repeat($._architecture_diagram_item))),
-
-    architecture_diagram_header: ($) =>
-      seq(field('type', alias($.architecture_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    architecture_diagram_type: (_) => token(prec(20, typeChoice(architectureDiagramTypes))),
-
-    _architecture_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.architecture_statement),
-        $._terminator,
-      ),
-
-    class_diagram: ($) => prec.right(seq($.class_diagram_header, repeat($._class_diagram_item))),
-
-    class_diagram_header: ($) =>
-      seq(field('type', alias($.class_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    class_diagram_type: (_) => token(prec(20, typeChoice(classDiagramTypes))),
-
-    _class_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, choice(
-          $.class_note_statement,
-          $.class_relationship_statement,
-          $.class_member_statement,
-          $.class_block,
-          $.class_entity_statement,
-        )),
-        $._terminator,
-      ),
-
-    cynefin_diagram: ($) => prec.right(seq($.cynefin_diagram_header, repeat($._cynefin_diagram_item))),
-
-    cynefin_diagram_header: ($) =>
-      seq(field('type', alias($.cynefin_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    cynefin_diagram_type: (_) => token(prec(20, typeChoice(cynefinDiagramTypes))),
-
-    _cynefin_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.cynefin_statement),
-        $._terminator,
-      ),
-
-    er_diagram: ($) => prec.right(seq($.er_diagram_header, repeat($._er_diagram_item))),
-
-    er_diagram_header: ($) =>
-      seq(field('type', alias($.er_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    er_diagram_type: (_) => token(prec(20, typeChoice(erDiagramTypes))),
-
-    _er_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, choice($.er_relationship_statement, $.er_attribute_statement)),
-        $._terminator,
-      ),
-
-    event_modeling_diagram: ($) => prec.right(seq($.event_modeling_diagram_header, repeat($._event_modeling_diagram_item))),
-
-    event_modeling_diagram_header: ($) =>
-      seq(field('type', alias($.event_modeling_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    event_modeling_diagram_type: (_) => token(prec(20, typeChoice(eventModelingDiagramTypes))),
-
-    _event_modeling_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.event_modeling_statement),
-        $._terminator,
-      ),
-
-    gantt_diagram: ($) => prec.right(seq($.gantt_diagram_header, repeat($._gantt_diagram_item))),
-
-    gantt_diagram_header: ($) =>
-      seq(field('type', alias($.gantt_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    gantt_diagram_type: (_) => token(prec(20, typeChoice(ganttDiagramTypes))),
-
-    _gantt_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, choice(
-          $.gantt_date_format_statement,
-          $.gantt_section_statement,
-          $.gantt_task_statement,
-        )),
-        $._terminator,
-      ),
-
-    git_graph_diagram: ($) => prec.right(seq($.git_graph_diagram_header, repeat($._git_graph_diagram_item))),
-
-    git_graph_diagram_header: ($) =>
-      seq(
-        field('type', alias($.git_graph_diagram_type, $.diagram_type)),
-        optional(field('direction', $.direction)),
-        optional(':'),
-        $._terminator,
-      ),
-
-    git_graph_diagram_type: (_) => token(prec(20, typeChoice(gitGraphDiagramTypes))),
-
-    _git_graph_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.git_graph_statement),
-        $._terminator,
-      ),
-
-    info_diagram: ($) => prec.right(seq($.info_diagram_header, repeat($._info_diagram_item))),
-
-    info_diagram_header: ($) =>
-      seq(field('type', alias($.info_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    info_diagram_type: (_) => token(prec(20, typeChoice(infoDiagramTypes))),
-
-    _info_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.info_statement),
-        $._terminator,
-      ),
-
-    journey_diagram: ($) => prec.right(seq($.journey_diagram_header, repeat($._journey_diagram_item))),
-
-    journey_diagram_header: ($) =>
-      seq(field('type', alias($.journey_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    journey_diagram_type: (_) => token(prec(20, typeChoice(journeyDiagramTypes))),
-
-    _journey_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, choice($.journey_section_statement, $.journey_task_statement)),
-        $._terminator,
-      ),
-
-    mindmap_diagram: ($) => prec.right(seq($.mindmap_diagram_header, repeat($._mindmap_diagram_item))),
-
-    mindmap_diagram_header: ($) =>
-      seq(field('type', alias($.mindmap_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    mindmap_diagram_type: (_) => token(prec(20, typeChoice(mindmapDiagramTypes))),
-
-    _mindmap_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.mindmap_statement),
-        $._terminator,
-      ),
-
-    packet_diagram: ($) => prec.right(seq($.packet_diagram_header, repeat($._packet_diagram_item))),
-
-    packet_diagram_header: ($) =>
-      seq(field('type', alias($.packet_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    packet_diagram_type: (_) => token(prec(20, typeChoice(packetDiagramTypes))),
-
-    _packet_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.packet_statement),
-        $._terminator,
-      ),
-
-    pie_diagram: ($) => prec.right(seq($.pie_diagram_header, repeat($._pie_diagram_item))),
-
-    pie_diagram_header: ($) =>
-      seq(
-        field('type', alias($.pie_diagram_type, $.diagram_type)),
-        optional('showData'),
-        optional(':'),
-        $._terminator,
-      ),
-
-    pie_diagram_type: (_) => token(prec(20, typeChoice(pieDiagramTypes))),
-
-    _pie_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.pie_statement),
-        $._terminator,
-      ),
-
-    quadrant_diagram: ($) => prec.right(seq($.quadrant_diagram_header, repeat($._quadrant_diagram_item))),
-
-    quadrant_diagram_header: ($) =>
-      seq(field('type', alias($.quadrant_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    quadrant_diagram_type: (_) => token(prec(20, typeChoice(quadrantDiagramTypes))),
-
-    _quadrant_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.quadrant_axis_statement),
-        bodyItem($, $.quadrant_section_statement),
-        bodyItem($, $.quadrant_point_statement),
-        $._terminator,
-      ),
-
-    radar_diagram: ($) => prec.right(seq($.radar_diagram_header, repeat($._radar_diagram_item))),
-
-    radar_diagram_header: ($) =>
-      seq(field('type', alias($.radar_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    radar_diagram_type: (_) => token(prec(20, typeChoice(radarDiagramTypes))),
-
-    _radar_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.radar_statement),
-        $._terminator,
-      ),
-
-    requirement_diagram: ($) => prec.right(seq($.requirement_diagram_header, repeat($._requirement_diagram_item))),
-
-    requirement_diagram_header: ($) =>
-      seq(field('type', alias($.requirement_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    requirement_diagram_type: (_) => token(prec(20, typeChoice(requirementDiagramTypes))),
-
-    _requirement_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.requirement_statement),
-        $._terminator,
-      ),
-
-    sequence_diagram: ($) => prec.right(seq($.sequence_diagram_header, repeat($._sequence_diagram_item))),
-
-    sequence_diagram_header: ($) =>
-      seq(field('type', alias($.sequence_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    sequence_diagram_type: (_) => token(prec(20, typeChoice(sequenceDiagramTypes))),
-
-    _sequence_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, choice(
-          $.sequence_autonumber_statement,
-          $.sequence_loop_statement,
-          $.sequence_note_statement,
-          $.sequence_message_statement,
-          $.end_statement,
-        )),
-        $._terminator,
-      ),
-
-    state_diagram: ($) => prec.right(seq($.state_diagram_header, repeat($._state_diagram_item))),
-
-    state_diagram_header: ($) =>
-      seq(field('type', alias($.state_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    state_diagram_type: (_) => token(prec(20, typeChoice(stateDiagramTypes))),
-
-    _state_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, choice(
-          $.flow_direction_statement,
-          $.class_def_statement,
-          $.class_statement,
-          $.state_declaration_statement,
-          $.state_transition_statement,
-        )),
-        $._terminator,
-      ),
-
-    timeline_diagram: ($) => prec.right(seq($.timeline_diagram_header, repeat($._timeline_diagram_item))),
-
-    timeline_diagram_header: ($) =>
-      seq(field('type', alias($.timeline_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    timeline_diagram_type: (_) => token(prec(20, typeChoice(timelineDiagramTypes))),
-
-    _timeline_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.timeline_statement),
-        $._terminator,
-      ),
-
-    tree_diagram: ($) => prec.right(seq($.tree_diagram_header, repeat($._tree_diagram_item))),
-
-    tree_diagram_header: ($) =>
-      seq(field('type', alias($.tree_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    tree_diagram_type: (_) => token(prec(20, typeChoice(treeDiagramTypes))),
-
-    _tree_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        $.tree_statement,
-        $._terminator,
-      ),
-
-    wardley_diagram: ($) => prec.right(seq($.wardley_diagram_header, repeat($._wardley_diagram_item))),
-
-    wardley_diagram_header: ($) =>
-      seq(field('type', alias($.wardley_diagram_type, $.diagram_type)), optional(':'), $._terminator),
-
-    wardley_diagram_type: (_) => token(prec(20, typeChoice(wardleyDiagramTypes))),
-
-    _wardley_diagram_item: ($) =>
-      choice(
-        $.directive,
-        $.comment,
-        bodyItem($, $.common_statement),
-        bodyItem($, $.wardley_statement),
-        $._terminator,
-      ),
+    ...diagramRules,
 
     generic_diagram: ($) => $.generic_diagram_header,
 
