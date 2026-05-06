@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "generate": "tree-sitter generate",
-    "test": "tree-sitter test",
+    "test": "TREE_SITTER_CACHE_DIR=${TREE_SITTER_CACHE_DIR:-/tmp/tree-sitter-cache} tree-sitter test",
     "parse": "tree-sitter parse"
   },
   "devDependencies": {
