@@ -19,6 +19,8 @@
   "end"
   "classDef"
   "class"
+  "note"
+  "for"
   "style"
   "linkStyle"
   "interpolate"
@@ -144,6 +146,26 @@
 (architecture_icon) @attribute
 (architecture_group_marker) @attribute
 (architecture_title) @string
+
+(class_note_statement
+  target: (identifier) @type)
+(class_note_text "\"" @string)
+(class_note_text_fragment) @string
+
+(class_relationship_statement
+  source: (identifier) @type
+  operator: (class_relationship_operator) @operator
+  target: (identifier) @type)
+
+(class_member_statement class: (identifier) @type)
+(class_block name: (identifier) @type)
+(class_entity_statement name: (identifier) @type)
+(class_member visibility: (class_visibility) @operator)
+(class_member type: (identifier) @type)
+(class_member name: (identifier) @property)
+(class_member
+  name: (identifier) @function
+  parameters: (class_parameter_list))
 
 (er_relationship_statement
   source: (identifier) @type

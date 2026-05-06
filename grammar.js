@@ -49,6 +49,7 @@ const diagramTypes = [
 
 const flowDiagramTypes = ['flowchart', 'flowchart-elk', 'flowchart-v2', 'graph'];
 const architectureDiagramTypes = ['architecture-beta'];
+const classDiagramTypes = ['classDiagram', 'classDiagram-v2'];
 const cynefinDiagramTypes = ['cynefin-beta'];
 const erDiagramTypes = ['erDiagram'];
 const eventModelingDiagramTypes = ['eventmodeling'];
@@ -65,6 +66,7 @@ const genericDiagramTypes = diagramTypes.filter(
     ![
       ...flowDiagramTypes,
       ...architectureDiagramTypes,
+      ...classDiagramTypes,
       ...cynefinDiagramTypes,
       ...erDiagramTypes,
       ...eventModelingDiagramTypes,
@@ -124,6 +126,7 @@ module.exports = grammar({
       choice(
         $.flow_diagram,
         $.architecture_diagram,
+        $.class_diagram,
         $.cynefin_diagram,
         $.er_diagram,
         $.event_modeling_diagram,
@@ -180,6 +183,26 @@ module.exports = grammar({
         $.comment,
         $.common_statement,
         $.architecture_statement,
+        $._terminator,
+      ),
+
+    class_diagram: ($) => prec.right(seq($.class_diagram_header, repeat($._class_diagram_item))),
+
+    class_diagram_header: ($) =>
+      seq(field('type', alias($.class_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    class_diagram_type: (_) => token(prec(20, typeChoice(classDiagramTypes))),
+
+    _class_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.class_note_statement,
+        $.class_relationship_statement,
+        $.class_member_statement,
+        $.class_block,
+        $.class_entity_statement,
         $._terminator,
       ),
 
@@ -621,6 +644,68 @@ module.exports = grammar({
     architecture_group_marker: (_) => token('{group}'),
     architecture_icon: (_) => token(/\([\w:-]+\)/),
     architecture_title: ($) => seq('[', choice($.quoted_string, $.label_text), ']'),
+
+    class_note_statement: ($) =>
+      seq(
+        'note',
+        optional(seq('for', field('target', $.identifier))),
+        field('text', $.class_note_text),
+        $._terminator,
+      ),
+
+    class_note_text: ($) => seq('"', optional($.class_note_label), '"'),
+
+    class_note_label: ($) => repeat1(choice($.html_tag, $.class_note_text_fragment)),
+
+    class_note_text_fragment: (_) => token(prec(PREC.remainder, /[^<"\n\r;]+|</)),
+
+    class_relationship_statement: ($) =>
+      seq(
+        field('source', $.identifier),
+        field('operator', $.class_relationship_operator),
+        field('target', $.identifier),
+        optional(seq(':', field('label', $._line_remainder))),
+        $._terminator,
+      ),
+
+    class_relationship_operator: (_) => token(/<\|--|<\|\.\.|\*--|o--|-->|<--|--|\.\./),
+
+    class_member_statement: ($) =>
+      seq(
+        field('class', $.identifier),
+        ':',
+        field('member', $.class_member),
+        $._terminator,
+      ),
+
+    class_block: ($) =>
+      seq(
+        'class',
+        field('name', $.identifier),
+        '{',
+        $._terminator,
+        repeat(choice($.class_block_member_statement, $.comment, $._terminator)),
+        '}',
+        $._terminator,
+      ),
+
+    class_block_member_statement: ($) => seq(field('member', $.class_member), $._terminator),
+
+    class_member: ($) =>
+      seq(
+        optional(field('visibility', $.class_visibility)),
+        choice(
+          seq(field('type', $.identifier), field('name', $.identifier), optional(field('parameters', $.class_parameter_list))),
+          seq(field('name', $.identifier), optional(field('parameters', $.class_parameter_list))),
+        ),
+      ),
+
+    class_visibility: (_) => choice('+', '-', '#', '~'),
+
+    class_parameter_list: ($) => seq('(', optional(token(/[^)\n\r]*/)), ')'),
+
+    class_entity_statement: ($) =>
+      seq(optional('class'), field('name', $.identifier), $._terminator),
 
     cynefin_statement: ($) =>
       choice(

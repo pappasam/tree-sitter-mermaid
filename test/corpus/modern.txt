@@ -220,3 +220,65 @@ Release milestone 2026-05-08 0d
         (gantt_task_status)
         (gantt_date)
         (gantt_duration)))))
+
+==================
+class diagram details
+==================
+
+classDiagram
+note "From Duck till Zebra"
+Animal <|-- Duck
+note for Duck "can fly<br>can swim"
+Animal : +int age
+Animal: +isMammal()
+class Duck{
+    +String beakColor
+    +swim()
+}
+
+---
+
+(source_file
+  (diagram
+    (class_diagram
+      (class_diagram_header
+        (diagram_type))
+      (class_note_statement
+        (class_note_text
+          (class_note_label
+            (class_note_text_fragment))))
+      (class_relationship_statement
+        (identifier)
+        (class_relationship_operator)
+        (identifier))
+      (class_note_statement
+        (identifier)
+        (class_note_text
+          (class_note_label
+            (class_note_text_fragment)
+            (html_tag)
+            (class_note_text_fragment))))
+      (class_member_statement
+        (identifier)
+        (class_member
+          (class_visibility)
+          (identifier)
+          (identifier)))
+      (class_member_statement
+        (identifier)
+        (class_member
+          (class_visibility)
+          (identifier)
+          (class_parameter_list)))
+      (class_block
+        (identifier)
+        (class_block_member_statement
+          (class_member
+            (class_visibility)
+            (identifier)
+            (identifier)))
+        (class_block_member_statement
+          (class_member
+            (class_visibility)
+            (identifier)
+            (class_parameter_list)))))))
