@@ -6,6 +6,13 @@ const PREC = {
 
 const typeChoice = (types) => (types.length === 1 ? types[0] : choice(...types));
 const bodyItem = ($, rule) => choice(prec(1, seq($.indentation, rule)), rule);
+const terminated = ($, ...rules) => seq(...rules, $._terminator);
+const keywordStatement = ($, keyword, ...rules) => terminated($, keyword, ...rules);
+const keywordNameStatement = ($, keyword, nameRule) =>
+  keywordStatement($, keyword, field('name', optional(nameRule)));
+const lineRemainderStatement = ($, keyword, fieldName = 'keyword') =>
+  terminated($, field(fieldName, keyword), optional($._line_remainder));
+const bracketLabel = ($, labelRule) => seq('[', field('text', optional(labelRule)), ']');
 
 const SUPPORT = {
   baseline: 'baseline',
@@ -328,19 +335,20 @@ module.exports = grammar({
         $.accessibility_description_statement,
       ),
 
-    title_statement: ($) => seq('title', optional(':'), optional(field('text', alias($._line_remainder, $.line_text))), $._terminator),
+    title_statement: ($) =>
+      keywordStatement($, 'title', optional(':'), optional(field('text', alias($._line_remainder, $.line_text)))),
 
     accessibility_title_statement: ($) =>
-      seq('accTitle', ':', optional(field('text', alias($._line_remainder, $.line_text))), $._terminator),
+      keywordStatement($, 'accTitle', ':', optional(field('text', alias($._line_remainder, $.line_text)))),
 
     accessibility_description_statement: ($) =>
-      seq(
+      terminated(
+        $,
         'accDescr',
         choice(
           seq(':', optional(field('text', alias($._line_remainder, $.line_text)))),
           field('block', $.brace_text),
         ),
-        $._terminator,
       ),
 
     flow_statement: ($) =>
@@ -366,10 +374,10 @@ module.exports = grammar({
         $._terminator,
       )),
 
-    sequence_autonumber_statement: ($) => seq($.sequence_autonumber_keyword, $._terminator),
+    sequence_autonumber_statement: ($) => terminated($, $.sequence_autonumber_keyword),
 
     sequence_loop_statement: ($) =>
-      seq($.sequence_loop_keyword, field('label', optional($.sequence_message_text)), $._terminator),
+      terminated($, $.sequence_loop_keyword, field('label', optional($.sequence_message_text))),
 
     sequence_note_statement: ($) =>
       seq(
@@ -411,7 +419,7 @@ module.exports = grammar({
     sequence_message_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
     state_declaration_statement: ($) =>
-      seq('state', field('name', $.identifier), $._terminator),
+      keywordStatement($, 'state', field('name', $.identifier)),
 
     state_transition_statement: ($) =>
       seq(
@@ -428,7 +436,7 @@ module.exports = grammar({
 
     state_transition_label: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
-    flow_direction_statement: ($) => seq('direction', field('direction', $.direction), $._terminator),
+    flow_direction_statement: ($) => keywordStatement($, 'direction', field('direction', $.direction)),
 
     subgraph_statement: ($) =>
       seq(
@@ -438,7 +446,7 @@ module.exports = grammar({
         $._terminator,
       ),
 
-    end_statement: ($) => seq('end', $._terminator),
+    end_statement: ($) => terminated($, 'end'),
 
     class_def_statement: ($) =>
       seq(
@@ -536,7 +544,7 @@ module.exports = grammar({
         $.double_circle_label,
       ),
 
-    square_label: ($) => seq('[', field('text', optional($.label_text)), ']'),
+    square_label: ($) => bracketLabel($, $.label_text),
     round_label: ($) => seq('(', field('text', optional($.label_text)), ')'),
     circle_label: ($) => seq('((', field('text', optional($.label_text)), '))'),
     stadium_label: ($) => seq('([', field('text', optional($.label_text)), '])'),
@@ -670,7 +678,7 @@ module.exports = grammar({
         $._terminator,
       ),
 
-    class_block_member_statement: ($) => seq(field('member', $.class_member), $._terminator),
+    class_block_member_statement: ($) => terminated($, field('member', $.class_member)),
 
     class_member: ($) =>
       seq(
@@ -686,7 +694,7 @@ module.exports = grammar({
     class_parameter_list: ($) => seq('(', optional(token(/[^)\n\r]*/)), ')'),
 
     class_entity_statement: ($) =>
-      seq(optional('class'), field('name', $.identifier), $._terminator),
+      terminated($, optional('class'), field('name', $.identifier)),
 
     cynefin_statement: ($) =>
       choice(
@@ -722,19 +730,14 @@ module.exports = grammar({
       ),
 
     event_modeling_statement: ($) =>
-      seq(
-        field('keyword', choice('entity', 'data', 'note', 'gwt', 'tf', 'timeframe', 'rf', 'resetframe')),
-        optional($._line_remainder),
-        $._terminator,
-      ),
+      lineRemainderStatement($, choice('entity', 'data', 'note', 'gwt', 'tf', 'timeframe', 'rf', 'resetframe')),
 
     gantt_date_format_statement: ($) =>
-      seq('dateFormat', field('format', $.gantt_date_format), $._terminator),
+      keywordStatement($, 'dateFormat', field('format', $.gantt_date_format)),
 
     gantt_date_format: (_) => token(/[A-Za-z0-9_:/.-]+/),
 
-    gantt_section_statement: ($) =>
-      seq('section', field('name', optional($.gantt_section_name)), $._terminator),
+    gantt_section_statement: ($) => keywordNameStatement($, 'section', $.gantt_section_name),
 
     gantt_section_name: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
@@ -773,10 +776,9 @@ module.exports = grammar({
 
     git_option_name: (_) => choice('id', 'msg', 'tag', 'type', 'order', 'parent'),
 
-    info_statement: ($) => seq('showInfo', $._terminator),
+    info_statement: ($) => terminated($, 'showInfo'),
 
-    journey_section_statement: ($) =>
-      seq('section', field('name', optional($.journey_section_name)), $._terminator),
+    journey_section_statement: ($) => keywordNameStatement($, 'section', $.journey_section_name),
 
     journey_section_name: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
@@ -814,7 +816,7 @@ module.exports = grammar({
 
     mindmap_circle_label: ($) => seq('((' , field('text', optional($.mindmap_label)), '))'),
 
-    mindmap_square_label: ($) => seq('[', field('text', optional($.mindmap_label)), ']'),
+    mindmap_square_label: ($) => bracketLabel($, $.mindmap_label),
 
     mindmap_round_label: ($) => seq('(', field('text', optional($.mindmap_label)), ')'),
 
@@ -825,12 +827,12 @@ module.exports = grammar({
     mindmap_label_fragment: (_) => token(prec(1, /[^<\[\]\(\)\n\r;]+|</)),
 
     mindmap_icon_statement: ($) =>
-      seq(
+      terminated(
+        $,
         $.mindmap_icon_marker,
         '(',
         field('name', $.mindmap_icon_name),
         ')',
-        $._terminator,
       ),
 
     mindmap_icon_marker: (_) => token(prec(3, '::icon')),
@@ -838,11 +840,11 @@ module.exports = grammar({
     mindmap_icon_name: (_) => token(/[^)\n\r;]+/),
 
     packet_statement: ($) =>
-      seq(
+      terminated(
+        $,
         field('range', choice(seq($.number, optional(seq('-', $.number))), seq('+', $.number))),
         ':',
         field('label', $.quoted_string),
-        $._terminator,
       ),
 
     pie_statement: ($) =>
@@ -852,12 +854,12 @@ module.exports = grammar({
       ),
 
     quadrant_axis_statement: ($) =>
-      seq(
+      terminated(
+        $,
         field('axis', $.quadrant_axis_name),
         field('from', $.quadrant_axis_text),
         $.quadrant_axis_arrow,
         field('to', $.quadrant_axis_text),
-        $._terminator,
       ),
 
     quadrant_axis_name: (_) => choice('x-axis', 'y-axis'),
@@ -865,12 +867,12 @@ module.exports = grammar({
     quadrant_axis_arrow: (_) => '-->',
 
     quadrant_section_statement: ($) =>
-      seq(
+      terminated(
+        $,
         'quadrant',
         '-',
         field('number', $.number),
         field('label', optional($.quadrant_text)),
-        $._terminator,
       ),
 
     quadrant_point_statement: ($) =>
@@ -974,8 +976,7 @@ module.exports = grammar({
         $.timeline_event_statement,
       ),
 
-    timeline_section_statement: ($) =>
-      seq('section', field('name', optional($.timeline_section_name)), $._terminator),
+    timeline_section_statement: ($) => keywordNameStatement($, 'section', $.timeline_section_name),
 
     timeline_section_name: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
@@ -1048,7 +1049,8 @@ module.exports = grammar({
 
     wardley_arrow: (_) => choice('->', '-->'),
 
-    unknown_statement: ($) => seq(optional($.indentation), repeat1(choice($.identifier, $.number, $.quoted_string, $.unknown_token)), $._terminator),
+    unknown_statement: ($) =>
+      terminated($, optional($.indentation), repeat1(choice($.identifier, $.number, $.quoted_string, $.unknown_token))),
 
     identifier_list: ($) => seq($.identifier, repeat(seq(',', $.identifier))),
 
