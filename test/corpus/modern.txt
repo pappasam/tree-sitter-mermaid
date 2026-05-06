@@ -509,3 +509,67 @@ class end badBadEvent
         (identifier_list
           (identifier))
         (identifier)))))
+
+==================
+quadrant chart details
+==================
+
+quadrantChart
+    title Reach and engagement of campaigns
+    x-axis Low Reach --> High Reach
+    y-axis Low Engagement --> High Engagement
+    quadrant-1 We should expand
+    quadrant-2 Need to promote
+    quadrant-3 Re-evaluate
+    quadrant-4 May be improved
+    Campaign A: [0.3, 0.6]
+    Campaign B: [0.45, 0.23]
+
+---
+
+(source_file
+  (diagram
+    (quadrant_diagram
+      (quadrant_diagram_header
+        (diagram_type))
+      (common_statement
+        (title_statement))
+      (quadrant_axis_statement
+        (quadrant_axis_name)
+        (quadrant_axis_text)
+        (quadrant_axis_arrow)
+        (quadrant_axis_text))
+      (indentation)
+      (quadrant_axis_statement
+        (quadrant_axis_name)
+        (quadrant_axis_text)
+        (quadrant_axis_arrow)
+        (quadrant_axis_text))
+      (indentation)
+      (quadrant_section_statement
+        (number)
+        (quadrant_text))
+      (indentation)
+      (quadrant_section_statement
+        (number)
+        (quadrant_text))
+      (indentation)
+      (quadrant_section_statement
+        (number)
+        (quadrant_text))
+      (indentation)
+      (quadrant_section_statement
+        (number)
+        (quadrant_text))
+      (quadrant_point_statement
+        (quadrant_point_label
+          (identifier)
+          (identifier))
+        (number)
+        (number))
+      (quadrant_point_statement
+        (quadrant_point_label
+          (identifier)
+          (identifier))
+        (number)
+        (number)))))

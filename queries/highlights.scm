@@ -115,6 +115,7 @@
   "cherry-pick"
   "showInfo"
   "showData"
+  "quadrant"
   "axis"
   "curve"
   "showLegend"
@@ -198,6 +199,21 @@
 (pie_statement
   label: (quoted_string) @string
   value: (number) @number)
+
+(quadrant_axis_statement
+  axis: (quadrant_axis_name) @keyword
+  from: (quadrant_axis_text) @string
+  (quadrant_axis_arrow) @operator
+  to: (quadrant_axis_text) @string)
+
+(quadrant_section_statement
+  number: (number) @number
+  label: (quadrant_text) @string)
+
+(quadrant_point_statement
+  label: (quadrant_point_label) @variable
+  x: (number) @number
+  y: (number) @number)
 
 (radar_axis name: (identifier) @variable)
 (radar_curve name: (identifier) @function)

@@ -59,6 +59,7 @@ const infoDiagramTypes = ['info'];
 const journeyDiagramTypes = ['journey'];
 const packetDiagramTypes = ['packet', 'packet-beta'];
 const pieDiagramTypes = ['pie'];
+const quadrantDiagramTypes = ['quadrantChart'];
 const radarDiagramTypes = ['radar-beta'];
 const sequenceDiagramTypes = ['sequenceDiagram'];
 const stateDiagramTypes = ['stateDiagram', 'stateDiagram-v2'];
@@ -79,6 +80,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...journeyDiagramTypes,
       ...packetDiagramTypes,
       ...pieDiagramTypes,
+      ...quadrantDiagramTypes,
       ...radarDiagramTypes,
       ...sequenceDiagramTypes,
       ...stateDiagramTypes,
@@ -141,6 +143,7 @@ module.exports = grammar({
         $.journey_diagram,
         $.packet_diagram,
         $.pie_diagram,
+        $.quadrant_diagram,
         $.radar_diagram,
         $.sequence_diagram,
         $.state_diagram,
@@ -369,6 +372,24 @@ module.exports = grammar({
         $.comment,
         $.common_statement,
         $.pie_statement,
+        $._terminator,
+      ),
+
+    quadrant_diagram: ($) => prec.right(seq($.quadrant_diagram_header, repeat($._quadrant_diagram_item))),
+
+    quadrant_diagram_header: ($) =>
+      seq(field('type', alias($.quadrant_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    quadrant_diagram_type: (_) => token(prec(20, typeChoice(quadrantDiagramTypes))),
+
+    _quadrant_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        seq(optional($.indentation), $.common_statement),
+        seq(optional($.indentation), $.quadrant_axis_statement),
+        seq(optional($.indentation), $.quadrant_section_statement),
+        seq(optional($.indentation), $.quadrant_point_statement),
         $._terminator,
       ),
 
@@ -966,6 +987,46 @@ module.exports = grammar({
         seq('showData', $._terminator),
         seq(field('label', $.quoted_string), ':', field('value', $.number), $._terminator),
       ),
+
+    quadrant_axis_statement: ($) =>
+      seq(
+        field('axis', $.quadrant_axis_name),
+        field('from', $.quadrant_axis_text),
+        $.quadrant_axis_arrow,
+        field('to', $.quadrant_axis_text),
+        $._terminator,
+      ),
+
+    quadrant_axis_name: (_) => choice('x-axis', 'y-axis'),
+
+    quadrant_axis_arrow: (_) => '-->',
+
+    quadrant_section_statement: ($) =>
+      seq(
+        'quadrant',
+        '-',
+        field('number', $.number),
+        field('label', optional($.quadrant_text)),
+        $._terminator,
+      ),
+
+    quadrant_point_statement: ($) =>
+      seq(
+        field('label', $.quadrant_point_label),
+        ':',
+        '[',
+        field('x', $.number),
+        ',',
+        field('y', $.number),
+        ']',
+        $._terminator,
+      ),
+
+    quadrant_point_label: ($) => repeat1($.identifier),
+
+    quadrant_axis_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;\[\],:-][^-\n\r;\[\],:]*/)),
+
+    quadrant_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;\[\],:][^\n\r;\[\],:]*/)),
 
     radar_statement: ($) =>
       choice(

@@ -979,6 +979,10 @@
           "named": true
         },
         {
+          "type": "quadrant_diagram",
+          "named": true
+        },
+        {
           "type": "radar_diagram",
           "named": true
         },
@@ -2484,6 +2488,198 @@
       "value": {
         "multiple": false,
         "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "quadrant_axis_arrow",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "quadrant_axis_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "quadrant_axis_statement",
+    "named": true,
+    "fields": {
+      "axis": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quadrant_axis_name",
+            "named": true
+          }
+        ]
+      },
+      "from": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quadrant_axis_text",
+            "named": true
+          }
+        ]
+      },
+      "to": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quadrant_axis_text",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "quadrant_axis_arrow",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quadrant_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "quadrant_axis_statement",
+          "named": true
+        },
+        {
+          "type": "quadrant_diagram_header",
+          "named": true
+        },
+        {
+          "type": "quadrant_point_statement",
+          "named": true
+        },
+        {
+          "type": "quadrant_section_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quadrant_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "quadrant_point_label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quadrant_point_statement",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quadrant_point_label",
+            "named": true
+          }
+        ]
+      },
+      "x": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "y": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "quadrant_section_statement",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quadrant_text",
+            "named": true
+          }
+        ]
+      },
+      "number": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
             "type": "number",
@@ -4156,6 +4352,18 @@
     "named": false
   },
   {
+    "type": "quadrant",
+    "named": false
+  },
+  {
+    "type": "quadrant_axis_text",
+    "named": true
+  },
+  {
+    "type": "quadrant_text",
+    "named": true
+  },
+  {
     "type": "quoted_string",
     "named": true
   },
@@ -4281,6 +4489,14 @@
   },
   {
     "type": "v",
+    "named": false
+  },
+  {
+    "type": "x-axis",
+    "named": false
+  },
+  {
+    "type": "y-axis",
     "named": false
   },
   {
