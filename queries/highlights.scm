@@ -192,7 +192,10 @@
 (gantt_task_statement duration: (gantt_duration) @number)
 (gantt_task_statement dependency: (identifier) @label)
 
-(git_option value: (_) @string)
+(git_option ":" @punctuation.delimiter)
+(git_option value: (quoted_string) @string)
+(git_option value: (identifier) @variable)
+(git_option value: (number) @number)
 
 (journey_section_statement name: (journey_section_name) @namespace)
 (journey_task_statement label: (journey_task_label) @string)
@@ -217,7 +220,7 @@
   to: (quadrant_axis_text) @string)
 
 (quadrant_section_statement
-  number: (number) @number
+  number: (number) @constant
   label: (quadrant_text) @string)
 
 (quadrant_point_statement
@@ -226,12 +229,12 @@
   y: (number) @number)
 
 (radar_axis name: (identifier) @variable)
-(radar_curve name: (identifier) @function)
+(radar_curve name: (identifier) @variable)
 (radar_option value: (_) @constant)
 
 ((requirement_block
   kind: (requirement_kind) @keyword
-  name: (identifier) @type)
+  name: (identifier) @variable)
  (#set! priority 110))
 
 ((requirement_property_statement
@@ -246,7 +249,7 @@
 
 ((requirement_property_statement
   name: (requirement_property_name) @property
-  value: (requirement_id) @number)
+  value: (requirement_id) @label)
  (#set! priority 111))
 
 ((requirement_relationship_statement
