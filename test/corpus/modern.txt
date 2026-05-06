@@ -289,6 +289,46 @@ requirementDiagram
           (identifier))))))
 
 ==================
+mindmap details
+==================
+
+mindmap
+  root((mindmap))
+    Origins
+      ::icon(fa fa-book)
+      On effectiveness<br/>and features
+
+---
+
+(source_file
+  (diagram
+    (mindmap_diagram
+      (mindmap_diagram_header
+        (diagram_type))
+      (mindmap_statement
+        (mindmap_node_statement
+          (mindmap_root_keyword)
+          (mindmap_circle_label
+            (mindmap_label
+              (mindmap_label_fragment)))))
+      (mindmap_statement
+        (mindmap_node_statement
+          (mindmap_plain_label
+            (mindmap_label
+              (mindmap_label_fragment)))))
+      (mindmap_statement
+        (mindmap_icon_statement
+          (mindmap_icon_marker)
+          (mindmap_icon_name)))
+      (mindmap_statement
+        (mindmap_node_statement
+          (mindmap_plain_label
+            (mindmap_label
+              (mindmap_label_fragment)
+              (html_tag)
+              (mindmap_label_fragment))))))))
+
+==================
 gantt shorthand
 ==================
 

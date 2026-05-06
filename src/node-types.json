@@ -1004,6 +1004,10 @@
           "named": true
         },
         {
+          "type": "mindmap_diagram",
+          "named": true
+        },
+        {
           "type": "packet_diagram",
           "named": true
         },
@@ -2388,6 +2392,222 @@
       "types": [
         {
           "type": "style_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mindmap_circle_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "mindmap_label",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mindmap_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "mindmap_diagram_header",
+          "named": true
+        },
+        {
+          "type": "mindmap_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mindmap_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mindmap_icon_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "mindmap_icon_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "mindmap_icon_marker",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mindmap_label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "html_tag",
+          "named": true
+        },
+        {
+          "type": "mindmap_label_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mindmap_node_statement",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "mindmap_circle_label",
+            "named": true
+          },
+          {
+            "type": "mindmap_plain_label",
+            "named": true
+          },
+          {
+            "type": "mindmap_round_label",
+            "named": true
+          },
+          {
+            "type": "mindmap_square_label",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "mindmap_root_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mindmap_plain_label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "mindmap_label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mindmap_round_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "mindmap_label",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mindmap_square_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "mindmap_label",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mindmap_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "mindmap_icon_statement",
+          "named": true
+        },
+        {
+          "type": "mindmap_node_statement",
           "named": true
         }
       ]
@@ -4725,6 +4945,22 @@
   {
     "type": "min",
     "named": false
+  },
+  {
+    "type": "mindmap_icon_marker",
+    "named": true
+  },
+  {
+    "type": "mindmap_icon_name",
+    "named": true
+  },
+  {
+    "type": "mindmap_label_fragment",
+    "named": true
+  },
+  {
+    "type": "mindmap_root_keyword",
+    "named": true
   },
   {
     "type": "msg",

@@ -57,6 +57,7 @@ const ganttDiagramTypes = ['gantt'];
 const gitGraphDiagramTypes = ['gitGraph'];
 const infoDiagramTypes = ['info'];
 const journeyDiagramTypes = ['journey'];
+const mindmapDiagramTypes = ['mindmap'];
 const packetDiagramTypes = ['packet', 'packet-beta'];
 const pieDiagramTypes = ['pie'];
 const quadrantDiagramTypes = ['quadrantChart'];
@@ -79,6 +80,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...gitGraphDiagramTypes,
       ...infoDiagramTypes,
       ...journeyDiagramTypes,
+      ...mindmapDiagramTypes,
       ...packetDiagramTypes,
       ...pieDiagramTypes,
       ...quadrantDiagramTypes,
@@ -92,7 +94,7 @@ const genericDiagramTypes = diagramTypes.filter(
 );
 
 const typeChoice = (types) => (types.length === 1 ? types[0] : choice(...types));
-const bodyItem = ($, rule) => choice(seq($.indentation, rule), rule);
+const bodyItem = ($, rule) => choice(prec(1, seq($.indentation, rule)), rule);
 
 module.exports = grammar({
   name: 'mermaid',
@@ -144,6 +146,7 @@ module.exports = grammar({
         $.git_graph_diagram,
         $.info_diagram,
         $.journey_diagram,
+        $.mindmap_diagram,
         $.packet_diagram,
         $.pie_diagram,
         $.quadrant_diagram,
@@ -341,6 +344,22 @@ module.exports = grammar({
         $.comment,
         bodyItem($, $.common_statement),
         bodyItem($, choice($.journey_section_statement, $.journey_task_statement)),
+        $._terminator,
+      ),
+
+    mindmap_diagram: ($) => prec.right(seq($.mindmap_diagram_header, repeat($._mindmap_diagram_item))),
+
+    mindmap_diagram_header: ($) =>
+      seq(field('type', alias($.mindmap_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    mindmap_diagram_type: (_) => token(prec(20, typeChoice(mindmapDiagramTypes))),
+
+    _mindmap_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.mindmap_statement),
         $._terminator,
       ),
 
@@ -989,6 +1008,51 @@ module.exports = grammar({
       ),
 
     journey_task_label: ($) => repeat1($.identifier),
+
+    mindmap_statement: ($) =>
+      choice(
+        $.mindmap_node_statement,
+        $.mindmap_icon_statement,
+      ),
+
+    mindmap_node_statement: ($) =>
+      seq(
+        optional($.mindmap_root_keyword),
+        field('label', choice(
+          $.mindmap_circle_label,
+          $.mindmap_square_label,
+          $.mindmap_round_label,
+          $.mindmap_plain_label,
+        )),
+        $._terminator,
+      ),
+
+    mindmap_root_keyword: (_) => token(prec(2, 'root')),
+
+    mindmap_circle_label: ($) => seq('((' , field('text', optional($.mindmap_label)), '))'),
+
+    mindmap_square_label: ($) => seq('[', field('text', optional($.mindmap_label)), ']'),
+
+    mindmap_round_label: ($) => seq('(', field('text', optional($.mindmap_label)), ')'),
+
+    mindmap_plain_label: ($) => $.mindmap_label,
+
+    mindmap_label: ($) => repeat1(choice($.html_tag, $.mindmap_label_fragment)),
+
+    mindmap_label_fragment: (_) => token(prec(1, /[^<\[\]\(\)\n\r;]+|</)),
+
+    mindmap_icon_statement: ($) =>
+      seq(
+        $.mindmap_icon_marker,
+        '(',
+        field('name', $.mindmap_icon_name),
+        ')',
+        $._terminator,
+      ),
+
+    mindmap_icon_marker: (_) => token(prec(3, '::icon')),
+
+    mindmap_icon_name: (_) => token(/[^)\n\r;]+/),
 
     packet_statement: ($) =>
       seq(

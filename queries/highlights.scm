@@ -199,6 +199,11 @@
 (journey_task_statement score: (number) @number)
 (journey_task_statement actor: (identifier) @variable)
 
+(mindmap_root_keyword) @keyword
+(mindmap_icon_marker) @keyword
+(mindmap_icon_name) @attribute
+(mindmap_label_fragment) @string
+
 (packet_statement label: (quoted_string) @string)
 
 (pie_statement
