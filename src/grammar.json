@@ -321,7 +321,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "generic_statement"
+          "name": "unknown_statement"
         },
         {
           "type": "SYMBOL",
@@ -418,7 +418,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "generic_diagram"
+          "name": "baseline_diagram"
         }
       ]
     },
@@ -3757,11 +3757,11 @@
         }
       ]
     },
-    "generic_diagram": {
+    "baseline_diagram": {
       "type": "SYMBOL",
-      "name": "generic_diagram_header"
+      "name": "baseline_diagram_header"
     },
-    "generic_diagram_header": {
+    "baseline_diagram_header": {
       "type": "SEQ",
       "members": [
         {
@@ -3771,7 +3771,7 @@
             "type": "ALIAS",
             "content": {
               "type": "SYMBOL",
-              "name": "generic_diagram_type"
+              "name": "baseline_diagram_type"
             },
             "named": true,
             "value": "diagram_type"
@@ -3820,7 +3820,7 @@
         }
       ]
     },
-    "generic_diagram_type": {
+    "baseline_diagram_type": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",
@@ -8894,7 +8894,7 @@
         }
       ]
     },
-    "generic_statement": {
+    "unknown_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -8928,7 +8928,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "generic_token"
+                "name": "unknown_token"
               }
             ]
           }
@@ -9174,7 +9174,7 @@
         }
       }
     },
-    "generic_token": {
+    "unknown_token": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",
@@ -9215,7 +9215,7 @@
       "flow_node"
     ],
     [
-      "generic_statement",
+      "unknown_statement",
       "flow_node"
     ]
   ],

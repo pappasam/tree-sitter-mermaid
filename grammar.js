@@ -1,5 +1,5 @@
 const PREC = {
-  generic: -10,
+  unknown: -10,
   remainder: -5,
   flow_statement: 2,
 };
@@ -14,7 +14,7 @@ const SUPPORT = {
 
 // Diagram support is intentionally tiered:
 // - structured diagrams have diagram-scoped body rules;
-// - baseline diagrams recognize the header and recover body lines through generic_statement.
+// - baseline diagrams recognize the header and recover body lines through unknown_statement.
 const diagramDefinitions = [
   {
     name: 'architecture',
@@ -273,7 +273,7 @@ module.exports = grammar({
   conflicts: ($) => [
     [$.event_modeling_statement, $.wardley_keyword_statement],
     [$.standalone_flow_node, $.flow_node],
-    [$.generic_statement, $.flow_node],
+    [$.unknown_statement, $.flow_node],
   ],
 
   rules: {
@@ -287,14 +287,14 @@ module.exports = grammar({
         $.diagram,
         bodyItem($, $.common_statement),
         ...topLevelStatementRules($),
-        $.generic_statement,
+        $.unknown_statement,
         $._terminator,
       ),
 
     diagram: ($) =>
       choice(
         ...scopedDiagramDefinitions.map((definition) => $[diagramRuleName(definition)]),
-        $.generic_diagram,
+        $.baseline_diagram,
       ),
 
     frontmatter: (_) => token(/---[\s\S]*---/),
@@ -307,17 +307,17 @@ module.exports = grammar({
 
     ...diagramRules,
 
-    generic_diagram: ($) => $.generic_diagram_header,
+    baseline_diagram: ($) => $.baseline_diagram_header,
 
-    generic_diagram_header: ($) =>
+    baseline_diagram_header: ($) =>
       seq(
-        field('type', alias($.generic_diagram_type, $.diagram_type)),
+        field('type', alias($.baseline_diagram_type, $.diagram_type)),
         optional(choice(field('direction', $.direction), 'showData')),
         optional(':'),
         $._terminator,
       ),
 
-    generic_diagram_type: (_) => token(prec(20, typeChoice(baselineDiagramTypes))),
+    baseline_diagram_type: (_) => token(prec(20, typeChoice(baselineDiagramTypes))),
 
     direction: (_) => choice('TB', 'TD', 'BT', 'RL', 'LR', 'BR', '<', '>', '^', 'v'),
 
@@ -1048,7 +1048,7 @@ module.exports = grammar({
 
     wardley_arrow: (_) => choice('->', '-->'),
 
-    generic_statement: ($) => seq(optional($.indentation), repeat1(choice($.identifier, $.number, $.quoted_string, $.generic_token)), $._terminator),
+    unknown_statement: ($) => seq(optional($.indentation), repeat1(choice($.identifier, $.number, $.quoted_string, $.unknown_token)), $._terminator),
 
     identifier_list: ($) => seq($.identifier, repeat(seq(',', $.identifier))),
 
@@ -1076,7 +1076,7 @@ module.exports = grammar({
 
     _line_remainder: (_) => token(prec(PREC.remainder, /[^\n\r;]+/)),
 
-    generic_token: (_) => token(prec(PREC.generic, /[^A-Za-z_0-9"'+ \t\n\r;][^ \t\n\r;]*/)),
+    unknown_token: (_) => token(prec(PREC.unknown, /[^A-Za-z_0-9"'+ \t\n\r;][^ \t\n\r;]*/)),
 
     _terminator: (_) => choice(/\r?\n/, ';'),
   },

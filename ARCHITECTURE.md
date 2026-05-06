@@ -22,7 +22,7 @@ This grammar uses three fallback layers:
 
 - structured diagrams parse known headers and known body statements
 - baseline diagrams parse recognized headers while leaving body lines recoverable
-- `generic_statement` preserves unknown lines without breaking nearby syntax
+- `unknown_statement` preserves unknown lines without breaking nearby syntax
 
 That is the right tradeoff for editor tooling: highlighting, folding, indentation, and navigation should keep working even when Mermaid changes faster than the grammar.
 

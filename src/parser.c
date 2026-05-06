@@ -55,7 +55,7 @@ enum ts_symbol_identifiers {
   sym_timeline_diagram_type = 25,
   sym_tree_diagram_type = 26,
   sym_wardley_diagram_type = 27,
-  sym_generic_diagram_type = 28,
+  sym_baseline_diagram_type = 28,
   anon_sym_TB = 29,
   anon_sym_TD = 30,
   anon_sym_BT = 31,
@@ -254,7 +254,7 @@ enum ts_symbol_identifiers {
   anon_sym_false = 224,
   sym_indentation = 225,
   sym__line_remainder = 226,
-  sym_generic_token = 227,
+  sym_unknown_token = 227,
   aux_sym__terminator_token1 = 228,
   anon_sym_SEMI = 229,
   sym_source_file = 230,
@@ -323,8 +323,8 @@ enum ts_symbol_identifiers {
   sym_wardley_diagram = 293,
   sym_wardley_diagram_header = 294,
   sym__wardley_diagram_item = 295,
-  sym_generic_diagram = 296,
-  sym_generic_diagram_header = 297,
+  sym_baseline_diagram = 296,
+  sym_baseline_diagram_header = 297,
   sym_direction = 298,
   sym_common_statement = 299,
   sym_title_statement = 300,
@@ -456,7 +456,7 @@ enum ts_symbol_identifiers {
   sym_wardley_keyword_statement = 426,
   sym_wardley_edge_statement = 427,
   sym_wardley_arrow = 428,
-  sym_generic_statement = 429,
+  sym_unknown_statement = 429,
   sym_identifier_list = 430,
   sym_number_list = 431,
   sym_argument_list = 432,
@@ -505,7 +505,7 @@ enum ts_symbol_identifiers {
   aux_sym_requirement_block_repeat1 = 475,
   aux_sym_timeline_text_repeat1 = 476,
   aux_sym_tree_item_statement_repeat1 = 477,
-  aux_sym_generic_statement_repeat1 = 478,
+  aux_sym_unknown_statement_repeat1 = 478,
   aux_sym_identifier_list_repeat1 = 479,
   aux_sym_number_list_repeat1 = 480,
   aux_sym_label_text_repeat1 = 481,
@@ -541,7 +541,7 @@ static const char * const ts_symbol_names[] = {
   [sym_timeline_diagram_type] = "diagram_type",
   [sym_tree_diagram_type] = "diagram_type",
   [sym_wardley_diagram_type] = "diagram_type",
-  [sym_generic_diagram_type] = "diagram_type",
+  [sym_baseline_diagram_type] = "diagram_type",
   [anon_sym_TB] = "TB",
   [anon_sym_TD] = "TD",
   [anon_sym_BT] = "BT",
@@ -740,7 +740,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_false] = "false",
   [sym_indentation] = "indentation",
   [sym__line_remainder] = "_line_remainder",
-  [sym_generic_token] = "generic_token",
+  [sym_unknown_token] = "unknown_token",
   [aux_sym__terminator_token1] = "_terminator_token1",
   [anon_sym_SEMI] = ";",
   [sym_source_file] = "source_file",
@@ -809,8 +809,8 @@ static const char * const ts_symbol_names[] = {
   [sym_wardley_diagram] = "wardley_diagram",
   [sym_wardley_diagram_header] = "wardley_diagram_header",
   [sym__wardley_diagram_item] = "_wardley_diagram_item",
-  [sym_generic_diagram] = "generic_diagram",
-  [sym_generic_diagram_header] = "generic_diagram_header",
+  [sym_baseline_diagram] = "baseline_diagram",
+  [sym_baseline_diagram_header] = "baseline_diagram_header",
   [sym_direction] = "direction",
   [sym_common_statement] = "common_statement",
   [sym_title_statement] = "title_statement",
@@ -942,7 +942,7 @@ static const char * const ts_symbol_names[] = {
   [sym_wardley_keyword_statement] = "wardley_keyword_statement",
   [sym_wardley_edge_statement] = "wardley_edge_statement",
   [sym_wardley_arrow] = "wardley_arrow",
-  [sym_generic_statement] = "generic_statement",
+  [sym_unknown_statement] = "unknown_statement",
   [sym_identifier_list] = "identifier_list",
   [sym_number_list] = "number_list",
   [sym_argument_list] = "argument_list",
@@ -991,7 +991,7 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_requirement_block_repeat1] = "requirement_block_repeat1",
   [aux_sym_timeline_text_repeat1] = "timeline_text_repeat1",
   [aux_sym_tree_item_statement_repeat1] = "tree_item_statement_repeat1",
-  [aux_sym_generic_statement_repeat1] = "generic_statement_repeat1",
+  [aux_sym_unknown_statement_repeat1] = "unknown_statement_repeat1",
   [aux_sym_identifier_list_repeat1] = "identifier_list_repeat1",
   [aux_sym_number_list_repeat1] = "number_list_repeat1",
   [aux_sym_label_text_repeat1] = "label_text_repeat1",
@@ -1027,7 +1027,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_timeline_diagram_type] = sym_flow_diagram_type,
   [sym_tree_diagram_type] = sym_flow_diagram_type,
   [sym_wardley_diagram_type] = sym_flow_diagram_type,
-  [sym_generic_diagram_type] = sym_flow_diagram_type,
+  [sym_baseline_diagram_type] = sym_flow_diagram_type,
   [anon_sym_TB] = anon_sym_TB,
   [anon_sym_TD] = anon_sym_TD,
   [anon_sym_BT] = anon_sym_BT,
@@ -1226,7 +1226,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_false] = anon_sym_false,
   [sym_indentation] = sym_indentation,
   [sym__line_remainder] = sym__line_remainder,
-  [sym_generic_token] = sym_generic_token,
+  [sym_unknown_token] = sym_unknown_token,
   [aux_sym__terminator_token1] = aux_sym__terminator_token1,
   [anon_sym_SEMI] = anon_sym_SEMI,
   [sym_source_file] = sym_source_file,
@@ -1295,8 +1295,8 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_wardley_diagram] = sym_wardley_diagram,
   [sym_wardley_diagram_header] = sym_wardley_diagram_header,
   [sym__wardley_diagram_item] = sym__wardley_diagram_item,
-  [sym_generic_diagram] = sym_generic_diagram,
-  [sym_generic_diagram_header] = sym_generic_diagram_header,
+  [sym_baseline_diagram] = sym_baseline_diagram,
+  [sym_baseline_diagram_header] = sym_baseline_diagram_header,
   [sym_direction] = sym_direction,
   [sym_common_statement] = sym_common_statement,
   [sym_title_statement] = sym_title_statement,
@@ -1428,7 +1428,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_wardley_keyword_statement] = sym_wardley_keyword_statement,
   [sym_wardley_edge_statement] = sym_wardley_edge_statement,
   [sym_wardley_arrow] = sym_wardley_arrow,
-  [sym_generic_statement] = sym_generic_statement,
+  [sym_unknown_statement] = sym_unknown_statement,
   [sym_identifier_list] = sym_identifier_list,
   [sym_number_list] = sym_number_list,
   [sym_argument_list] = sym_argument_list,
@@ -1477,7 +1477,7 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_requirement_block_repeat1] = aux_sym_requirement_block_repeat1,
   [aux_sym_timeline_text_repeat1] = aux_sym_timeline_text_repeat1,
   [aux_sym_tree_item_statement_repeat1] = aux_sym_tree_item_statement_repeat1,
-  [aux_sym_generic_statement_repeat1] = aux_sym_generic_statement_repeat1,
+  [aux_sym_unknown_statement_repeat1] = aux_sym_unknown_statement_repeat1,
   [aux_sym_identifier_list_repeat1] = aux_sym_identifier_list_repeat1,
   [aux_sym_number_list_repeat1] = aux_sym_number_list_repeat1,
   [aux_sym_label_text_repeat1] = aux_sym_label_text_repeat1,
@@ -1597,7 +1597,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_generic_diagram_type] = {
+  [sym_baseline_diagram_type] = {
     .visible = true,
     .named = true,
   },
@@ -2393,7 +2393,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = true,
   },
-  [sym_generic_token] = {
+  [sym_unknown_token] = {
     .visible = true,
     .named = true,
   },
@@ -2669,11 +2669,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = true,
   },
-  [sym_generic_diagram] = {
+  [sym_baseline_diagram] = {
     .visible = true,
     .named = true,
   },
-  [sym_generic_diagram_header] = {
+  [sym_baseline_diagram_header] = {
     .visible = true,
     .named = true,
   },
@@ -3201,7 +3201,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_generic_statement] = {
+  [sym_unknown_statement] = {
     .visible = true,
     .named = true,
   },
@@ -3397,7 +3397,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [aux_sym_generic_statement_repeat1] = {
+  [aux_sym_unknown_statement_repeat1] = {
     .visible = false,
     .named = false,
   },
@@ -7066,22 +7066,22 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_wardley_diagram_type);
       END_STATE();
     case 248:
-      ACCEPT_TOKEN(sym_generic_diagram_type);
+      ACCEPT_TOKEN(sym_baseline_diagram_type);
       END_STATE();
     case 249:
-      ACCEPT_TOKEN(sym_generic_diagram_type);
+      ACCEPT_TOKEN(sym_baseline_diagram_type);
       if (lookahead == '-') ADVANCE(124);
       END_STATE();
     case 250:
-      ACCEPT_TOKEN(sym_generic_diagram_type);
+      ACCEPT_TOKEN(sym_baseline_diagram_type);
       if (lookahead == '-') ADVANCE(1183);
       END_STATE();
     case 251:
-      ACCEPT_TOKEN(sym_generic_diagram_type);
+      ACCEPT_TOKEN(sym_baseline_diagram_type);
       if (lookahead == '-') ADVANCE(503);
       END_STATE();
     case 252:
-      ACCEPT_TOKEN(sym_generic_diagram_type);
+      ACCEPT_TOKEN(sym_baseline_diagram_type);
       if (lookahead == '-') ADVANCE(504);
       END_STATE();
     case 253:
@@ -17793,7 +17793,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1134);
       END_STATE();
     case 1135:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1135,
@@ -17829,7 +17829,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1136:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1136,
@@ -17866,7 +17866,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1137:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1137,
@@ -17903,7 +17903,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1138:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1138,
@@ -17940,7 +17940,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1139:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1139,
@@ -17977,7 +17977,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1140:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1140,
@@ -18002,7 +18002,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1141:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1141,
@@ -18023,7 +18023,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1142:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '\n', 1232,
         '\f', 1142,
@@ -18045,7 +18045,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1231);
       END_STATE();
     case 1143:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '\f') ADVANCE(1143);
       if (lookahead == '/') ADVANCE(1143);
       if (lookahead == '<') ADVANCE(1231);
@@ -18061,7 +18061,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '<') ADVANCE(1143);
       END_STATE();
     case 1144:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '\f') ADVANCE(1143);
       if (lookahead == '/') ADVANCE(1172);
       if (lookahead == '>') ADVANCE(811);
@@ -18079,7 +18079,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1145:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '\f') ADVANCE(1145);
       if (lookahead == '"') ADVANCE(1146);
       if (lookahead == '\'') ADVANCE(1149);
@@ -18101,7 +18101,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1146:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '"') ADVANCE(810);
       if (lookahead == '\\') ADVANCE(1227);
       if (lookahead == '\t' ||
@@ -18112,7 +18112,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1146);
       END_STATE();
     case 1147:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '#') ADVANCE(806);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18122,7 +18122,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1148:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '%') ADVANCE(212);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18132,7 +18132,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1149:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '\'') ADVANCE(810);
       if (lookahead == '\\') ADVANCE(1228);
       if (lookahead == '\t' ||
@@ -18143,7 +18143,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1149);
       END_STATE();
     case 1150:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == ')') ADVANCE(803);
       if (lookahead == '-' ||
           ('0' <= lookahead && lookahead <= '9') ||
@@ -18158,7 +18158,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1151:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '*') ADVANCE(1173);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18168,7 +18168,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1152:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1153);
       if (lookahead == '0') ADVANCE(1119);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(1120);
@@ -18180,7 +18180,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1153:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1165);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18190,7 +18190,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1154:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(197);
       if (lookahead == '\t' ||
           lookahead == '\n' ||
@@ -18200,7 +18200,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1165);
       END_STATE();
     case 1155:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(338);
       if (lookahead == '.') ADVANCE(337);
       if (lookahead == '0') ADVANCE(1119);
@@ -18214,7 +18214,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1156:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1161);
       if (lookahead == '.') ADVANCE(337);
       if (lookahead == '=') ADVANCE(1171);
@@ -18227,7 +18227,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1157:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(340);
       if (lookahead == '.') ADVANCE(337);
       if (lookahead != 0 &&
@@ -18238,7 +18238,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1158:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(370);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18248,7 +18248,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1159:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(373);
       if (lookahead == '\t' ||
           lookahead == ' ') ADVANCE(67);
@@ -18259,7 +18259,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1159);
       END_STATE();
     case 1160:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1154);
       if (lookahead == '\t' ||
           lookahead == '\n' ||
@@ -18269,7 +18269,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1165);
       END_STATE();
     case 1161:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(339);
       if (lookahead == '.') ADVANCE(337);
       if (lookahead != 0 &&
@@ -18280,7 +18280,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1162:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       ADVANCE_MAP(
         '-', 1158,
         ':', 1170,
@@ -18299,7 +18299,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           (lookahead < ':' || '<' < lookahead)) ADVANCE(1231);
       END_STATE();
     case 1163:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1158);
       if (lookahead == '<' ||
           lookahead == '>') ADVANCE(1164);
@@ -18312,7 +18312,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '<') ADVANCE(1231);
       END_STATE();
     case 1164:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1158);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18322,7 +18322,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1165:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '-') ADVANCE(1160);
       if (lookahead == '\t' ||
           lookahead == '\n' ||
@@ -18332,7 +18332,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(1165);
       END_STATE();
     case 1166:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '0') ADVANCE(1119);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(1120);
       if (lookahead != 0 &&
@@ -18343,7 +18343,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1167:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '2') ADVANCE(219);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18353,7 +18353,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1168:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '2') ADVANCE(226);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18363,7 +18363,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1169:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '2') ADVANCE(240);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18373,7 +18373,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1170:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == ':') ADVANCE(349);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18384,7 +18384,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1171:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '=') ADVANCE(341);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18394,7 +18394,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1172:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '>') ADVANCE(811);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18404,7 +18404,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1173:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == ']') ADVANCE(295);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18414,7 +18414,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1174:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(233);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18424,7 +18424,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1175:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(248);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18434,7 +18434,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1176:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(239);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18444,7 +18444,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1177:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(232);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18454,7 +18454,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1178:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(247);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18464,7 +18464,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1179:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(246);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18474,7 +18474,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1180:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(225);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18484,7 +18484,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1181:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(1221);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18494,7 +18494,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1182:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'a') ADVANCE(1222);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18504,7 +18504,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1183:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1191);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18514,7 +18514,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1184:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1193);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18524,7 +18524,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1185:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1194);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18534,7 +18534,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1186:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1195);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18544,7 +18544,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1187:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1196);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18554,7 +18554,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1188:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1197);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18564,7 +18564,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1189:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'b') ADVANCE(1198);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18574,7 +18574,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1190:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'c') ADVANCE(1203);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18584,7 +18584,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1191:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1211);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18594,7 +18594,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1192:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1204);
       if (lookahead == 'v') ADVANCE(1167);
       if (lookahead != 0 &&
@@ -18605,7 +18605,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1193:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1212);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18615,7 +18615,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1194:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1213);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18625,7 +18625,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1195:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1214);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18635,7 +18635,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1196:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1215);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18645,7 +18645,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1197:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1216);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18655,7 +18655,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1198:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'e') ADVANCE(1217);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18665,7 +18665,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1199:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'i') ADVANCE(1190);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18675,7 +18675,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1200:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'i') ADVANCE(1209);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18685,7 +18685,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1201:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'i') ADVANCE(1210);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18695,7 +18695,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1202:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'k') ADVANCE(219);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18705,7 +18705,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1203:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'k') ADVANCE(396);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18715,7 +18715,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1204:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'l') ADVANCE(1202);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18725,7 +18725,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1205:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'o') ADVANCE(1218);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18735,7 +18735,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1206:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'p') ADVANCE(1199);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18745,7 +18745,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1207:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'p') ADVANCE(1223);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18755,7 +18755,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1208:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'r') ADVANCE(1205);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18765,7 +18765,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1209:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 's') ADVANCE(786);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18775,7 +18775,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1210:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 's') ADVANCE(787);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18785,7 +18785,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1211:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1175);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18795,7 +18795,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1212:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1176);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18805,7 +18805,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1213:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1174);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18815,7 +18815,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1214:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1177);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18825,7 +18825,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1215:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1178);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18835,7 +18835,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1216:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1179);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18845,7 +18845,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1217:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 't') ADVANCE(1180);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18855,7 +18855,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1218:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'u') ADVANCE(1207);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18865,7 +18865,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1219:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'v') ADVANCE(1168);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18875,7 +18875,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1220:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'v') ADVANCE(1169);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18885,7 +18885,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1221:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'x') ADVANCE(1200);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18895,7 +18895,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1222:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 'x') ADVANCE(1201);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18905,7 +18905,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1223:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '}') ADVANCE(375);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18915,7 +18915,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1224:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '~') ADVANCE(347);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18925,7 +18925,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1225:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '~') ADVANCE(1224);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18935,7 +18935,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1226:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == 0x0b ||
           lookahead == '\f') ADVANCE(1226);
       if (('\t' <= lookahead && lookahead <= '\r') ||
@@ -18946,7 +18946,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1227:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '\t' ||
           lookahead == '\r' ||
           lookahead == ' ' ||
@@ -18956,7 +18956,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\n') ADVANCE(1146);
       END_STATE();
     case 1228:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead == '\t' ||
           lookahead == '\r' ||
           lookahead == ' ' ||
@@ -18966,7 +18966,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\n') ADVANCE(1149);
       END_STATE();
     case 1229:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(1121);
       if (lookahead != 0 &&
           lookahead != '\t' &&
@@ -18976,7 +18976,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1230:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (('A' <= lookahead && lookahead <= 'Z') ||
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(1144);
       if (lookahead != 0 &&
@@ -18987,7 +18987,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ';') ADVANCE(1231);
       END_STATE();
     case 1231:
-      ACCEPT_TOKEN(sym_generic_token);
+      ACCEPT_TOKEN(sym_unknown_token);
       if (lookahead != 0 &&
           lookahead != '\t' &&
           lookahead != '\n' &&
@@ -22526,8 +22526,8 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_tree_diagram_header] = STATE(50),
     [sym_wardley_diagram] = STATE(227),
     [sym_wardley_diagram_header] = STATE(38),
-    [sym_generic_diagram] = STATE(227),
-    [sym_generic_diagram_header] = STATE(280),
+    [sym_baseline_diagram] = STATE(227),
+    [sym_baseline_diagram_header] = STATE(280),
     [sym_common_statement] = STATE(2),
     [sym_title_statement] = STATE(281),
     [sym_accessibility_title_statement] = STATE(281),
@@ -22565,10 +22565,10 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_wardley_statement] = STATE(2),
     [sym_wardley_keyword_statement] = STATE(288),
     [sym_wardley_edge_statement] = STATE(288),
-    [sym_generic_statement] = STATE(2),
+    [sym_unknown_statement] = STATE(2),
     [sym__terminator] = STATE(2),
     [aux_sym_source_file_repeat1] = STATE(2),
-    [aux_sym_generic_statement_repeat1] = STATE(500),
+    [aux_sym_unknown_statement_repeat1] = STATE(500),
     [ts_builtin_sym_end] = ACTIONS(3),
     [sym_identifier] = ACTIONS(5),
     [sym_frontmatter] = ACTIONS(7),
@@ -22596,7 +22596,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(47),
     [sym_tree_diagram_type] = ACTIONS(49),
     [sym_wardley_diagram_type] = ACTIONS(51),
-    [sym_generic_diagram_type] = ACTIONS(53),
+    [sym_baseline_diagram_type] = ACTIONS(53),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -22653,7 +22653,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(111),
     [sym_number] = ACTIONS(113),
     [sym_indentation] = ACTIONS(115),
-    [sym_generic_token] = ACTIONS(117),
+    [sym_unknown_token] = ACTIONS(117),
     [aux_sym__terminator_token1] = ACTIONS(7),
     [anon_sym_SEMI] = ACTIONS(7),
   },
@@ -22702,8 +22702,8 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_tree_diagram_header] = STATE(50),
     [sym_wardley_diagram] = STATE(227),
     [sym_wardley_diagram_header] = STATE(38),
-    [sym_generic_diagram] = STATE(227),
-    [sym_generic_diagram_header] = STATE(280),
+    [sym_baseline_diagram] = STATE(227),
+    [sym_baseline_diagram_header] = STATE(280),
     [sym_common_statement] = STATE(3),
     [sym_title_statement] = STATE(281),
     [sym_accessibility_title_statement] = STATE(281),
@@ -22741,10 +22741,10 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_wardley_statement] = STATE(3),
     [sym_wardley_keyword_statement] = STATE(288),
     [sym_wardley_edge_statement] = STATE(288),
-    [sym_generic_statement] = STATE(3),
+    [sym_unknown_statement] = STATE(3),
     [sym__terminator] = STATE(3),
     [aux_sym_source_file_repeat1] = STATE(3),
-    [aux_sym_generic_statement_repeat1] = STATE(500),
+    [aux_sym_unknown_statement_repeat1] = STATE(500),
     [ts_builtin_sym_end] = ACTIONS(119),
     [sym_identifier] = ACTIONS(5),
     [sym_frontmatter] = ACTIONS(121),
@@ -22772,7 +22772,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(47),
     [sym_tree_diagram_type] = ACTIONS(49),
     [sym_wardley_diagram_type] = ACTIONS(51),
-    [sym_generic_diagram_type] = ACTIONS(53),
+    [sym_baseline_diagram_type] = ACTIONS(53),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -22829,7 +22829,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(111),
     [sym_number] = ACTIONS(113),
     [sym_indentation] = ACTIONS(115),
-    [sym_generic_token] = ACTIONS(117),
+    [sym_unknown_token] = ACTIONS(117),
     [aux_sym__terminator_token1] = ACTIONS(121),
     [anon_sym_SEMI] = ACTIONS(121),
   },
@@ -22878,8 +22878,8 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_tree_diagram_header] = STATE(50),
     [sym_wardley_diagram] = STATE(227),
     [sym_wardley_diagram_header] = STATE(38),
-    [sym_generic_diagram] = STATE(227),
-    [sym_generic_diagram_header] = STATE(280),
+    [sym_baseline_diagram] = STATE(227),
+    [sym_baseline_diagram_header] = STATE(280),
     [sym_common_statement] = STATE(3),
     [sym_title_statement] = STATE(281),
     [sym_accessibility_title_statement] = STATE(281),
@@ -22917,10 +22917,10 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_wardley_statement] = STATE(3),
     [sym_wardley_keyword_statement] = STATE(288),
     [sym_wardley_edge_statement] = STATE(288),
-    [sym_generic_statement] = STATE(3),
+    [sym_unknown_statement] = STATE(3),
     [sym__terminator] = STATE(3),
     [aux_sym_source_file_repeat1] = STATE(3),
-    [aux_sym_generic_statement_repeat1] = STATE(500),
+    [aux_sym_unknown_statement_repeat1] = STATE(500),
     [ts_builtin_sym_end] = ACTIONS(123),
     [sym_identifier] = ACTIONS(125),
     [sym_frontmatter] = ACTIONS(128),
@@ -22948,7 +22948,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(188),
     [sym_tree_diagram_type] = ACTIONS(191),
     [sym_wardley_diagram_type] = ACTIONS(194),
-    [sym_generic_diagram_type] = ACTIONS(197),
+    [sym_baseline_diagram_type] = ACTIONS(197),
     [anon_sym_title] = ACTIONS(200),
     [anon_sym_accTitle] = ACTIONS(203),
     [anon_sym_accDescr] = ACTIONS(206),
@@ -23005,7 +23005,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(284),
     [sym_number] = ACTIONS(287),
     [sym_indentation] = ACTIONS(290),
-    [sym_generic_token] = ACTIONS(293),
+    [sym_unknown_token] = ACTIONS(293),
     [aux_sym__terminator_token1] = ACTIONS(128),
     [anon_sym_SEMI] = ACTIONS(128),
   },
@@ -23053,7 +23053,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(298),
     [sym_tree_diagram_type] = ACTIONS(298),
     [sym_wardley_diagram_type] = ACTIONS(298),
-    [sym_generic_diagram_type] = ACTIONS(298),
+    [sym_baseline_diagram_type] = ACTIONS(298),
     [anon_sym_title] = ACTIONS(302),
     [anon_sym_accTitle] = ACTIONS(304),
     [anon_sym_accDescr] = ACTIONS(306),
@@ -23117,7 +23117,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(316),
     [sym_number] = ACTIONS(298),
     [sym_indentation] = ACTIONS(320),
-    [sym_generic_token] = ACTIONS(298),
+    [sym_unknown_token] = ACTIONS(298),
     [aux_sym__terminator_token1] = ACTIONS(300),
     [anon_sym_SEMI] = ACTIONS(300),
   },
@@ -23165,7 +23165,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(324),
     [sym_tree_diagram_type] = ACTIONS(324),
     [sym_wardley_diagram_type] = ACTIONS(324),
-    [sym_generic_diagram_type] = ACTIONS(324),
+    [sym_baseline_diagram_type] = ACTIONS(324),
     [anon_sym_title] = ACTIONS(302),
     [anon_sym_accTitle] = ACTIONS(304),
     [anon_sym_accDescr] = ACTIONS(306),
@@ -23229,7 +23229,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(316),
     [sym_number] = ACTIONS(324),
     [sym_indentation] = ACTIONS(320),
-    [sym_generic_token] = ACTIONS(324),
+    [sym_unknown_token] = ACTIONS(324),
     [aux_sym__terminator_token1] = ACTIONS(326),
     [anon_sym_SEMI] = ACTIONS(326),
   },
@@ -23277,7 +23277,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(330),
     [sym_tree_diagram_type] = ACTIONS(330),
     [sym_wardley_diagram_type] = ACTIONS(330),
-    [sym_generic_diagram_type] = ACTIONS(330),
+    [sym_baseline_diagram_type] = ACTIONS(330),
     [anon_sym_title] = ACTIONS(335),
     [anon_sym_accTitle] = ACTIONS(338),
     [anon_sym_accDescr] = ACTIONS(341),
@@ -23341,7 +23341,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(356),
     [sym_number] = ACTIONS(330),
     [sym_indentation] = ACTIONS(362),
-    [sym_generic_token] = ACTIONS(330),
+    [sym_unknown_token] = ACTIONS(330),
     [aux_sym__terminator_token1] = ACTIONS(332),
     [anon_sym_SEMI] = ACTIONS(332),
   },
@@ -23393,7 +23393,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(369),
     [sym_tree_diagram_type] = ACTIONS(369),
     [sym_wardley_diagram_type] = ACTIONS(369),
-    [sym_generic_diagram_type] = ACTIONS(369),
+    [sym_baseline_diagram_type] = ACTIONS(369),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -23450,7 +23450,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(369),
     [sym_number] = ACTIONS(369),
     [sym_indentation] = ACTIONS(373),
-    [sym_generic_token] = ACTIONS(369),
+    [sym_unknown_token] = ACTIONS(369),
     [aux_sym__terminator_token1] = ACTIONS(371),
     [anon_sym_SEMI] = ACTIONS(371),
   },
@@ -23502,7 +23502,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(377),
     [sym_tree_diagram_type] = ACTIONS(377),
     [sym_wardley_diagram_type] = ACTIONS(377),
-    [sym_generic_diagram_type] = ACTIONS(377),
+    [sym_baseline_diagram_type] = ACTIONS(377),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -23559,7 +23559,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(377),
     [sym_number] = ACTIONS(377),
     [sym_indentation] = ACTIONS(373),
-    [sym_generic_token] = ACTIONS(377),
+    [sym_unknown_token] = ACTIONS(377),
     [aux_sym__terminator_token1] = ACTIONS(379),
     [anon_sym_SEMI] = ACTIONS(379),
   },
@@ -23611,7 +23611,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(386),
     [sym_tree_diagram_type] = ACTIONS(386),
     [sym_wardley_diagram_type] = ACTIONS(386),
-    [sym_generic_diagram_type] = ACTIONS(386),
+    [sym_baseline_diagram_type] = ACTIONS(386),
     [anon_sym_title] = ACTIONS(391),
     [anon_sym_accTitle] = ACTIONS(394),
     [anon_sym_accDescr] = ACTIONS(397),
@@ -23668,7 +23668,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(386),
     [sym_number] = ACTIONS(386),
     [sym_indentation] = ACTIONS(424),
-    [sym_generic_token] = ACTIONS(386),
+    [sym_unknown_token] = ACTIONS(386),
     [aux_sym__terminator_token1] = ACTIONS(388),
     [anon_sym_SEMI] = ACTIONS(388),
   },
@@ -23711,7 +23711,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(431),
     [sym_tree_diagram_type] = ACTIONS(431),
     [sym_wardley_diagram_type] = ACTIONS(431),
-    [sym_generic_diagram_type] = ACTIONS(431),
+    [sym_baseline_diagram_type] = ACTIONS(431),
     [anon_sym_title] = ACTIONS(435),
     [anon_sym_accTitle] = ACTIONS(437),
     [anon_sym_accDescr] = ACTIONS(439),
@@ -23775,7 +23775,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(431),
     [sym_number] = ACTIONS(431),
     [sym_indentation] = ACTIONS(443),
-    [sym_generic_token] = ACTIONS(431),
+    [sym_unknown_token] = ACTIONS(431),
     [aux_sym__terminator_token1] = ACTIONS(433),
     [anon_sym_SEMI] = ACTIONS(433),
   },
@@ -23818,7 +23818,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(450),
     [sym_tree_diagram_type] = ACTIONS(450),
     [sym_wardley_diagram_type] = ACTIONS(450),
-    [sym_generic_diagram_type] = ACTIONS(450),
+    [sym_baseline_diagram_type] = ACTIONS(450),
     [anon_sym_title] = ACTIONS(455),
     [anon_sym_accTitle] = ACTIONS(458),
     [anon_sym_accDescr] = ACTIONS(461),
@@ -23882,7 +23882,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(450),
     [sym_number] = ACTIONS(450),
     [sym_indentation] = ACTIONS(467),
-    [sym_generic_token] = ACTIONS(450),
+    [sym_unknown_token] = ACTIONS(450),
     [aux_sym__terminator_token1] = ACTIONS(452),
     [anon_sym_SEMI] = ACTIONS(452),
   },
@@ -23925,7 +23925,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(472),
     [sym_tree_diagram_type] = ACTIONS(472),
     [sym_wardley_diagram_type] = ACTIONS(472),
-    [sym_generic_diagram_type] = ACTIONS(472),
+    [sym_baseline_diagram_type] = ACTIONS(472),
     [anon_sym_title] = ACTIONS(435),
     [anon_sym_accTitle] = ACTIONS(437),
     [anon_sym_accDescr] = ACTIONS(439),
@@ -23989,7 +23989,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(472),
     [sym_number] = ACTIONS(472),
     [sym_indentation] = ACTIONS(443),
-    [sym_generic_token] = ACTIONS(472),
+    [sym_unknown_token] = ACTIONS(472),
     [aux_sym__terminator_token1] = ACTIONS(474),
     [anon_sym_SEMI] = ACTIONS(474),
   },
@@ -24034,7 +24034,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(480),
     [sym_tree_diagram_type] = ACTIONS(480),
     [sym_wardley_diagram_type] = ACTIONS(480),
-    [sym_generic_diagram_type] = ACTIONS(480),
+    [sym_baseline_diagram_type] = ACTIONS(480),
     [anon_sym_title] = ACTIONS(484),
     [anon_sym_accTitle] = ACTIONS(486),
     [anon_sym_accDescr] = ACTIONS(488),
@@ -24094,7 +24094,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(480),
     [sym_number] = ACTIONS(480),
     [sym_indentation] = ACTIONS(498),
-    [sym_generic_token] = ACTIONS(480),
+    [sym_unknown_token] = ACTIONS(480),
     [aux_sym__terminator_token1] = ACTIONS(482),
     [anon_sym_SEMI] = ACTIONS(482),
   },
@@ -24139,7 +24139,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(502),
     [sym_tree_diagram_type] = ACTIONS(502),
     [sym_wardley_diagram_type] = ACTIONS(502),
-    [sym_generic_diagram_type] = ACTIONS(502),
+    [sym_baseline_diagram_type] = ACTIONS(502),
     [anon_sym_title] = ACTIONS(484),
     [anon_sym_accTitle] = ACTIONS(486),
     [anon_sym_accDescr] = ACTIONS(488),
@@ -24199,7 +24199,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(502),
     [sym_number] = ACTIONS(502),
     [sym_indentation] = ACTIONS(498),
-    [sym_generic_token] = ACTIONS(502),
+    [sym_unknown_token] = ACTIONS(502),
     [aux_sym__terminator_token1] = ACTIONS(504),
     [anon_sym_SEMI] = ACTIONS(504),
   },
@@ -24244,7 +24244,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(510),
     [sym_tree_diagram_type] = ACTIONS(510),
     [sym_wardley_diagram_type] = ACTIONS(510),
-    [sym_generic_diagram_type] = ACTIONS(510),
+    [sym_baseline_diagram_type] = ACTIONS(510),
     [anon_sym_title] = ACTIONS(514),
     [anon_sym_accTitle] = ACTIONS(516),
     [anon_sym_accDescr] = ACTIONS(518),
@@ -24304,7 +24304,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(510),
     [sym_number] = ACTIONS(510),
     [sym_indentation] = ACTIONS(524),
-    [sym_generic_token] = ACTIONS(510),
+    [sym_unknown_token] = ACTIONS(510),
     [aux_sym__terminator_token1] = ACTIONS(512),
     [anon_sym_SEMI] = ACTIONS(512),
   },
@@ -24349,7 +24349,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(528),
     [sym_tree_diagram_type] = ACTIONS(528),
     [sym_wardley_diagram_type] = ACTIONS(528),
-    [sym_generic_diagram_type] = ACTIONS(528),
+    [sym_baseline_diagram_type] = ACTIONS(528),
     [anon_sym_title] = ACTIONS(514),
     [anon_sym_accTitle] = ACTIONS(516),
     [anon_sym_accDescr] = ACTIONS(518),
@@ -24409,7 +24409,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(528),
     [sym_number] = ACTIONS(528),
     [sym_indentation] = ACTIONS(524),
-    [sym_generic_token] = ACTIONS(528),
+    [sym_unknown_token] = ACTIONS(528),
     [aux_sym__terminator_token1] = ACTIONS(530),
     [anon_sym_SEMI] = ACTIONS(530),
   },
@@ -24454,7 +24454,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(537),
     [sym_tree_diagram_type] = ACTIONS(537),
     [sym_wardley_diagram_type] = ACTIONS(537),
-    [sym_generic_diagram_type] = ACTIONS(537),
+    [sym_baseline_diagram_type] = ACTIONS(537),
     [anon_sym_title] = ACTIONS(542),
     [anon_sym_accTitle] = ACTIONS(545),
     [anon_sym_accDescr] = ACTIONS(548),
@@ -24514,7 +24514,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(537),
     [sym_number] = ACTIONS(537),
     [sym_indentation] = ACTIONS(563),
-    [sym_generic_token] = ACTIONS(537),
+    [sym_unknown_token] = ACTIONS(537),
     [aux_sym__terminator_token1] = ACTIONS(539),
     [anon_sym_SEMI] = ACTIONS(539),
   },
@@ -24559,7 +24559,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(571),
     [sym_tree_diagram_type] = ACTIONS(571),
     [sym_wardley_diagram_type] = ACTIONS(571),
-    [sym_generic_diagram_type] = ACTIONS(571),
+    [sym_baseline_diagram_type] = ACTIONS(571),
     [anon_sym_title] = ACTIONS(576),
     [anon_sym_accTitle] = ACTIONS(579),
     [anon_sym_accDescr] = ACTIONS(582),
@@ -24619,7 +24619,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(571),
     [sym_number] = ACTIONS(571),
     [sym_indentation] = ACTIONS(591),
-    [sym_generic_token] = ACTIONS(571),
+    [sym_unknown_token] = ACTIONS(571),
     [aux_sym__terminator_token1] = ACTIONS(573),
     [anon_sym_SEMI] = ACTIONS(573),
   },
@@ -24663,7 +24663,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(598),
     [sym_tree_diagram_type] = ACTIONS(598),
     [sym_wardley_diagram_type] = ACTIONS(598),
-    [sym_generic_diagram_type] = ACTIONS(598),
+    [sym_baseline_diagram_type] = ACTIONS(598),
     [anon_sym_title] = ACTIONS(602),
     [anon_sym_accTitle] = ACTIONS(604),
     [anon_sym_accDescr] = ACTIONS(606),
@@ -24722,7 +24722,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(598),
     [sym_number] = ACTIONS(598),
     [sym_indentation] = ACTIONS(612),
-    [sym_generic_token] = ACTIONS(598),
+    [sym_unknown_token] = ACTIONS(598),
     [aux_sym__terminator_token1] = ACTIONS(600),
     [anon_sym_SEMI] = ACTIONS(600),
   },
@@ -24766,7 +24766,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(616),
     [sym_tree_diagram_type] = ACTIONS(616),
     [sym_wardley_diagram_type] = ACTIONS(616),
-    [sym_generic_diagram_type] = ACTIONS(616),
+    [sym_baseline_diagram_type] = ACTIONS(616),
     [anon_sym_title] = ACTIONS(602),
     [anon_sym_accTitle] = ACTIONS(604),
     [anon_sym_accDescr] = ACTIONS(606),
@@ -24825,7 +24825,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(616),
     [sym_number] = ACTIONS(616),
     [sym_indentation] = ACTIONS(612),
-    [sym_generic_token] = ACTIONS(616),
+    [sym_unknown_token] = ACTIONS(616),
     [aux_sym__terminator_token1] = ACTIONS(618),
     [anon_sym_SEMI] = ACTIONS(618),
   },
@@ -24869,7 +24869,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(624),
     [sym_tree_diagram_type] = ACTIONS(624),
     [sym_wardley_diagram_type] = ACTIONS(624),
-    [sym_generic_diagram_type] = ACTIONS(624),
+    [sym_baseline_diagram_type] = ACTIONS(624),
     [anon_sym_title] = ACTIONS(628),
     [anon_sym_accTitle] = ACTIONS(630),
     [anon_sym_accDescr] = ACTIONS(632),
@@ -24928,7 +24928,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(624),
     [sym_number] = ACTIONS(624),
     [sym_indentation] = ACTIONS(642),
-    [sym_generic_token] = ACTIONS(624),
+    [sym_unknown_token] = ACTIONS(624),
     [aux_sym__terminator_token1] = ACTIONS(626),
     [anon_sym_SEMI] = ACTIONS(626),
   },
@@ -24972,7 +24972,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(646),
     [sym_tree_diagram_type] = ACTIONS(646),
     [sym_wardley_diagram_type] = ACTIONS(646),
-    [sym_generic_diagram_type] = ACTIONS(646),
+    [sym_baseline_diagram_type] = ACTIONS(646),
     [anon_sym_title] = ACTIONS(628),
     [anon_sym_accTitle] = ACTIONS(630),
     [anon_sym_accDescr] = ACTIONS(632),
@@ -25031,7 +25031,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(646),
     [sym_number] = ACTIONS(646),
     [sym_indentation] = ACTIONS(642),
-    [sym_generic_token] = ACTIONS(646),
+    [sym_unknown_token] = ACTIONS(646),
     [aux_sym__terminator_token1] = ACTIONS(648),
     [anon_sym_SEMI] = ACTIONS(648),
   },
@@ -25075,7 +25075,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(655),
     [sym_tree_diagram_type] = ACTIONS(655),
     [sym_wardley_diagram_type] = ACTIONS(655),
-    [sym_generic_diagram_type] = ACTIONS(655),
+    [sym_baseline_diagram_type] = ACTIONS(655),
     [anon_sym_title] = ACTIONS(660),
     [anon_sym_accTitle] = ACTIONS(663),
     [anon_sym_accDescr] = ACTIONS(666),
@@ -25134,7 +25134,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(655),
     [sym_number] = ACTIONS(655),
     [sym_indentation] = ACTIONS(675),
-    [sym_generic_token] = ACTIONS(655),
+    [sym_unknown_token] = ACTIONS(655),
     [aux_sym__terminator_token1] = ACTIONS(657),
     [anon_sym_SEMI] = ACTIONS(657),
   },
@@ -25178,7 +25178,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(683),
     [sym_tree_diagram_type] = ACTIONS(683),
     [sym_wardley_diagram_type] = ACTIONS(683),
-    [sym_generic_diagram_type] = ACTIONS(683),
+    [sym_baseline_diagram_type] = ACTIONS(683),
     [anon_sym_title] = ACTIONS(688),
     [anon_sym_accTitle] = ACTIONS(691),
     [anon_sym_accDescr] = ACTIONS(694),
@@ -25237,7 +25237,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(683),
     [sym_number] = ACTIONS(683),
     [sym_indentation] = ACTIONS(709),
-    [sym_generic_token] = ACTIONS(683),
+    [sym_unknown_token] = ACTIONS(683),
     [aux_sym__terminator_token1] = ACTIONS(685),
     [anon_sym_SEMI] = ACTIONS(685),
   },
@@ -25280,7 +25280,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(714),
     [sym_tree_diagram_type] = ACTIONS(714),
     [sym_wardley_diagram_type] = ACTIONS(714),
-    [sym_generic_diagram_type] = ACTIONS(714),
+    [sym_baseline_diagram_type] = ACTIONS(714),
     [anon_sym_title] = ACTIONS(720),
     [anon_sym_accTitle] = ACTIONS(722),
     [anon_sym_accDescr] = ACTIONS(724),
@@ -25339,7 +25339,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(714),
     [sym_number] = ACTIONS(714),
     [sym_indentation] = ACTIONS(730),
-    [sym_generic_token] = ACTIONS(714),
+    [sym_unknown_token] = ACTIONS(714),
     [aux_sym__terminator_token1] = ACTIONS(716),
     [anon_sym_SEMI] = ACTIONS(716),
   },
@@ -25382,7 +25382,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(734),
     [sym_tree_diagram_type] = ACTIONS(734),
     [sym_wardley_diagram_type] = ACTIONS(734),
-    [sym_generic_diagram_type] = ACTIONS(734),
+    [sym_baseline_diagram_type] = ACTIONS(734),
     [anon_sym_title] = ACTIONS(720),
     [anon_sym_accTitle] = ACTIONS(722),
     [anon_sym_accDescr] = ACTIONS(724),
@@ -25441,7 +25441,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(734),
     [sym_number] = ACTIONS(734),
     [sym_indentation] = ACTIONS(730),
-    [sym_generic_token] = ACTIONS(734),
+    [sym_unknown_token] = ACTIONS(734),
     [aux_sym__terminator_token1] = ACTIONS(736),
     [anon_sym_SEMI] = ACTIONS(736),
   },
@@ -25484,7 +25484,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(740),
     [sym_tree_diagram_type] = ACTIONS(740),
     [sym_wardley_diagram_type] = ACTIONS(740),
-    [sym_generic_diagram_type] = ACTIONS(740),
+    [sym_baseline_diagram_type] = ACTIONS(740),
     [anon_sym_title] = ACTIONS(748),
     [anon_sym_accTitle] = ACTIONS(751),
     [anon_sym_accDescr] = ACTIONS(754),
@@ -25543,7 +25543,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(740),
     [sym_number] = ACTIONS(740),
     [sym_indentation] = ACTIONS(763),
-    [sym_generic_token] = ACTIONS(740),
+    [sym_unknown_token] = ACTIONS(740),
     [aux_sym__terminator_token1] = ACTIONS(742),
     [anon_sym_SEMI] = ACTIONS(742),
   },
@@ -25587,7 +25587,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(770),
     [sym_tree_diagram_type] = ACTIONS(770),
     [sym_wardley_diagram_type] = ACTIONS(770),
-    [sym_generic_diagram_type] = ACTIONS(770),
+    [sym_baseline_diagram_type] = ACTIONS(770),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -25644,7 +25644,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(770),
     [sym_number] = ACTIONS(770),
     [sym_indentation] = ACTIONS(774),
-    [sym_generic_token] = ACTIONS(770),
+    [sym_unknown_token] = ACTIONS(770),
     [aux_sym__terminator_token1] = ACTIONS(772),
     [anon_sym_SEMI] = ACTIONS(772),
   },
@@ -25687,7 +25687,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(781),
     [sym_tree_diagram_type] = ACTIONS(781),
     [sym_wardley_diagram_type] = ACTIONS(781),
-    [sym_generic_diagram_type] = ACTIONS(781),
+    [sym_baseline_diagram_type] = ACTIONS(781),
     [anon_sym_title] = ACTIONS(786),
     [anon_sym_accTitle] = ACTIONS(789),
     [anon_sym_accDescr] = ACTIONS(792),
@@ -25745,7 +25745,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(781),
     [sym_number] = ACTIONS(781),
     [sym_indentation] = ACTIONS(798),
-    [sym_generic_token] = ACTIONS(781),
+    [sym_unknown_token] = ACTIONS(781),
     [aux_sym__terminator_token1] = ACTIONS(783),
     [anon_sym_SEMI] = ACTIONS(783),
   },
@@ -25789,7 +25789,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(806),
     [sym_tree_diagram_type] = ACTIONS(806),
     [sym_wardley_diagram_type] = ACTIONS(806),
-    [sym_generic_diagram_type] = ACTIONS(806),
+    [sym_baseline_diagram_type] = ACTIONS(806),
     [anon_sym_title] = ACTIONS(811),
     [anon_sym_accTitle] = ACTIONS(814),
     [anon_sym_accDescr] = ACTIONS(817),
@@ -25846,7 +25846,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(806),
     [sym_number] = ACTIONS(806),
     [sym_indentation] = ACTIONS(829),
-    [sym_generic_token] = ACTIONS(806),
+    [sym_unknown_token] = ACTIONS(806),
     [aux_sym__terminator_token1] = ACTIONS(808),
     [anon_sym_SEMI] = ACTIONS(808),
   },
@@ -25890,7 +25890,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(837),
     [sym_tree_diagram_type] = ACTIONS(837),
     [sym_wardley_diagram_type] = ACTIONS(837),
-    [sym_generic_diagram_type] = ACTIONS(837),
+    [sym_baseline_diagram_type] = ACTIONS(837),
     [anon_sym_title] = ACTIONS(842),
     [anon_sym_accTitle] = ACTIONS(845),
     [anon_sym_accDescr] = ACTIONS(848),
@@ -25947,7 +25947,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(837),
     [sym_number] = ACTIONS(837),
     [sym_indentation] = ACTIONS(857),
-    [sym_generic_token] = ACTIONS(837),
+    [sym_unknown_token] = ACTIONS(837),
     [aux_sym__terminator_token1] = ACTIONS(839),
     [anon_sym_SEMI] = ACTIONS(839),
   },
@@ -25991,7 +25991,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(862),
     [sym_tree_diagram_type] = ACTIONS(862),
     [sym_wardley_diagram_type] = ACTIONS(862),
-    [sym_generic_diagram_type] = ACTIONS(862),
+    [sym_baseline_diagram_type] = ACTIONS(862),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26048,7 +26048,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(862),
     [sym_number] = ACTIONS(862),
     [sym_indentation] = ACTIONS(774),
-    [sym_generic_token] = ACTIONS(862),
+    [sym_unknown_token] = ACTIONS(862),
     [aux_sym__terminator_token1] = ACTIONS(864),
     [anon_sym_SEMI] = ACTIONS(864),
   },
@@ -26091,7 +26091,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(870),
     [sym_tree_diagram_type] = ACTIONS(870),
     [sym_wardley_diagram_type] = ACTIONS(870),
-    [sym_generic_diagram_type] = ACTIONS(870),
+    [sym_baseline_diagram_type] = ACTIONS(870),
     [anon_sym_title] = ACTIONS(874),
     [anon_sym_accTitle] = ACTIONS(876),
     [anon_sym_accDescr] = ACTIONS(878),
@@ -26149,7 +26149,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(870),
     [sym_number] = ACTIONS(870),
     [sym_indentation] = ACTIONS(882),
-    [sym_generic_token] = ACTIONS(870),
+    [sym_unknown_token] = ACTIONS(870),
     [aux_sym__terminator_token1] = ACTIONS(872),
     [anon_sym_SEMI] = ACTIONS(872),
   },
@@ -26192,7 +26192,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(886),
     [sym_tree_diagram_type] = ACTIONS(886),
     [sym_wardley_diagram_type] = ACTIONS(886),
-    [sym_generic_diagram_type] = ACTIONS(886),
+    [sym_baseline_diagram_type] = ACTIONS(886),
     [anon_sym_title] = ACTIONS(874),
     [anon_sym_accTitle] = ACTIONS(876),
     [anon_sym_accDescr] = ACTIONS(878),
@@ -26250,7 +26250,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(886),
     [sym_number] = ACTIONS(886),
     [sym_indentation] = ACTIONS(882),
-    [sym_generic_token] = ACTIONS(886),
+    [sym_unknown_token] = ACTIONS(886),
     [aux_sym__terminator_token1] = ACTIONS(888),
     [anon_sym_SEMI] = ACTIONS(888),
   },
@@ -26294,7 +26294,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(894),
     [sym_tree_diagram_type] = ACTIONS(894),
     [sym_wardley_diagram_type] = ACTIONS(894),
-    [sym_generic_diagram_type] = ACTIONS(894),
+    [sym_baseline_diagram_type] = ACTIONS(894),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26351,7 +26351,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(894),
     [sym_number] = ACTIONS(894),
     [sym_indentation] = ACTIONS(902),
-    [sym_generic_token] = ACTIONS(894),
+    [sym_unknown_token] = ACTIONS(894),
     [aux_sym__terminator_token1] = ACTIONS(896),
     [anon_sym_SEMI] = ACTIONS(896),
   },
@@ -26395,7 +26395,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(906),
     [sym_tree_diagram_type] = ACTIONS(906),
     [sym_wardley_diagram_type] = ACTIONS(906),
-    [sym_generic_diagram_type] = ACTIONS(906),
+    [sym_baseline_diagram_type] = ACTIONS(906),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26452,7 +26452,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(906),
     [sym_number] = ACTIONS(906),
     [sym_indentation] = ACTIONS(902),
-    [sym_generic_token] = ACTIONS(906),
+    [sym_unknown_token] = ACTIONS(906),
     [aux_sym__terminator_token1] = ACTIONS(908),
     [anon_sym_SEMI] = ACTIONS(908),
   },
@@ -26494,7 +26494,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(912),
     [sym_tree_diagram_type] = ACTIONS(912),
     [sym_wardley_diagram_type] = ACTIONS(912),
-    [sym_generic_diagram_type] = ACTIONS(912),
+    [sym_baseline_diagram_type] = ACTIONS(912),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26551,7 +26551,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(912),
     [sym_number] = ACTIONS(912),
     [sym_indentation] = ACTIONS(916),
-    [sym_generic_token] = ACTIONS(912),
+    [sym_unknown_token] = ACTIONS(912),
     [aux_sym__terminator_token1] = ACTIONS(914),
     [anon_sym_SEMI] = ACTIONS(914),
   },
@@ -26593,7 +26593,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(922),
     [sym_tree_diagram_type] = ACTIONS(922),
     [sym_wardley_diagram_type] = ACTIONS(922),
-    [sym_generic_diagram_type] = ACTIONS(922),
+    [sym_baseline_diagram_type] = ACTIONS(922),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26650,7 +26650,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(922),
     [sym_number] = ACTIONS(922),
     [sym_indentation] = ACTIONS(926),
-    [sym_generic_token] = ACTIONS(922),
+    [sym_unknown_token] = ACTIONS(922),
     [aux_sym__terminator_token1] = ACTIONS(924),
     [anon_sym_SEMI] = ACTIONS(924),
   },
@@ -26692,7 +26692,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(930),
     [sym_tree_diagram_type] = ACTIONS(930),
     [sym_wardley_diagram_type] = ACTIONS(930),
-    [sym_generic_diagram_type] = ACTIONS(930),
+    [sym_baseline_diagram_type] = ACTIONS(930),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26749,7 +26749,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(930),
     [sym_number] = ACTIONS(930),
     [sym_indentation] = ACTIONS(916),
-    [sym_generic_token] = ACTIONS(930),
+    [sym_unknown_token] = ACTIONS(930),
     [aux_sym__terminator_token1] = ACTIONS(932),
     [anon_sym_SEMI] = ACTIONS(932),
   },
@@ -26791,7 +26791,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(936),
     [sym_tree_diagram_type] = ACTIONS(936),
     [sym_wardley_diagram_type] = ACTIONS(936),
-    [sym_generic_diagram_type] = ACTIONS(936),
+    [sym_baseline_diagram_type] = ACTIONS(936),
     [anon_sym_title] = ACTIONS(941),
     [anon_sym_accTitle] = ACTIONS(944),
     [anon_sym_accDescr] = ACTIONS(947),
@@ -26848,7 +26848,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(936),
     [sym_number] = ACTIONS(936),
     [sym_indentation] = ACTIONS(959),
-    [sym_generic_token] = ACTIONS(936),
+    [sym_unknown_token] = ACTIONS(936),
     [aux_sym__terminator_token1] = ACTIONS(938),
     [anon_sym_SEMI] = ACTIONS(938),
   },
@@ -26890,7 +26890,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(964),
     [sym_tree_diagram_type] = ACTIONS(964),
     [sym_wardley_diagram_type] = ACTIONS(964),
-    [sym_generic_diagram_type] = ACTIONS(964),
+    [sym_baseline_diagram_type] = ACTIONS(964),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -26947,7 +26947,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(964),
     [sym_number] = ACTIONS(964),
     [sym_indentation] = ACTIONS(926),
-    [sym_generic_token] = ACTIONS(964),
+    [sym_unknown_token] = ACTIONS(964),
     [aux_sym__terminator_token1] = ACTIONS(966),
     [anon_sym_SEMI] = ACTIONS(966),
   },
@@ -26989,7 +26989,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(973),
     [sym_tree_diagram_type] = ACTIONS(973),
     [sym_wardley_diagram_type] = ACTIONS(973),
-    [sym_generic_diagram_type] = ACTIONS(973),
+    [sym_baseline_diagram_type] = ACTIONS(973),
     [anon_sym_title] = ACTIONS(978),
     [anon_sym_accTitle] = ACTIONS(981),
     [anon_sym_accDescr] = ACTIONS(984),
@@ -27046,7 +27046,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(973),
     [sym_number] = ACTIONS(973),
     [sym_indentation] = ACTIONS(990),
-    [sym_generic_token] = ACTIONS(973),
+    [sym_unknown_token] = ACTIONS(973),
     [aux_sym__terminator_token1] = ACTIONS(975),
     [anon_sym_SEMI] = ACTIONS(975),
   },
@@ -27087,7 +27087,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(995),
     [sym_tree_diagram_type] = ACTIONS(995),
     [sym_wardley_diagram_type] = ACTIONS(995),
-    [sym_generic_diagram_type] = ACTIONS(995),
+    [sym_baseline_diagram_type] = ACTIONS(995),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -27144,7 +27144,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(995),
     [sym_number] = ACTIONS(995),
     [sym_indentation] = ACTIONS(999),
-    [sym_generic_token] = ACTIONS(995),
+    [sym_unknown_token] = ACTIONS(995),
     [aux_sym__terminator_token1] = ACTIONS(997),
     [anon_sym_SEMI] = ACTIONS(997),
   },
@@ -27185,7 +27185,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1003),
     [sym_tree_diagram_type] = ACTIONS(1003),
     [sym_wardley_diagram_type] = ACTIONS(1003),
-    [sym_generic_diagram_type] = ACTIONS(1003),
+    [sym_baseline_diagram_type] = ACTIONS(1003),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -27242,7 +27242,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1007),
     [sym_number] = ACTIONS(1003),
     [sym_indentation] = ACTIONS(1009),
-    [sym_generic_token] = ACTIONS(1003),
+    [sym_unknown_token] = ACTIONS(1003),
     [aux_sym__terminator_token1] = ACTIONS(1005),
     [anon_sym_SEMI] = ACTIONS(1005),
   },
@@ -27283,7 +27283,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1015),
     [sym_tree_diagram_type] = ACTIONS(1015),
     [sym_wardley_diagram_type] = ACTIONS(1015),
-    [sym_generic_diagram_type] = ACTIONS(1015),
+    [sym_baseline_diagram_type] = ACTIONS(1015),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -27340,7 +27340,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1015),
     [sym_number] = ACTIONS(1015),
     [sym_indentation] = ACTIONS(1019),
-    [sym_generic_token] = ACTIONS(1015),
+    [sym_unknown_token] = ACTIONS(1015),
     [aux_sym__terminator_token1] = ACTIONS(1017),
     [anon_sym_SEMI] = ACTIONS(1017),
   },
@@ -27381,7 +27381,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1023),
     [sym_tree_diagram_type] = ACTIONS(1023),
     [sym_wardley_diagram_type] = ACTIONS(1023),
-    [sym_generic_diagram_type] = ACTIONS(1023),
+    [sym_baseline_diagram_type] = ACTIONS(1023),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -27438,7 +27438,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1023),
     [sym_number] = ACTIONS(1023),
     [sym_indentation] = ACTIONS(999),
-    [sym_generic_token] = ACTIONS(1023),
+    [sym_unknown_token] = ACTIONS(1023),
     [aux_sym__terminator_token1] = ACTIONS(1025),
     [anon_sym_SEMI] = ACTIONS(1025),
   },
@@ -27479,7 +27479,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1029),
     [sym_tree_diagram_type] = ACTIONS(1029),
     [sym_wardley_diagram_type] = ACTIONS(1029),
-    [sym_generic_diagram_type] = ACTIONS(1029),
+    [sym_baseline_diagram_type] = ACTIONS(1029),
     [anon_sym_title] = ACTIONS(1034),
     [anon_sym_accTitle] = ACTIONS(1037),
     [anon_sym_accDescr] = ACTIONS(1040),
@@ -27536,7 +27536,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1029),
     [sym_number] = ACTIONS(1029),
     [sym_indentation] = ACTIONS(1046),
-    [sym_generic_token] = ACTIONS(1029),
+    [sym_unknown_token] = ACTIONS(1029),
     [aux_sym__terminator_token1] = ACTIONS(1031),
     [anon_sym_SEMI] = ACTIONS(1031),
   },
@@ -27577,7 +27577,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1051),
     [sym_tree_diagram_type] = ACTIONS(1051),
     [sym_wardley_diagram_type] = ACTIONS(1051),
-    [sym_generic_diagram_type] = ACTIONS(1051),
+    [sym_baseline_diagram_type] = ACTIONS(1051),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -27634,7 +27634,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1051),
     [sym_number] = ACTIONS(1051),
     [sym_indentation] = ACTIONS(1019),
-    [sym_generic_token] = ACTIONS(1051),
+    [sym_unknown_token] = ACTIONS(1051),
     [aux_sym__terminator_token1] = ACTIONS(1053),
     [anon_sym_SEMI] = ACTIONS(1053),
   },
@@ -27675,7 +27675,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1060),
     [sym_tree_diagram_type] = ACTIONS(1060),
     [sym_wardley_diagram_type] = ACTIONS(1060),
-    [sym_generic_diagram_type] = ACTIONS(1060),
+    [sym_baseline_diagram_type] = ACTIONS(1060),
     [anon_sym_title] = ACTIONS(1065),
     [anon_sym_accTitle] = ACTIONS(1068),
     [anon_sym_accDescr] = ACTIONS(1071),
@@ -27732,7 +27732,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1060),
     [sym_number] = ACTIONS(1060),
     [sym_indentation] = ACTIONS(1074),
-    [sym_generic_token] = ACTIONS(1060),
+    [sym_unknown_token] = ACTIONS(1060),
     [aux_sym__terminator_token1] = ACTIONS(1062),
     [anon_sym_SEMI] = ACTIONS(1062),
   },
@@ -27773,7 +27773,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1079),
     [sym_tree_diagram_type] = ACTIONS(1079),
     [sym_wardley_diagram_type] = ACTIONS(1079),
-    [sym_generic_diagram_type] = ACTIONS(1079),
+    [sym_baseline_diagram_type] = ACTIONS(1079),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -27830,7 +27830,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1007),
     [sym_number] = ACTIONS(1079),
     [sym_indentation] = ACTIONS(1009),
-    [sym_generic_token] = ACTIONS(1079),
+    [sym_unknown_token] = ACTIONS(1079),
     [aux_sym__terminator_token1] = ACTIONS(1081),
     [anon_sym_SEMI] = ACTIONS(1081),
   },
@@ -27871,7 +27871,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1085),
     [sym_tree_diagram_type] = ACTIONS(1085),
     [sym_wardley_diagram_type] = ACTIONS(1085),
-    [sym_generic_diagram_type] = ACTIONS(1085),
+    [sym_baseline_diagram_type] = ACTIONS(1085),
     [anon_sym_title] = ACTIONS(1090),
     [anon_sym_accTitle] = ACTIONS(1093),
     [anon_sym_accDescr] = ACTIONS(1096),
@@ -27928,7 +27928,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1099),
     [sym_number] = ACTIONS(1085),
     [sym_indentation] = ACTIONS(1102),
-    [sym_generic_token] = ACTIONS(1085),
+    [sym_unknown_token] = ACTIONS(1085),
     [aux_sym__terminator_token1] = ACTIONS(1087),
     [anon_sym_SEMI] = ACTIONS(1087),
   },
@@ -27968,7 +27968,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1107),
     [sym_tree_diagram_type] = ACTIONS(1107),
     [sym_wardley_diagram_type] = ACTIONS(1107),
-    [sym_generic_diagram_type] = ACTIONS(1107),
+    [sym_baseline_diagram_type] = ACTIONS(1107),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -28025,7 +28025,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1107),
     [sym_number] = ACTIONS(1107),
     [sym_indentation] = ACTIONS(1111),
-    [sym_generic_token] = ACTIONS(1107),
+    [sym_unknown_token] = ACTIONS(1107),
     [aux_sym__terminator_token1] = ACTIONS(1109),
     [anon_sym_SEMI] = ACTIONS(1109),
   },
@@ -28065,7 +28065,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1115),
     [sym_tree_diagram_type] = ACTIONS(1115),
     [sym_wardley_diagram_type] = ACTIONS(1115),
-    [sym_generic_diagram_type] = ACTIONS(1115),
+    [sym_baseline_diagram_type] = ACTIONS(1115),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -28122,7 +28122,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1115),
     [sym_number] = ACTIONS(1115),
     [sym_indentation] = ACTIONS(1119),
-    [sym_generic_token] = ACTIONS(1115),
+    [sym_unknown_token] = ACTIONS(1115),
     [aux_sym__terminator_token1] = ACTIONS(1117),
     [anon_sym_SEMI] = ACTIONS(1117),
   },
@@ -28162,7 +28162,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1123),
     [sym_tree_diagram_type] = ACTIONS(1123),
     [sym_wardley_diagram_type] = ACTIONS(1123),
-    [sym_generic_diagram_type] = ACTIONS(1123),
+    [sym_baseline_diagram_type] = ACTIONS(1123),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -28219,7 +28219,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1123),
     [sym_number] = ACTIONS(1127),
     [sym_indentation] = ACTIONS(1129),
-    [sym_generic_token] = ACTIONS(1123),
+    [sym_unknown_token] = ACTIONS(1123),
     [aux_sym__terminator_token1] = ACTIONS(1125),
     [anon_sym_SEMI] = ACTIONS(1125),
   },
@@ -28259,7 +28259,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1133),
     [sym_tree_diagram_type] = ACTIONS(1133),
     [sym_wardley_diagram_type] = ACTIONS(1133),
-    [sym_generic_diagram_type] = ACTIONS(1133),
+    [sym_baseline_diagram_type] = ACTIONS(1133),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -28316,7 +28316,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1133),
     [sym_number] = ACTIONS(1133),
     [sym_indentation] = ACTIONS(1119),
-    [sym_generic_token] = ACTIONS(1133),
+    [sym_unknown_token] = ACTIONS(1133),
     [aux_sym__terminator_token1] = ACTIONS(1135),
     [anon_sym_SEMI] = ACTIONS(1135),
   },
@@ -28356,7 +28356,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1139),
     [sym_tree_diagram_type] = ACTIONS(1139),
     [sym_wardley_diagram_type] = ACTIONS(1139),
-    [sym_generic_diagram_type] = ACTIONS(1139),
+    [sym_baseline_diagram_type] = ACTIONS(1139),
     [anon_sym_title] = ACTIONS(1144),
     [anon_sym_accTitle] = ACTIONS(1147),
     [anon_sym_accDescr] = ACTIONS(1150),
@@ -28413,7 +28413,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1139),
     [sym_number] = ACTIONS(1139),
     [sym_indentation] = ACTIONS(1156),
-    [sym_generic_token] = ACTIONS(1139),
+    [sym_unknown_token] = ACTIONS(1139),
     [aux_sym__terminator_token1] = ACTIONS(1141),
     [anon_sym_SEMI] = ACTIONS(1141),
   },
@@ -28453,7 +28453,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1161),
     [sym_tree_diagram_type] = ACTIONS(1161),
     [sym_wardley_diagram_type] = ACTIONS(1161),
-    [sym_generic_diagram_type] = ACTIONS(1161),
+    [sym_baseline_diagram_type] = ACTIONS(1161),
     [anon_sym_title] = ACTIONS(1166),
     [anon_sym_accTitle] = ACTIONS(1169),
     [anon_sym_accDescr] = ACTIONS(1172),
@@ -28510,7 +28510,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1161),
     [sym_number] = ACTIONS(1161),
     [sym_indentation] = ACTIONS(1190),
-    [sym_generic_token] = ACTIONS(1161),
+    [sym_unknown_token] = ACTIONS(1161),
     [aux_sym__terminator_token1] = ACTIONS(1163),
     [anon_sym_SEMI] = ACTIONS(1163),
   },
@@ -28550,7 +28550,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1195),
     [sym_tree_diagram_type] = ACTIONS(1195),
     [sym_wardley_diagram_type] = ACTIONS(1195),
-    [sym_generic_diagram_type] = ACTIONS(1195),
+    [sym_baseline_diagram_type] = ACTIONS(1195),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -28607,7 +28607,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1195),
     [sym_number] = ACTIONS(1195),
     [sym_indentation] = ACTIONS(1199),
-    [sym_generic_token] = ACTIONS(1195),
+    [sym_unknown_token] = ACTIONS(1195),
     [aux_sym__terminator_token1] = ACTIONS(1197),
     [anon_sym_SEMI] = ACTIONS(1197),
   },
@@ -28647,7 +28647,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1203),
     [sym_tree_diagram_type] = ACTIONS(1203),
     [sym_wardley_diagram_type] = ACTIONS(1203),
-    [sym_generic_diagram_type] = ACTIONS(1203),
+    [sym_baseline_diagram_type] = ACTIONS(1203),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -28704,7 +28704,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1203),
     [sym_number] = ACTIONS(1203),
     [sym_indentation] = ACTIONS(1111),
-    [sym_generic_token] = ACTIONS(1203),
+    [sym_unknown_token] = ACTIONS(1203),
     [aux_sym__terminator_token1] = ACTIONS(1205),
     [anon_sym_SEMI] = ACTIONS(1205),
   },
@@ -28744,7 +28744,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1209),
     [sym_tree_diagram_type] = ACTIONS(1209),
     [sym_wardley_diagram_type] = ACTIONS(1209),
-    [sym_generic_diagram_type] = ACTIONS(1209),
+    [sym_baseline_diagram_type] = ACTIONS(1209),
     [anon_sym_title] = ACTIONS(1214),
     [anon_sym_accTitle] = ACTIONS(1217),
     [anon_sym_accDescr] = ACTIONS(1220),
@@ -28801,7 +28801,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1209),
     [sym_number] = ACTIONS(1209),
     [sym_indentation] = ACTIONS(1226),
-    [sym_generic_token] = ACTIONS(1209),
+    [sym_unknown_token] = ACTIONS(1209),
     [aux_sym__terminator_token1] = ACTIONS(1211),
     [anon_sym_SEMI] = ACTIONS(1211),
   },
@@ -28841,7 +28841,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1231),
     [sym_tree_diagram_type] = ACTIONS(1231),
     [sym_wardley_diagram_type] = ACTIONS(1231),
-    [sym_generic_diagram_type] = ACTIONS(1231),
+    [sym_baseline_diagram_type] = ACTIONS(1231),
     [anon_sym_title] = ACTIONS(1236),
     [anon_sym_accTitle] = ACTIONS(1239),
     [anon_sym_accDescr] = ACTIONS(1242),
@@ -28898,7 +28898,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1231),
     [sym_number] = ACTIONS(1248),
     [sym_indentation] = ACTIONS(1251),
-    [sym_generic_token] = ACTIONS(1231),
+    [sym_unknown_token] = ACTIONS(1231),
     [aux_sym__terminator_token1] = ACTIONS(1233),
     [anon_sym_SEMI] = ACTIONS(1233),
   },
@@ -28938,7 +28938,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1256),
     [sym_tree_diagram_type] = ACTIONS(1256),
     [sym_wardley_diagram_type] = ACTIONS(1256),
-    [sym_generic_diagram_type] = ACTIONS(1256),
+    [sym_baseline_diagram_type] = ACTIONS(1256),
     [anon_sym_title] = ACTIONS(1264),
     [anon_sym_accTitle] = ACTIONS(1267),
     [anon_sym_accDescr] = ACTIONS(1270),
@@ -28995,7 +28995,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1273),
     [sym_number] = ACTIONS(1256),
     [sym_indentation] = ACTIONS(1276),
-    [sym_generic_token] = ACTIONS(1256),
+    [sym_unknown_token] = ACTIONS(1256),
     [aux_sym__terminator_token1] = ACTIONS(1258),
     [anon_sym_SEMI] = ACTIONS(1258),
   },
@@ -29035,7 +29035,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1281),
     [sym_tree_diagram_type] = ACTIONS(1281),
     [sym_wardley_diagram_type] = ACTIONS(1281),
-    [sym_generic_diagram_type] = ACTIONS(1281),
+    [sym_baseline_diagram_type] = ACTIONS(1281),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -29092,7 +29092,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1285),
     [sym_number] = ACTIONS(1281),
     [sym_indentation] = ACTIONS(1287),
-    [sym_generic_token] = ACTIONS(1281),
+    [sym_unknown_token] = ACTIONS(1281),
     [aux_sym__terminator_token1] = ACTIONS(1283),
     [anon_sym_SEMI] = ACTIONS(1283),
   },
@@ -29132,7 +29132,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1291),
     [sym_tree_diagram_type] = ACTIONS(1291),
     [sym_wardley_diagram_type] = ACTIONS(1291),
-    [sym_generic_diagram_type] = ACTIONS(1291),
+    [sym_baseline_diagram_type] = ACTIONS(1291),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -29189,7 +29189,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1291),
     [sym_number] = ACTIONS(1127),
     [sym_indentation] = ACTIONS(1129),
-    [sym_generic_token] = ACTIONS(1291),
+    [sym_unknown_token] = ACTIONS(1291),
     [aux_sym__terminator_token1] = ACTIONS(1293),
     [anon_sym_SEMI] = ACTIONS(1293),
   },
@@ -29229,7 +29229,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1297),
     [sym_tree_diagram_type] = ACTIONS(1297),
     [sym_wardley_diagram_type] = ACTIONS(1297),
-    [sym_generic_diagram_type] = ACTIONS(1297),
+    [sym_baseline_diagram_type] = ACTIONS(1297),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -29286,7 +29286,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1285),
     [sym_number] = ACTIONS(1297),
     [sym_indentation] = ACTIONS(1287),
-    [sym_generic_token] = ACTIONS(1297),
+    [sym_unknown_token] = ACTIONS(1297),
     [aux_sym__terminator_token1] = ACTIONS(1299),
     [anon_sym_SEMI] = ACTIONS(1299),
   },
@@ -29326,7 +29326,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1303),
     [sym_tree_diagram_type] = ACTIONS(1303),
     [sym_wardley_diagram_type] = ACTIONS(1303),
-    [sym_generic_diagram_type] = ACTIONS(1303),
+    [sym_baseline_diagram_type] = ACTIONS(1303),
     [anon_sym_title] = ACTIONS(55),
     [anon_sym_accTitle] = ACTIONS(57),
     [anon_sym_accDescr] = ACTIONS(59),
@@ -29383,7 +29383,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1303),
     [sym_number] = ACTIONS(1303),
     [sym_indentation] = ACTIONS(1199),
-    [sym_generic_token] = ACTIONS(1303),
+    [sym_unknown_token] = ACTIONS(1303),
     [aux_sym__terminator_token1] = ACTIONS(1305),
     [anon_sym_SEMI] = ACTIONS(1305),
   },
@@ -29423,7 +29423,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_wardley_statement] = STATE(223),
     [sym_wardley_keyword_statement] = STATE(288),
     [sym_wardley_edge_statement] = STATE(288),
-    [aux_sym_generic_statement_repeat1] = STATE(513),
+    [aux_sym_unknown_statement_repeat1] = STATE(513),
     [sym_identifier] = ACTIONS(5),
     [anon_sym_showData] = ACTIONS(33),
     [anon_sym_title] = ACTIONS(55),
@@ -29481,7 +29481,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_deaccelerator] = ACTIONS(109),
     [sym_quoted_string] = ACTIONS(1307),
     [sym_number] = ACTIONS(113),
-    [sym_generic_token] = ACTIONS(1309),
+    [sym_unknown_token] = ACTIONS(1309),
   },
   [STATE(68)] = {
     [ts_builtin_sym_end] = ACTIONS(1311),
@@ -29511,7 +29511,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1313),
     [sym_tree_diagram_type] = ACTIONS(1313),
     [sym_wardley_diagram_type] = ACTIONS(1313),
-    [sym_generic_diagram_type] = ACTIONS(1313),
+    [sym_baseline_diagram_type] = ACTIONS(1313),
     [anon_sym_title] = ACTIONS(1313),
     [anon_sym_accTitle] = ACTIONS(1313),
     [anon_sym_accDescr] = ACTIONS(1313),
@@ -29575,7 +29575,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1313),
     [sym_number] = ACTIONS(1313),
     [sym_indentation] = ACTIONS(1313),
-    [sym_generic_token] = ACTIONS(1313),
+    [sym_unknown_token] = ACTIONS(1313),
     [aux_sym__terminator_token1] = ACTIONS(1313),
     [anon_sym_SEMI] = ACTIONS(1313),
   },
@@ -29607,7 +29607,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1317),
     [sym_tree_diagram_type] = ACTIONS(1317),
     [sym_wardley_diagram_type] = ACTIONS(1317),
-    [sym_generic_diagram_type] = ACTIONS(1317),
+    [sym_baseline_diagram_type] = ACTIONS(1317),
     [anon_sym_title] = ACTIONS(1317),
     [anon_sym_accTitle] = ACTIONS(1317),
     [anon_sym_accDescr] = ACTIONS(1317),
@@ -29671,7 +29671,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1317),
     [sym_number] = ACTIONS(1317),
     [sym_indentation] = ACTIONS(1317),
-    [sym_generic_token] = ACTIONS(1317),
+    [sym_unknown_token] = ACTIONS(1317),
     [aux_sym__terminator_token1] = ACTIONS(1317),
     [anon_sym_SEMI] = ACTIONS(1317),
   },
@@ -29703,7 +29703,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1321),
     [sym_tree_diagram_type] = ACTIONS(1321),
     [sym_wardley_diagram_type] = ACTIONS(1321),
-    [sym_generic_diagram_type] = ACTIONS(1321),
+    [sym_baseline_diagram_type] = ACTIONS(1321),
     [anon_sym_title] = ACTIONS(1321),
     [anon_sym_accTitle] = ACTIONS(1321),
     [anon_sym_accDescr] = ACTIONS(1321),
@@ -29767,7 +29767,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1321),
     [sym_number] = ACTIONS(1321),
     [sym_indentation] = ACTIONS(1321),
-    [sym_generic_token] = ACTIONS(1321),
+    [sym_unknown_token] = ACTIONS(1321),
     [aux_sym__terminator_token1] = ACTIONS(1321),
     [anon_sym_SEMI] = ACTIONS(1321),
   },
@@ -29799,7 +29799,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1325),
     [sym_tree_diagram_type] = ACTIONS(1325),
     [sym_wardley_diagram_type] = ACTIONS(1325),
-    [sym_generic_diagram_type] = ACTIONS(1325),
+    [sym_baseline_diagram_type] = ACTIONS(1325),
     [anon_sym_title] = ACTIONS(1325),
     [anon_sym_accTitle] = ACTIONS(1325),
     [anon_sym_accDescr] = ACTIONS(1325),
@@ -29863,7 +29863,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1325),
     [sym_number] = ACTIONS(1325),
     [sym_indentation] = ACTIONS(1325),
-    [sym_generic_token] = ACTIONS(1325),
+    [sym_unknown_token] = ACTIONS(1325),
     [aux_sym__terminator_token1] = ACTIONS(1325),
     [anon_sym_SEMI] = ACTIONS(1325),
   },
@@ -29895,7 +29895,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1329),
     [sym_tree_diagram_type] = ACTIONS(1329),
     [sym_wardley_diagram_type] = ACTIONS(1329),
-    [sym_generic_diagram_type] = ACTIONS(1329),
+    [sym_baseline_diagram_type] = ACTIONS(1329),
     [anon_sym_title] = ACTIONS(1329),
     [anon_sym_accTitle] = ACTIONS(1329),
     [anon_sym_accDescr] = ACTIONS(1329),
@@ -29959,7 +29959,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1329),
     [sym_number] = ACTIONS(1329),
     [sym_indentation] = ACTIONS(1329),
-    [sym_generic_token] = ACTIONS(1329),
+    [sym_unknown_token] = ACTIONS(1329),
     [aux_sym__terminator_token1] = ACTIONS(1329),
     [anon_sym_SEMI] = ACTIONS(1329),
   },
@@ -29991,7 +29991,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1333),
     [sym_tree_diagram_type] = ACTIONS(1333),
     [sym_wardley_diagram_type] = ACTIONS(1333),
-    [sym_generic_diagram_type] = ACTIONS(1333),
+    [sym_baseline_diagram_type] = ACTIONS(1333),
     [anon_sym_title] = ACTIONS(1333),
     [anon_sym_accTitle] = ACTIONS(1333),
     [anon_sym_accDescr] = ACTIONS(1333),
@@ -30055,7 +30055,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1333),
     [sym_number] = ACTIONS(1333),
     [sym_indentation] = ACTIONS(1333),
-    [sym_generic_token] = ACTIONS(1333),
+    [sym_unknown_token] = ACTIONS(1333),
     [aux_sym__terminator_token1] = ACTIONS(1333),
     [anon_sym_SEMI] = ACTIONS(1333),
   },
@@ -30087,7 +30087,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1337),
     [sym_tree_diagram_type] = ACTIONS(1337),
     [sym_wardley_diagram_type] = ACTIONS(1337),
-    [sym_generic_diagram_type] = ACTIONS(1337),
+    [sym_baseline_diagram_type] = ACTIONS(1337),
     [anon_sym_title] = ACTIONS(1337),
     [anon_sym_accTitle] = ACTIONS(1337),
     [anon_sym_accDescr] = ACTIONS(1337),
@@ -30151,7 +30151,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1337),
     [sym_number] = ACTIONS(1337),
     [sym_indentation] = ACTIONS(1337),
-    [sym_generic_token] = ACTIONS(1337),
+    [sym_unknown_token] = ACTIONS(1337),
     [aux_sym__terminator_token1] = ACTIONS(1337),
     [anon_sym_SEMI] = ACTIONS(1337),
   },
@@ -30183,7 +30183,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1341),
     [sym_tree_diagram_type] = ACTIONS(1341),
     [sym_wardley_diagram_type] = ACTIONS(1341),
-    [sym_generic_diagram_type] = ACTIONS(1341),
+    [sym_baseline_diagram_type] = ACTIONS(1341),
     [anon_sym_title] = ACTIONS(1341),
     [anon_sym_accTitle] = ACTIONS(1341),
     [anon_sym_accDescr] = ACTIONS(1341),
@@ -30247,7 +30247,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1341),
     [sym_number] = ACTIONS(1341),
     [sym_indentation] = ACTIONS(1341),
-    [sym_generic_token] = ACTIONS(1341),
+    [sym_unknown_token] = ACTIONS(1341),
     [aux_sym__terminator_token1] = ACTIONS(1341),
     [anon_sym_SEMI] = ACTIONS(1341),
   },
@@ -30279,7 +30279,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1345),
     [sym_tree_diagram_type] = ACTIONS(1345),
     [sym_wardley_diagram_type] = ACTIONS(1345),
-    [sym_generic_diagram_type] = ACTIONS(1345),
+    [sym_baseline_diagram_type] = ACTIONS(1345),
     [anon_sym_title] = ACTIONS(1345),
     [anon_sym_accTitle] = ACTIONS(1345),
     [anon_sym_accDescr] = ACTIONS(1345),
@@ -30343,7 +30343,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1345),
     [sym_number] = ACTIONS(1345),
     [sym_indentation] = ACTIONS(1345),
-    [sym_generic_token] = ACTIONS(1345),
+    [sym_unknown_token] = ACTIONS(1345),
     [aux_sym__terminator_token1] = ACTIONS(1345),
     [anon_sym_SEMI] = ACTIONS(1345),
   },
@@ -30375,7 +30375,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1349),
     [sym_tree_diagram_type] = ACTIONS(1349),
     [sym_wardley_diagram_type] = ACTIONS(1349),
-    [sym_generic_diagram_type] = ACTIONS(1349),
+    [sym_baseline_diagram_type] = ACTIONS(1349),
     [anon_sym_title] = ACTIONS(1349),
     [anon_sym_accTitle] = ACTIONS(1349),
     [anon_sym_accDescr] = ACTIONS(1349),
@@ -30439,7 +30439,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1349),
     [sym_number] = ACTIONS(1349),
     [sym_indentation] = ACTIONS(1349),
-    [sym_generic_token] = ACTIONS(1349),
+    [sym_unknown_token] = ACTIONS(1349),
     [aux_sym__terminator_token1] = ACTIONS(1349),
     [anon_sym_SEMI] = ACTIONS(1349),
   },
@@ -30471,7 +30471,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1353),
     [sym_tree_diagram_type] = ACTIONS(1353),
     [sym_wardley_diagram_type] = ACTIONS(1353),
-    [sym_generic_diagram_type] = ACTIONS(1353),
+    [sym_baseline_diagram_type] = ACTIONS(1353),
     [anon_sym_title] = ACTIONS(1353),
     [anon_sym_accTitle] = ACTIONS(1353),
     [anon_sym_accDescr] = ACTIONS(1353),
@@ -30535,7 +30535,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1353),
     [sym_number] = ACTIONS(1353),
     [sym_indentation] = ACTIONS(1353),
-    [sym_generic_token] = ACTIONS(1353),
+    [sym_unknown_token] = ACTIONS(1353),
     [aux_sym__terminator_token1] = ACTIONS(1353),
     [anon_sym_SEMI] = ACTIONS(1353),
   },
@@ -30567,7 +30567,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1357),
     [sym_tree_diagram_type] = ACTIONS(1357),
     [sym_wardley_diagram_type] = ACTIONS(1357),
-    [sym_generic_diagram_type] = ACTIONS(1357),
+    [sym_baseline_diagram_type] = ACTIONS(1357),
     [anon_sym_title] = ACTIONS(1357),
     [anon_sym_accTitle] = ACTIONS(1357),
     [anon_sym_accDescr] = ACTIONS(1357),
@@ -30631,7 +30631,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1357),
     [sym_number] = ACTIONS(1357),
     [sym_indentation] = ACTIONS(1357),
-    [sym_generic_token] = ACTIONS(1357),
+    [sym_unknown_token] = ACTIONS(1357),
     [aux_sym__terminator_token1] = ACTIONS(1357),
     [anon_sym_SEMI] = ACTIONS(1357),
   },
@@ -30663,7 +30663,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1361),
     [sym_tree_diagram_type] = ACTIONS(1361),
     [sym_wardley_diagram_type] = ACTIONS(1361),
-    [sym_generic_diagram_type] = ACTIONS(1361),
+    [sym_baseline_diagram_type] = ACTIONS(1361),
     [anon_sym_title] = ACTIONS(1361),
     [anon_sym_accTitle] = ACTIONS(1361),
     [anon_sym_accDescr] = ACTIONS(1361),
@@ -30727,7 +30727,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1361),
     [sym_number] = ACTIONS(1361),
     [sym_indentation] = ACTIONS(1361),
-    [sym_generic_token] = ACTIONS(1361),
+    [sym_unknown_token] = ACTIONS(1361),
     [aux_sym__terminator_token1] = ACTIONS(1361),
     [anon_sym_SEMI] = ACTIONS(1361),
   },
@@ -30759,7 +30759,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -30823,7 +30823,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -30855,7 +30855,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -30919,7 +30919,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -30951,7 +30951,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1373),
     [sym_tree_diagram_type] = ACTIONS(1373),
     [sym_wardley_diagram_type] = ACTIONS(1373),
-    [sym_generic_diagram_type] = ACTIONS(1373),
+    [sym_baseline_diagram_type] = ACTIONS(1373),
     [anon_sym_title] = ACTIONS(1373),
     [anon_sym_accTitle] = ACTIONS(1373),
     [anon_sym_accDescr] = ACTIONS(1373),
@@ -31015,7 +31015,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1373),
     [sym_number] = ACTIONS(1373),
     [sym_indentation] = ACTIONS(1373),
-    [sym_generic_token] = ACTIONS(1373),
+    [sym_unknown_token] = ACTIONS(1373),
     [aux_sym__terminator_token1] = ACTIONS(1373),
     [anon_sym_SEMI] = ACTIONS(1373),
   },
@@ -31047,7 +31047,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -31111,7 +31111,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -31143,7 +31143,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -31207,7 +31207,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -31239,7 +31239,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -31303,7 +31303,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -31335,7 +31335,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -31399,7 +31399,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -31431,7 +31431,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -31495,7 +31495,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -31527,7 +31527,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -31591,7 +31591,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -31623,7 +31623,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -31687,7 +31687,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -31719,7 +31719,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -31783,7 +31783,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -31815,7 +31815,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -31879,7 +31879,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -31911,7 +31911,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -31975,7 +31975,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -32007,7 +32007,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -32071,7 +32071,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -32103,7 +32103,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -32167,7 +32167,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -32199,7 +32199,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -32263,7 +32263,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -32295,7 +32295,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -32359,7 +32359,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -32391,7 +32391,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -32455,7 +32455,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -32487,7 +32487,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -32551,7 +32551,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -32583,7 +32583,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -32647,7 +32647,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -32679,7 +32679,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1409),
     [sym_tree_diagram_type] = ACTIONS(1409),
     [sym_wardley_diagram_type] = ACTIONS(1409),
-    [sym_generic_diagram_type] = ACTIONS(1409),
+    [sym_baseline_diagram_type] = ACTIONS(1409),
     [anon_sym_title] = ACTIONS(1409),
     [anon_sym_accTitle] = ACTIONS(1409),
     [anon_sym_accDescr] = ACTIONS(1409),
@@ -32743,7 +32743,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1409),
     [sym_number] = ACTIONS(1409),
     [sym_indentation] = ACTIONS(1409),
-    [sym_generic_token] = ACTIONS(1409),
+    [sym_unknown_token] = ACTIONS(1409),
     [aux_sym__terminator_token1] = ACTIONS(1409),
     [anon_sym_SEMI] = ACTIONS(1409),
   },
@@ -32775,7 +32775,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -32839,7 +32839,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_html_tag] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -32871,7 +32871,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -32931,7 +32931,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -32963,7 +32963,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1413),
     [sym_tree_diagram_type] = ACTIONS(1413),
     [sym_wardley_diagram_type] = ACTIONS(1413),
-    [sym_generic_diagram_type] = ACTIONS(1413),
+    [sym_baseline_diagram_type] = ACTIONS(1413),
     [anon_sym_title] = ACTIONS(1413),
     [anon_sym_accTitle] = ACTIONS(1413),
     [anon_sym_accDescr] = ACTIONS(1413),
@@ -33023,7 +33023,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1413),
     [sym_number] = ACTIONS(1413),
     [sym_indentation] = ACTIONS(1413),
-    [sym_generic_token] = ACTIONS(1413),
+    [sym_unknown_token] = ACTIONS(1413),
     [aux_sym__terminator_token1] = ACTIONS(1413),
     [anon_sym_SEMI] = ACTIONS(1413),
   },
@@ -33056,7 +33056,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1417),
     [sym_tree_diagram_type] = ACTIONS(1417),
     [sym_wardley_diagram_type] = ACTIONS(1417),
-    [sym_generic_diagram_type] = ACTIONS(1417),
+    [sym_baseline_diagram_type] = ACTIONS(1417),
     [anon_sym_title] = ACTIONS(1417),
     [anon_sym_accTitle] = ACTIONS(1417),
     [anon_sym_accDescr] = ACTIONS(1417),
@@ -33115,7 +33115,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1417),
     [sym_number] = ACTIONS(1417),
     [sym_indentation] = ACTIONS(1417),
-    [sym_generic_token] = ACTIONS(1417),
+    [sym_unknown_token] = ACTIONS(1417),
     [aux_sym__terminator_token1] = ACTIONS(1417),
     [anon_sym_SEMI] = ACTIONS(1417),
   },
@@ -33148,7 +33148,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1421),
     [sym_tree_diagram_type] = ACTIONS(1421),
     [sym_wardley_diagram_type] = ACTIONS(1421),
-    [sym_generic_diagram_type] = ACTIONS(1421),
+    [sym_baseline_diagram_type] = ACTIONS(1421),
     [anon_sym_title] = ACTIONS(1421),
     [anon_sym_accTitle] = ACTIONS(1421),
     [anon_sym_accDescr] = ACTIONS(1421),
@@ -33207,7 +33207,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1421),
     [sym_number] = ACTIONS(1421),
     [sym_indentation] = ACTIONS(1421),
-    [sym_generic_token] = ACTIONS(1421),
+    [sym_unknown_token] = ACTIONS(1421),
     [aux_sym__terminator_token1] = ACTIONS(1421),
     [anon_sym_SEMI] = ACTIONS(1421),
   },
@@ -33240,7 +33240,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1425),
     [sym_tree_diagram_type] = ACTIONS(1425),
     [sym_wardley_diagram_type] = ACTIONS(1425),
-    [sym_generic_diagram_type] = ACTIONS(1425),
+    [sym_baseline_diagram_type] = ACTIONS(1425),
     [anon_sym_title] = ACTIONS(1425),
     [anon_sym_accTitle] = ACTIONS(1425),
     [anon_sym_accDescr] = ACTIONS(1425),
@@ -33299,7 +33299,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1425),
     [sym_number] = ACTIONS(1425),
     [sym_indentation] = ACTIONS(1425),
-    [sym_generic_token] = ACTIONS(1425),
+    [sym_unknown_token] = ACTIONS(1425),
     [aux_sym__terminator_token1] = ACTIONS(1425),
     [anon_sym_SEMI] = ACTIONS(1425),
   },
@@ -33331,7 +33331,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1429),
     [sym_tree_diagram_type] = ACTIONS(1429),
     [sym_wardley_diagram_type] = ACTIONS(1429),
-    [sym_generic_diagram_type] = ACTIONS(1429),
+    [sym_baseline_diagram_type] = ACTIONS(1429),
     [anon_sym_title] = ACTIONS(1429),
     [anon_sym_accTitle] = ACTIONS(1429),
     [anon_sym_accDescr] = ACTIONS(1429),
@@ -33391,7 +33391,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1429),
     [sym_number] = ACTIONS(1429),
     [sym_indentation] = ACTIONS(1429),
-    [sym_generic_token] = ACTIONS(1429),
+    [sym_unknown_token] = ACTIONS(1429),
     [aux_sym__terminator_token1] = ACTIONS(1429),
     [anon_sym_SEMI] = ACTIONS(1429),
   },
@@ -33423,7 +33423,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1433),
     [sym_tree_diagram_type] = ACTIONS(1433),
     [sym_wardley_diagram_type] = ACTIONS(1433),
-    [sym_generic_diagram_type] = ACTIONS(1433),
+    [sym_baseline_diagram_type] = ACTIONS(1433),
     [anon_sym_title] = ACTIONS(1433),
     [anon_sym_accTitle] = ACTIONS(1433),
     [anon_sym_accDescr] = ACTIONS(1433),
@@ -33483,7 +33483,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1433),
     [sym_number] = ACTIONS(1433),
     [sym_indentation] = ACTIONS(1433),
-    [sym_generic_token] = ACTIONS(1433),
+    [sym_unknown_token] = ACTIONS(1433),
     [aux_sym__terminator_token1] = ACTIONS(1433),
     [anon_sym_SEMI] = ACTIONS(1433),
   },
@@ -33516,7 +33516,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1437),
     [sym_tree_diagram_type] = ACTIONS(1437),
     [sym_wardley_diagram_type] = ACTIONS(1437),
-    [sym_generic_diagram_type] = ACTIONS(1437),
+    [sym_baseline_diagram_type] = ACTIONS(1437),
     [anon_sym_title] = ACTIONS(1437),
     [anon_sym_accTitle] = ACTIONS(1437),
     [anon_sym_accDescr] = ACTIONS(1437),
@@ -33575,7 +33575,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1437),
     [sym_number] = ACTIONS(1437),
     [sym_indentation] = ACTIONS(1437),
-    [sym_generic_token] = ACTIONS(1437),
+    [sym_unknown_token] = ACTIONS(1437),
     [aux_sym__terminator_token1] = ACTIONS(1437),
     [anon_sym_SEMI] = ACTIONS(1437),
   },
@@ -33607,7 +33607,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1441),
     [sym_tree_diagram_type] = ACTIONS(1441),
     [sym_wardley_diagram_type] = ACTIONS(1441),
-    [sym_generic_diagram_type] = ACTIONS(1441),
+    [sym_baseline_diagram_type] = ACTIONS(1441),
     [anon_sym_title] = ACTIONS(1441),
     [anon_sym_accTitle] = ACTIONS(1441),
     [anon_sym_accDescr] = ACTIONS(1441),
@@ -33667,7 +33667,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1441),
     [sym_number] = ACTIONS(1441),
     [sym_indentation] = ACTIONS(1441),
-    [sym_generic_token] = ACTIONS(1441),
+    [sym_unknown_token] = ACTIONS(1441),
     [aux_sym__terminator_token1] = ACTIONS(1441),
     [anon_sym_SEMI] = ACTIONS(1441),
   },
@@ -33699,7 +33699,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1445),
     [sym_tree_diagram_type] = ACTIONS(1445),
     [sym_wardley_diagram_type] = ACTIONS(1445),
-    [sym_generic_diagram_type] = ACTIONS(1445),
+    [sym_baseline_diagram_type] = ACTIONS(1445),
     [anon_sym_title] = ACTIONS(1445),
     [anon_sym_accTitle] = ACTIONS(1445),
     [anon_sym_accDescr] = ACTIONS(1445),
@@ -33759,7 +33759,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1445),
     [sym_number] = ACTIONS(1445),
     [sym_indentation] = ACTIONS(1445),
-    [sym_generic_token] = ACTIONS(1445),
+    [sym_unknown_token] = ACTIONS(1445),
     [aux_sym__terminator_token1] = ACTIONS(1445),
     [anon_sym_SEMI] = ACTIONS(1445),
   },
@@ -33791,7 +33791,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1449),
     [sym_tree_diagram_type] = ACTIONS(1449),
     [sym_wardley_diagram_type] = ACTIONS(1449),
-    [sym_generic_diagram_type] = ACTIONS(1449),
+    [sym_baseline_diagram_type] = ACTIONS(1449),
     [anon_sym_title] = ACTIONS(1449),
     [anon_sym_accTitle] = ACTIONS(1449),
     [anon_sym_accDescr] = ACTIONS(1449),
@@ -33851,7 +33851,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1449),
     [sym_number] = ACTIONS(1449),
     [sym_indentation] = ACTIONS(1449),
-    [sym_generic_token] = ACTIONS(1449),
+    [sym_unknown_token] = ACTIONS(1449),
     [aux_sym__terminator_token1] = ACTIONS(1449),
     [anon_sym_SEMI] = ACTIONS(1449),
   },
@@ -33883,7 +33883,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1453),
     [sym_tree_diagram_type] = ACTIONS(1453),
     [sym_wardley_diagram_type] = ACTIONS(1453),
-    [sym_generic_diagram_type] = ACTIONS(1453),
+    [sym_baseline_diagram_type] = ACTIONS(1453),
     [anon_sym_title] = ACTIONS(1453),
     [anon_sym_accTitle] = ACTIONS(1453),
     [anon_sym_accDescr] = ACTIONS(1453),
@@ -33943,7 +33943,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1453),
     [sym_number] = ACTIONS(1453),
     [sym_indentation] = ACTIONS(1453),
-    [sym_generic_token] = ACTIONS(1453),
+    [sym_unknown_token] = ACTIONS(1453),
     [aux_sym__terminator_token1] = ACTIONS(1453),
     [anon_sym_SEMI] = ACTIONS(1453),
   },
@@ -33975,7 +33975,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1457),
     [sym_tree_diagram_type] = ACTIONS(1457),
     [sym_wardley_diagram_type] = ACTIONS(1457),
-    [sym_generic_diagram_type] = ACTIONS(1457),
+    [sym_baseline_diagram_type] = ACTIONS(1457),
     [anon_sym_title] = ACTIONS(1457),
     [anon_sym_accTitle] = ACTIONS(1457),
     [anon_sym_accDescr] = ACTIONS(1457),
@@ -34035,7 +34035,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1457),
     [sym_number] = ACTIONS(1457),
     [sym_indentation] = ACTIONS(1457),
-    [sym_generic_token] = ACTIONS(1457),
+    [sym_unknown_token] = ACTIONS(1457),
     [aux_sym__terminator_token1] = ACTIONS(1457),
     [anon_sym_SEMI] = ACTIONS(1457),
   },
@@ -34067,7 +34067,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1461),
     [sym_tree_diagram_type] = ACTIONS(1461),
     [sym_wardley_diagram_type] = ACTIONS(1461),
-    [sym_generic_diagram_type] = ACTIONS(1461),
+    [sym_baseline_diagram_type] = ACTIONS(1461),
     [anon_sym_title] = ACTIONS(1461),
     [anon_sym_accTitle] = ACTIONS(1461),
     [anon_sym_accDescr] = ACTIONS(1461),
@@ -34127,7 +34127,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1461),
     [sym_number] = ACTIONS(1461),
     [sym_indentation] = ACTIONS(1461),
-    [sym_generic_token] = ACTIONS(1461),
+    [sym_unknown_token] = ACTIONS(1461),
     [aux_sym__terminator_token1] = ACTIONS(1461),
     [anon_sym_SEMI] = ACTIONS(1461),
   },
@@ -34159,7 +34159,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1465),
     [sym_tree_diagram_type] = ACTIONS(1465),
     [sym_wardley_diagram_type] = ACTIONS(1465),
-    [sym_generic_diagram_type] = ACTIONS(1465),
+    [sym_baseline_diagram_type] = ACTIONS(1465),
     [anon_sym_title] = ACTIONS(1465),
     [anon_sym_accTitle] = ACTIONS(1465),
     [anon_sym_accDescr] = ACTIONS(1465),
@@ -34219,7 +34219,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1465),
     [sym_number] = ACTIONS(1465),
     [sym_indentation] = ACTIONS(1465),
-    [sym_generic_token] = ACTIONS(1465),
+    [sym_unknown_token] = ACTIONS(1465),
     [aux_sym__terminator_token1] = ACTIONS(1465),
     [anon_sym_SEMI] = ACTIONS(1465),
   },
@@ -34251,7 +34251,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1469),
     [sym_tree_diagram_type] = ACTIONS(1469),
     [sym_wardley_diagram_type] = ACTIONS(1469),
-    [sym_generic_diagram_type] = ACTIONS(1469),
+    [sym_baseline_diagram_type] = ACTIONS(1469),
     [anon_sym_title] = ACTIONS(1469),
     [anon_sym_accTitle] = ACTIONS(1469),
     [anon_sym_accDescr] = ACTIONS(1469),
@@ -34311,7 +34311,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1469),
     [sym_number] = ACTIONS(1469),
     [sym_indentation] = ACTIONS(1469),
-    [sym_generic_token] = ACTIONS(1469),
+    [sym_unknown_token] = ACTIONS(1469),
     [aux_sym__terminator_token1] = ACTIONS(1469),
     [anon_sym_SEMI] = ACTIONS(1469),
   },
@@ -34344,7 +34344,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1473),
     [sym_tree_diagram_type] = ACTIONS(1473),
     [sym_wardley_diagram_type] = ACTIONS(1473),
-    [sym_generic_diagram_type] = ACTIONS(1473),
+    [sym_baseline_diagram_type] = ACTIONS(1473),
     [anon_sym_title] = ACTIONS(1473),
     [anon_sym_accTitle] = ACTIONS(1473),
     [anon_sym_accDescr] = ACTIONS(1473),
@@ -34403,7 +34403,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1473),
     [sym_number] = ACTIONS(1473),
     [sym_indentation] = ACTIONS(1473),
-    [sym_generic_token] = ACTIONS(1473),
+    [sym_unknown_token] = ACTIONS(1473),
     [aux_sym__terminator_token1] = ACTIONS(1473),
     [anon_sym_SEMI] = ACTIONS(1473),
   },
@@ -34435,7 +34435,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1477),
     [sym_tree_diagram_type] = ACTIONS(1477),
     [sym_wardley_diagram_type] = ACTIONS(1477),
-    [sym_generic_diagram_type] = ACTIONS(1477),
+    [sym_baseline_diagram_type] = ACTIONS(1477),
     [anon_sym_title] = ACTIONS(1477),
     [anon_sym_accTitle] = ACTIONS(1477),
     [anon_sym_accDescr] = ACTIONS(1477),
@@ -34495,7 +34495,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1477),
     [sym_number] = ACTIONS(1477),
     [sym_indentation] = ACTIONS(1477),
-    [sym_generic_token] = ACTIONS(1477),
+    [sym_unknown_token] = ACTIONS(1477),
     [aux_sym__terminator_token1] = ACTIONS(1477),
     [anon_sym_SEMI] = ACTIONS(1477),
   },
@@ -34528,7 +34528,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1481),
     [sym_tree_diagram_type] = ACTIONS(1481),
     [sym_wardley_diagram_type] = ACTIONS(1481),
-    [sym_generic_diagram_type] = ACTIONS(1481),
+    [sym_baseline_diagram_type] = ACTIONS(1481),
     [anon_sym_title] = ACTIONS(1481),
     [anon_sym_accTitle] = ACTIONS(1481),
     [anon_sym_accDescr] = ACTIONS(1481),
@@ -34587,7 +34587,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1481),
     [sym_number] = ACTIONS(1481),
     [sym_indentation] = ACTIONS(1481),
-    [sym_generic_token] = ACTIONS(1481),
+    [sym_unknown_token] = ACTIONS(1481),
     [aux_sym__terminator_token1] = ACTIONS(1481),
     [anon_sym_SEMI] = ACTIONS(1481),
   },
@@ -34619,7 +34619,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1485),
     [sym_tree_diagram_type] = ACTIONS(1485),
     [sym_wardley_diagram_type] = ACTIONS(1485),
-    [sym_generic_diagram_type] = ACTIONS(1485),
+    [sym_baseline_diagram_type] = ACTIONS(1485),
     [anon_sym_title] = ACTIONS(1485),
     [anon_sym_accTitle] = ACTIONS(1485),
     [anon_sym_accDescr] = ACTIONS(1485),
@@ -34679,7 +34679,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1485),
     [sym_number] = ACTIONS(1485),
     [sym_indentation] = ACTIONS(1485),
-    [sym_generic_token] = ACTIONS(1485),
+    [sym_unknown_token] = ACTIONS(1485),
     [aux_sym__terminator_token1] = ACTIONS(1485),
     [anon_sym_SEMI] = ACTIONS(1485),
   },
@@ -34711,7 +34711,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1489),
     [sym_tree_diagram_type] = ACTIONS(1489),
     [sym_wardley_diagram_type] = ACTIONS(1489),
-    [sym_generic_diagram_type] = ACTIONS(1489),
+    [sym_baseline_diagram_type] = ACTIONS(1489),
     [anon_sym_title] = ACTIONS(1489),
     [anon_sym_accTitle] = ACTIONS(1489),
     [anon_sym_accDescr] = ACTIONS(1489),
@@ -34771,7 +34771,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1489),
     [sym_number] = ACTIONS(1489),
     [sym_indentation] = ACTIONS(1489),
-    [sym_generic_token] = ACTIONS(1489),
+    [sym_unknown_token] = ACTIONS(1489),
     [aux_sym__terminator_token1] = ACTIONS(1489),
     [anon_sym_SEMI] = ACTIONS(1489),
   },
@@ -34804,7 +34804,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1493),
     [sym_tree_diagram_type] = ACTIONS(1493),
     [sym_wardley_diagram_type] = ACTIONS(1493),
-    [sym_generic_diagram_type] = ACTIONS(1493),
+    [sym_baseline_diagram_type] = ACTIONS(1493),
     [anon_sym_title] = ACTIONS(1493),
     [anon_sym_accTitle] = ACTIONS(1493),
     [anon_sym_accDescr] = ACTIONS(1493),
@@ -34863,7 +34863,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1493),
     [sym_number] = ACTIONS(1493),
     [sym_indentation] = ACTIONS(1493),
-    [sym_generic_token] = ACTIONS(1493),
+    [sym_unknown_token] = ACTIONS(1493),
     [aux_sym__terminator_token1] = ACTIONS(1493),
     [anon_sym_SEMI] = ACTIONS(1493),
   },
@@ -34895,7 +34895,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1497),
     [sym_tree_diagram_type] = ACTIONS(1497),
     [sym_wardley_diagram_type] = ACTIONS(1497),
-    [sym_generic_diagram_type] = ACTIONS(1497),
+    [sym_baseline_diagram_type] = ACTIONS(1497),
     [anon_sym_title] = ACTIONS(1497),
     [anon_sym_accTitle] = ACTIONS(1497),
     [anon_sym_accDescr] = ACTIONS(1497),
@@ -34955,7 +34955,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1497),
     [sym_number] = ACTIONS(1497),
     [sym_indentation] = ACTIONS(1497),
-    [sym_generic_token] = ACTIONS(1497),
+    [sym_unknown_token] = ACTIONS(1497),
     [aux_sym__terminator_token1] = ACTIONS(1497),
     [anon_sym_SEMI] = ACTIONS(1497),
   },
@@ -34987,7 +34987,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1501),
     [sym_tree_diagram_type] = ACTIONS(1501),
     [sym_wardley_diagram_type] = ACTIONS(1501),
-    [sym_generic_diagram_type] = ACTIONS(1501),
+    [sym_baseline_diagram_type] = ACTIONS(1501),
     [anon_sym_title] = ACTIONS(1501),
     [anon_sym_accTitle] = ACTIONS(1501),
     [anon_sym_accDescr] = ACTIONS(1501),
@@ -35047,7 +35047,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1501),
     [sym_number] = ACTIONS(1501),
     [sym_indentation] = ACTIONS(1501),
-    [sym_generic_token] = ACTIONS(1501),
+    [sym_unknown_token] = ACTIONS(1501),
     [aux_sym__terminator_token1] = ACTIONS(1501),
     [anon_sym_SEMI] = ACTIONS(1501),
   },
@@ -35079,7 +35079,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1505),
     [sym_tree_diagram_type] = ACTIONS(1505),
     [sym_wardley_diagram_type] = ACTIONS(1505),
-    [sym_generic_diagram_type] = ACTIONS(1505),
+    [sym_baseline_diagram_type] = ACTIONS(1505),
     [anon_sym_title] = ACTIONS(1505),
     [anon_sym_accTitle] = ACTIONS(1505),
     [anon_sym_accDescr] = ACTIONS(1505),
@@ -35139,7 +35139,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1505),
     [sym_number] = ACTIONS(1505),
     [sym_indentation] = ACTIONS(1505),
-    [sym_generic_token] = ACTIONS(1505),
+    [sym_unknown_token] = ACTIONS(1505),
     [aux_sym__terminator_token1] = ACTIONS(1505),
     [anon_sym_SEMI] = ACTIONS(1505),
   },
@@ -35171,7 +35171,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -35231,7 +35231,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -35263,7 +35263,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -35323,7 +35323,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -35355,7 +35355,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -35415,7 +35415,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -35448,7 +35448,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -35507,7 +35507,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -35539,7 +35539,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -35599,7 +35599,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -35631,7 +35631,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -35691,7 +35691,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -35723,7 +35723,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -35783,7 +35783,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -35815,7 +35815,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -35875,7 +35875,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -35907,7 +35907,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -35967,7 +35967,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -35999,7 +35999,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -36059,7 +36059,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -36092,7 +36092,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1509),
     [sym_tree_diagram_type] = ACTIONS(1509),
     [sym_wardley_diagram_type] = ACTIONS(1509),
-    [sym_generic_diagram_type] = ACTIONS(1509),
+    [sym_baseline_diagram_type] = ACTIONS(1509),
     [anon_sym_title] = ACTIONS(1509),
     [anon_sym_accTitle] = ACTIONS(1509),
     [anon_sym_accDescr] = ACTIONS(1509),
@@ -36151,7 +36151,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1509),
     [sym_number] = ACTIONS(1509),
     [sym_indentation] = ACTIONS(1509),
-    [sym_generic_token] = ACTIONS(1509),
+    [sym_unknown_token] = ACTIONS(1509),
     [aux_sym__terminator_token1] = ACTIONS(1509),
     [anon_sym_SEMI] = ACTIONS(1509),
   },
@@ -36184,7 +36184,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1513),
     [sym_tree_diagram_type] = ACTIONS(1513),
     [sym_wardley_diagram_type] = ACTIONS(1513),
-    [sym_generic_diagram_type] = ACTIONS(1513),
+    [sym_baseline_diagram_type] = ACTIONS(1513),
     [anon_sym_title] = ACTIONS(1513),
     [anon_sym_accTitle] = ACTIONS(1513),
     [anon_sym_accDescr] = ACTIONS(1513),
@@ -36243,7 +36243,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1513),
     [sym_number] = ACTIONS(1513),
     [sym_indentation] = ACTIONS(1513),
-    [sym_generic_token] = ACTIONS(1513),
+    [sym_unknown_token] = ACTIONS(1513),
     [aux_sym__terminator_token1] = ACTIONS(1513),
     [anon_sym_SEMI] = ACTIONS(1513),
   },
@@ -36276,7 +36276,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1517),
     [sym_tree_diagram_type] = ACTIONS(1517),
     [sym_wardley_diagram_type] = ACTIONS(1517),
-    [sym_generic_diagram_type] = ACTIONS(1517),
+    [sym_baseline_diagram_type] = ACTIONS(1517),
     [anon_sym_title] = ACTIONS(1517),
     [anon_sym_accTitle] = ACTIONS(1517),
     [anon_sym_accDescr] = ACTIONS(1517),
@@ -36335,7 +36335,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1517),
     [sym_number] = ACTIONS(1517),
     [sym_indentation] = ACTIONS(1517),
-    [sym_generic_token] = ACTIONS(1517),
+    [sym_unknown_token] = ACTIONS(1517),
     [aux_sym__terminator_token1] = ACTIONS(1517),
     [anon_sym_SEMI] = ACTIONS(1517),
   },
@@ -36367,7 +36367,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1521),
     [sym_tree_diagram_type] = ACTIONS(1521),
     [sym_wardley_diagram_type] = ACTIONS(1521),
-    [sym_generic_diagram_type] = ACTIONS(1521),
+    [sym_baseline_diagram_type] = ACTIONS(1521),
     [anon_sym_title] = ACTIONS(1521),
     [anon_sym_accTitle] = ACTIONS(1521),
     [anon_sym_accDescr] = ACTIONS(1521),
@@ -36427,7 +36427,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1521),
     [sym_number] = ACTIONS(1521),
     [sym_indentation] = ACTIONS(1521),
-    [sym_generic_token] = ACTIONS(1521),
+    [sym_unknown_token] = ACTIONS(1521),
     [aux_sym__terminator_token1] = ACTIONS(1521),
     [anon_sym_SEMI] = ACTIONS(1521),
   },
@@ -36459,7 +36459,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1525),
     [sym_tree_diagram_type] = ACTIONS(1525),
     [sym_wardley_diagram_type] = ACTIONS(1525),
-    [sym_generic_diagram_type] = ACTIONS(1525),
+    [sym_baseline_diagram_type] = ACTIONS(1525),
     [anon_sym_title] = ACTIONS(1525),
     [anon_sym_accTitle] = ACTIONS(1525),
     [anon_sym_accDescr] = ACTIONS(1525),
@@ -36519,7 +36519,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1525),
     [sym_number] = ACTIONS(1525),
     [sym_indentation] = ACTIONS(1525),
-    [sym_generic_token] = ACTIONS(1525),
+    [sym_unknown_token] = ACTIONS(1525),
     [aux_sym__terminator_token1] = ACTIONS(1525),
     [anon_sym_SEMI] = ACTIONS(1525),
   },
@@ -36551,7 +36551,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -36611,7 +36611,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -36643,7 +36643,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -36703,7 +36703,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -36735,7 +36735,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -36795,7 +36795,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -36827,7 +36827,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -36887,7 +36887,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -36919,7 +36919,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -36979,7 +36979,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -37011,7 +37011,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -37071,7 +37071,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -37103,7 +37103,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -37163,7 +37163,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -37195,7 +37195,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -37255,7 +37255,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -37287,7 +37287,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -37347,7 +37347,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -37380,7 +37380,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -37439,7 +37439,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -37472,7 +37472,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -37531,7 +37531,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -37564,7 +37564,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -37623,7 +37623,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -37656,7 +37656,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -37715,7 +37715,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -37748,7 +37748,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -37807,7 +37807,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -37840,7 +37840,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -37899,7 +37899,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -37932,7 +37932,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -37991,7 +37991,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -38024,7 +38024,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -38083,7 +38083,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -38116,7 +38116,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -38175,7 +38175,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -38207,7 +38207,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -38267,7 +38267,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -38299,7 +38299,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -38358,7 +38358,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -38390,7 +38390,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1529),
     [sym_tree_diagram_type] = ACTIONS(1529),
     [sym_wardley_diagram_type] = ACTIONS(1529),
-    [sym_generic_diagram_type] = ACTIONS(1529),
+    [sym_baseline_diagram_type] = ACTIONS(1529),
     [anon_sym_title] = ACTIONS(1529),
     [anon_sym_accTitle] = ACTIONS(1529),
     [anon_sym_accDescr] = ACTIONS(1529),
@@ -38449,7 +38449,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1529),
     [sym_number] = ACTIONS(1529),
     [sym_indentation] = ACTIONS(1529),
-    [sym_generic_token] = ACTIONS(1529),
+    [sym_unknown_token] = ACTIONS(1529),
     [aux_sym__terminator_token1] = ACTIONS(1529),
     [anon_sym_SEMI] = ACTIONS(1529),
   },
@@ -38481,7 +38481,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1533),
     [sym_tree_diagram_type] = ACTIONS(1533),
     [sym_wardley_diagram_type] = ACTIONS(1533),
-    [sym_generic_diagram_type] = ACTIONS(1533),
+    [sym_baseline_diagram_type] = ACTIONS(1533),
     [anon_sym_title] = ACTIONS(1533),
     [anon_sym_accTitle] = ACTIONS(1533),
     [anon_sym_accDescr] = ACTIONS(1533),
@@ -38540,7 +38540,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1533),
     [sym_number] = ACTIONS(1533),
     [sym_indentation] = ACTIONS(1533),
-    [sym_generic_token] = ACTIONS(1533),
+    [sym_unknown_token] = ACTIONS(1533),
     [aux_sym__terminator_token1] = ACTIONS(1533),
     [anon_sym_SEMI] = ACTIONS(1533),
   },
@@ -38572,7 +38572,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1537),
     [sym_tree_diagram_type] = ACTIONS(1537),
     [sym_wardley_diagram_type] = ACTIONS(1537),
-    [sym_generic_diagram_type] = ACTIONS(1537),
+    [sym_baseline_diagram_type] = ACTIONS(1537),
     [anon_sym_title] = ACTIONS(1537),
     [anon_sym_accTitle] = ACTIONS(1537),
     [anon_sym_accDescr] = ACTIONS(1537),
@@ -38631,7 +38631,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1537),
     [sym_number] = ACTIONS(1537),
     [sym_indentation] = ACTIONS(1537),
-    [sym_generic_token] = ACTIONS(1537),
+    [sym_unknown_token] = ACTIONS(1537),
     [aux_sym__terminator_token1] = ACTIONS(1537),
     [anon_sym_SEMI] = ACTIONS(1537),
   },
@@ -38663,7 +38663,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1541),
     [sym_tree_diagram_type] = ACTIONS(1541),
     [sym_wardley_diagram_type] = ACTIONS(1541),
-    [sym_generic_diagram_type] = ACTIONS(1541),
+    [sym_baseline_diagram_type] = ACTIONS(1541),
     [anon_sym_title] = ACTIONS(1541),
     [anon_sym_accTitle] = ACTIONS(1541),
     [anon_sym_accDescr] = ACTIONS(1541),
@@ -38722,7 +38722,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1541),
     [sym_number] = ACTIONS(1541),
     [sym_indentation] = ACTIONS(1541),
-    [sym_generic_token] = ACTIONS(1541),
+    [sym_unknown_token] = ACTIONS(1541),
     [aux_sym__terminator_token1] = ACTIONS(1541),
     [anon_sym_SEMI] = ACTIONS(1541),
   },
@@ -38754,7 +38754,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1545),
     [sym_tree_diagram_type] = ACTIONS(1545),
     [sym_wardley_diagram_type] = ACTIONS(1545),
-    [sym_generic_diagram_type] = ACTIONS(1545),
+    [sym_baseline_diagram_type] = ACTIONS(1545),
     [anon_sym_title] = ACTIONS(1545),
     [anon_sym_accTitle] = ACTIONS(1545),
     [anon_sym_accDescr] = ACTIONS(1545),
@@ -38813,7 +38813,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1545),
     [sym_number] = ACTIONS(1545),
     [sym_indentation] = ACTIONS(1545),
-    [sym_generic_token] = ACTIONS(1545),
+    [sym_unknown_token] = ACTIONS(1545),
     [aux_sym__terminator_token1] = ACTIONS(1545),
     [anon_sym_SEMI] = ACTIONS(1545),
   },
@@ -38845,7 +38845,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1549),
     [sym_tree_diagram_type] = ACTIONS(1549),
     [sym_wardley_diagram_type] = ACTIONS(1549),
-    [sym_generic_diagram_type] = ACTIONS(1549),
+    [sym_baseline_diagram_type] = ACTIONS(1549),
     [anon_sym_title] = ACTIONS(1549),
     [anon_sym_accTitle] = ACTIONS(1549),
     [anon_sym_accDescr] = ACTIONS(1549),
@@ -38904,7 +38904,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1549),
     [sym_number] = ACTIONS(1549),
     [sym_indentation] = ACTIONS(1549),
-    [sym_generic_token] = ACTIONS(1549),
+    [sym_unknown_token] = ACTIONS(1549),
     [aux_sym__terminator_token1] = ACTIONS(1549),
     [anon_sym_SEMI] = ACTIONS(1549),
   },
@@ -38936,7 +38936,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1553),
     [sym_tree_diagram_type] = ACTIONS(1553),
     [sym_wardley_diagram_type] = ACTIONS(1553),
-    [sym_generic_diagram_type] = ACTIONS(1553),
+    [sym_baseline_diagram_type] = ACTIONS(1553),
     [anon_sym_title] = ACTIONS(1553),
     [anon_sym_accTitle] = ACTIONS(1553),
     [anon_sym_accDescr] = ACTIONS(1553),
@@ -38995,7 +38995,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1553),
     [sym_number] = ACTIONS(1553),
     [sym_indentation] = ACTIONS(1553),
-    [sym_generic_token] = ACTIONS(1553),
+    [sym_unknown_token] = ACTIONS(1553),
     [aux_sym__terminator_token1] = ACTIONS(1553),
     [anon_sym_SEMI] = ACTIONS(1553),
   },
@@ -39027,7 +39027,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1557),
     [sym_tree_diagram_type] = ACTIONS(1557),
     [sym_wardley_diagram_type] = ACTIONS(1557),
-    [sym_generic_diagram_type] = ACTIONS(1557),
+    [sym_baseline_diagram_type] = ACTIONS(1557),
     [anon_sym_title] = ACTIONS(1557),
     [anon_sym_accTitle] = ACTIONS(1557),
     [anon_sym_accDescr] = ACTIONS(1557),
@@ -39086,7 +39086,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1557),
     [sym_number] = ACTIONS(1557),
     [sym_indentation] = ACTIONS(1557),
-    [sym_generic_token] = ACTIONS(1557),
+    [sym_unknown_token] = ACTIONS(1557),
     [aux_sym__terminator_token1] = ACTIONS(1557),
     [anon_sym_SEMI] = ACTIONS(1557),
   },
@@ -39118,7 +39118,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1561),
     [sym_tree_diagram_type] = ACTIONS(1561),
     [sym_wardley_diagram_type] = ACTIONS(1561),
-    [sym_generic_diagram_type] = ACTIONS(1561),
+    [sym_baseline_diagram_type] = ACTIONS(1561),
     [anon_sym_title] = ACTIONS(1561),
     [anon_sym_accTitle] = ACTIONS(1561),
     [anon_sym_accDescr] = ACTIONS(1561),
@@ -39177,7 +39177,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1561),
     [sym_number] = ACTIONS(1561),
     [sym_indentation] = ACTIONS(1561),
-    [sym_generic_token] = ACTIONS(1561),
+    [sym_unknown_token] = ACTIONS(1561),
     [aux_sym__terminator_token1] = ACTIONS(1561),
     [anon_sym_SEMI] = ACTIONS(1561),
   },
@@ -39209,7 +39209,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -39268,7 +39268,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -39300,7 +39300,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -39359,7 +39359,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -39391,7 +39391,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1565),
     [sym_tree_diagram_type] = ACTIONS(1565),
     [sym_wardley_diagram_type] = ACTIONS(1565),
-    [sym_generic_diagram_type] = ACTIONS(1565),
+    [sym_baseline_diagram_type] = ACTIONS(1565),
     [anon_sym_title] = ACTIONS(1565),
     [anon_sym_accTitle] = ACTIONS(1565),
     [anon_sym_accDescr] = ACTIONS(1565),
@@ -39450,7 +39450,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1565),
     [sym_number] = ACTIONS(1565),
     [sym_indentation] = ACTIONS(1565),
-    [sym_generic_token] = ACTIONS(1565),
+    [sym_unknown_token] = ACTIONS(1565),
     [aux_sym__terminator_token1] = ACTIONS(1565),
     [anon_sym_SEMI] = ACTIONS(1565),
   },
@@ -39482,7 +39482,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1569),
     [sym_tree_diagram_type] = ACTIONS(1569),
     [sym_wardley_diagram_type] = ACTIONS(1569),
-    [sym_generic_diagram_type] = ACTIONS(1569),
+    [sym_baseline_diagram_type] = ACTIONS(1569),
     [anon_sym_title] = ACTIONS(1569),
     [anon_sym_accTitle] = ACTIONS(1569),
     [anon_sym_accDescr] = ACTIONS(1569),
@@ -39541,7 +39541,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1569),
     [sym_number] = ACTIONS(1569),
     [sym_indentation] = ACTIONS(1569),
-    [sym_generic_token] = ACTIONS(1569),
+    [sym_unknown_token] = ACTIONS(1569),
     [aux_sym__terminator_token1] = ACTIONS(1569),
     [anon_sym_SEMI] = ACTIONS(1569),
   },
@@ -39573,7 +39573,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1573),
     [sym_tree_diagram_type] = ACTIONS(1573),
     [sym_wardley_diagram_type] = ACTIONS(1573),
-    [sym_generic_diagram_type] = ACTIONS(1573),
+    [sym_baseline_diagram_type] = ACTIONS(1573),
     [anon_sym_title] = ACTIONS(1573),
     [anon_sym_accTitle] = ACTIONS(1573),
     [anon_sym_accDescr] = ACTIONS(1573),
@@ -39632,7 +39632,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1573),
     [sym_number] = ACTIONS(1573),
     [sym_indentation] = ACTIONS(1573),
-    [sym_generic_token] = ACTIONS(1573),
+    [sym_unknown_token] = ACTIONS(1573),
     [aux_sym__terminator_token1] = ACTIONS(1573),
     [anon_sym_SEMI] = ACTIONS(1573),
   },
@@ -39664,7 +39664,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -39723,7 +39723,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -39755,7 +39755,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -39814,7 +39814,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -39846,7 +39846,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -39905,7 +39905,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -39937,7 +39937,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -39996,7 +39996,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -40028,7 +40028,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -40087,7 +40087,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -40119,7 +40119,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1577),
     [sym_tree_diagram_type] = ACTIONS(1577),
     [sym_wardley_diagram_type] = ACTIONS(1577),
-    [sym_generic_diagram_type] = ACTIONS(1577),
+    [sym_baseline_diagram_type] = ACTIONS(1577),
     [anon_sym_title] = ACTIONS(1577),
     [anon_sym_accTitle] = ACTIONS(1577),
     [anon_sym_accDescr] = ACTIONS(1577),
@@ -40178,7 +40178,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1577),
     [sym_number] = ACTIONS(1577),
     [sym_indentation] = ACTIONS(1577),
-    [sym_generic_token] = ACTIONS(1577),
+    [sym_unknown_token] = ACTIONS(1577),
     [aux_sym__terminator_token1] = ACTIONS(1577),
     [anon_sym_SEMI] = ACTIONS(1577),
   },
@@ -40210,7 +40210,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1581),
     [sym_tree_diagram_type] = ACTIONS(1581),
     [sym_wardley_diagram_type] = ACTIONS(1581),
-    [sym_generic_diagram_type] = ACTIONS(1581),
+    [sym_baseline_diagram_type] = ACTIONS(1581),
     [anon_sym_title] = ACTIONS(1581),
     [anon_sym_accTitle] = ACTIONS(1581),
     [anon_sym_accDescr] = ACTIONS(1581),
@@ -40269,7 +40269,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1581),
     [sym_number] = ACTIONS(1581),
     [sym_indentation] = ACTIONS(1581),
-    [sym_generic_token] = ACTIONS(1581),
+    [sym_unknown_token] = ACTIONS(1581),
     [aux_sym__terminator_token1] = ACTIONS(1581),
     [anon_sym_SEMI] = ACTIONS(1581),
   },
@@ -40301,7 +40301,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1585),
     [sym_tree_diagram_type] = ACTIONS(1585),
     [sym_wardley_diagram_type] = ACTIONS(1585),
-    [sym_generic_diagram_type] = ACTIONS(1585),
+    [sym_baseline_diagram_type] = ACTIONS(1585),
     [anon_sym_title] = ACTIONS(1585),
     [anon_sym_accTitle] = ACTIONS(1585),
     [anon_sym_accDescr] = ACTIONS(1585),
@@ -40360,7 +40360,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1585),
     [sym_number] = ACTIONS(1585),
     [sym_indentation] = ACTIONS(1585),
-    [sym_generic_token] = ACTIONS(1585),
+    [sym_unknown_token] = ACTIONS(1585),
     [aux_sym__terminator_token1] = ACTIONS(1585),
     [anon_sym_SEMI] = ACTIONS(1585),
   },
@@ -40392,7 +40392,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -40451,7 +40451,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -40483,7 +40483,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -40542,7 +40542,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -40574,7 +40574,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -40633,7 +40633,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -40665,7 +40665,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1589),
     [sym_tree_diagram_type] = ACTIONS(1589),
     [sym_wardley_diagram_type] = ACTIONS(1589),
-    [sym_generic_diagram_type] = ACTIONS(1589),
+    [sym_baseline_diagram_type] = ACTIONS(1589),
     [anon_sym_title] = ACTIONS(1589),
     [anon_sym_accTitle] = ACTIONS(1589),
     [anon_sym_accDescr] = ACTIONS(1589),
@@ -40724,7 +40724,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1589),
     [sym_number] = ACTIONS(1589),
     [sym_indentation] = ACTIONS(1589),
-    [sym_generic_token] = ACTIONS(1589),
+    [sym_unknown_token] = ACTIONS(1589),
     [aux_sym__terminator_token1] = ACTIONS(1589),
     [anon_sym_SEMI] = ACTIONS(1589),
   },
@@ -40756,7 +40756,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1593),
     [sym_tree_diagram_type] = ACTIONS(1593),
     [sym_wardley_diagram_type] = ACTIONS(1593),
-    [sym_generic_diagram_type] = ACTIONS(1593),
+    [sym_baseline_diagram_type] = ACTIONS(1593),
     [anon_sym_title] = ACTIONS(1593),
     [anon_sym_accTitle] = ACTIONS(1593),
     [anon_sym_accDescr] = ACTIONS(1593),
@@ -40815,7 +40815,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1593),
     [sym_number] = ACTIONS(1593),
     [sym_indentation] = ACTIONS(1593),
-    [sym_generic_token] = ACTIONS(1593),
+    [sym_unknown_token] = ACTIONS(1593),
     [aux_sym__terminator_token1] = ACTIONS(1593),
     [anon_sym_SEMI] = ACTIONS(1593),
   },
@@ -40847,7 +40847,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1597),
     [sym_tree_diagram_type] = ACTIONS(1597),
     [sym_wardley_diagram_type] = ACTIONS(1597),
-    [sym_generic_diagram_type] = ACTIONS(1597),
+    [sym_baseline_diagram_type] = ACTIONS(1597),
     [anon_sym_title] = ACTIONS(1597),
     [anon_sym_accTitle] = ACTIONS(1597),
     [anon_sym_accDescr] = ACTIONS(1597),
@@ -40906,7 +40906,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1597),
     [sym_number] = ACTIONS(1597),
     [sym_indentation] = ACTIONS(1597),
-    [sym_generic_token] = ACTIONS(1597),
+    [sym_unknown_token] = ACTIONS(1597),
     [aux_sym__terminator_token1] = ACTIONS(1597),
     [anon_sym_SEMI] = ACTIONS(1597),
   },
@@ -40938,7 +40938,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -40997,7 +40997,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -41029,7 +41029,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -41088,7 +41088,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -41120,7 +41120,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -41179,7 +41179,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -41211,7 +41211,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -41270,7 +41270,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -41302,7 +41302,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1601),
     [sym_tree_diagram_type] = ACTIONS(1601),
     [sym_wardley_diagram_type] = ACTIONS(1601),
-    [sym_generic_diagram_type] = ACTIONS(1601),
+    [sym_baseline_diagram_type] = ACTIONS(1601),
     [anon_sym_title] = ACTIONS(1601),
     [anon_sym_accTitle] = ACTIONS(1601),
     [anon_sym_accDescr] = ACTIONS(1601),
@@ -41361,7 +41361,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1601),
     [sym_number] = ACTIONS(1601),
     [sym_indentation] = ACTIONS(1601),
-    [sym_generic_token] = ACTIONS(1601),
+    [sym_unknown_token] = ACTIONS(1601),
     [aux_sym__terminator_token1] = ACTIONS(1601),
     [anon_sym_SEMI] = ACTIONS(1601),
   },
@@ -41393,7 +41393,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -41452,7 +41452,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -41484,7 +41484,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -41543,7 +41543,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -41575,7 +41575,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -41634,7 +41634,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -41666,7 +41666,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -41725,7 +41725,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -41757,7 +41757,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -41816,7 +41816,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -41848,7 +41848,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1605),
     [sym_tree_diagram_type] = ACTIONS(1605),
     [sym_wardley_diagram_type] = ACTIONS(1605),
-    [sym_generic_diagram_type] = ACTIONS(1605),
+    [sym_baseline_diagram_type] = ACTIONS(1605),
     [anon_sym_title] = ACTIONS(1605),
     [anon_sym_accTitle] = ACTIONS(1605),
     [anon_sym_accDescr] = ACTIONS(1605),
@@ -41907,7 +41907,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1605),
     [sym_number] = ACTIONS(1605),
     [sym_indentation] = ACTIONS(1605),
-    [sym_generic_token] = ACTIONS(1605),
+    [sym_unknown_token] = ACTIONS(1605),
     [aux_sym__terminator_token1] = ACTIONS(1605),
     [anon_sym_SEMI] = ACTIONS(1605),
   },
@@ -41939,7 +41939,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1609),
     [sym_tree_diagram_type] = ACTIONS(1609),
     [sym_wardley_diagram_type] = ACTIONS(1609),
-    [sym_generic_diagram_type] = ACTIONS(1609),
+    [sym_baseline_diagram_type] = ACTIONS(1609),
     [anon_sym_title] = ACTIONS(1609),
     [anon_sym_accTitle] = ACTIONS(1609),
     [anon_sym_accDescr] = ACTIONS(1609),
@@ -41998,7 +41998,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1609),
     [sym_number] = ACTIONS(1609),
     [sym_indentation] = ACTIONS(1609),
-    [sym_generic_token] = ACTIONS(1609),
+    [sym_unknown_token] = ACTIONS(1609),
     [aux_sym__terminator_token1] = ACTIONS(1609),
     [anon_sym_SEMI] = ACTIONS(1609),
   },
@@ -42030,7 +42030,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -42088,7 +42088,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -42120,7 +42120,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1613),
     [sym_tree_diagram_type] = ACTIONS(1613),
     [sym_wardley_diagram_type] = ACTIONS(1613),
-    [sym_generic_diagram_type] = ACTIONS(1613),
+    [sym_baseline_diagram_type] = ACTIONS(1613),
     [anon_sym_title] = ACTIONS(1613),
     [anon_sym_accTitle] = ACTIONS(1613),
     [anon_sym_accDescr] = ACTIONS(1613),
@@ -42178,7 +42178,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1613),
     [sym_number] = ACTIONS(1613),
     [sym_indentation] = ACTIONS(1613),
-    [sym_generic_token] = ACTIONS(1613),
+    [sym_unknown_token] = ACTIONS(1613),
     [aux_sym__terminator_token1] = ACTIONS(1613),
     [anon_sym_SEMI] = ACTIONS(1613),
   },
@@ -42210,7 +42210,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1617),
     [sym_tree_diagram_type] = ACTIONS(1617),
     [sym_wardley_diagram_type] = ACTIONS(1617),
-    [sym_generic_diagram_type] = ACTIONS(1617),
+    [sym_baseline_diagram_type] = ACTIONS(1617),
     [anon_sym_title] = ACTIONS(1617),
     [anon_sym_accTitle] = ACTIONS(1617),
     [anon_sym_accDescr] = ACTIONS(1617),
@@ -42268,7 +42268,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1617),
     [sym_number] = ACTIONS(1617),
     [sym_indentation] = ACTIONS(1617),
-    [sym_generic_token] = ACTIONS(1617),
+    [sym_unknown_token] = ACTIONS(1617),
     [aux_sym__terminator_token1] = ACTIONS(1617),
     [anon_sym_SEMI] = ACTIONS(1617),
   },
@@ -42300,7 +42300,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1621),
     [sym_tree_diagram_type] = ACTIONS(1621),
     [sym_wardley_diagram_type] = ACTIONS(1621),
-    [sym_generic_diagram_type] = ACTIONS(1621),
+    [sym_baseline_diagram_type] = ACTIONS(1621),
     [anon_sym_title] = ACTIONS(1621),
     [anon_sym_accTitle] = ACTIONS(1621),
     [anon_sym_accDescr] = ACTIONS(1621),
@@ -42358,7 +42358,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1621),
     [sym_number] = ACTIONS(1621),
     [sym_indentation] = ACTIONS(1621),
-    [sym_generic_token] = ACTIONS(1621),
+    [sym_unknown_token] = ACTIONS(1621),
     [aux_sym__terminator_token1] = ACTIONS(1621),
     [anon_sym_SEMI] = ACTIONS(1621),
   },
@@ -42390,7 +42390,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1625),
     [sym_tree_diagram_type] = ACTIONS(1625),
     [sym_wardley_diagram_type] = ACTIONS(1625),
-    [sym_generic_diagram_type] = ACTIONS(1625),
+    [sym_baseline_diagram_type] = ACTIONS(1625),
     [anon_sym_title] = ACTIONS(1625),
     [anon_sym_accTitle] = ACTIONS(1625),
     [anon_sym_accDescr] = ACTIONS(1625),
@@ -42448,7 +42448,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1625),
     [sym_number] = ACTIONS(1625),
     [sym_indentation] = ACTIONS(1625),
-    [sym_generic_token] = ACTIONS(1625),
+    [sym_unknown_token] = ACTIONS(1625),
     [aux_sym__terminator_token1] = ACTIONS(1625),
     [anon_sym_SEMI] = ACTIONS(1625),
   },
@@ -42480,7 +42480,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -42538,7 +42538,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -42570,7 +42570,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -42628,7 +42628,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -42660,7 +42660,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1629),
     [sym_tree_diagram_type] = ACTIONS(1629),
     [sym_wardley_diagram_type] = ACTIONS(1629),
-    [sym_generic_diagram_type] = ACTIONS(1629),
+    [sym_baseline_diagram_type] = ACTIONS(1629),
     [anon_sym_title] = ACTIONS(1629),
     [anon_sym_accTitle] = ACTIONS(1629),
     [anon_sym_accDescr] = ACTIONS(1629),
@@ -42718,7 +42718,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1629),
     [sym_number] = ACTIONS(1629),
     [sym_indentation] = ACTIONS(1629),
-    [sym_generic_token] = ACTIONS(1629),
+    [sym_unknown_token] = ACTIONS(1629),
     [aux_sym__terminator_token1] = ACTIONS(1629),
     [anon_sym_SEMI] = ACTIONS(1629),
   },
@@ -42750,7 +42750,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1633),
     [sym_tree_diagram_type] = ACTIONS(1633),
     [sym_wardley_diagram_type] = ACTIONS(1633),
-    [sym_generic_diagram_type] = ACTIONS(1633),
+    [sym_baseline_diagram_type] = ACTIONS(1633),
     [anon_sym_title] = ACTIONS(1633),
     [anon_sym_accTitle] = ACTIONS(1633),
     [anon_sym_accDescr] = ACTIONS(1633),
@@ -42808,7 +42808,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1633),
     [sym_number] = ACTIONS(1633),
     [sym_indentation] = ACTIONS(1633),
-    [sym_generic_token] = ACTIONS(1633),
+    [sym_unknown_token] = ACTIONS(1633),
     [aux_sym__terminator_token1] = ACTIONS(1633),
     [anon_sym_SEMI] = ACTIONS(1633),
   },
@@ -42840,7 +42840,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1637),
     [sym_tree_diagram_type] = ACTIONS(1637),
     [sym_wardley_diagram_type] = ACTIONS(1637),
-    [sym_generic_diagram_type] = ACTIONS(1637),
+    [sym_baseline_diagram_type] = ACTIONS(1637),
     [anon_sym_title] = ACTIONS(1637),
     [anon_sym_accTitle] = ACTIONS(1637),
     [anon_sym_accDescr] = ACTIONS(1637),
@@ -42898,7 +42898,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1637),
     [sym_number] = ACTIONS(1637),
     [sym_indentation] = ACTIONS(1637),
-    [sym_generic_token] = ACTIONS(1637),
+    [sym_unknown_token] = ACTIONS(1637),
     [aux_sym__terminator_token1] = ACTIONS(1637),
     [anon_sym_SEMI] = ACTIONS(1637),
   },
@@ -42930,7 +42930,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -42988,7 +42988,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -43020,7 +43020,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -43078,7 +43078,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -43110,7 +43110,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -43168,7 +43168,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -43200,7 +43200,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -43258,7 +43258,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -43290,7 +43290,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -43348,7 +43348,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -43380,7 +43380,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -43438,7 +43438,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -43470,7 +43470,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -43528,7 +43528,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -43560,7 +43560,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1641),
     [sym_tree_diagram_type] = ACTIONS(1641),
     [sym_wardley_diagram_type] = ACTIONS(1641),
-    [sym_generic_diagram_type] = ACTIONS(1641),
+    [sym_baseline_diagram_type] = ACTIONS(1641),
     [anon_sym_title] = ACTIONS(1641),
     [anon_sym_accTitle] = ACTIONS(1641),
     [anon_sym_accDescr] = ACTIONS(1641),
@@ -43618,7 +43618,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1641),
     [sym_number] = ACTIONS(1641),
     [sym_indentation] = ACTIONS(1641),
-    [sym_generic_token] = ACTIONS(1641),
+    [sym_unknown_token] = ACTIONS(1641),
     [aux_sym__terminator_token1] = ACTIONS(1641),
     [anon_sym_SEMI] = ACTIONS(1641),
   },
@@ -43650,7 +43650,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1645),
     [sym_tree_diagram_type] = ACTIONS(1645),
     [sym_wardley_diagram_type] = ACTIONS(1645),
-    [sym_generic_diagram_type] = ACTIONS(1645),
+    [sym_baseline_diagram_type] = ACTIONS(1645),
     [anon_sym_title] = ACTIONS(1645),
     [anon_sym_accTitle] = ACTIONS(1645),
     [anon_sym_accDescr] = ACTIONS(1645),
@@ -43708,7 +43708,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1645),
     [sym_number] = ACTIONS(1645),
     [sym_indentation] = ACTIONS(1645),
-    [sym_generic_token] = ACTIONS(1645),
+    [sym_unknown_token] = ACTIONS(1645),
     [aux_sym__terminator_token1] = ACTIONS(1645),
     [anon_sym_SEMI] = ACTIONS(1645),
   },
@@ -43740,7 +43740,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1649),
     [sym_tree_diagram_type] = ACTIONS(1649),
     [sym_wardley_diagram_type] = ACTIONS(1649),
-    [sym_generic_diagram_type] = ACTIONS(1649),
+    [sym_baseline_diagram_type] = ACTIONS(1649),
     [anon_sym_title] = ACTIONS(1649),
     [anon_sym_accTitle] = ACTIONS(1649),
     [anon_sym_accDescr] = ACTIONS(1649),
@@ -43797,7 +43797,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1649),
     [sym_number] = ACTIONS(1649),
     [sym_indentation] = ACTIONS(1649),
-    [sym_generic_token] = ACTIONS(1649),
+    [sym_unknown_token] = ACTIONS(1649),
     [aux_sym__terminator_token1] = ACTIONS(1649),
     [anon_sym_SEMI] = ACTIONS(1649),
   },
@@ -43829,7 +43829,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1653),
     [sym_tree_diagram_type] = ACTIONS(1653),
     [sym_wardley_diagram_type] = ACTIONS(1653),
-    [sym_generic_diagram_type] = ACTIONS(1653),
+    [sym_baseline_diagram_type] = ACTIONS(1653),
     [anon_sym_title] = ACTIONS(1653),
     [anon_sym_accTitle] = ACTIONS(1653),
     [anon_sym_accDescr] = ACTIONS(1653),
@@ -43886,7 +43886,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1653),
     [sym_number] = ACTIONS(1653),
     [sym_indentation] = ACTIONS(1653),
-    [sym_generic_token] = ACTIONS(1653),
+    [sym_unknown_token] = ACTIONS(1653),
     [aux_sym__terminator_token1] = ACTIONS(1653),
     [anon_sym_SEMI] = ACTIONS(1653),
   },
@@ -43918,7 +43918,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1657),
     [sym_tree_diagram_type] = ACTIONS(1657),
     [sym_wardley_diagram_type] = ACTIONS(1657),
-    [sym_generic_diagram_type] = ACTIONS(1657),
+    [sym_baseline_diagram_type] = ACTIONS(1657),
     [anon_sym_title] = ACTIONS(1657),
     [anon_sym_accTitle] = ACTIONS(1657),
     [anon_sym_accDescr] = ACTIONS(1657),
@@ -43975,7 +43975,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1657),
     [sym_number] = ACTIONS(1657),
     [sym_indentation] = ACTIONS(1657),
-    [sym_generic_token] = ACTIONS(1657),
+    [sym_unknown_token] = ACTIONS(1657),
     [aux_sym__terminator_token1] = ACTIONS(1657),
     [anon_sym_SEMI] = ACTIONS(1657),
   },
@@ -44007,7 +44007,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1661),
     [sym_tree_diagram_type] = ACTIONS(1661),
     [sym_wardley_diagram_type] = ACTIONS(1661),
-    [sym_generic_diagram_type] = ACTIONS(1661),
+    [sym_baseline_diagram_type] = ACTIONS(1661),
     [anon_sym_title] = ACTIONS(1661),
     [anon_sym_accTitle] = ACTIONS(1661),
     [anon_sym_accDescr] = ACTIONS(1661),
@@ -44064,7 +44064,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1661),
     [sym_number] = ACTIONS(1661),
     [sym_indentation] = ACTIONS(1661),
-    [sym_generic_token] = ACTIONS(1661),
+    [sym_unknown_token] = ACTIONS(1661),
     [aux_sym__terminator_token1] = ACTIONS(1661),
     [anon_sym_SEMI] = ACTIONS(1661),
   },
@@ -44096,7 +44096,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1665),
     [sym_tree_diagram_type] = ACTIONS(1665),
     [sym_wardley_diagram_type] = ACTIONS(1665),
-    [sym_generic_diagram_type] = ACTIONS(1665),
+    [sym_baseline_diagram_type] = ACTIONS(1665),
     [anon_sym_title] = ACTIONS(1665),
     [anon_sym_accTitle] = ACTIONS(1665),
     [anon_sym_accDescr] = ACTIONS(1665),
@@ -44153,7 +44153,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1665),
     [sym_number] = ACTIONS(1665),
     [sym_indentation] = ACTIONS(1665),
-    [sym_generic_token] = ACTIONS(1665),
+    [sym_unknown_token] = ACTIONS(1665),
     [aux_sym__terminator_token1] = ACTIONS(1665),
     [anon_sym_SEMI] = ACTIONS(1665),
   },
@@ -44185,7 +44185,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1669),
     [sym_tree_diagram_type] = ACTIONS(1669),
     [sym_wardley_diagram_type] = ACTIONS(1669),
-    [sym_generic_diagram_type] = ACTIONS(1669),
+    [sym_baseline_diagram_type] = ACTIONS(1669),
     [anon_sym_title] = ACTIONS(1669),
     [anon_sym_accTitle] = ACTIONS(1669),
     [anon_sym_accDescr] = ACTIONS(1669),
@@ -44242,7 +44242,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1669),
     [sym_number] = ACTIONS(1669),
     [sym_indentation] = ACTIONS(1669),
-    [sym_generic_token] = ACTIONS(1669),
+    [sym_unknown_token] = ACTIONS(1669),
     [aux_sym__terminator_token1] = ACTIONS(1669),
     [anon_sym_SEMI] = ACTIONS(1669),
   },
@@ -44274,7 +44274,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1673),
     [sym_tree_diagram_type] = ACTIONS(1673),
     [sym_wardley_diagram_type] = ACTIONS(1673),
-    [sym_generic_diagram_type] = ACTIONS(1673),
+    [sym_baseline_diagram_type] = ACTIONS(1673),
     [anon_sym_title] = ACTIONS(1673),
     [anon_sym_accTitle] = ACTIONS(1673),
     [anon_sym_accDescr] = ACTIONS(1673),
@@ -44331,7 +44331,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1673),
     [sym_number] = ACTIONS(1673),
     [sym_indentation] = ACTIONS(1673),
-    [sym_generic_token] = ACTIONS(1673),
+    [sym_unknown_token] = ACTIONS(1673),
     [aux_sym__terminator_token1] = ACTIONS(1673),
     [anon_sym_SEMI] = ACTIONS(1673),
   },
@@ -44363,7 +44363,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1677),
     [sym_tree_diagram_type] = ACTIONS(1677),
     [sym_wardley_diagram_type] = ACTIONS(1677),
-    [sym_generic_diagram_type] = ACTIONS(1677),
+    [sym_baseline_diagram_type] = ACTIONS(1677),
     [anon_sym_title] = ACTIONS(1677),
     [anon_sym_accTitle] = ACTIONS(1677),
     [anon_sym_accDescr] = ACTIONS(1677),
@@ -44420,7 +44420,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1677),
     [sym_number] = ACTIONS(1677),
     [sym_indentation] = ACTIONS(1677),
-    [sym_generic_token] = ACTIONS(1677),
+    [sym_unknown_token] = ACTIONS(1677),
     [aux_sym__terminator_token1] = ACTIONS(1677),
     [anon_sym_SEMI] = ACTIONS(1677),
   },
@@ -44452,7 +44452,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1681),
     [sym_tree_diagram_type] = ACTIONS(1681),
     [sym_wardley_diagram_type] = ACTIONS(1681),
-    [sym_generic_diagram_type] = ACTIONS(1681),
+    [sym_baseline_diagram_type] = ACTIONS(1681),
     [anon_sym_title] = ACTIONS(1681),
     [anon_sym_accTitle] = ACTIONS(1681),
     [anon_sym_accDescr] = ACTIONS(1681),
@@ -44509,7 +44509,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1681),
     [sym_number] = ACTIONS(1681),
     [sym_indentation] = ACTIONS(1681),
-    [sym_generic_token] = ACTIONS(1681),
+    [sym_unknown_token] = ACTIONS(1681),
     [aux_sym__terminator_token1] = ACTIONS(1681),
     [anon_sym_SEMI] = ACTIONS(1681),
   },
@@ -44541,7 +44541,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1685),
     [sym_tree_diagram_type] = ACTIONS(1685),
     [sym_wardley_diagram_type] = ACTIONS(1685),
-    [sym_generic_diagram_type] = ACTIONS(1685),
+    [sym_baseline_diagram_type] = ACTIONS(1685),
     [anon_sym_title] = ACTIONS(1685),
     [anon_sym_accTitle] = ACTIONS(1685),
     [anon_sym_accDescr] = ACTIONS(1685),
@@ -44598,7 +44598,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1685),
     [sym_number] = ACTIONS(1685),
     [sym_indentation] = ACTIONS(1685),
-    [sym_generic_token] = ACTIONS(1685),
+    [sym_unknown_token] = ACTIONS(1685),
     [aux_sym__terminator_token1] = ACTIONS(1685),
     [anon_sym_SEMI] = ACTIONS(1685),
   },
@@ -44630,7 +44630,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1689),
     [sym_tree_diagram_type] = ACTIONS(1689),
     [sym_wardley_diagram_type] = ACTIONS(1689),
-    [sym_generic_diagram_type] = ACTIONS(1689),
+    [sym_baseline_diagram_type] = ACTIONS(1689),
     [anon_sym_title] = ACTIONS(1689),
     [anon_sym_accTitle] = ACTIONS(1689),
     [anon_sym_accDescr] = ACTIONS(1689),
@@ -44687,7 +44687,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1689),
     [sym_number] = ACTIONS(1689),
     [sym_indentation] = ACTIONS(1689),
-    [sym_generic_token] = ACTIONS(1689),
+    [sym_unknown_token] = ACTIONS(1689),
     [aux_sym__terminator_token1] = ACTIONS(1689),
     [anon_sym_SEMI] = ACTIONS(1689),
   },
@@ -44719,7 +44719,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1693),
     [sym_tree_diagram_type] = ACTIONS(1693),
     [sym_wardley_diagram_type] = ACTIONS(1693),
-    [sym_generic_diagram_type] = ACTIONS(1693),
+    [sym_baseline_diagram_type] = ACTIONS(1693),
     [anon_sym_title] = ACTIONS(1693),
     [anon_sym_accTitle] = ACTIONS(1693),
     [anon_sym_accDescr] = ACTIONS(1693),
@@ -44776,7 +44776,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1693),
     [sym_number] = ACTIONS(1693),
     [sym_indentation] = ACTIONS(1693),
-    [sym_generic_token] = ACTIONS(1693),
+    [sym_unknown_token] = ACTIONS(1693),
     [aux_sym__terminator_token1] = ACTIONS(1693),
     [anon_sym_SEMI] = ACTIONS(1693),
   },
@@ -44808,7 +44808,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1697),
     [sym_tree_diagram_type] = ACTIONS(1697),
     [sym_wardley_diagram_type] = ACTIONS(1697),
-    [sym_generic_diagram_type] = ACTIONS(1697),
+    [sym_baseline_diagram_type] = ACTIONS(1697),
     [anon_sym_title] = ACTIONS(1697),
     [anon_sym_accTitle] = ACTIONS(1697),
     [anon_sym_accDescr] = ACTIONS(1697),
@@ -44865,7 +44865,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1697),
     [sym_number] = ACTIONS(1697),
     [sym_indentation] = ACTIONS(1697),
-    [sym_generic_token] = ACTIONS(1697),
+    [sym_unknown_token] = ACTIONS(1697),
     [aux_sym__terminator_token1] = ACTIONS(1697),
     [anon_sym_SEMI] = ACTIONS(1697),
   },
@@ -44897,7 +44897,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1701),
     [sym_tree_diagram_type] = ACTIONS(1701),
     [sym_wardley_diagram_type] = ACTIONS(1701),
-    [sym_generic_diagram_type] = ACTIONS(1701),
+    [sym_baseline_diagram_type] = ACTIONS(1701),
     [anon_sym_title] = ACTIONS(1701),
     [anon_sym_accTitle] = ACTIONS(1701),
     [anon_sym_accDescr] = ACTIONS(1701),
@@ -44954,7 +44954,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1701),
     [sym_number] = ACTIONS(1701),
     [sym_indentation] = ACTIONS(1701),
-    [sym_generic_token] = ACTIONS(1701),
+    [sym_unknown_token] = ACTIONS(1701),
     [aux_sym__terminator_token1] = ACTIONS(1701),
     [anon_sym_SEMI] = ACTIONS(1701),
   },
@@ -44986,7 +44986,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1705),
     [sym_tree_diagram_type] = ACTIONS(1705),
     [sym_wardley_diagram_type] = ACTIONS(1705),
-    [sym_generic_diagram_type] = ACTIONS(1705),
+    [sym_baseline_diagram_type] = ACTIONS(1705),
     [anon_sym_title] = ACTIONS(1705),
     [anon_sym_accTitle] = ACTIONS(1705),
     [anon_sym_accDescr] = ACTIONS(1705),
@@ -45043,7 +45043,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1705),
     [sym_number] = ACTIONS(1705),
     [sym_indentation] = ACTIONS(1705),
-    [sym_generic_token] = ACTIONS(1705),
+    [sym_unknown_token] = ACTIONS(1705),
     [aux_sym__terminator_token1] = ACTIONS(1705),
     [anon_sym_SEMI] = ACTIONS(1705),
   },
@@ -45075,7 +45075,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1709),
     [sym_tree_diagram_type] = ACTIONS(1709),
     [sym_wardley_diagram_type] = ACTIONS(1709),
-    [sym_generic_diagram_type] = ACTIONS(1709),
+    [sym_baseline_diagram_type] = ACTIONS(1709),
     [anon_sym_title] = ACTIONS(1709),
     [anon_sym_accTitle] = ACTIONS(1709),
     [anon_sym_accDescr] = ACTIONS(1709),
@@ -45132,7 +45132,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1709),
     [sym_number] = ACTIONS(1709),
     [sym_indentation] = ACTIONS(1709),
-    [sym_generic_token] = ACTIONS(1709),
+    [sym_unknown_token] = ACTIONS(1709),
     [aux_sym__terminator_token1] = ACTIONS(1709),
     [anon_sym_SEMI] = ACTIONS(1709),
   },
@@ -45164,7 +45164,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1713),
     [sym_tree_diagram_type] = ACTIONS(1713),
     [sym_wardley_diagram_type] = ACTIONS(1713),
-    [sym_generic_diagram_type] = ACTIONS(1713),
+    [sym_baseline_diagram_type] = ACTIONS(1713),
     [anon_sym_title] = ACTIONS(1713),
     [anon_sym_accTitle] = ACTIONS(1713),
     [anon_sym_accDescr] = ACTIONS(1713),
@@ -45221,7 +45221,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1713),
     [sym_number] = ACTIONS(1713),
     [sym_indentation] = ACTIONS(1713),
-    [sym_generic_token] = ACTIONS(1713),
+    [sym_unknown_token] = ACTIONS(1713),
     [aux_sym__terminator_token1] = ACTIONS(1713),
     [anon_sym_SEMI] = ACTIONS(1713),
   },
@@ -45253,7 +45253,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1717),
     [sym_tree_diagram_type] = ACTIONS(1717),
     [sym_wardley_diagram_type] = ACTIONS(1717),
-    [sym_generic_diagram_type] = ACTIONS(1717),
+    [sym_baseline_diagram_type] = ACTIONS(1717),
     [anon_sym_title] = ACTIONS(1717),
     [anon_sym_accTitle] = ACTIONS(1717),
     [anon_sym_accDescr] = ACTIONS(1717),
@@ -45310,7 +45310,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1717),
     [sym_number] = ACTIONS(1717),
     [sym_indentation] = ACTIONS(1717),
-    [sym_generic_token] = ACTIONS(1717),
+    [sym_unknown_token] = ACTIONS(1717),
     [aux_sym__terminator_token1] = ACTIONS(1717),
     [anon_sym_SEMI] = ACTIONS(1717),
   },
@@ -45342,7 +45342,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1721),
     [sym_tree_diagram_type] = ACTIONS(1721),
     [sym_wardley_diagram_type] = ACTIONS(1721),
-    [sym_generic_diagram_type] = ACTIONS(1721),
+    [sym_baseline_diagram_type] = ACTIONS(1721),
     [anon_sym_title] = ACTIONS(1721),
     [anon_sym_accTitle] = ACTIONS(1721),
     [anon_sym_accDescr] = ACTIONS(1721),
@@ -45399,7 +45399,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1721),
     [sym_number] = ACTIONS(1721),
     [sym_indentation] = ACTIONS(1721),
-    [sym_generic_token] = ACTIONS(1721),
+    [sym_unknown_token] = ACTIONS(1721),
     [aux_sym__terminator_token1] = ACTIONS(1721),
     [anon_sym_SEMI] = ACTIONS(1721),
   },
@@ -45431,7 +45431,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1725),
     [sym_tree_diagram_type] = ACTIONS(1725),
     [sym_wardley_diagram_type] = ACTIONS(1725),
-    [sym_generic_diagram_type] = ACTIONS(1725),
+    [sym_baseline_diagram_type] = ACTIONS(1725),
     [anon_sym_title] = ACTIONS(1725),
     [anon_sym_accTitle] = ACTIONS(1725),
     [anon_sym_accDescr] = ACTIONS(1725),
@@ -45488,7 +45488,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1725),
     [sym_number] = ACTIONS(1725),
     [sym_indentation] = ACTIONS(1725),
-    [sym_generic_token] = ACTIONS(1725),
+    [sym_unknown_token] = ACTIONS(1725),
     [aux_sym__terminator_token1] = ACTIONS(1725),
     [anon_sym_SEMI] = ACTIONS(1725),
   },
@@ -45520,7 +45520,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1729),
     [sym_tree_diagram_type] = ACTIONS(1729),
     [sym_wardley_diagram_type] = ACTIONS(1729),
-    [sym_generic_diagram_type] = ACTIONS(1729),
+    [sym_baseline_diagram_type] = ACTIONS(1729),
     [anon_sym_title] = ACTIONS(1729),
     [anon_sym_accTitle] = ACTIONS(1729),
     [anon_sym_accDescr] = ACTIONS(1729),
@@ -45577,7 +45577,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1729),
     [sym_number] = ACTIONS(1729),
     [sym_indentation] = ACTIONS(1729),
-    [sym_generic_token] = ACTIONS(1729),
+    [sym_unknown_token] = ACTIONS(1729),
     [aux_sym__terminator_token1] = ACTIONS(1729),
     [anon_sym_SEMI] = ACTIONS(1729),
   },
@@ -45609,7 +45609,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1733),
     [sym_tree_diagram_type] = ACTIONS(1733),
     [sym_wardley_diagram_type] = ACTIONS(1733),
-    [sym_generic_diagram_type] = ACTIONS(1733),
+    [sym_baseline_diagram_type] = ACTIONS(1733),
     [anon_sym_title] = ACTIONS(1733),
     [anon_sym_accTitle] = ACTIONS(1733),
     [anon_sym_accDescr] = ACTIONS(1733),
@@ -45666,7 +45666,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1733),
     [sym_number] = ACTIONS(1733),
     [sym_indentation] = ACTIONS(1733),
-    [sym_generic_token] = ACTIONS(1733),
+    [sym_unknown_token] = ACTIONS(1733),
     [aux_sym__terminator_token1] = ACTIONS(1733),
     [anon_sym_SEMI] = ACTIONS(1733),
   },
@@ -45698,7 +45698,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1737),
     [sym_tree_diagram_type] = ACTIONS(1737),
     [sym_wardley_diagram_type] = ACTIONS(1737),
-    [sym_generic_diagram_type] = ACTIONS(1737),
+    [sym_baseline_diagram_type] = ACTIONS(1737),
     [anon_sym_title] = ACTIONS(1737),
     [anon_sym_accTitle] = ACTIONS(1737),
     [anon_sym_accDescr] = ACTIONS(1737),
@@ -45755,7 +45755,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1737),
     [sym_number] = ACTIONS(1737),
     [sym_indentation] = ACTIONS(1737),
-    [sym_generic_token] = ACTIONS(1737),
+    [sym_unknown_token] = ACTIONS(1737),
     [aux_sym__terminator_token1] = ACTIONS(1737),
     [anon_sym_SEMI] = ACTIONS(1737),
   },
@@ -45787,7 +45787,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1741),
     [sym_tree_diagram_type] = ACTIONS(1741),
     [sym_wardley_diagram_type] = ACTIONS(1741),
-    [sym_generic_diagram_type] = ACTIONS(1741),
+    [sym_baseline_diagram_type] = ACTIONS(1741),
     [anon_sym_title] = ACTIONS(1741),
     [anon_sym_accTitle] = ACTIONS(1741),
     [anon_sym_accDescr] = ACTIONS(1741),
@@ -45844,7 +45844,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1741),
     [sym_number] = ACTIONS(1741),
     [sym_indentation] = ACTIONS(1741),
-    [sym_generic_token] = ACTIONS(1741),
+    [sym_unknown_token] = ACTIONS(1741),
     [aux_sym__terminator_token1] = ACTIONS(1741),
     [anon_sym_SEMI] = ACTIONS(1741),
   },
@@ -45876,7 +45876,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1405),
     [sym_tree_diagram_type] = ACTIONS(1405),
     [sym_wardley_diagram_type] = ACTIONS(1405),
-    [sym_generic_diagram_type] = ACTIONS(1405),
+    [sym_baseline_diagram_type] = ACTIONS(1405),
     [anon_sym_title] = ACTIONS(1405),
     [anon_sym_accTitle] = ACTIONS(1405),
     [anon_sym_accDescr] = ACTIONS(1405),
@@ -45933,7 +45933,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1405),
     [sym_number] = ACTIONS(1405),
     [sym_indentation] = ACTIONS(1405),
-    [sym_generic_token] = ACTIONS(1405),
+    [sym_unknown_token] = ACTIONS(1405),
     [aux_sym__terminator_token1] = ACTIONS(1405),
     [anon_sym_SEMI] = ACTIONS(1405),
   },
@@ -45965,7 +45965,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1377),
     [sym_tree_diagram_type] = ACTIONS(1377),
     [sym_wardley_diagram_type] = ACTIONS(1377),
-    [sym_generic_diagram_type] = ACTIONS(1377),
+    [sym_baseline_diagram_type] = ACTIONS(1377),
     [anon_sym_title] = ACTIONS(1377),
     [anon_sym_accTitle] = ACTIONS(1377),
     [anon_sym_accDescr] = ACTIONS(1377),
@@ -46022,7 +46022,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1377),
     [sym_number] = ACTIONS(1377),
     [sym_indentation] = ACTIONS(1377),
-    [sym_generic_token] = ACTIONS(1377),
+    [sym_unknown_token] = ACTIONS(1377),
     [aux_sym__terminator_token1] = ACTIONS(1377),
     [anon_sym_SEMI] = ACTIONS(1377),
   },
@@ -46054,7 +46054,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1381),
     [sym_tree_diagram_type] = ACTIONS(1381),
     [sym_wardley_diagram_type] = ACTIONS(1381),
-    [sym_generic_diagram_type] = ACTIONS(1381),
+    [sym_baseline_diagram_type] = ACTIONS(1381),
     [anon_sym_title] = ACTIONS(1381),
     [anon_sym_accTitle] = ACTIONS(1381),
     [anon_sym_accDescr] = ACTIONS(1381),
@@ -46111,7 +46111,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1381),
     [sym_number] = ACTIONS(1381),
     [sym_indentation] = ACTIONS(1381),
-    [sym_generic_token] = ACTIONS(1381),
+    [sym_unknown_token] = ACTIONS(1381),
     [aux_sym__terminator_token1] = ACTIONS(1381),
     [anon_sym_SEMI] = ACTIONS(1381),
   },
@@ -46143,7 +46143,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1385),
     [sym_tree_diagram_type] = ACTIONS(1385),
     [sym_wardley_diagram_type] = ACTIONS(1385),
-    [sym_generic_diagram_type] = ACTIONS(1385),
+    [sym_baseline_diagram_type] = ACTIONS(1385),
     [anon_sym_title] = ACTIONS(1385),
     [anon_sym_accTitle] = ACTIONS(1385),
     [anon_sym_accDescr] = ACTIONS(1385),
@@ -46200,7 +46200,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1385),
     [sym_number] = ACTIONS(1385),
     [sym_indentation] = ACTIONS(1385),
-    [sym_generic_token] = ACTIONS(1385),
+    [sym_unknown_token] = ACTIONS(1385),
     [aux_sym__terminator_token1] = ACTIONS(1385),
     [anon_sym_SEMI] = ACTIONS(1385),
   },
@@ -46232,7 +46232,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1389),
     [sym_tree_diagram_type] = ACTIONS(1389),
     [sym_wardley_diagram_type] = ACTIONS(1389),
-    [sym_generic_diagram_type] = ACTIONS(1389),
+    [sym_baseline_diagram_type] = ACTIONS(1389),
     [anon_sym_title] = ACTIONS(1389),
     [anon_sym_accTitle] = ACTIONS(1389),
     [anon_sym_accDescr] = ACTIONS(1389),
@@ -46289,7 +46289,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1389),
     [sym_number] = ACTIONS(1389),
     [sym_indentation] = ACTIONS(1389),
-    [sym_generic_token] = ACTIONS(1389),
+    [sym_unknown_token] = ACTIONS(1389),
     [aux_sym__terminator_token1] = ACTIONS(1389),
     [anon_sym_SEMI] = ACTIONS(1389),
   },
@@ -46321,7 +46321,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1581),
     [sym_tree_diagram_type] = ACTIONS(1581),
     [sym_wardley_diagram_type] = ACTIONS(1581),
-    [sym_generic_diagram_type] = ACTIONS(1581),
+    [sym_baseline_diagram_type] = ACTIONS(1581),
     [anon_sym_title] = ACTIONS(1581),
     [anon_sym_accTitle] = ACTIONS(1581),
     [anon_sym_accDescr] = ACTIONS(1581),
@@ -46378,7 +46378,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1581),
     [sym_number] = ACTIONS(1581),
     [sym_indentation] = ACTIONS(1581),
-    [sym_generic_token] = ACTIONS(1581),
+    [sym_unknown_token] = ACTIONS(1581),
     [aux_sym__terminator_token1] = ACTIONS(1581),
     [anon_sym_SEMI] = ACTIONS(1581),
   },
@@ -46410,7 +46410,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1745),
     [sym_tree_diagram_type] = ACTIONS(1745),
     [sym_wardley_diagram_type] = ACTIONS(1745),
-    [sym_generic_diagram_type] = ACTIONS(1745),
+    [sym_baseline_diagram_type] = ACTIONS(1745),
     [anon_sym_title] = ACTIONS(1745),
     [anon_sym_accTitle] = ACTIONS(1745),
     [anon_sym_accDescr] = ACTIONS(1745),
@@ -46467,7 +46467,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1745),
     [sym_number] = ACTIONS(1745),
     [sym_indentation] = ACTIONS(1745),
-    [sym_generic_token] = ACTIONS(1745),
+    [sym_unknown_token] = ACTIONS(1745),
     [aux_sym__terminator_token1] = ACTIONS(1745),
     [anon_sym_SEMI] = ACTIONS(1745),
   },
@@ -46499,7 +46499,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1749),
     [sym_tree_diagram_type] = ACTIONS(1749),
     [sym_wardley_diagram_type] = ACTIONS(1749),
-    [sym_generic_diagram_type] = ACTIONS(1749),
+    [sym_baseline_diagram_type] = ACTIONS(1749),
     [anon_sym_title] = ACTIONS(1749),
     [anon_sym_accTitle] = ACTIONS(1749),
     [anon_sym_accDescr] = ACTIONS(1749),
@@ -46556,7 +46556,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1749),
     [sym_number] = ACTIONS(1749),
     [sym_indentation] = ACTIONS(1749),
-    [sym_generic_token] = ACTIONS(1749),
+    [sym_unknown_token] = ACTIONS(1749),
     [aux_sym__terminator_token1] = ACTIONS(1749),
     [anon_sym_SEMI] = ACTIONS(1749),
   },
@@ -46588,7 +46588,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1585),
     [sym_tree_diagram_type] = ACTIONS(1585),
     [sym_wardley_diagram_type] = ACTIONS(1585),
-    [sym_generic_diagram_type] = ACTIONS(1585),
+    [sym_baseline_diagram_type] = ACTIONS(1585),
     [anon_sym_title] = ACTIONS(1585),
     [anon_sym_accTitle] = ACTIONS(1585),
     [anon_sym_accDescr] = ACTIONS(1585),
@@ -46645,7 +46645,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1585),
     [sym_number] = ACTIONS(1585),
     [sym_indentation] = ACTIONS(1585),
-    [sym_generic_token] = ACTIONS(1585),
+    [sym_unknown_token] = ACTIONS(1585),
     [aux_sym__terminator_token1] = ACTIONS(1585),
     [anon_sym_SEMI] = ACTIONS(1585),
   },
@@ -46677,7 +46677,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1753),
     [sym_tree_diagram_type] = ACTIONS(1753),
     [sym_wardley_diagram_type] = ACTIONS(1753),
-    [sym_generic_diagram_type] = ACTIONS(1753),
+    [sym_baseline_diagram_type] = ACTIONS(1753),
     [anon_sym_title] = ACTIONS(1753),
     [anon_sym_accTitle] = ACTIONS(1753),
     [anon_sym_accDescr] = ACTIONS(1753),
@@ -46734,7 +46734,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1753),
     [sym_number] = ACTIONS(1753),
     [sym_indentation] = ACTIONS(1753),
-    [sym_generic_token] = ACTIONS(1753),
+    [sym_unknown_token] = ACTIONS(1753),
     [aux_sym__terminator_token1] = ACTIONS(1753),
     [anon_sym_SEMI] = ACTIONS(1753),
   },
@@ -46766,7 +46766,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1757),
     [sym_tree_diagram_type] = ACTIONS(1757),
     [sym_wardley_diagram_type] = ACTIONS(1757),
-    [sym_generic_diagram_type] = ACTIONS(1757),
+    [sym_baseline_diagram_type] = ACTIONS(1757),
     [anon_sym_title] = ACTIONS(1757),
     [anon_sym_accTitle] = ACTIONS(1757),
     [anon_sym_accDescr] = ACTIONS(1757),
@@ -46823,7 +46823,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1757),
     [sym_number] = ACTIONS(1757),
     [sym_indentation] = ACTIONS(1757),
-    [sym_generic_token] = ACTIONS(1757),
+    [sym_unknown_token] = ACTIONS(1757),
     [aux_sym__terminator_token1] = ACTIONS(1757),
     [anon_sym_SEMI] = ACTIONS(1757),
   },
@@ -46855,7 +46855,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1761),
     [sym_tree_diagram_type] = ACTIONS(1761),
     [sym_wardley_diagram_type] = ACTIONS(1761),
-    [sym_generic_diagram_type] = ACTIONS(1761),
+    [sym_baseline_diagram_type] = ACTIONS(1761),
     [anon_sym_title] = ACTIONS(1761),
     [anon_sym_accTitle] = ACTIONS(1761),
     [anon_sym_accDescr] = ACTIONS(1761),
@@ -46912,7 +46912,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1761),
     [sym_number] = ACTIONS(1761),
     [sym_indentation] = ACTIONS(1761),
-    [sym_generic_token] = ACTIONS(1761),
+    [sym_unknown_token] = ACTIONS(1761),
     [aux_sym__terminator_token1] = ACTIONS(1761),
     [anon_sym_SEMI] = ACTIONS(1761),
   },
@@ -46944,7 +46944,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1765),
     [sym_tree_diagram_type] = ACTIONS(1765),
     [sym_wardley_diagram_type] = ACTIONS(1765),
-    [sym_generic_diagram_type] = ACTIONS(1765),
+    [sym_baseline_diagram_type] = ACTIONS(1765),
     [anon_sym_title] = ACTIONS(1765),
     [anon_sym_accTitle] = ACTIONS(1765),
     [anon_sym_accDescr] = ACTIONS(1765),
@@ -47001,7 +47001,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1765),
     [sym_number] = ACTIONS(1765),
     [sym_indentation] = ACTIONS(1765),
-    [sym_generic_token] = ACTIONS(1765),
+    [sym_unknown_token] = ACTIONS(1765),
     [aux_sym__terminator_token1] = ACTIONS(1765),
     [anon_sym_SEMI] = ACTIONS(1765),
   },
@@ -47033,7 +47033,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1769),
     [sym_tree_diagram_type] = ACTIONS(1769),
     [sym_wardley_diagram_type] = ACTIONS(1769),
-    [sym_generic_diagram_type] = ACTIONS(1769),
+    [sym_baseline_diagram_type] = ACTIONS(1769),
     [anon_sym_title] = ACTIONS(1769),
     [anon_sym_accTitle] = ACTIONS(1769),
     [anon_sym_accDescr] = ACTIONS(1769),
@@ -47090,7 +47090,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1769),
     [sym_number] = ACTIONS(1769),
     [sym_indentation] = ACTIONS(1769),
-    [sym_generic_token] = ACTIONS(1769),
+    [sym_unknown_token] = ACTIONS(1769),
     [aux_sym__terminator_token1] = ACTIONS(1769),
     [anon_sym_SEMI] = ACTIONS(1769),
   },
@@ -47122,7 +47122,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1773),
     [sym_tree_diagram_type] = ACTIONS(1773),
     [sym_wardley_diagram_type] = ACTIONS(1773),
-    [sym_generic_diagram_type] = ACTIONS(1773),
+    [sym_baseline_diagram_type] = ACTIONS(1773),
     [anon_sym_title] = ACTIONS(1773),
     [anon_sym_accTitle] = ACTIONS(1773),
     [anon_sym_accDescr] = ACTIONS(1773),
@@ -47179,7 +47179,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1773),
     [sym_number] = ACTIONS(1773),
     [sym_indentation] = ACTIONS(1773),
-    [sym_generic_token] = ACTIONS(1773),
+    [sym_unknown_token] = ACTIONS(1773),
     [aux_sym__terminator_token1] = ACTIONS(1773),
     [anon_sym_SEMI] = ACTIONS(1773),
   },
@@ -47211,7 +47211,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1778),
     [sym_tree_diagram_type] = ACTIONS(1778),
     [sym_wardley_diagram_type] = ACTIONS(1778),
-    [sym_generic_diagram_type] = ACTIONS(1778),
+    [sym_baseline_diagram_type] = ACTIONS(1778),
     [anon_sym_title] = ACTIONS(1778),
     [anon_sym_accTitle] = ACTIONS(1778),
     [anon_sym_accDescr] = ACTIONS(1778),
@@ -47268,7 +47268,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1778),
     [sym_number] = ACTIONS(1778),
     [sym_indentation] = ACTIONS(1778),
-    [sym_generic_token] = ACTIONS(1778),
+    [sym_unknown_token] = ACTIONS(1778),
     [aux_sym__terminator_token1] = ACTIONS(1778),
     [anon_sym_SEMI] = ACTIONS(1778),
   },
@@ -47300,7 +47300,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1783),
     [sym_tree_diagram_type] = ACTIONS(1783),
     [sym_wardley_diagram_type] = ACTIONS(1783),
-    [sym_generic_diagram_type] = ACTIONS(1783),
+    [sym_baseline_diagram_type] = ACTIONS(1783),
     [anon_sym_title] = ACTIONS(1783),
     [anon_sym_accTitle] = ACTIONS(1783),
     [anon_sym_accDescr] = ACTIONS(1783),
@@ -47357,7 +47357,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1783),
     [sym_number] = ACTIONS(1783),
     [sym_indentation] = ACTIONS(1783),
-    [sym_generic_token] = ACTIONS(1783),
+    [sym_unknown_token] = ACTIONS(1783),
     [aux_sym__terminator_token1] = ACTIONS(1783),
     [anon_sym_SEMI] = ACTIONS(1783),
   },
@@ -47389,7 +47389,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1787),
     [sym_tree_diagram_type] = ACTIONS(1787),
     [sym_wardley_diagram_type] = ACTIONS(1787),
-    [sym_generic_diagram_type] = ACTIONS(1787),
+    [sym_baseline_diagram_type] = ACTIONS(1787),
     [anon_sym_title] = ACTIONS(1787),
     [anon_sym_accTitle] = ACTIONS(1787),
     [anon_sym_accDescr] = ACTIONS(1787),
@@ -47446,7 +47446,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1787),
     [sym_number] = ACTIONS(1787),
     [sym_indentation] = ACTIONS(1787),
-    [sym_generic_token] = ACTIONS(1787),
+    [sym_unknown_token] = ACTIONS(1787),
     [aux_sym__terminator_token1] = ACTIONS(1787),
     [anon_sym_SEMI] = ACTIONS(1787),
   },
@@ -47478,7 +47478,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1791),
     [sym_tree_diagram_type] = ACTIONS(1791),
     [sym_wardley_diagram_type] = ACTIONS(1791),
-    [sym_generic_diagram_type] = ACTIONS(1791),
+    [sym_baseline_diagram_type] = ACTIONS(1791),
     [anon_sym_title] = ACTIONS(1791),
     [anon_sym_accTitle] = ACTIONS(1791),
     [anon_sym_accDescr] = ACTIONS(1791),
@@ -47535,7 +47535,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1791),
     [sym_number] = ACTIONS(1791),
     [sym_indentation] = ACTIONS(1791),
-    [sym_generic_token] = ACTIONS(1791),
+    [sym_unknown_token] = ACTIONS(1791),
     [aux_sym__terminator_token1] = ACTIONS(1791),
     [anon_sym_SEMI] = ACTIONS(1791),
   },
@@ -47567,7 +47567,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1795),
     [sym_tree_diagram_type] = ACTIONS(1795),
     [sym_wardley_diagram_type] = ACTIONS(1795),
-    [sym_generic_diagram_type] = ACTIONS(1795),
+    [sym_baseline_diagram_type] = ACTIONS(1795),
     [anon_sym_title] = ACTIONS(1795),
     [anon_sym_accTitle] = ACTIONS(1795),
     [anon_sym_accDescr] = ACTIONS(1795),
@@ -47624,7 +47624,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1795),
     [sym_number] = ACTIONS(1795),
     [sym_indentation] = ACTIONS(1795),
-    [sym_generic_token] = ACTIONS(1795),
+    [sym_unknown_token] = ACTIONS(1795),
     [aux_sym__terminator_token1] = ACTIONS(1795),
     [anon_sym_SEMI] = ACTIONS(1795),
   },
@@ -47656,7 +47656,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1799),
     [sym_tree_diagram_type] = ACTIONS(1799),
     [sym_wardley_diagram_type] = ACTIONS(1799),
-    [sym_generic_diagram_type] = ACTIONS(1799),
+    [sym_baseline_diagram_type] = ACTIONS(1799),
     [anon_sym_title] = ACTIONS(1799),
     [anon_sym_accTitle] = ACTIONS(1799),
     [anon_sym_accDescr] = ACTIONS(1799),
@@ -47713,7 +47713,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1799),
     [sym_number] = ACTIONS(1799),
     [sym_indentation] = ACTIONS(1799),
-    [sym_generic_token] = ACTIONS(1799),
+    [sym_unknown_token] = ACTIONS(1799),
     [aux_sym__terminator_token1] = ACTIONS(1799),
     [anon_sym_SEMI] = ACTIONS(1799),
   },
@@ -47745,7 +47745,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1803),
     [sym_tree_diagram_type] = ACTIONS(1803),
     [sym_wardley_diagram_type] = ACTIONS(1803),
-    [sym_generic_diagram_type] = ACTIONS(1803),
+    [sym_baseline_diagram_type] = ACTIONS(1803),
     [anon_sym_title] = ACTIONS(1803),
     [anon_sym_accTitle] = ACTIONS(1803),
     [anon_sym_accDescr] = ACTIONS(1803),
@@ -47802,7 +47802,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1803),
     [sym_number] = ACTIONS(1803),
     [sym_indentation] = ACTIONS(1803),
-    [sym_generic_token] = ACTIONS(1803),
+    [sym_unknown_token] = ACTIONS(1803),
     [aux_sym__terminator_token1] = ACTIONS(1803),
     [anon_sym_SEMI] = ACTIONS(1803),
   },
@@ -47834,7 +47834,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1807),
     [sym_tree_diagram_type] = ACTIONS(1807),
     [sym_wardley_diagram_type] = ACTIONS(1807),
-    [sym_generic_diagram_type] = ACTIONS(1807),
+    [sym_baseline_diagram_type] = ACTIONS(1807),
     [anon_sym_title] = ACTIONS(1807),
     [anon_sym_accTitle] = ACTIONS(1807),
     [anon_sym_accDescr] = ACTIONS(1807),
@@ -47891,7 +47891,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1807),
     [sym_number] = ACTIONS(1807),
     [sym_indentation] = ACTIONS(1807),
-    [sym_generic_token] = ACTIONS(1807),
+    [sym_unknown_token] = ACTIONS(1807),
     [aux_sym__terminator_token1] = ACTIONS(1807),
     [anon_sym_SEMI] = ACTIONS(1807),
   },
@@ -47923,7 +47923,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1811),
     [sym_tree_diagram_type] = ACTIONS(1811),
     [sym_wardley_diagram_type] = ACTIONS(1811),
-    [sym_generic_diagram_type] = ACTIONS(1811),
+    [sym_baseline_diagram_type] = ACTIONS(1811),
     [anon_sym_title] = ACTIONS(1811),
     [anon_sym_accTitle] = ACTIONS(1811),
     [anon_sym_accDescr] = ACTIONS(1811),
@@ -47980,7 +47980,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1811),
     [sym_number] = ACTIONS(1811),
     [sym_indentation] = ACTIONS(1811),
-    [sym_generic_token] = ACTIONS(1811),
+    [sym_unknown_token] = ACTIONS(1811),
     [aux_sym__terminator_token1] = ACTIONS(1811),
     [anon_sym_SEMI] = ACTIONS(1811),
   },
@@ -48012,7 +48012,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1815),
     [sym_tree_diagram_type] = ACTIONS(1815),
     [sym_wardley_diagram_type] = ACTIONS(1815),
-    [sym_generic_diagram_type] = ACTIONS(1815),
+    [sym_baseline_diagram_type] = ACTIONS(1815),
     [anon_sym_title] = ACTIONS(1815),
     [anon_sym_accTitle] = ACTIONS(1815),
     [anon_sym_accDescr] = ACTIONS(1815),
@@ -48069,7 +48069,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1815),
     [sym_number] = ACTIONS(1815),
     [sym_indentation] = ACTIONS(1815),
-    [sym_generic_token] = ACTIONS(1815),
+    [sym_unknown_token] = ACTIONS(1815),
     [aux_sym__terminator_token1] = ACTIONS(1815),
     [anon_sym_SEMI] = ACTIONS(1815),
   },
@@ -48101,7 +48101,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1819),
     [sym_tree_diagram_type] = ACTIONS(1819),
     [sym_wardley_diagram_type] = ACTIONS(1819),
-    [sym_generic_diagram_type] = ACTIONS(1819),
+    [sym_baseline_diagram_type] = ACTIONS(1819),
     [anon_sym_title] = ACTIONS(1819),
     [anon_sym_accTitle] = ACTIONS(1819),
     [anon_sym_accDescr] = ACTIONS(1819),
@@ -48158,7 +48158,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1819),
     [sym_number] = ACTIONS(1819),
     [sym_indentation] = ACTIONS(1819),
-    [sym_generic_token] = ACTIONS(1819),
+    [sym_unknown_token] = ACTIONS(1819),
     [aux_sym__terminator_token1] = ACTIONS(1819),
     [anon_sym_SEMI] = ACTIONS(1819),
   },
@@ -48190,7 +48190,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1823),
     [sym_tree_diagram_type] = ACTIONS(1823),
     [sym_wardley_diagram_type] = ACTIONS(1823),
-    [sym_generic_diagram_type] = ACTIONS(1823),
+    [sym_baseline_diagram_type] = ACTIONS(1823),
     [anon_sym_title] = ACTIONS(1823),
     [anon_sym_accTitle] = ACTIONS(1823),
     [anon_sym_accDescr] = ACTIONS(1823),
@@ -48247,7 +48247,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1823),
     [sym_number] = ACTIONS(1823),
     [sym_indentation] = ACTIONS(1823),
-    [sym_generic_token] = ACTIONS(1823),
+    [sym_unknown_token] = ACTIONS(1823),
     [aux_sym__terminator_token1] = ACTIONS(1823),
     [anon_sym_SEMI] = ACTIONS(1823),
   },
@@ -48279,7 +48279,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1827),
     [sym_tree_diagram_type] = ACTIONS(1827),
     [sym_wardley_diagram_type] = ACTIONS(1827),
-    [sym_generic_diagram_type] = ACTIONS(1827),
+    [sym_baseline_diagram_type] = ACTIONS(1827),
     [anon_sym_title] = ACTIONS(1827),
     [anon_sym_accTitle] = ACTIONS(1827),
     [anon_sym_accDescr] = ACTIONS(1827),
@@ -48336,7 +48336,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1827),
     [sym_number] = ACTIONS(1827),
     [sym_indentation] = ACTIONS(1827),
-    [sym_generic_token] = ACTIONS(1827),
+    [sym_unknown_token] = ACTIONS(1827),
     [aux_sym__terminator_token1] = ACTIONS(1827),
     [anon_sym_SEMI] = ACTIONS(1827),
   },
@@ -48368,7 +48368,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1831),
     [sym_tree_diagram_type] = ACTIONS(1831),
     [sym_wardley_diagram_type] = ACTIONS(1831),
-    [sym_generic_diagram_type] = ACTIONS(1831),
+    [sym_baseline_diagram_type] = ACTIONS(1831),
     [anon_sym_title] = ACTIONS(1831),
     [anon_sym_accTitle] = ACTIONS(1831),
     [anon_sym_accDescr] = ACTIONS(1831),
@@ -48425,7 +48425,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1831),
     [sym_number] = ACTIONS(1831),
     [sym_indentation] = ACTIONS(1831),
-    [sym_generic_token] = ACTIONS(1831),
+    [sym_unknown_token] = ACTIONS(1831),
     [aux_sym__terminator_token1] = ACTIONS(1831),
     [anon_sym_SEMI] = ACTIONS(1831),
   },
@@ -48457,7 +48457,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1835),
     [sym_tree_diagram_type] = ACTIONS(1835),
     [sym_wardley_diagram_type] = ACTIONS(1835),
-    [sym_generic_diagram_type] = ACTIONS(1835),
+    [sym_baseline_diagram_type] = ACTIONS(1835),
     [anon_sym_title] = ACTIONS(1835),
     [anon_sym_accTitle] = ACTIONS(1835),
     [anon_sym_accDescr] = ACTIONS(1835),
@@ -48514,7 +48514,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1835),
     [sym_number] = ACTIONS(1835),
     [sym_indentation] = ACTIONS(1835),
-    [sym_generic_token] = ACTIONS(1835),
+    [sym_unknown_token] = ACTIONS(1835),
     [aux_sym__terminator_token1] = ACTIONS(1835),
     [anon_sym_SEMI] = ACTIONS(1835),
   },
@@ -48546,7 +48546,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1839),
     [sym_tree_diagram_type] = ACTIONS(1839),
     [sym_wardley_diagram_type] = ACTIONS(1839),
-    [sym_generic_diagram_type] = ACTIONS(1839),
+    [sym_baseline_diagram_type] = ACTIONS(1839),
     [anon_sym_title] = ACTIONS(1839),
     [anon_sym_accTitle] = ACTIONS(1839),
     [anon_sym_accDescr] = ACTIONS(1839),
@@ -48603,7 +48603,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1839),
     [sym_number] = ACTIONS(1839),
     [sym_indentation] = ACTIONS(1839),
-    [sym_generic_token] = ACTIONS(1839),
+    [sym_unknown_token] = ACTIONS(1839),
     [aux_sym__terminator_token1] = ACTIONS(1839),
     [anon_sym_SEMI] = ACTIONS(1839),
   },
@@ -48635,7 +48635,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1843),
     [sym_tree_diagram_type] = ACTIONS(1843),
     [sym_wardley_diagram_type] = ACTIONS(1843),
-    [sym_generic_diagram_type] = ACTIONS(1843),
+    [sym_baseline_diagram_type] = ACTIONS(1843),
     [anon_sym_title] = ACTIONS(1843),
     [anon_sym_accTitle] = ACTIONS(1843),
     [anon_sym_accDescr] = ACTIONS(1843),
@@ -48692,7 +48692,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1843),
     [sym_number] = ACTIONS(1843),
     [sym_indentation] = ACTIONS(1843),
-    [sym_generic_token] = ACTIONS(1843),
+    [sym_unknown_token] = ACTIONS(1843),
     [aux_sym__terminator_token1] = ACTIONS(1843),
     [anon_sym_SEMI] = ACTIONS(1843),
   },
@@ -48724,7 +48724,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1847),
     [sym_tree_diagram_type] = ACTIONS(1847),
     [sym_wardley_diagram_type] = ACTIONS(1847),
-    [sym_generic_diagram_type] = ACTIONS(1847),
+    [sym_baseline_diagram_type] = ACTIONS(1847),
     [anon_sym_title] = ACTIONS(1847),
     [anon_sym_accTitle] = ACTIONS(1847),
     [anon_sym_accDescr] = ACTIONS(1847),
@@ -48781,7 +48781,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1847),
     [sym_number] = ACTIONS(1847),
     [sym_indentation] = ACTIONS(1847),
-    [sym_generic_token] = ACTIONS(1847),
+    [sym_unknown_token] = ACTIONS(1847),
     [aux_sym__terminator_token1] = ACTIONS(1847),
     [anon_sym_SEMI] = ACTIONS(1847),
   },
@@ -48813,7 +48813,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1851),
     [sym_tree_diagram_type] = ACTIONS(1851),
     [sym_wardley_diagram_type] = ACTIONS(1851),
-    [sym_generic_diagram_type] = ACTIONS(1851),
+    [sym_baseline_diagram_type] = ACTIONS(1851),
     [anon_sym_title] = ACTIONS(1851),
     [anon_sym_accTitle] = ACTIONS(1851),
     [anon_sym_accDescr] = ACTIONS(1851),
@@ -48870,7 +48870,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1851),
     [sym_number] = ACTIONS(1851),
     [sym_indentation] = ACTIONS(1851),
-    [sym_generic_token] = ACTIONS(1851),
+    [sym_unknown_token] = ACTIONS(1851),
     [aux_sym__terminator_token1] = ACTIONS(1851),
     [anon_sym_SEMI] = ACTIONS(1851),
   },
@@ -48902,7 +48902,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1855),
     [sym_tree_diagram_type] = ACTIONS(1855),
     [sym_wardley_diagram_type] = ACTIONS(1855),
-    [sym_generic_diagram_type] = ACTIONS(1855),
+    [sym_baseline_diagram_type] = ACTIONS(1855),
     [anon_sym_title] = ACTIONS(1855),
     [anon_sym_accTitle] = ACTIONS(1855),
     [anon_sym_accDescr] = ACTIONS(1855),
@@ -48959,7 +48959,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1855),
     [sym_number] = ACTIONS(1855),
     [sym_indentation] = ACTIONS(1855),
-    [sym_generic_token] = ACTIONS(1855),
+    [sym_unknown_token] = ACTIONS(1855),
     [aux_sym__terminator_token1] = ACTIONS(1855),
     [anon_sym_SEMI] = ACTIONS(1855),
   },
@@ -48991,7 +48991,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1365),
     [sym_tree_diagram_type] = ACTIONS(1365),
     [sym_wardley_diagram_type] = ACTIONS(1365),
-    [sym_generic_diagram_type] = ACTIONS(1365),
+    [sym_baseline_diagram_type] = ACTIONS(1365),
     [anon_sym_title] = ACTIONS(1365),
     [anon_sym_accTitle] = ACTIONS(1365),
     [anon_sym_accDescr] = ACTIONS(1365),
@@ -49048,7 +49048,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1365),
     [sym_number] = ACTIONS(1365),
     [sym_indentation] = ACTIONS(1365),
-    [sym_generic_token] = ACTIONS(1365),
+    [sym_unknown_token] = ACTIONS(1365),
     [aux_sym__terminator_token1] = ACTIONS(1365),
     [anon_sym_SEMI] = ACTIONS(1365),
   },
@@ -49080,7 +49080,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1859),
     [sym_tree_diagram_type] = ACTIONS(1859),
     [sym_wardley_diagram_type] = ACTIONS(1859),
-    [sym_generic_diagram_type] = ACTIONS(1859),
+    [sym_baseline_diagram_type] = ACTIONS(1859),
     [anon_sym_title] = ACTIONS(1859),
     [anon_sym_accTitle] = ACTIONS(1859),
     [anon_sym_accDescr] = ACTIONS(1859),
@@ -49137,7 +49137,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1859),
     [sym_number] = ACTIONS(1859),
     [sym_indentation] = ACTIONS(1859),
-    [sym_generic_token] = ACTIONS(1859),
+    [sym_unknown_token] = ACTIONS(1859),
     [aux_sym__terminator_token1] = ACTIONS(1859),
     [anon_sym_SEMI] = ACTIONS(1859),
   },
@@ -49169,7 +49169,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1863),
     [sym_tree_diagram_type] = ACTIONS(1863),
     [sym_wardley_diagram_type] = ACTIONS(1863),
-    [sym_generic_diagram_type] = ACTIONS(1863),
+    [sym_baseline_diagram_type] = ACTIONS(1863),
     [anon_sym_title] = ACTIONS(1863),
     [anon_sym_accTitle] = ACTIONS(1863),
     [anon_sym_accDescr] = ACTIONS(1863),
@@ -49226,7 +49226,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1863),
     [sym_number] = ACTIONS(1863),
     [sym_indentation] = ACTIONS(1863),
-    [sym_generic_token] = ACTIONS(1863),
+    [sym_unknown_token] = ACTIONS(1863),
     [aux_sym__terminator_token1] = ACTIONS(1863),
     [anon_sym_SEMI] = ACTIONS(1863),
   },
@@ -49258,7 +49258,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1867),
     [sym_tree_diagram_type] = ACTIONS(1867),
     [sym_wardley_diagram_type] = ACTIONS(1867),
-    [sym_generic_diagram_type] = ACTIONS(1867),
+    [sym_baseline_diagram_type] = ACTIONS(1867),
     [anon_sym_title] = ACTIONS(1867),
     [anon_sym_accTitle] = ACTIONS(1867),
     [anon_sym_accDescr] = ACTIONS(1867),
@@ -49315,7 +49315,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1867),
     [sym_number] = ACTIONS(1867),
     [sym_indentation] = ACTIONS(1867),
-    [sym_generic_token] = ACTIONS(1867),
+    [sym_unknown_token] = ACTIONS(1867),
     [aux_sym__terminator_token1] = ACTIONS(1867),
     [anon_sym_SEMI] = ACTIONS(1867),
   },
@@ -49347,7 +49347,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1871),
     [sym_tree_diagram_type] = ACTIONS(1871),
     [sym_wardley_diagram_type] = ACTIONS(1871),
-    [sym_generic_diagram_type] = ACTIONS(1871),
+    [sym_baseline_diagram_type] = ACTIONS(1871),
     [anon_sym_title] = ACTIONS(1871),
     [anon_sym_accTitle] = ACTIONS(1871),
     [anon_sym_accDescr] = ACTIONS(1871),
@@ -49404,7 +49404,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1871),
     [sym_number] = ACTIONS(1871),
     [sym_indentation] = ACTIONS(1871),
-    [sym_generic_token] = ACTIONS(1871),
+    [sym_unknown_token] = ACTIONS(1871),
     [aux_sym__terminator_token1] = ACTIONS(1871),
     [anon_sym_SEMI] = ACTIONS(1871),
   },
@@ -49436,7 +49436,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1875),
     [sym_tree_diagram_type] = ACTIONS(1875),
     [sym_wardley_diagram_type] = ACTIONS(1875),
-    [sym_generic_diagram_type] = ACTIONS(1875),
+    [sym_baseline_diagram_type] = ACTIONS(1875),
     [anon_sym_title] = ACTIONS(1875),
     [anon_sym_accTitle] = ACTIONS(1875),
     [anon_sym_accDescr] = ACTIONS(1875),
@@ -49493,7 +49493,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1875),
     [sym_number] = ACTIONS(1875),
     [sym_indentation] = ACTIONS(1875),
-    [sym_generic_token] = ACTIONS(1875),
+    [sym_unknown_token] = ACTIONS(1875),
     [aux_sym__terminator_token1] = ACTIONS(1875),
     [anon_sym_SEMI] = ACTIONS(1875),
   },
@@ -49525,7 +49525,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1879),
     [sym_tree_diagram_type] = ACTIONS(1879),
     [sym_wardley_diagram_type] = ACTIONS(1879),
-    [sym_generic_diagram_type] = ACTIONS(1879),
+    [sym_baseline_diagram_type] = ACTIONS(1879),
     [anon_sym_title] = ACTIONS(1879),
     [anon_sym_accTitle] = ACTIONS(1879),
     [anon_sym_accDescr] = ACTIONS(1879),
@@ -49582,7 +49582,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1879),
     [sym_number] = ACTIONS(1879),
     [sym_indentation] = ACTIONS(1879),
-    [sym_generic_token] = ACTIONS(1879),
+    [sym_unknown_token] = ACTIONS(1879),
     [aux_sym__terminator_token1] = ACTIONS(1879),
     [anon_sym_SEMI] = ACTIONS(1879),
   },
@@ -49614,7 +49614,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1883),
     [sym_tree_diagram_type] = ACTIONS(1883),
     [sym_wardley_diagram_type] = ACTIONS(1883),
-    [sym_generic_diagram_type] = ACTIONS(1883),
+    [sym_baseline_diagram_type] = ACTIONS(1883),
     [anon_sym_title] = ACTIONS(1883),
     [anon_sym_accTitle] = ACTIONS(1883),
     [anon_sym_accDescr] = ACTIONS(1883),
@@ -49671,7 +49671,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1883),
     [sym_number] = ACTIONS(1883),
     [sym_indentation] = ACTIONS(1883),
-    [sym_generic_token] = ACTIONS(1883),
+    [sym_unknown_token] = ACTIONS(1883),
     [aux_sym__terminator_token1] = ACTIONS(1883),
     [anon_sym_SEMI] = ACTIONS(1883),
   },
@@ -49703,7 +49703,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1887),
     [sym_tree_diagram_type] = ACTIONS(1887),
     [sym_wardley_diagram_type] = ACTIONS(1887),
-    [sym_generic_diagram_type] = ACTIONS(1887),
+    [sym_baseline_diagram_type] = ACTIONS(1887),
     [anon_sym_title] = ACTIONS(1887),
     [anon_sym_accTitle] = ACTIONS(1887),
     [anon_sym_accDescr] = ACTIONS(1887),
@@ -49760,7 +49760,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1887),
     [sym_number] = ACTIONS(1887),
     [sym_indentation] = ACTIONS(1887),
-    [sym_generic_token] = ACTIONS(1887),
+    [sym_unknown_token] = ACTIONS(1887),
     [aux_sym__terminator_token1] = ACTIONS(1887),
     [anon_sym_SEMI] = ACTIONS(1887),
   },
@@ -49792,7 +49792,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1891),
     [sym_tree_diagram_type] = ACTIONS(1891),
     [sym_wardley_diagram_type] = ACTIONS(1891),
-    [sym_generic_diagram_type] = ACTIONS(1891),
+    [sym_baseline_diagram_type] = ACTIONS(1891),
     [anon_sym_title] = ACTIONS(1891),
     [anon_sym_accTitle] = ACTIONS(1891),
     [anon_sym_accDescr] = ACTIONS(1891),
@@ -49849,7 +49849,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1891),
     [sym_number] = ACTIONS(1891),
     [sym_indentation] = ACTIONS(1891),
-    [sym_generic_token] = ACTIONS(1891),
+    [sym_unknown_token] = ACTIONS(1891),
     [aux_sym__terminator_token1] = ACTIONS(1891),
     [anon_sym_SEMI] = ACTIONS(1891),
   },
@@ -49881,7 +49881,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1895),
     [sym_tree_diagram_type] = ACTIONS(1895),
     [sym_wardley_diagram_type] = ACTIONS(1895),
-    [sym_generic_diagram_type] = ACTIONS(1895),
+    [sym_baseline_diagram_type] = ACTIONS(1895),
     [anon_sym_title] = ACTIONS(1895),
     [anon_sym_accTitle] = ACTIONS(1895),
     [anon_sym_accDescr] = ACTIONS(1895),
@@ -49938,7 +49938,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1895),
     [sym_number] = ACTIONS(1895),
     [sym_indentation] = ACTIONS(1895),
-    [sym_generic_token] = ACTIONS(1895),
+    [sym_unknown_token] = ACTIONS(1895),
     [aux_sym__terminator_token1] = ACTIONS(1895),
     [anon_sym_SEMI] = ACTIONS(1895),
   },
@@ -49970,7 +49970,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1899),
     [sym_tree_diagram_type] = ACTIONS(1899),
     [sym_wardley_diagram_type] = ACTIONS(1899),
-    [sym_generic_diagram_type] = ACTIONS(1899),
+    [sym_baseline_diagram_type] = ACTIONS(1899),
     [anon_sym_title] = ACTIONS(1899),
     [anon_sym_accTitle] = ACTIONS(1899),
     [anon_sym_accDescr] = ACTIONS(1899),
@@ -50027,7 +50027,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1899),
     [sym_number] = ACTIONS(1899),
     [sym_indentation] = ACTIONS(1899),
-    [sym_generic_token] = ACTIONS(1899),
+    [sym_unknown_token] = ACTIONS(1899),
     [aux_sym__terminator_token1] = ACTIONS(1899),
     [anon_sym_SEMI] = ACTIONS(1899),
   },
@@ -50059,7 +50059,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1903),
     [sym_tree_diagram_type] = ACTIONS(1903),
     [sym_wardley_diagram_type] = ACTIONS(1903),
-    [sym_generic_diagram_type] = ACTIONS(1903),
+    [sym_baseline_diagram_type] = ACTIONS(1903),
     [anon_sym_title] = ACTIONS(1903),
     [anon_sym_accTitle] = ACTIONS(1903),
     [anon_sym_accDescr] = ACTIONS(1903),
@@ -50116,7 +50116,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1903),
     [sym_number] = ACTIONS(1903),
     [sym_indentation] = ACTIONS(1903),
-    [sym_generic_token] = ACTIONS(1903),
+    [sym_unknown_token] = ACTIONS(1903),
     [aux_sym__terminator_token1] = ACTIONS(1903),
     [anon_sym_SEMI] = ACTIONS(1903),
   },
@@ -50148,7 +50148,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1907),
     [sym_tree_diagram_type] = ACTIONS(1907),
     [sym_wardley_diagram_type] = ACTIONS(1907),
-    [sym_generic_diagram_type] = ACTIONS(1907),
+    [sym_baseline_diagram_type] = ACTIONS(1907),
     [anon_sym_title] = ACTIONS(1907),
     [anon_sym_accTitle] = ACTIONS(1907),
     [anon_sym_accDescr] = ACTIONS(1907),
@@ -50205,7 +50205,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1907),
     [sym_number] = ACTIONS(1907),
     [sym_indentation] = ACTIONS(1907),
-    [sym_generic_token] = ACTIONS(1907),
+    [sym_unknown_token] = ACTIONS(1907),
     [aux_sym__terminator_token1] = ACTIONS(1907),
     [anon_sym_SEMI] = ACTIONS(1907),
   },
@@ -50237,7 +50237,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1911),
     [sym_tree_diagram_type] = ACTIONS(1911),
     [sym_wardley_diagram_type] = ACTIONS(1911),
-    [sym_generic_diagram_type] = ACTIONS(1911),
+    [sym_baseline_diagram_type] = ACTIONS(1911),
     [anon_sym_title] = ACTIONS(1911),
     [anon_sym_accTitle] = ACTIONS(1911),
     [anon_sym_accDescr] = ACTIONS(1911),
@@ -50294,7 +50294,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1911),
     [sym_number] = ACTIONS(1911),
     [sym_indentation] = ACTIONS(1911),
-    [sym_generic_token] = ACTIONS(1911),
+    [sym_unknown_token] = ACTIONS(1911),
     [aux_sym__terminator_token1] = ACTIONS(1911),
     [anon_sym_SEMI] = ACTIONS(1911),
   },
@@ -50326,7 +50326,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1915),
     [sym_tree_diagram_type] = ACTIONS(1915),
     [sym_wardley_diagram_type] = ACTIONS(1915),
-    [sym_generic_diagram_type] = ACTIONS(1915),
+    [sym_baseline_diagram_type] = ACTIONS(1915),
     [anon_sym_title] = ACTIONS(1915),
     [anon_sym_accTitle] = ACTIONS(1915),
     [anon_sym_accDescr] = ACTIONS(1915),
@@ -50383,7 +50383,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1915),
     [sym_number] = ACTIONS(1915),
     [sym_indentation] = ACTIONS(1915),
-    [sym_generic_token] = ACTIONS(1915),
+    [sym_unknown_token] = ACTIONS(1915),
     [aux_sym__terminator_token1] = ACTIONS(1915),
     [anon_sym_SEMI] = ACTIONS(1915),
   },
@@ -50415,7 +50415,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1919),
     [sym_tree_diagram_type] = ACTIONS(1919),
     [sym_wardley_diagram_type] = ACTIONS(1919),
-    [sym_generic_diagram_type] = ACTIONS(1919),
+    [sym_baseline_diagram_type] = ACTIONS(1919),
     [anon_sym_title] = ACTIONS(1919),
     [anon_sym_accTitle] = ACTIONS(1919),
     [anon_sym_accDescr] = ACTIONS(1919),
@@ -50472,7 +50472,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1919),
     [sym_number] = ACTIONS(1919),
     [sym_indentation] = ACTIONS(1919),
-    [sym_generic_token] = ACTIONS(1919),
+    [sym_unknown_token] = ACTIONS(1919),
     [aux_sym__terminator_token1] = ACTIONS(1919),
     [anon_sym_SEMI] = ACTIONS(1919),
   },
@@ -50504,7 +50504,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1923),
     [sym_tree_diagram_type] = ACTIONS(1923),
     [sym_wardley_diagram_type] = ACTIONS(1923),
-    [sym_generic_diagram_type] = ACTIONS(1923),
+    [sym_baseline_diagram_type] = ACTIONS(1923),
     [anon_sym_title] = ACTIONS(1923),
     [anon_sym_accTitle] = ACTIONS(1923),
     [anon_sym_accDescr] = ACTIONS(1923),
@@ -50561,7 +50561,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1923),
     [sym_number] = ACTIONS(1923),
     [sym_indentation] = ACTIONS(1923),
-    [sym_generic_token] = ACTIONS(1923),
+    [sym_unknown_token] = ACTIONS(1923),
     [aux_sym__terminator_token1] = ACTIONS(1923),
     [anon_sym_SEMI] = ACTIONS(1923),
   },
@@ -50593,7 +50593,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1927),
     [sym_tree_diagram_type] = ACTIONS(1927),
     [sym_wardley_diagram_type] = ACTIONS(1927),
-    [sym_generic_diagram_type] = ACTIONS(1927),
+    [sym_baseline_diagram_type] = ACTIONS(1927),
     [anon_sym_title] = ACTIONS(1927),
     [anon_sym_accTitle] = ACTIONS(1927),
     [anon_sym_accDescr] = ACTIONS(1927),
@@ -50650,7 +50650,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1927),
     [sym_number] = ACTIONS(1927),
     [sym_indentation] = ACTIONS(1927),
-    [sym_generic_token] = ACTIONS(1927),
+    [sym_unknown_token] = ACTIONS(1927),
     [aux_sym__terminator_token1] = ACTIONS(1927),
     [anon_sym_SEMI] = ACTIONS(1927),
   },
@@ -50682,7 +50682,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1931),
     [sym_tree_diagram_type] = ACTIONS(1931),
     [sym_wardley_diagram_type] = ACTIONS(1931),
-    [sym_generic_diagram_type] = ACTIONS(1931),
+    [sym_baseline_diagram_type] = ACTIONS(1931),
     [anon_sym_title] = ACTIONS(1931),
     [anon_sym_accTitle] = ACTIONS(1931),
     [anon_sym_accDescr] = ACTIONS(1931),
@@ -50739,7 +50739,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1931),
     [sym_number] = ACTIONS(1931),
     [sym_indentation] = ACTIONS(1931),
-    [sym_generic_token] = ACTIONS(1931),
+    [sym_unknown_token] = ACTIONS(1931),
     [aux_sym__terminator_token1] = ACTIONS(1931),
     [anon_sym_SEMI] = ACTIONS(1931),
   },
@@ -50771,7 +50771,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1393),
     [sym_tree_diagram_type] = ACTIONS(1393),
     [sym_wardley_diagram_type] = ACTIONS(1393),
-    [sym_generic_diagram_type] = ACTIONS(1393),
+    [sym_baseline_diagram_type] = ACTIONS(1393),
     [anon_sym_title] = ACTIONS(1393),
     [anon_sym_accTitle] = ACTIONS(1393),
     [anon_sym_accDescr] = ACTIONS(1393),
@@ -50828,7 +50828,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1393),
     [sym_number] = ACTIONS(1393),
     [sym_indentation] = ACTIONS(1393),
-    [sym_generic_token] = ACTIONS(1393),
+    [sym_unknown_token] = ACTIONS(1393),
     [aux_sym__terminator_token1] = ACTIONS(1393),
     [anon_sym_SEMI] = ACTIONS(1393),
   },
@@ -50860,7 +50860,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1397),
     [sym_tree_diagram_type] = ACTIONS(1397),
     [sym_wardley_diagram_type] = ACTIONS(1397),
-    [sym_generic_diagram_type] = ACTIONS(1397),
+    [sym_baseline_diagram_type] = ACTIONS(1397),
     [anon_sym_title] = ACTIONS(1397),
     [anon_sym_accTitle] = ACTIONS(1397),
     [anon_sym_accDescr] = ACTIONS(1397),
@@ -50917,7 +50917,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1397),
     [sym_number] = ACTIONS(1397),
     [sym_indentation] = ACTIONS(1397),
-    [sym_generic_token] = ACTIONS(1397),
+    [sym_unknown_token] = ACTIONS(1397),
     [aux_sym__terminator_token1] = ACTIONS(1397),
     [anon_sym_SEMI] = ACTIONS(1397),
   },
@@ -50949,7 +50949,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1935),
     [sym_tree_diagram_type] = ACTIONS(1935),
     [sym_wardley_diagram_type] = ACTIONS(1935),
-    [sym_generic_diagram_type] = ACTIONS(1935),
+    [sym_baseline_diagram_type] = ACTIONS(1935),
     [anon_sym_title] = ACTIONS(1935),
     [anon_sym_accTitle] = ACTIONS(1935),
     [anon_sym_accDescr] = ACTIONS(1935),
@@ -51006,7 +51006,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1935),
     [sym_number] = ACTIONS(1935),
     [sym_indentation] = ACTIONS(1935),
-    [sym_generic_token] = ACTIONS(1935),
+    [sym_unknown_token] = ACTIONS(1935),
     [aux_sym__terminator_token1] = ACTIONS(1935),
     [anon_sym_SEMI] = ACTIONS(1935),
   },
@@ -51038,7 +51038,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1589),
     [sym_tree_diagram_type] = ACTIONS(1589),
     [sym_wardley_diagram_type] = ACTIONS(1589),
-    [sym_generic_diagram_type] = ACTIONS(1589),
+    [sym_baseline_diagram_type] = ACTIONS(1589),
     [anon_sym_title] = ACTIONS(1589),
     [anon_sym_accTitle] = ACTIONS(1589),
     [anon_sym_accDescr] = ACTIONS(1589),
@@ -51095,7 +51095,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1589),
     [sym_number] = ACTIONS(1589),
     [sym_indentation] = ACTIONS(1589),
-    [sym_generic_token] = ACTIONS(1589),
+    [sym_unknown_token] = ACTIONS(1589),
     [aux_sym__terminator_token1] = ACTIONS(1589),
     [anon_sym_SEMI] = ACTIONS(1589),
   },
@@ -51127,7 +51127,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1593),
     [sym_tree_diagram_type] = ACTIONS(1593),
     [sym_wardley_diagram_type] = ACTIONS(1593),
-    [sym_generic_diagram_type] = ACTIONS(1593),
+    [sym_baseline_diagram_type] = ACTIONS(1593),
     [anon_sym_title] = ACTIONS(1593),
     [anon_sym_accTitle] = ACTIONS(1593),
     [anon_sym_accDescr] = ACTIONS(1593),
@@ -51184,7 +51184,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1593),
     [sym_number] = ACTIONS(1593),
     [sym_indentation] = ACTIONS(1593),
-    [sym_generic_token] = ACTIONS(1593),
+    [sym_unknown_token] = ACTIONS(1593),
     [aux_sym__terminator_token1] = ACTIONS(1593),
     [anon_sym_SEMI] = ACTIONS(1593),
   },
@@ -51216,7 +51216,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1939),
     [sym_tree_diagram_type] = ACTIONS(1939),
     [sym_wardley_diagram_type] = ACTIONS(1939),
-    [sym_generic_diagram_type] = ACTIONS(1939),
+    [sym_baseline_diagram_type] = ACTIONS(1939),
     [anon_sym_title] = ACTIONS(1939),
     [anon_sym_accTitle] = ACTIONS(1939),
     [anon_sym_accDescr] = ACTIONS(1939),
@@ -51273,7 +51273,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1939),
     [sym_number] = ACTIONS(1939),
     [sym_indentation] = ACTIONS(1939),
-    [sym_generic_token] = ACTIONS(1939),
+    [sym_unknown_token] = ACTIONS(1939),
     [aux_sym__terminator_token1] = ACTIONS(1939),
     [anon_sym_SEMI] = ACTIONS(1939),
   },
@@ -51305,7 +51305,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1943),
     [sym_tree_diagram_type] = ACTIONS(1943),
     [sym_wardley_diagram_type] = ACTIONS(1943),
-    [sym_generic_diagram_type] = ACTIONS(1943),
+    [sym_baseline_diagram_type] = ACTIONS(1943),
     [anon_sym_title] = ACTIONS(1943),
     [anon_sym_accTitle] = ACTIONS(1943),
     [anon_sym_accDescr] = ACTIONS(1943),
@@ -51362,7 +51362,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1943),
     [sym_number] = ACTIONS(1943),
     [sym_indentation] = ACTIONS(1943),
-    [sym_generic_token] = ACTIONS(1943),
+    [sym_unknown_token] = ACTIONS(1943),
     [aux_sym__terminator_token1] = ACTIONS(1943),
     [anon_sym_SEMI] = ACTIONS(1943),
   },
@@ -51394,7 +51394,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1947),
     [sym_tree_diagram_type] = ACTIONS(1947),
     [sym_wardley_diagram_type] = ACTIONS(1947),
-    [sym_generic_diagram_type] = ACTIONS(1947),
+    [sym_baseline_diagram_type] = ACTIONS(1947),
     [anon_sym_title] = ACTIONS(1947),
     [anon_sym_accTitle] = ACTIONS(1947),
     [anon_sym_accDescr] = ACTIONS(1947),
@@ -51451,7 +51451,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1947),
     [sym_number] = ACTIONS(1947),
     [sym_indentation] = ACTIONS(1947),
-    [sym_generic_token] = ACTIONS(1947),
+    [sym_unknown_token] = ACTIONS(1947),
     [aux_sym__terminator_token1] = ACTIONS(1947),
     [anon_sym_SEMI] = ACTIONS(1947),
   },
@@ -51483,7 +51483,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1951),
     [sym_tree_diagram_type] = ACTIONS(1951),
     [sym_wardley_diagram_type] = ACTIONS(1951),
-    [sym_generic_diagram_type] = ACTIONS(1951),
+    [sym_baseline_diagram_type] = ACTIONS(1951),
     [anon_sym_title] = ACTIONS(1951),
     [anon_sym_accTitle] = ACTIONS(1951),
     [anon_sym_accDescr] = ACTIONS(1951),
@@ -51540,7 +51540,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1951),
     [sym_number] = ACTIONS(1951),
     [sym_indentation] = ACTIONS(1951),
-    [sym_generic_token] = ACTIONS(1951),
+    [sym_unknown_token] = ACTIONS(1951),
     [aux_sym__terminator_token1] = ACTIONS(1951),
     [anon_sym_SEMI] = ACTIONS(1951),
   },
@@ -51572,7 +51572,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1955),
     [sym_tree_diagram_type] = ACTIONS(1955),
     [sym_wardley_diagram_type] = ACTIONS(1955),
-    [sym_generic_diagram_type] = ACTIONS(1955),
+    [sym_baseline_diagram_type] = ACTIONS(1955),
     [anon_sym_title] = ACTIONS(1955),
     [anon_sym_accTitle] = ACTIONS(1955),
     [anon_sym_accDescr] = ACTIONS(1955),
@@ -51629,7 +51629,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1955),
     [sym_number] = ACTIONS(1955),
     [sym_indentation] = ACTIONS(1955),
-    [sym_generic_token] = ACTIONS(1955),
+    [sym_unknown_token] = ACTIONS(1955),
     [aux_sym__terminator_token1] = ACTIONS(1955),
     [anon_sym_SEMI] = ACTIONS(1955),
   },
@@ -51661,7 +51661,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1959),
     [sym_tree_diagram_type] = ACTIONS(1959),
     [sym_wardley_diagram_type] = ACTIONS(1959),
-    [sym_generic_diagram_type] = ACTIONS(1959),
+    [sym_baseline_diagram_type] = ACTIONS(1959),
     [anon_sym_title] = ACTIONS(1959),
     [anon_sym_accTitle] = ACTIONS(1959),
     [anon_sym_accDescr] = ACTIONS(1959),
@@ -51718,7 +51718,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1959),
     [sym_number] = ACTIONS(1959),
     [sym_indentation] = ACTIONS(1959),
-    [sym_generic_token] = ACTIONS(1959),
+    [sym_unknown_token] = ACTIONS(1959),
     [aux_sym__terminator_token1] = ACTIONS(1959),
     [anon_sym_SEMI] = ACTIONS(1959),
   },
@@ -51750,7 +51750,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1963),
     [sym_tree_diagram_type] = ACTIONS(1963),
     [sym_wardley_diagram_type] = ACTIONS(1963),
-    [sym_generic_diagram_type] = ACTIONS(1963),
+    [sym_baseline_diagram_type] = ACTIONS(1963),
     [anon_sym_title] = ACTIONS(1963),
     [anon_sym_accTitle] = ACTIONS(1963),
     [anon_sym_accDescr] = ACTIONS(1963),
@@ -51807,7 +51807,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1963),
     [sym_number] = ACTIONS(1963),
     [sym_indentation] = ACTIONS(1963),
-    [sym_generic_token] = ACTIONS(1963),
+    [sym_unknown_token] = ACTIONS(1963),
     [aux_sym__terminator_token1] = ACTIONS(1963),
     [anon_sym_SEMI] = ACTIONS(1963),
   },
@@ -51839,7 +51839,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1967),
     [sym_tree_diagram_type] = ACTIONS(1967),
     [sym_wardley_diagram_type] = ACTIONS(1967),
-    [sym_generic_diagram_type] = ACTIONS(1967),
+    [sym_baseline_diagram_type] = ACTIONS(1967),
     [anon_sym_title] = ACTIONS(1967),
     [anon_sym_accTitle] = ACTIONS(1967),
     [anon_sym_accDescr] = ACTIONS(1967),
@@ -51896,7 +51896,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1967),
     [sym_number] = ACTIONS(1967),
     [sym_indentation] = ACTIONS(1967),
-    [sym_generic_token] = ACTIONS(1967),
+    [sym_unknown_token] = ACTIONS(1967),
     [aux_sym__terminator_token1] = ACTIONS(1967),
     [anon_sym_SEMI] = ACTIONS(1967),
   },
@@ -51928,7 +51928,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1971),
     [sym_tree_diagram_type] = ACTIONS(1971),
     [sym_wardley_diagram_type] = ACTIONS(1971),
-    [sym_generic_diagram_type] = ACTIONS(1971),
+    [sym_baseline_diagram_type] = ACTIONS(1971),
     [anon_sym_title] = ACTIONS(1971),
     [anon_sym_accTitle] = ACTIONS(1971),
     [anon_sym_accDescr] = ACTIONS(1971),
@@ -51985,7 +51985,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1971),
     [sym_number] = ACTIONS(1971),
     [sym_indentation] = ACTIONS(1971),
-    [sym_generic_token] = ACTIONS(1971),
+    [sym_unknown_token] = ACTIONS(1971),
     [aux_sym__terminator_token1] = ACTIONS(1971),
     [anon_sym_SEMI] = ACTIONS(1971),
   },
@@ -52017,7 +52017,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1975),
     [sym_tree_diagram_type] = ACTIONS(1975),
     [sym_wardley_diagram_type] = ACTIONS(1975),
-    [sym_generic_diagram_type] = ACTIONS(1975),
+    [sym_baseline_diagram_type] = ACTIONS(1975),
     [anon_sym_title] = ACTIONS(1975),
     [anon_sym_accTitle] = ACTIONS(1975),
     [anon_sym_accDescr] = ACTIONS(1975),
@@ -52074,7 +52074,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1975),
     [sym_number] = ACTIONS(1975),
     [sym_indentation] = ACTIONS(1975),
-    [sym_generic_token] = ACTIONS(1975),
+    [sym_unknown_token] = ACTIONS(1975),
     [aux_sym__terminator_token1] = ACTIONS(1975),
     [anon_sym_SEMI] = ACTIONS(1975),
   },
@@ -52106,7 +52106,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1979),
     [sym_tree_diagram_type] = ACTIONS(1979),
     [sym_wardley_diagram_type] = ACTIONS(1979),
-    [sym_generic_diagram_type] = ACTIONS(1979),
+    [sym_baseline_diagram_type] = ACTIONS(1979),
     [anon_sym_title] = ACTIONS(1979),
     [anon_sym_accTitle] = ACTIONS(1979),
     [anon_sym_accDescr] = ACTIONS(1979),
@@ -52163,7 +52163,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1979),
     [sym_number] = ACTIONS(1979),
     [sym_indentation] = ACTIONS(1979),
-    [sym_generic_token] = ACTIONS(1979),
+    [sym_unknown_token] = ACTIONS(1979),
     [aux_sym__terminator_token1] = ACTIONS(1979),
     [anon_sym_SEMI] = ACTIONS(1979),
   },
@@ -52195,7 +52195,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1983),
     [sym_tree_diagram_type] = ACTIONS(1983),
     [sym_wardley_diagram_type] = ACTIONS(1983),
-    [sym_generic_diagram_type] = ACTIONS(1983),
+    [sym_baseline_diagram_type] = ACTIONS(1983),
     [anon_sym_title] = ACTIONS(1983),
     [anon_sym_accTitle] = ACTIONS(1983),
     [anon_sym_accDescr] = ACTIONS(1983),
@@ -52252,7 +52252,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1983),
     [sym_number] = ACTIONS(1983),
     [sym_indentation] = ACTIONS(1983),
-    [sym_generic_token] = ACTIONS(1983),
+    [sym_unknown_token] = ACTIONS(1983),
     [aux_sym__terminator_token1] = ACTIONS(1983),
     [anon_sym_SEMI] = ACTIONS(1983),
   },
@@ -52284,7 +52284,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1987),
     [sym_tree_diagram_type] = ACTIONS(1987),
     [sym_wardley_diagram_type] = ACTIONS(1987),
-    [sym_generic_diagram_type] = ACTIONS(1987),
+    [sym_baseline_diagram_type] = ACTIONS(1987),
     [anon_sym_title] = ACTIONS(1987),
     [anon_sym_accTitle] = ACTIONS(1987),
     [anon_sym_accDescr] = ACTIONS(1987),
@@ -52341,7 +52341,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1987),
     [sym_number] = ACTIONS(1987),
     [sym_indentation] = ACTIONS(1987),
-    [sym_generic_token] = ACTIONS(1987),
+    [sym_unknown_token] = ACTIONS(1987),
     [aux_sym__terminator_token1] = ACTIONS(1987),
     [anon_sym_SEMI] = ACTIONS(1987),
   },
@@ -52373,7 +52373,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1991),
     [sym_tree_diagram_type] = ACTIONS(1991),
     [sym_wardley_diagram_type] = ACTIONS(1991),
-    [sym_generic_diagram_type] = ACTIONS(1991),
+    [sym_baseline_diagram_type] = ACTIONS(1991),
     [anon_sym_title] = ACTIONS(1991),
     [anon_sym_accTitle] = ACTIONS(1991),
     [anon_sym_accDescr] = ACTIONS(1991),
@@ -52430,7 +52430,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1991),
     [sym_number] = ACTIONS(1991),
     [sym_indentation] = ACTIONS(1991),
-    [sym_generic_token] = ACTIONS(1991),
+    [sym_unknown_token] = ACTIONS(1991),
     [aux_sym__terminator_token1] = ACTIONS(1991),
     [anon_sym_SEMI] = ACTIONS(1991),
   },
@@ -52462,7 +52462,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1995),
     [sym_tree_diagram_type] = ACTIONS(1995),
     [sym_wardley_diagram_type] = ACTIONS(1995),
-    [sym_generic_diagram_type] = ACTIONS(1995),
+    [sym_baseline_diagram_type] = ACTIONS(1995),
     [anon_sym_title] = ACTIONS(1995),
     [anon_sym_accTitle] = ACTIONS(1995),
     [anon_sym_accDescr] = ACTIONS(1995),
@@ -52519,7 +52519,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1995),
     [sym_number] = ACTIONS(1995),
     [sym_indentation] = ACTIONS(1995),
-    [sym_generic_token] = ACTIONS(1995),
+    [sym_unknown_token] = ACTIONS(1995),
     [aux_sym__terminator_token1] = ACTIONS(1995),
     [anon_sym_SEMI] = ACTIONS(1995),
   },
@@ -52551,7 +52551,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1999),
     [sym_tree_diagram_type] = ACTIONS(1999),
     [sym_wardley_diagram_type] = ACTIONS(1999),
-    [sym_generic_diagram_type] = ACTIONS(1999),
+    [sym_baseline_diagram_type] = ACTIONS(1999),
     [anon_sym_title] = ACTIONS(1999),
     [anon_sym_accTitle] = ACTIONS(1999),
     [anon_sym_accDescr] = ACTIONS(1999),
@@ -52608,7 +52608,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1999),
     [sym_number] = ACTIONS(1999),
     [sym_indentation] = ACTIONS(1999),
-    [sym_generic_token] = ACTIONS(1999),
+    [sym_unknown_token] = ACTIONS(1999),
     [aux_sym__terminator_token1] = ACTIONS(1999),
     [anon_sym_SEMI] = ACTIONS(1999),
   },
@@ -52640,7 +52640,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2003),
     [sym_tree_diagram_type] = ACTIONS(2003),
     [sym_wardley_diagram_type] = ACTIONS(2003),
-    [sym_generic_diagram_type] = ACTIONS(2003),
+    [sym_baseline_diagram_type] = ACTIONS(2003),
     [anon_sym_title] = ACTIONS(2003),
     [anon_sym_accTitle] = ACTIONS(2003),
     [anon_sym_accDescr] = ACTIONS(2003),
@@ -52697,7 +52697,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2003),
     [sym_number] = ACTIONS(2003),
     [sym_indentation] = ACTIONS(2003),
-    [sym_generic_token] = ACTIONS(2003),
+    [sym_unknown_token] = ACTIONS(2003),
     [aux_sym__terminator_token1] = ACTIONS(2003),
     [anon_sym_SEMI] = ACTIONS(2003),
   },
@@ -52729,7 +52729,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2007),
     [sym_tree_diagram_type] = ACTIONS(2007),
     [sym_wardley_diagram_type] = ACTIONS(2007),
-    [sym_generic_diagram_type] = ACTIONS(2007),
+    [sym_baseline_diagram_type] = ACTIONS(2007),
     [anon_sym_title] = ACTIONS(2007),
     [anon_sym_accTitle] = ACTIONS(2007),
     [anon_sym_accDescr] = ACTIONS(2007),
@@ -52786,7 +52786,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2007),
     [sym_number] = ACTIONS(2007),
     [sym_indentation] = ACTIONS(2007),
-    [sym_generic_token] = ACTIONS(2007),
+    [sym_unknown_token] = ACTIONS(2007),
     [aux_sym__terminator_token1] = ACTIONS(2007),
     [anon_sym_SEMI] = ACTIONS(2007),
   },
@@ -52818,7 +52818,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2011),
     [sym_tree_diagram_type] = ACTIONS(2011),
     [sym_wardley_diagram_type] = ACTIONS(2011),
-    [sym_generic_diagram_type] = ACTIONS(2011),
+    [sym_baseline_diagram_type] = ACTIONS(2011),
     [anon_sym_title] = ACTIONS(2011),
     [anon_sym_accTitle] = ACTIONS(2011),
     [anon_sym_accDescr] = ACTIONS(2011),
@@ -52875,7 +52875,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2011),
     [sym_number] = ACTIONS(2011),
     [sym_indentation] = ACTIONS(2011),
-    [sym_generic_token] = ACTIONS(2011),
+    [sym_unknown_token] = ACTIONS(2011),
     [aux_sym__terminator_token1] = ACTIONS(2011),
     [anon_sym_SEMI] = ACTIONS(2011),
   },
@@ -52907,7 +52907,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2015),
     [sym_tree_diagram_type] = ACTIONS(2015),
     [sym_wardley_diagram_type] = ACTIONS(2015),
-    [sym_generic_diagram_type] = ACTIONS(2015),
+    [sym_baseline_diagram_type] = ACTIONS(2015),
     [anon_sym_title] = ACTIONS(2015),
     [anon_sym_accTitle] = ACTIONS(2015),
     [anon_sym_accDescr] = ACTIONS(2015),
@@ -52964,7 +52964,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2015),
     [sym_number] = ACTIONS(2015),
     [sym_indentation] = ACTIONS(2015),
-    [sym_generic_token] = ACTIONS(2015),
+    [sym_unknown_token] = ACTIONS(2015),
     [aux_sym__terminator_token1] = ACTIONS(2015),
     [anon_sym_SEMI] = ACTIONS(2015),
   },
@@ -52996,7 +52996,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2019),
     [sym_tree_diagram_type] = ACTIONS(2019),
     [sym_wardley_diagram_type] = ACTIONS(2019),
-    [sym_generic_diagram_type] = ACTIONS(2019),
+    [sym_baseline_diagram_type] = ACTIONS(2019),
     [anon_sym_title] = ACTIONS(2019),
     [anon_sym_accTitle] = ACTIONS(2019),
     [anon_sym_accDescr] = ACTIONS(2019),
@@ -53053,7 +53053,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2019),
     [sym_number] = ACTIONS(2019),
     [sym_indentation] = ACTIONS(2019),
-    [sym_generic_token] = ACTIONS(2019),
+    [sym_unknown_token] = ACTIONS(2019),
     [aux_sym__terminator_token1] = ACTIONS(2019),
     [anon_sym_SEMI] = ACTIONS(2019),
   },
@@ -53085,7 +53085,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2023),
     [sym_tree_diagram_type] = ACTIONS(2023),
     [sym_wardley_diagram_type] = ACTIONS(2023),
-    [sym_generic_diagram_type] = ACTIONS(2023),
+    [sym_baseline_diagram_type] = ACTIONS(2023),
     [anon_sym_title] = ACTIONS(2023),
     [anon_sym_accTitle] = ACTIONS(2023),
     [anon_sym_accDescr] = ACTIONS(2023),
@@ -53142,7 +53142,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2023),
     [sym_number] = ACTIONS(2023),
     [sym_indentation] = ACTIONS(2023),
-    [sym_generic_token] = ACTIONS(2023),
+    [sym_unknown_token] = ACTIONS(2023),
     [aux_sym__terminator_token1] = ACTIONS(2023),
     [anon_sym_SEMI] = ACTIONS(2023),
   },
@@ -53174,7 +53174,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2027),
     [sym_tree_diagram_type] = ACTIONS(2027),
     [sym_wardley_diagram_type] = ACTIONS(2027),
-    [sym_generic_diagram_type] = ACTIONS(2027),
+    [sym_baseline_diagram_type] = ACTIONS(2027),
     [anon_sym_title] = ACTIONS(2027),
     [anon_sym_accTitle] = ACTIONS(2027),
     [anon_sym_accDescr] = ACTIONS(2027),
@@ -53231,7 +53231,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2027),
     [sym_number] = ACTIONS(2027),
     [sym_indentation] = ACTIONS(2027),
-    [sym_generic_token] = ACTIONS(2027),
+    [sym_unknown_token] = ACTIONS(2027),
     [aux_sym__terminator_token1] = ACTIONS(2027),
     [anon_sym_SEMI] = ACTIONS(2027),
   },
@@ -53263,7 +53263,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2031),
     [sym_tree_diagram_type] = ACTIONS(2031),
     [sym_wardley_diagram_type] = ACTIONS(2031),
-    [sym_generic_diagram_type] = ACTIONS(2031),
+    [sym_baseline_diagram_type] = ACTIONS(2031),
     [anon_sym_title] = ACTIONS(2031),
     [anon_sym_accTitle] = ACTIONS(2031),
     [anon_sym_accDescr] = ACTIONS(2031),
@@ -53320,7 +53320,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2031),
     [sym_number] = ACTIONS(2031),
     [sym_indentation] = ACTIONS(2031),
-    [sym_generic_token] = ACTIONS(2031),
+    [sym_unknown_token] = ACTIONS(2031),
     [aux_sym__terminator_token1] = ACTIONS(2031),
     [anon_sym_SEMI] = ACTIONS(2031),
   },
@@ -53352,7 +53352,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2035),
     [sym_tree_diagram_type] = ACTIONS(2035),
     [sym_wardley_diagram_type] = ACTIONS(2035),
-    [sym_generic_diagram_type] = ACTIONS(2035),
+    [sym_baseline_diagram_type] = ACTIONS(2035),
     [anon_sym_title] = ACTIONS(2035),
     [anon_sym_accTitle] = ACTIONS(2035),
     [anon_sym_accDescr] = ACTIONS(2035),
@@ -53409,7 +53409,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2035),
     [sym_number] = ACTIONS(2035),
     [sym_indentation] = ACTIONS(2035),
-    [sym_generic_token] = ACTIONS(2035),
+    [sym_unknown_token] = ACTIONS(2035),
     [aux_sym__terminator_token1] = ACTIONS(2035),
     [anon_sym_SEMI] = ACTIONS(2035),
   },
@@ -53441,7 +53441,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2039),
     [sym_tree_diagram_type] = ACTIONS(2039),
     [sym_wardley_diagram_type] = ACTIONS(2039),
-    [sym_generic_diagram_type] = ACTIONS(2039),
+    [sym_baseline_diagram_type] = ACTIONS(2039),
     [anon_sym_title] = ACTIONS(2039),
     [anon_sym_accTitle] = ACTIONS(2039),
     [anon_sym_accDescr] = ACTIONS(2039),
@@ -53498,7 +53498,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2039),
     [sym_number] = ACTIONS(2039),
     [sym_indentation] = ACTIONS(2039),
-    [sym_generic_token] = ACTIONS(2039),
+    [sym_unknown_token] = ACTIONS(2039),
     [aux_sym__terminator_token1] = ACTIONS(2039),
     [anon_sym_SEMI] = ACTIONS(2039),
   },
@@ -53530,7 +53530,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2043),
     [sym_tree_diagram_type] = ACTIONS(2043),
     [sym_wardley_diagram_type] = ACTIONS(2043),
-    [sym_generic_diagram_type] = ACTIONS(2043),
+    [sym_baseline_diagram_type] = ACTIONS(2043),
     [anon_sym_title] = ACTIONS(2043),
     [anon_sym_accTitle] = ACTIONS(2043),
     [anon_sym_accDescr] = ACTIONS(2043),
@@ -53587,7 +53587,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2043),
     [sym_number] = ACTIONS(2043),
     [sym_indentation] = ACTIONS(2043),
-    [sym_generic_token] = ACTIONS(2043),
+    [sym_unknown_token] = ACTIONS(2043),
     [aux_sym__terminator_token1] = ACTIONS(2043),
     [anon_sym_SEMI] = ACTIONS(2043),
   },
@@ -53619,7 +53619,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2047),
     [sym_tree_diagram_type] = ACTIONS(2047),
     [sym_wardley_diagram_type] = ACTIONS(2047),
-    [sym_generic_diagram_type] = ACTIONS(2047),
+    [sym_baseline_diagram_type] = ACTIONS(2047),
     [anon_sym_title] = ACTIONS(2047),
     [anon_sym_accTitle] = ACTIONS(2047),
     [anon_sym_accDescr] = ACTIONS(2047),
@@ -53676,7 +53676,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2047),
     [sym_number] = ACTIONS(2047),
     [sym_indentation] = ACTIONS(2047),
-    [sym_generic_token] = ACTIONS(2047),
+    [sym_unknown_token] = ACTIONS(2047),
     [aux_sym__terminator_token1] = ACTIONS(2047),
     [anon_sym_SEMI] = ACTIONS(2047),
   },
@@ -53708,7 +53708,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2051),
     [sym_tree_diagram_type] = ACTIONS(2051),
     [sym_wardley_diagram_type] = ACTIONS(2051),
-    [sym_generic_diagram_type] = ACTIONS(2051),
+    [sym_baseline_diagram_type] = ACTIONS(2051),
     [anon_sym_title] = ACTIONS(2051),
     [anon_sym_accTitle] = ACTIONS(2051),
     [anon_sym_accDescr] = ACTIONS(2051),
@@ -53765,7 +53765,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2051),
     [sym_number] = ACTIONS(2051),
     [sym_indentation] = ACTIONS(2051),
-    [sym_generic_token] = ACTIONS(2051),
+    [sym_unknown_token] = ACTIONS(2051),
     [aux_sym__terminator_token1] = ACTIONS(2051),
     [anon_sym_SEMI] = ACTIONS(2051),
   },
@@ -53797,7 +53797,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2055),
     [sym_tree_diagram_type] = ACTIONS(2055),
     [sym_wardley_diagram_type] = ACTIONS(2055),
-    [sym_generic_diagram_type] = ACTIONS(2055),
+    [sym_baseline_diagram_type] = ACTIONS(2055),
     [anon_sym_title] = ACTIONS(2055),
     [anon_sym_accTitle] = ACTIONS(2055),
     [anon_sym_accDescr] = ACTIONS(2055),
@@ -53854,7 +53854,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2055),
     [sym_number] = ACTIONS(2055),
     [sym_indentation] = ACTIONS(2055),
-    [sym_generic_token] = ACTIONS(2055),
+    [sym_unknown_token] = ACTIONS(2055),
     [aux_sym__terminator_token1] = ACTIONS(2055),
     [anon_sym_SEMI] = ACTIONS(2055),
   },
@@ -53886,7 +53886,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2059),
     [sym_tree_diagram_type] = ACTIONS(2059),
     [sym_wardley_diagram_type] = ACTIONS(2059),
-    [sym_generic_diagram_type] = ACTIONS(2059),
+    [sym_baseline_diagram_type] = ACTIONS(2059),
     [anon_sym_title] = ACTIONS(2059),
     [anon_sym_accTitle] = ACTIONS(2059),
     [anon_sym_accDescr] = ACTIONS(2059),
@@ -53943,7 +53943,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2059),
     [sym_number] = ACTIONS(2059),
     [sym_indentation] = ACTIONS(2059),
-    [sym_generic_token] = ACTIONS(2059),
+    [sym_unknown_token] = ACTIONS(2059),
     [aux_sym__terminator_token1] = ACTIONS(2059),
     [anon_sym_SEMI] = ACTIONS(2059),
   },
@@ -53975,7 +53975,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2063),
     [sym_tree_diagram_type] = ACTIONS(2063),
     [sym_wardley_diagram_type] = ACTIONS(2063),
-    [sym_generic_diagram_type] = ACTIONS(2063),
+    [sym_baseline_diagram_type] = ACTIONS(2063),
     [anon_sym_title] = ACTIONS(2063),
     [anon_sym_accTitle] = ACTIONS(2063),
     [anon_sym_accDescr] = ACTIONS(2063),
@@ -54032,7 +54032,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2063),
     [sym_number] = ACTIONS(2063),
     [sym_indentation] = ACTIONS(2063),
-    [sym_generic_token] = ACTIONS(2063),
+    [sym_unknown_token] = ACTIONS(2063),
     [aux_sym__terminator_token1] = ACTIONS(2063),
     [anon_sym_SEMI] = ACTIONS(2063),
   },
@@ -54064,7 +54064,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2067),
     [sym_tree_diagram_type] = ACTIONS(2067),
     [sym_wardley_diagram_type] = ACTIONS(2067),
-    [sym_generic_diagram_type] = ACTIONS(2067),
+    [sym_baseline_diagram_type] = ACTIONS(2067),
     [anon_sym_title] = ACTIONS(2067),
     [anon_sym_accTitle] = ACTIONS(2067),
     [anon_sym_accDescr] = ACTIONS(2067),
@@ -54121,7 +54121,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2067),
     [sym_number] = ACTIONS(2067),
     [sym_indentation] = ACTIONS(2067),
-    [sym_generic_token] = ACTIONS(2067),
+    [sym_unknown_token] = ACTIONS(2067),
     [aux_sym__terminator_token1] = ACTIONS(2067),
     [anon_sym_SEMI] = ACTIONS(2067),
   },
@@ -54153,7 +54153,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2071),
     [sym_tree_diagram_type] = ACTIONS(2071),
     [sym_wardley_diagram_type] = ACTIONS(2071),
-    [sym_generic_diagram_type] = ACTIONS(2071),
+    [sym_baseline_diagram_type] = ACTIONS(2071),
     [anon_sym_title] = ACTIONS(2071),
     [anon_sym_accTitle] = ACTIONS(2071),
     [anon_sym_accDescr] = ACTIONS(2071),
@@ -54210,7 +54210,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2071),
     [sym_number] = ACTIONS(2071),
     [sym_indentation] = ACTIONS(2071),
-    [sym_generic_token] = ACTIONS(2071),
+    [sym_unknown_token] = ACTIONS(2071),
     [aux_sym__terminator_token1] = ACTIONS(2071),
     [anon_sym_SEMI] = ACTIONS(2071),
   },
@@ -54242,7 +54242,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2075),
     [sym_tree_diagram_type] = ACTIONS(2075),
     [sym_wardley_diagram_type] = ACTIONS(2075),
-    [sym_generic_diagram_type] = ACTIONS(2075),
+    [sym_baseline_diagram_type] = ACTIONS(2075),
     [anon_sym_title] = ACTIONS(2075),
     [anon_sym_accTitle] = ACTIONS(2075),
     [anon_sym_accDescr] = ACTIONS(2075),
@@ -54299,7 +54299,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2075),
     [sym_number] = ACTIONS(2075),
     [sym_indentation] = ACTIONS(2075),
-    [sym_generic_token] = ACTIONS(2075),
+    [sym_unknown_token] = ACTIONS(2075),
     [aux_sym__terminator_token1] = ACTIONS(2075),
     [anon_sym_SEMI] = ACTIONS(2075),
   },
@@ -54331,7 +54331,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2079),
     [sym_tree_diagram_type] = ACTIONS(2079),
     [sym_wardley_diagram_type] = ACTIONS(2079),
-    [sym_generic_diagram_type] = ACTIONS(2079),
+    [sym_baseline_diagram_type] = ACTIONS(2079),
     [anon_sym_title] = ACTIONS(2079),
     [anon_sym_accTitle] = ACTIONS(2079),
     [anon_sym_accDescr] = ACTIONS(2079),
@@ -54388,7 +54388,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2079),
     [sym_number] = ACTIONS(2079),
     [sym_indentation] = ACTIONS(2079),
-    [sym_generic_token] = ACTIONS(2079),
+    [sym_unknown_token] = ACTIONS(2079),
     [aux_sym__terminator_token1] = ACTIONS(2079),
     [anon_sym_SEMI] = ACTIONS(2079),
   },
@@ -54420,7 +54420,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2083),
     [sym_tree_diagram_type] = ACTIONS(2083),
     [sym_wardley_diagram_type] = ACTIONS(2083),
-    [sym_generic_diagram_type] = ACTIONS(2083),
+    [sym_baseline_diagram_type] = ACTIONS(2083),
     [anon_sym_title] = ACTIONS(2083),
     [anon_sym_accTitle] = ACTIONS(2083),
     [anon_sym_accDescr] = ACTIONS(2083),
@@ -54477,7 +54477,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2083),
     [sym_number] = ACTIONS(2083),
     [sym_indentation] = ACTIONS(2083),
-    [sym_generic_token] = ACTIONS(2083),
+    [sym_unknown_token] = ACTIONS(2083),
     [aux_sym__terminator_token1] = ACTIONS(2083),
     [anon_sym_SEMI] = ACTIONS(2083),
   },
@@ -54509,7 +54509,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2087),
     [sym_tree_diagram_type] = ACTIONS(2087),
     [sym_wardley_diagram_type] = ACTIONS(2087),
-    [sym_generic_diagram_type] = ACTIONS(2087),
+    [sym_baseline_diagram_type] = ACTIONS(2087),
     [anon_sym_title] = ACTIONS(2087),
     [anon_sym_accTitle] = ACTIONS(2087),
     [anon_sym_accDescr] = ACTIONS(2087),
@@ -54566,7 +54566,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2087),
     [sym_number] = ACTIONS(2087),
     [sym_indentation] = ACTIONS(2087),
-    [sym_generic_token] = ACTIONS(2087),
+    [sym_unknown_token] = ACTIONS(2087),
     [aux_sym__terminator_token1] = ACTIONS(2087),
     [anon_sym_SEMI] = ACTIONS(2087),
   },
@@ -54598,7 +54598,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2091),
     [sym_tree_diagram_type] = ACTIONS(2091),
     [sym_wardley_diagram_type] = ACTIONS(2091),
-    [sym_generic_diagram_type] = ACTIONS(2091),
+    [sym_baseline_diagram_type] = ACTIONS(2091),
     [anon_sym_title] = ACTIONS(2091),
     [anon_sym_accTitle] = ACTIONS(2091),
     [anon_sym_accDescr] = ACTIONS(2091),
@@ -54655,7 +54655,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2091),
     [sym_number] = ACTIONS(2091),
     [sym_indentation] = ACTIONS(2091),
-    [sym_generic_token] = ACTIONS(2091),
+    [sym_unknown_token] = ACTIONS(2091),
     [aux_sym__terminator_token1] = ACTIONS(2091),
     [anon_sym_SEMI] = ACTIONS(2091),
   },
@@ -54687,7 +54687,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2095),
     [sym_tree_diagram_type] = ACTIONS(2095),
     [sym_wardley_diagram_type] = ACTIONS(2095),
-    [sym_generic_diagram_type] = ACTIONS(2095),
+    [sym_baseline_diagram_type] = ACTIONS(2095),
     [anon_sym_title] = ACTIONS(2095),
     [anon_sym_accTitle] = ACTIONS(2095),
     [anon_sym_accDescr] = ACTIONS(2095),
@@ -54744,7 +54744,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2095),
     [sym_number] = ACTIONS(2095),
     [sym_indentation] = ACTIONS(2095),
-    [sym_generic_token] = ACTIONS(2095),
+    [sym_unknown_token] = ACTIONS(2095),
     [aux_sym__terminator_token1] = ACTIONS(2095),
     [anon_sym_SEMI] = ACTIONS(2095),
   },
@@ -54776,7 +54776,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2099),
     [sym_tree_diagram_type] = ACTIONS(2099),
     [sym_wardley_diagram_type] = ACTIONS(2099),
-    [sym_generic_diagram_type] = ACTIONS(2099),
+    [sym_baseline_diagram_type] = ACTIONS(2099),
     [anon_sym_title] = ACTIONS(2099),
     [anon_sym_accTitle] = ACTIONS(2099),
     [anon_sym_accDescr] = ACTIONS(2099),
@@ -54833,7 +54833,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2099),
     [sym_number] = ACTIONS(2099),
     [sym_indentation] = ACTIONS(2099),
-    [sym_generic_token] = ACTIONS(2099),
+    [sym_unknown_token] = ACTIONS(2099),
     [aux_sym__terminator_token1] = ACTIONS(2099),
     [anon_sym_SEMI] = ACTIONS(2099),
   },
@@ -54865,7 +54865,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2103),
     [sym_tree_diagram_type] = ACTIONS(2103),
     [sym_wardley_diagram_type] = ACTIONS(2103),
-    [sym_generic_diagram_type] = ACTIONS(2103),
+    [sym_baseline_diagram_type] = ACTIONS(2103),
     [anon_sym_title] = ACTIONS(2103),
     [anon_sym_accTitle] = ACTIONS(2103),
     [anon_sym_accDescr] = ACTIONS(2103),
@@ -54922,7 +54922,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2103),
     [sym_number] = ACTIONS(2103),
     [sym_indentation] = ACTIONS(2103),
-    [sym_generic_token] = ACTIONS(2103),
+    [sym_unknown_token] = ACTIONS(2103),
     [aux_sym__terminator_token1] = ACTIONS(2103),
     [anon_sym_SEMI] = ACTIONS(2103),
   },
@@ -54954,7 +54954,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2107),
     [sym_tree_diagram_type] = ACTIONS(2107),
     [sym_wardley_diagram_type] = ACTIONS(2107),
-    [sym_generic_diagram_type] = ACTIONS(2107),
+    [sym_baseline_diagram_type] = ACTIONS(2107),
     [anon_sym_title] = ACTIONS(2107),
     [anon_sym_accTitle] = ACTIONS(2107),
     [anon_sym_accDescr] = ACTIONS(2107),
@@ -55011,7 +55011,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2107),
     [sym_number] = ACTIONS(2107),
     [sym_indentation] = ACTIONS(2107),
-    [sym_generic_token] = ACTIONS(2107),
+    [sym_unknown_token] = ACTIONS(2107),
     [aux_sym__terminator_token1] = ACTIONS(2107),
     [anon_sym_SEMI] = ACTIONS(2107),
   },
@@ -55043,7 +55043,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1991),
     [sym_tree_diagram_type] = ACTIONS(1991),
     [sym_wardley_diagram_type] = ACTIONS(1991),
-    [sym_generic_diagram_type] = ACTIONS(1991),
+    [sym_baseline_diagram_type] = ACTIONS(1991),
     [anon_sym_title] = ACTIONS(1991),
     [anon_sym_accTitle] = ACTIONS(1991),
     [anon_sym_accDescr] = ACTIONS(1991),
@@ -55100,7 +55100,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1991),
     [sym_number] = ACTIONS(1991),
     [sym_indentation] = ACTIONS(1991),
-    [sym_generic_token] = ACTIONS(1991),
+    [sym_unknown_token] = ACTIONS(1991),
     [aux_sym__terminator_token1] = ACTIONS(1991),
     [anon_sym_SEMI] = ACTIONS(1991),
   },
@@ -55132,7 +55132,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2111),
     [sym_tree_diagram_type] = ACTIONS(2111),
     [sym_wardley_diagram_type] = ACTIONS(2111),
-    [sym_generic_diagram_type] = ACTIONS(2111),
+    [sym_baseline_diagram_type] = ACTIONS(2111),
     [anon_sym_title] = ACTIONS(2111),
     [anon_sym_accTitle] = ACTIONS(2111),
     [anon_sym_accDescr] = ACTIONS(2111),
@@ -55189,7 +55189,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2111),
     [sym_number] = ACTIONS(2111),
     [sym_indentation] = ACTIONS(2111),
-    [sym_generic_token] = ACTIONS(2111),
+    [sym_unknown_token] = ACTIONS(2111),
     [aux_sym__terminator_token1] = ACTIONS(2111),
     [anon_sym_SEMI] = ACTIONS(2111),
   },
@@ -55221,7 +55221,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2115),
     [sym_tree_diagram_type] = ACTIONS(2115),
     [sym_wardley_diagram_type] = ACTIONS(2115),
-    [sym_generic_diagram_type] = ACTIONS(2115),
+    [sym_baseline_diagram_type] = ACTIONS(2115),
     [anon_sym_title] = ACTIONS(2115),
     [anon_sym_accTitle] = ACTIONS(2115),
     [anon_sym_accDescr] = ACTIONS(2115),
@@ -55278,7 +55278,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2115),
     [sym_number] = ACTIONS(2115),
     [sym_indentation] = ACTIONS(2115),
-    [sym_generic_token] = ACTIONS(2115),
+    [sym_unknown_token] = ACTIONS(2115),
     [aux_sym__terminator_token1] = ACTIONS(2115),
     [anon_sym_SEMI] = ACTIONS(2115),
   },
@@ -55310,7 +55310,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2119),
     [sym_tree_diagram_type] = ACTIONS(2119),
     [sym_wardley_diagram_type] = ACTIONS(2119),
-    [sym_generic_diagram_type] = ACTIONS(2119),
+    [sym_baseline_diagram_type] = ACTIONS(2119),
     [anon_sym_title] = ACTIONS(2119),
     [anon_sym_accTitle] = ACTIONS(2119),
     [anon_sym_accDescr] = ACTIONS(2119),
@@ -55367,7 +55367,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2119),
     [sym_number] = ACTIONS(2119),
     [sym_indentation] = ACTIONS(2119),
-    [sym_generic_token] = ACTIONS(2119),
+    [sym_unknown_token] = ACTIONS(2119),
     [aux_sym__terminator_token1] = ACTIONS(2119),
     [anon_sym_SEMI] = ACTIONS(2119),
   },
@@ -55399,7 +55399,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2123),
     [sym_tree_diagram_type] = ACTIONS(2123),
     [sym_wardley_diagram_type] = ACTIONS(2123),
-    [sym_generic_diagram_type] = ACTIONS(2123),
+    [sym_baseline_diagram_type] = ACTIONS(2123),
     [anon_sym_title] = ACTIONS(2123),
     [anon_sym_accTitle] = ACTIONS(2123),
     [anon_sym_accDescr] = ACTIONS(2123),
@@ -55456,7 +55456,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2123),
     [sym_number] = ACTIONS(2123),
     [sym_indentation] = ACTIONS(2123),
-    [sym_generic_token] = ACTIONS(2123),
+    [sym_unknown_token] = ACTIONS(2123),
     [aux_sym__terminator_token1] = ACTIONS(2123),
     [anon_sym_SEMI] = ACTIONS(2123),
   },
@@ -55488,7 +55488,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2127),
     [sym_tree_diagram_type] = ACTIONS(2127),
     [sym_wardley_diagram_type] = ACTIONS(2127),
-    [sym_generic_diagram_type] = ACTIONS(2127),
+    [sym_baseline_diagram_type] = ACTIONS(2127),
     [anon_sym_title] = ACTIONS(2127),
     [anon_sym_accTitle] = ACTIONS(2127),
     [anon_sym_accDescr] = ACTIONS(2127),
@@ -55545,7 +55545,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2127),
     [sym_number] = ACTIONS(2127),
     [sym_indentation] = ACTIONS(2127),
-    [sym_generic_token] = ACTIONS(2127),
+    [sym_unknown_token] = ACTIONS(2127),
     [aux_sym__terminator_token1] = ACTIONS(2127),
     [anon_sym_SEMI] = ACTIONS(2127),
   },
@@ -55577,7 +55577,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1991),
     [sym_tree_diagram_type] = ACTIONS(1991),
     [sym_wardley_diagram_type] = ACTIONS(1991),
-    [sym_generic_diagram_type] = ACTIONS(1991),
+    [sym_baseline_diagram_type] = ACTIONS(1991),
     [anon_sym_title] = ACTIONS(1991),
     [anon_sym_accTitle] = ACTIONS(1991),
     [anon_sym_accDescr] = ACTIONS(1991),
@@ -55634,7 +55634,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1991),
     [sym_number] = ACTIONS(1991),
     [sym_indentation] = ACTIONS(1991),
-    [sym_generic_token] = ACTIONS(1991),
+    [sym_unknown_token] = ACTIONS(1991),
     [aux_sym__terminator_token1] = ACTIONS(1991),
     [anon_sym_SEMI] = ACTIONS(1991),
   },
@@ -55666,7 +55666,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2131),
     [sym_tree_diagram_type] = ACTIONS(2131),
     [sym_wardley_diagram_type] = ACTIONS(2131),
-    [sym_generic_diagram_type] = ACTIONS(2131),
+    [sym_baseline_diagram_type] = ACTIONS(2131),
     [anon_sym_title] = ACTIONS(2131),
     [anon_sym_accTitle] = ACTIONS(2131),
     [anon_sym_accDescr] = ACTIONS(2131),
@@ -55723,7 +55723,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2131),
     [sym_number] = ACTIONS(2131),
     [sym_indentation] = ACTIONS(2131),
-    [sym_generic_token] = ACTIONS(2131),
+    [sym_unknown_token] = ACTIONS(2131),
     [aux_sym__terminator_token1] = ACTIONS(2131),
     [anon_sym_SEMI] = ACTIONS(2131),
   },
@@ -55755,7 +55755,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2135),
     [sym_tree_diagram_type] = ACTIONS(2135),
     [sym_wardley_diagram_type] = ACTIONS(2135),
-    [sym_generic_diagram_type] = ACTIONS(2135),
+    [sym_baseline_diagram_type] = ACTIONS(2135),
     [anon_sym_title] = ACTIONS(2135),
     [anon_sym_accTitle] = ACTIONS(2135),
     [anon_sym_accDescr] = ACTIONS(2135),
@@ -55812,7 +55812,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2135),
     [sym_number] = ACTIONS(2135),
     [sym_indentation] = ACTIONS(2135),
-    [sym_generic_token] = ACTIONS(2135),
+    [sym_unknown_token] = ACTIONS(2135),
     [aux_sym__terminator_token1] = ACTIONS(2135),
     [anon_sym_SEMI] = ACTIONS(2135),
   },
@@ -55844,7 +55844,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2139),
     [sym_tree_diagram_type] = ACTIONS(2139),
     [sym_wardley_diagram_type] = ACTIONS(2139),
-    [sym_generic_diagram_type] = ACTIONS(2139),
+    [sym_baseline_diagram_type] = ACTIONS(2139),
     [anon_sym_title] = ACTIONS(2139),
     [anon_sym_accTitle] = ACTIONS(2139),
     [anon_sym_accDescr] = ACTIONS(2139),
@@ -55901,7 +55901,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2139),
     [sym_number] = ACTIONS(2139),
     [sym_indentation] = ACTIONS(2139),
-    [sym_generic_token] = ACTIONS(2139),
+    [sym_unknown_token] = ACTIONS(2139),
     [aux_sym__terminator_token1] = ACTIONS(2139),
     [anon_sym_SEMI] = ACTIONS(2139),
   },
@@ -55933,7 +55933,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2143),
     [sym_tree_diagram_type] = ACTIONS(2143),
     [sym_wardley_diagram_type] = ACTIONS(2143),
-    [sym_generic_diagram_type] = ACTIONS(2143),
+    [sym_baseline_diagram_type] = ACTIONS(2143),
     [anon_sym_title] = ACTIONS(2143),
     [anon_sym_accTitle] = ACTIONS(2143),
     [anon_sym_accDescr] = ACTIONS(2143),
@@ -55990,7 +55990,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2143),
     [sym_number] = ACTIONS(2143),
     [sym_indentation] = ACTIONS(2143),
-    [sym_generic_token] = ACTIONS(2143),
+    [sym_unknown_token] = ACTIONS(2143),
     [aux_sym__terminator_token1] = ACTIONS(2143),
     [anon_sym_SEMI] = ACTIONS(2143),
   },
@@ -56022,7 +56022,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2147),
     [sym_tree_diagram_type] = ACTIONS(2147),
     [sym_wardley_diagram_type] = ACTIONS(2147),
-    [sym_generic_diagram_type] = ACTIONS(2147),
+    [sym_baseline_diagram_type] = ACTIONS(2147),
     [anon_sym_title] = ACTIONS(2147),
     [anon_sym_accTitle] = ACTIONS(2147),
     [anon_sym_accDescr] = ACTIONS(2147),
@@ -56079,7 +56079,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2147),
     [sym_number] = ACTIONS(2147),
     [sym_indentation] = ACTIONS(2147),
-    [sym_generic_token] = ACTIONS(2147),
+    [sym_unknown_token] = ACTIONS(2147),
     [aux_sym__terminator_token1] = ACTIONS(2147),
     [anon_sym_SEMI] = ACTIONS(2147),
   },
@@ -56111,7 +56111,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2151),
     [sym_tree_diagram_type] = ACTIONS(2151),
     [sym_wardley_diagram_type] = ACTIONS(2151),
-    [sym_generic_diagram_type] = ACTIONS(2151),
+    [sym_baseline_diagram_type] = ACTIONS(2151),
     [anon_sym_title] = ACTIONS(2151),
     [anon_sym_accTitle] = ACTIONS(2151),
     [anon_sym_accDescr] = ACTIONS(2151),
@@ -56168,7 +56168,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2151),
     [sym_number] = ACTIONS(2151),
     [sym_indentation] = ACTIONS(2151),
-    [sym_generic_token] = ACTIONS(2151),
+    [sym_unknown_token] = ACTIONS(2151),
     [aux_sym__terminator_token1] = ACTIONS(2151),
     [anon_sym_SEMI] = ACTIONS(2151),
   },
@@ -56200,7 +56200,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2155),
     [sym_tree_diagram_type] = ACTIONS(2155),
     [sym_wardley_diagram_type] = ACTIONS(2155),
-    [sym_generic_diagram_type] = ACTIONS(2155),
+    [sym_baseline_diagram_type] = ACTIONS(2155),
     [anon_sym_title] = ACTIONS(2155),
     [anon_sym_accTitle] = ACTIONS(2155),
     [anon_sym_accDescr] = ACTIONS(2155),
@@ -56257,7 +56257,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2155),
     [sym_number] = ACTIONS(2155),
     [sym_indentation] = ACTIONS(2155),
-    [sym_generic_token] = ACTIONS(2155),
+    [sym_unknown_token] = ACTIONS(2155),
     [aux_sym__terminator_token1] = ACTIONS(2155),
     [anon_sym_SEMI] = ACTIONS(2155),
   },
@@ -56289,7 +56289,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2159),
     [sym_tree_diagram_type] = ACTIONS(2159),
     [sym_wardley_diagram_type] = ACTIONS(2159),
-    [sym_generic_diagram_type] = ACTIONS(2159),
+    [sym_baseline_diagram_type] = ACTIONS(2159),
     [anon_sym_title] = ACTIONS(2159),
     [anon_sym_accTitle] = ACTIONS(2159),
     [anon_sym_accDescr] = ACTIONS(2159),
@@ -56346,7 +56346,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2159),
     [sym_number] = ACTIONS(2159),
     [sym_indentation] = ACTIONS(2159),
-    [sym_generic_token] = ACTIONS(2159),
+    [sym_unknown_token] = ACTIONS(2159),
     [aux_sym__terminator_token1] = ACTIONS(2159),
     [anon_sym_SEMI] = ACTIONS(2159),
   },
@@ -56378,7 +56378,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2163),
     [sym_tree_diagram_type] = ACTIONS(2163),
     [sym_wardley_diagram_type] = ACTIONS(2163),
-    [sym_generic_diagram_type] = ACTIONS(2163),
+    [sym_baseline_diagram_type] = ACTIONS(2163),
     [anon_sym_title] = ACTIONS(2163),
     [anon_sym_accTitle] = ACTIONS(2163),
     [anon_sym_accDescr] = ACTIONS(2163),
@@ -56435,7 +56435,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2163),
     [sym_number] = ACTIONS(2163),
     [sym_indentation] = ACTIONS(2163),
-    [sym_generic_token] = ACTIONS(2163),
+    [sym_unknown_token] = ACTIONS(2163),
     [aux_sym__terminator_token1] = ACTIONS(2163),
     [anon_sym_SEMI] = ACTIONS(2163),
   },
@@ -56467,7 +56467,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2167),
     [sym_tree_diagram_type] = ACTIONS(2167),
     [sym_wardley_diagram_type] = ACTIONS(2167),
-    [sym_generic_diagram_type] = ACTIONS(2167),
+    [sym_baseline_diagram_type] = ACTIONS(2167),
     [anon_sym_title] = ACTIONS(2167),
     [anon_sym_accTitle] = ACTIONS(2167),
     [anon_sym_accDescr] = ACTIONS(2167),
@@ -56524,7 +56524,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2167),
     [sym_number] = ACTIONS(2167),
     [sym_indentation] = ACTIONS(2167),
-    [sym_generic_token] = ACTIONS(2167),
+    [sym_unknown_token] = ACTIONS(2167),
     [aux_sym__terminator_token1] = ACTIONS(2167),
     [anon_sym_SEMI] = ACTIONS(2167),
   },
@@ -56556,7 +56556,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2171),
     [sym_tree_diagram_type] = ACTIONS(2171),
     [sym_wardley_diagram_type] = ACTIONS(2171),
-    [sym_generic_diagram_type] = ACTIONS(2171),
+    [sym_baseline_diagram_type] = ACTIONS(2171),
     [anon_sym_title] = ACTIONS(2171),
     [anon_sym_accTitle] = ACTIONS(2171),
     [anon_sym_accDescr] = ACTIONS(2171),
@@ -56613,7 +56613,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2171),
     [sym_number] = ACTIONS(2171),
     [sym_indentation] = ACTIONS(2171),
-    [sym_generic_token] = ACTIONS(2171),
+    [sym_unknown_token] = ACTIONS(2171),
     [aux_sym__terminator_token1] = ACTIONS(2171),
     [anon_sym_SEMI] = ACTIONS(2171),
   },
@@ -56645,7 +56645,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2175),
     [sym_tree_diagram_type] = ACTIONS(2175),
     [sym_wardley_diagram_type] = ACTIONS(2175),
-    [sym_generic_diagram_type] = ACTIONS(2175),
+    [sym_baseline_diagram_type] = ACTIONS(2175),
     [anon_sym_title] = ACTIONS(2175),
     [anon_sym_accTitle] = ACTIONS(2175),
     [anon_sym_accDescr] = ACTIONS(2175),
@@ -56702,7 +56702,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2175),
     [sym_number] = ACTIONS(2175),
     [sym_indentation] = ACTIONS(2175),
-    [sym_generic_token] = ACTIONS(2175),
+    [sym_unknown_token] = ACTIONS(2175),
     [aux_sym__terminator_token1] = ACTIONS(2175),
     [anon_sym_SEMI] = ACTIONS(2175),
   },
@@ -56734,7 +56734,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2179),
     [sym_tree_diagram_type] = ACTIONS(2179),
     [sym_wardley_diagram_type] = ACTIONS(2179),
-    [sym_generic_diagram_type] = ACTIONS(2179),
+    [sym_baseline_diagram_type] = ACTIONS(2179),
     [anon_sym_title] = ACTIONS(2179),
     [anon_sym_accTitle] = ACTIONS(2179),
     [anon_sym_accDescr] = ACTIONS(2179),
@@ -56791,7 +56791,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2179),
     [sym_number] = ACTIONS(2179),
     [sym_indentation] = ACTIONS(2179),
-    [sym_generic_token] = ACTIONS(2179),
+    [sym_unknown_token] = ACTIONS(2179),
     [aux_sym__terminator_token1] = ACTIONS(2179),
     [anon_sym_SEMI] = ACTIONS(2179),
   },
@@ -56823,7 +56823,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2183),
     [sym_tree_diagram_type] = ACTIONS(2183),
     [sym_wardley_diagram_type] = ACTIONS(2183),
-    [sym_generic_diagram_type] = ACTIONS(2183),
+    [sym_baseline_diagram_type] = ACTIONS(2183),
     [anon_sym_title] = ACTIONS(2183),
     [anon_sym_accTitle] = ACTIONS(2183),
     [anon_sym_accDescr] = ACTIONS(2183),
@@ -56880,7 +56880,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2183),
     [sym_number] = ACTIONS(2183),
     [sym_indentation] = ACTIONS(2183),
-    [sym_generic_token] = ACTIONS(2183),
+    [sym_unknown_token] = ACTIONS(2183),
     [aux_sym__terminator_token1] = ACTIONS(2183),
     [anon_sym_SEMI] = ACTIONS(2183),
   },
@@ -56912,7 +56912,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2187),
     [sym_tree_diagram_type] = ACTIONS(2187),
     [sym_wardley_diagram_type] = ACTIONS(2187),
-    [sym_generic_diagram_type] = ACTIONS(2187),
+    [sym_baseline_diagram_type] = ACTIONS(2187),
     [anon_sym_title] = ACTIONS(2187),
     [anon_sym_accTitle] = ACTIONS(2187),
     [anon_sym_accDescr] = ACTIONS(2187),
@@ -56969,7 +56969,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2187),
     [sym_number] = ACTIONS(2187),
     [sym_indentation] = ACTIONS(2187),
-    [sym_generic_token] = ACTIONS(2187),
+    [sym_unknown_token] = ACTIONS(2187),
     [aux_sym__terminator_token1] = ACTIONS(2187),
     [anon_sym_SEMI] = ACTIONS(2187),
   },
@@ -57001,7 +57001,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2191),
     [sym_tree_diagram_type] = ACTIONS(2191),
     [sym_wardley_diagram_type] = ACTIONS(2191),
-    [sym_generic_diagram_type] = ACTIONS(2191),
+    [sym_baseline_diagram_type] = ACTIONS(2191),
     [anon_sym_title] = ACTIONS(2191),
     [anon_sym_accTitle] = ACTIONS(2191),
     [anon_sym_accDescr] = ACTIONS(2191),
@@ -57058,7 +57058,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2191),
     [sym_number] = ACTIONS(2191),
     [sym_indentation] = ACTIONS(2191),
-    [sym_generic_token] = ACTIONS(2191),
+    [sym_unknown_token] = ACTIONS(2191),
     [aux_sym__terminator_token1] = ACTIONS(2191),
     [anon_sym_SEMI] = ACTIONS(2191),
   },
@@ -57090,7 +57090,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2195),
     [sym_tree_diagram_type] = ACTIONS(2195),
     [sym_wardley_diagram_type] = ACTIONS(2195),
-    [sym_generic_diagram_type] = ACTIONS(2195),
+    [sym_baseline_diagram_type] = ACTIONS(2195),
     [anon_sym_title] = ACTIONS(2195),
     [anon_sym_accTitle] = ACTIONS(2195),
     [anon_sym_accDescr] = ACTIONS(2195),
@@ -57147,7 +57147,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2195),
     [sym_number] = ACTIONS(2195),
     [sym_indentation] = ACTIONS(2195),
-    [sym_generic_token] = ACTIONS(2195),
+    [sym_unknown_token] = ACTIONS(2195),
     [aux_sym__terminator_token1] = ACTIONS(2195),
     [anon_sym_SEMI] = ACTIONS(2195),
   },
@@ -57179,7 +57179,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2199),
     [sym_tree_diagram_type] = ACTIONS(2199),
     [sym_wardley_diagram_type] = ACTIONS(2199),
-    [sym_generic_diagram_type] = ACTIONS(2199),
+    [sym_baseline_diagram_type] = ACTIONS(2199),
     [anon_sym_title] = ACTIONS(2199),
     [anon_sym_accTitle] = ACTIONS(2199),
     [anon_sym_accDescr] = ACTIONS(2199),
@@ -57236,7 +57236,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2199),
     [sym_number] = ACTIONS(2199),
     [sym_indentation] = ACTIONS(2199),
-    [sym_generic_token] = ACTIONS(2199),
+    [sym_unknown_token] = ACTIONS(2199),
     [aux_sym__terminator_token1] = ACTIONS(2199),
     [anon_sym_SEMI] = ACTIONS(2199),
   },
@@ -57268,7 +57268,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2203),
     [sym_tree_diagram_type] = ACTIONS(2203),
     [sym_wardley_diagram_type] = ACTIONS(2203),
-    [sym_generic_diagram_type] = ACTIONS(2203),
+    [sym_baseline_diagram_type] = ACTIONS(2203),
     [anon_sym_title] = ACTIONS(2203),
     [anon_sym_accTitle] = ACTIONS(2203),
     [anon_sym_accDescr] = ACTIONS(2203),
@@ -57325,7 +57325,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2203),
     [sym_number] = ACTIONS(2203),
     [sym_indentation] = ACTIONS(2203),
-    [sym_generic_token] = ACTIONS(2203),
+    [sym_unknown_token] = ACTIONS(2203),
     [aux_sym__terminator_token1] = ACTIONS(2203),
     [anon_sym_SEMI] = ACTIONS(2203),
   },
@@ -57357,7 +57357,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2207),
     [sym_tree_diagram_type] = ACTIONS(2207),
     [sym_wardley_diagram_type] = ACTIONS(2207),
-    [sym_generic_diagram_type] = ACTIONS(2207),
+    [sym_baseline_diagram_type] = ACTIONS(2207),
     [anon_sym_title] = ACTIONS(2207),
     [anon_sym_accTitle] = ACTIONS(2207),
     [anon_sym_accDescr] = ACTIONS(2207),
@@ -57414,7 +57414,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2207),
     [sym_number] = ACTIONS(2207),
     [sym_indentation] = ACTIONS(2207),
-    [sym_generic_token] = ACTIONS(2207),
+    [sym_unknown_token] = ACTIONS(2207),
     [aux_sym__terminator_token1] = ACTIONS(2207),
     [anon_sym_SEMI] = ACTIONS(2207),
   },
@@ -57446,7 +57446,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2211),
     [sym_tree_diagram_type] = ACTIONS(2211),
     [sym_wardley_diagram_type] = ACTIONS(2211),
-    [sym_generic_diagram_type] = ACTIONS(2211),
+    [sym_baseline_diagram_type] = ACTIONS(2211),
     [anon_sym_title] = ACTIONS(2211),
     [anon_sym_accTitle] = ACTIONS(2211),
     [anon_sym_accDescr] = ACTIONS(2211),
@@ -57503,7 +57503,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2211),
     [sym_number] = ACTIONS(2211),
     [sym_indentation] = ACTIONS(2211),
-    [sym_generic_token] = ACTIONS(2211),
+    [sym_unknown_token] = ACTIONS(2211),
     [aux_sym__terminator_token1] = ACTIONS(2211),
     [anon_sym_SEMI] = ACTIONS(2211),
   },
@@ -57535,7 +57535,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2215),
     [sym_tree_diagram_type] = ACTIONS(2215),
     [sym_wardley_diagram_type] = ACTIONS(2215),
-    [sym_generic_diagram_type] = ACTIONS(2215),
+    [sym_baseline_diagram_type] = ACTIONS(2215),
     [anon_sym_title] = ACTIONS(2215),
     [anon_sym_accTitle] = ACTIONS(2215),
     [anon_sym_accDescr] = ACTIONS(2215),
@@ -57592,7 +57592,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2215),
     [sym_number] = ACTIONS(2215),
     [sym_indentation] = ACTIONS(2215),
-    [sym_generic_token] = ACTIONS(2215),
+    [sym_unknown_token] = ACTIONS(2215),
     [aux_sym__terminator_token1] = ACTIONS(2215),
     [anon_sym_SEMI] = ACTIONS(2215),
   },
@@ -57624,7 +57624,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2219),
     [sym_tree_diagram_type] = ACTIONS(2219),
     [sym_wardley_diagram_type] = ACTIONS(2219),
-    [sym_generic_diagram_type] = ACTIONS(2219),
+    [sym_baseline_diagram_type] = ACTIONS(2219),
     [anon_sym_title] = ACTIONS(2219),
     [anon_sym_accTitle] = ACTIONS(2219),
     [anon_sym_accDescr] = ACTIONS(2219),
@@ -57681,7 +57681,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2219),
     [sym_number] = ACTIONS(2219),
     [sym_indentation] = ACTIONS(2219),
-    [sym_generic_token] = ACTIONS(2219),
+    [sym_unknown_token] = ACTIONS(2219),
     [aux_sym__terminator_token1] = ACTIONS(2219),
     [anon_sym_SEMI] = ACTIONS(2219),
   },
@@ -57713,7 +57713,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2223),
     [sym_tree_diagram_type] = ACTIONS(2223),
     [sym_wardley_diagram_type] = ACTIONS(2223),
-    [sym_generic_diagram_type] = ACTIONS(2223),
+    [sym_baseline_diagram_type] = ACTIONS(2223),
     [anon_sym_title] = ACTIONS(2223),
     [anon_sym_accTitle] = ACTIONS(2223),
     [anon_sym_accDescr] = ACTIONS(2223),
@@ -57770,7 +57770,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2223),
     [sym_number] = ACTIONS(2223),
     [sym_indentation] = ACTIONS(2223),
-    [sym_generic_token] = ACTIONS(2223),
+    [sym_unknown_token] = ACTIONS(2223),
     [aux_sym__terminator_token1] = ACTIONS(2223),
     [anon_sym_SEMI] = ACTIONS(2223),
   },
@@ -57802,7 +57802,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2227),
     [sym_tree_diagram_type] = ACTIONS(2227),
     [sym_wardley_diagram_type] = ACTIONS(2227),
-    [sym_generic_diagram_type] = ACTIONS(2227),
+    [sym_baseline_diagram_type] = ACTIONS(2227),
     [anon_sym_title] = ACTIONS(2227),
     [anon_sym_accTitle] = ACTIONS(2227),
     [anon_sym_accDescr] = ACTIONS(2227),
@@ -57859,7 +57859,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2227),
     [sym_number] = ACTIONS(2227),
     [sym_indentation] = ACTIONS(2227),
-    [sym_generic_token] = ACTIONS(2227),
+    [sym_unknown_token] = ACTIONS(2227),
     [aux_sym__terminator_token1] = ACTIONS(2227),
     [anon_sym_SEMI] = ACTIONS(2227),
   },
@@ -57891,7 +57891,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2231),
     [sym_tree_diagram_type] = ACTIONS(2231),
     [sym_wardley_diagram_type] = ACTIONS(2231),
-    [sym_generic_diagram_type] = ACTIONS(2231),
+    [sym_baseline_diagram_type] = ACTIONS(2231),
     [anon_sym_title] = ACTIONS(2231),
     [anon_sym_accTitle] = ACTIONS(2231),
     [anon_sym_accDescr] = ACTIONS(2231),
@@ -57948,7 +57948,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2231),
     [sym_number] = ACTIONS(2231),
     [sym_indentation] = ACTIONS(2231),
-    [sym_generic_token] = ACTIONS(2231),
+    [sym_unknown_token] = ACTIONS(2231),
     [aux_sym__terminator_token1] = ACTIONS(2231),
     [anon_sym_SEMI] = ACTIONS(2231),
   },
@@ -57980,7 +57980,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2235),
     [sym_tree_diagram_type] = ACTIONS(2235),
     [sym_wardley_diagram_type] = ACTIONS(2235),
-    [sym_generic_diagram_type] = ACTIONS(2235),
+    [sym_baseline_diagram_type] = ACTIONS(2235),
     [anon_sym_title] = ACTIONS(2235),
     [anon_sym_accTitle] = ACTIONS(2235),
     [anon_sym_accDescr] = ACTIONS(2235),
@@ -58037,7 +58037,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2235),
     [sym_number] = ACTIONS(2235),
     [sym_indentation] = ACTIONS(2235),
-    [sym_generic_token] = ACTIONS(2235),
+    [sym_unknown_token] = ACTIONS(2235),
     [aux_sym__terminator_token1] = ACTIONS(2235),
     [anon_sym_SEMI] = ACTIONS(2235),
   },
@@ -58069,7 +58069,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2239),
     [sym_tree_diagram_type] = ACTIONS(2239),
     [sym_wardley_diagram_type] = ACTIONS(2239),
-    [sym_generic_diagram_type] = ACTIONS(2239),
+    [sym_baseline_diagram_type] = ACTIONS(2239),
     [anon_sym_title] = ACTIONS(2239),
     [anon_sym_accTitle] = ACTIONS(2239),
     [anon_sym_accDescr] = ACTIONS(2239),
@@ -58126,7 +58126,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2239),
     [sym_number] = ACTIONS(2239),
     [sym_indentation] = ACTIONS(2239),
-    [sym_generic_token] = ACTIONS(2239),
+    [sym_unknown_token] = ACTIONS(2239),
     [aux_sym__terminator_token1] = ACTIONS(2239),
     [anon_sym_SEMI] = ACTIONS(2239),
   },
@@ -58158,7 +58158,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1369),
     [sym_tree_diagram_type] = ACTIONS(1369),
     [sym_wardley_diagram_type] = ACTIONS(1369),
-    [sym_generic_diagram_type] = ACTIONS(1369),
+    [sym_baseline_diagram_type] = ACTIONS(1369),
     [anon_sym_title] = ACTIONS(1369),
     [anon_sym_accTitle] = ACTIONS(1369),
     [anon_sym_accDescr] = ACTIONS(1369),
@@ -58215,7 +58215,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1369),
     [sym_number] = ACTIONS(1369),
     [sym_indentation] = ACTIONS(1369),
-    [sym_generic_token] = ACTIONS(1369),
+    [sym_unknown_token] = ACTIONS(1369),
     [aux_sym__terminator_token1] = ACTIONS(1369),
     [anon_sym_SEMI] = ACTIONS(1369),
   },
@@ -58247,7 +58247,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2243),
     [sym_tree_diagram_type] = ACTIONS(2243),
     [sym_wardley_diagram_type] = ACTIONS(2243),
-    [sym_generic_diagram_type] = ACTIONS(2243),
+    [sym_baseline_diagram_type] = ACTIONS(2243),
     [anon_sym_title] = ACTIONS(2243),
     [anon_sym_accTitle] = ACTIONS(2243),
     [anon_sym_accDescr] = ACTIONS(2243),
@@ -58304,7 +58304,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2243),
     [sym_number] = ACTIONS(2243),
     [sym_indentation] = ACTIONS(2243),
-    [sym_generic_token] = ACTIONS(2243),
+    [sym_unknown_token] = ACTIONS(2243),
     [aux_sym__terminator_token1] = ACTIONS(2243),
     [anon_sym_SEMI] = ACTIONS(2243),
   },
@@ -58336,7 +58336,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1477),
     [sym_tree_diagram_type] = ACTIONS(1477),
     [sym_wardley_diagram_type] = ACTIONS(1477),
-    [sym_generic_diagram_type] = ACTIONS(1477),
+    [sym_baseline_diagram_type] = ACTIONS(1477),
     [anon_sym_title] = ACTIONS(1477),
     [anon_sym_accTitle] = ACTIONS(1477),
     [anon_sym_accDescr] = ACTIONS(1477),
@@ -58393,7 +58393,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1477),
     [sym_number] = ACTIONS(1477),
     [sym_indentation] = ACTIONS(1477),
-    [sym_generic_token] = ACTIONS(1477),
+    [sym_unknown_token] = ACTIONS(1477),
     [aux_sym__terminator_token1] = ACTIONS(1477),
     [anon_sym_SEMI] = ACTIONS(1477),
   },
@@ -58425,7 +58425,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2248),
     [sym_tree_diagram_type] = ACTIONS(2248),
     [sym_wardley_diagram_type] = ACTIONS(2248),
-    [sym_generic_diagram_type] = ACTIONS(2248),
+    [sym_baseline_diagram_type] = ACTIONS(2248),
     [anon_sym_title] = ACTIONS(2248),
     [anon_sym_accTitle] = ACTIONS(2248),
     [anon_sym_accDescr] = ACTIONS(2248),
@@ -58482,7 +58482,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2248),
     [sym_number] = ACTIONS(2248),
     [sym_indentation] = ACTIONS(2248),
-    [sym_generic_token] = ACTIONS(2248),
+    [sym_unknown_token] = ACTIONS(2248),
     [aux_sym__terminator_token1] = ACTIONS(2248),
     [anon_sym_SEMI] = ACTIONS(2248),
   },
@@ -58514,7 +58514,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2253),
     [sym_tree_diagram_type] = ACTIONS(2253),
     [sym_wardley_diagram_type] = ACTIONS(2253),
-    [sym_generic_diagram_type] = ACTIONS(2253),
+    [sym_baseline_diagram_type] = ACTIONS(2253),
     [anon_sym_title] = ACTIONS(2253),
     [anon_sym_accTitle] = ACTIONS(2253),
     [anon_sym_accDescr] = ACTIONS(2253),
@@ -58571,7 +58571,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2253),
     [sym_number] = ACTIONS(2253),
     [sym_indentation] = ACTIONS(2253),
-    [sym_generic_token] = ACTIONS(2253),
+    [sym_unknown_token] = ACTIONS(2253),
     [aux_sym__terminator_token1] = ACTIONS(2253),
     [anon_sym_SEMI] = ACTIONS(2253),
   },
@@ -58603,7 +58603,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2257),
     [sym_tree_diagram_type] = ACTIONS(2257),
     [sym_wardley_diagram_type] = ACTIONS(2257),
-    [sym_generic_diagram_type] = ACTIONS(2257),
+    [sym_baseline_diagram_type] = ACTIONS(2257),
     [anon_sym_title] = ACTIONS(2257),
     [anon_sym_accTitle] = ACTIONS(2257),
     [anon_sym_accDescr] = ACTIONS(2257),
@@ -58660,7 +58660,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2257),
     [sym_number] = ACTIONS(2257),
     [sym_indentation] = ACTIONS(2257),
-    [sym_generic_token] = ACTIONS(2257),
+    [sym_unknown_token] = ACTIONS(2257),
     [aux_sym__terminator_token1] = ACTIONS(2257),
     [anon_sym_SEMI] = ACTIONS(2257),
   },
@@ -58692,7 +58692,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2261),
     [sym_tree_diagram_type] = ACTIONS(2261),
     [sym_wardley_diagram_type] = ACTIONS(2261),
-    [sym_generic_diagram_type] = ACTIONS(2261),
+    [sym_baseline_diagram_type] = ACTIONS(2261),
     [anon_sym_title] = ACTIONS(2261),
     [anon_sym_accTitle] = ACTIONS(2261),
     [anon_sym_accDescr] = ACTIONS(2261),
@@ -58749,7 +58749,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2261),
     [sym_number] = ACTIONS(2261),
     [sym_indentation] = ACTIONS(2261),
-    [sym_generic_token] = ACTIONS(2261),
+    [sym_unknown_token] = ACTIONS(2261),
     [aux_sym__terminator_token1] = ACTIONS(2261),
     [anon_sym_SEMI] = ACTIONS(2261),
   },
@@ -58781,7 +58781,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2265),
     [sym_tree_diagram_type] = ACTIONS(2265),
     [sym_wardley_diagram_type] = ACTIONS(2265),
-    [sym_generic_diagram_type] = ACTIONS(2265),
+    [sym_baseline_diagram_type] = ACTIONS(2265),
     [anon_sym_title] = ACTIONS(2265),
     [anon_sym_accTitle] = ACTIONS(2265),
     [anon_sym_accDescr] = ACTIONS(2265),
@@ -58838,7 +58838,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2265),
     [sym_number] = ACTIONS(2265),
     [sym_indentation] = ACTIONS(2265),
-    [sym_generic_token] = ACTIONS(2265),
+    [sym_unknown_token] = ACTIONS(2265),
     [aux_sym__terminator_token1] = ACTIONS(2265),
     [anon_sym_SEMI] = ACTIONS(2265),
   },
@@ -58870,7 +58870,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(2269),
     [sym_tree_diagram_type] = ACTIONS(2269),
     [sym_wardley_diagram_type] = ACTIONS(2269),
-    [sym_generic_diagram_type] = ACTIONS(2269),
+    [sym_baseline_diagram_type] = ACTIONS(2269),
     [anon_sym_title] = ACTIONS(2269),
     [anon_sym_accTitle] = ACTIONS(2269),
     [anon_sym_accDescr] = ACTIONS(2269),
@@ -58927,7 +58927,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(2269),
     [sym_number] = ACTIONS(2269),
     [sym_indentation] = ACTIONS(2269),
-    [sym_generic_token] = ACTIONS(2269),
+    [sym_unknown_token] = ACTIONS(2269),
     [aux_sym__terminator_token1] = ACTIONS(2269),
     [anon_sym_SEMI] = ACTIONS(2269),
   },
@@ -58959,7 +58959,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_timeline_diagram_type] = ACTIONS(1401),
     [sym_tree_diagram_type] = ACTIONS(1401),
     [sym_wardley_diagram_type] = ACTIONS(1401),
-    [sym_generic_diagram_type] = ACTIONS(1401),
+    [sym_baseline_diagram_type] = ACTIONS(1401),
     [anon_sym_title] = ACTIONS(1401),
     [anon_sym_accTitle] = ACTIONS(1401),
     [anon_sym_accDescr] = ACTIONS(1401),
@@ -59016,7 +59016,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_quoted_string] = ACTIONS(1401),
     [sym_number] = ACTIONS(1401),
     [sym_indentation] = ACTIONS(1401),
-    [sym_generic_token] = ACTIONS(1401),
+    [sym_unknown_token] = ACTIONS(1401),
     [aux_sym__terminator_token1] = ACTIONS(1401),
     [anon_sym_SEMI] = ACTIONS(1401),
   },
@@ -59073,7 +59073,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(2308), 5,
       sym_quoted_string,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
     STATE(436), 12,
@@ -60877,7 +60877,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_quoted_string,
       sym_identifier,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
   [2314] = 7,
@@ -60921,7 +60921,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_quoted_string,
       sym_identifier,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
   [2372] = 9,
@@ -61543,7 +61543,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(228), 1,
       sym__terminator,
     STATE(521), 1,
-      aux_sym_generic_statement_repeat1,
+      aux_sym_unknown_statement_repeat1,
     ACTIONS(2778), 2,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
@@ -61551,7 +61551,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_quoted_string,
       sym_identifier,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
   [3190] = 3,
     STATE(499), 1,
       aux_sym_mindmap_label_repeat1,
@@ -61670,7 +61670,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_quoted_string,
       sym_identifier,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
   [3351] = 7,
@@ -61718,7 +61718,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(270), 1,
       sym__terminator,
     STATE(521), 1,
-      aux_sym_generic_statement_repeat1,
+      aux_sym_unknown_statement_repeat1,
     ACTIONS(2848), 2,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
@@ -61726,7 +61726,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_quoted_string,
       sym_identifier,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
   [3423] = 6,
     ACTIONS(2522), 1,
       anon_sym_title,
@@ -61814,7 +61814,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_SEMI,
   [3536] = 3,
     STATE(521), 1,
-      aux_sym_generic_statement_repeat1,
+      aux_sym_unknown_statement_repeat1,
     ACTIONS(2873), 2,
       aux_sym__terminator_token1,
       anon_sym_SEMI,
@@ -61822,7 +61822,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_quoted_string,
       sym_identifier,
       sym_number,
-      sym_generic_token,
+      sym_unknown_token,
   [3550] = 6,
     ACTIONS(2835), 1,
       sym_gantt_date,
@@ -67012,8 +67012,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [1665] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_radar_statement, 2, 0, 0),
   [1667] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_diagram, 1, 0, 0),
   [1669] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_diagram, 1, 0, 0),
-  [1671] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_statement, 2, 0, 0),
-  [1673] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_statement, 2, 0, 0),
+  [1671] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_unknown_statement, 2, 0, 0),
+  [1673] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_unknown_statement, 2, 0, 0),
   [1675] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_flow_diagram_header, 3, 0, 2),
   [1677] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_flow_diagram_header, 3, 0, 2),
   [1679] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_flow_diagram_header, 3, 0, 9),
@@ -67044,10 +67044,10 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [1729] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tree_diagram_header, 3, 0, 2),
   [1731] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_wardley_diagram_header, 3, 0, 2),
   [1733] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_wardley_diagram_header, 3, 0, 2),
-  [1735] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_diagram_header, 3, 0, 2),
-  [1737] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_diagram_header, 3, 0, 2),
-  [1739] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_diagram_header, 3, 0, 9),
-  [1741] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_diagram_header, 3, 0, 9),
+  [1735] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_baseline_diagram_header, 3, 0, 2),
+  [1737] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_baseline_diagram_header, 3, 0, 2),
+  [1739] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_baseline_diagram_header, 3, 0, 9),
+  [1741] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_baseline_diagram_header, 3, 0, 9),
   [1743] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph_statement, 3, 0, 13),
   [1745] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph_statement, 3, 0, 13),
   [1747] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph_statement, 3, 0, 14),
@@ -67082,8 +67082,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [1807] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tree_item_statement, 3, 0, 4),
   [1809] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tree_item_statement, 3, 0, 22),
   [1811] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tree_item_statement, 3, 0, 22),
-  [1813] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_statement, 3, 0, 0),
-  [1815] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_statement, 3, 0, 0),
+  [1813] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_unknown_statement, 3, 0, 0),
+  [1815] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_unknown_statement, 3, 0, 0),
   [1817] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__flow_diagram_item, 2, 0, 0),
   [1819] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__flow_diagram_item, 2, 0, 0),
   [1821] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__architecture_diagram_item, 2, 0, 0),
@@ -67102,8 +67102,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [1847] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__git_graph_diagram_item, 2, 0, 0),
   [1849] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__info_diagram_item, 2, 0, 0),
   [1851] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__info_diagram_item, 2, 0, 0),
-  [1853] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_diagram, 1, 0, 0),
-  [1855] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_diagram, 1, 0, 0),
+  [1853] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_baseline_diagram, 1, 0, 0),
+  [1855] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_baseline_diagram, 1, 0, 0),
   [1857] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_flow_statement, 1, 0, 0),
   [1859] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_flow_statement, 1, 0, 0),
   [1861] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__packet_diagram_item, 2, 0, 0),
@@ -67138,10 +67138,10 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [1919] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_git_graph_diagram_header, 4, 0, 9),
   [1921] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pie_diagram_header, 4, 0, 2),
   [1923] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pie_diagram_header, 4, 0, 2),
-  [1925] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_diagram_header, 4, 0, 2),
-  [1927] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_diagram_header, 4, 0, 2),
-  [1929] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_diagram_header, 4, 0, 9),
-  [1931] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_diagram_header, 4, 0, 9),
+  [1925] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_baseline_diagram_header, 4, 0, 2),
+  [1927] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_baseline_diagram_header, 4, 0, 2),
+  [1929] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_baseline_diagram_header, 4, 0, 9),
+  [1931] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_baseline_diagram_header, 4, 0, 9),
   [1933] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph_statement, 4, 0, 32),
   [1935] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph_statement, 4, 0, 32),
   [1937] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_style_statement, 4, 0, 16),
@@ -67294,8 +67294,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2231] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tree_diagram_header, 2, 0, 2),
   [2233] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_wardley_diagram_header, 2, 0, 2),
   [2235] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_wardley_diagram_header, 2, 0, 2),
-  [2237] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_generic_diagram_header, 2, 0, 2),
-  [2239] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_generic_diagram_header, 2, 0, 2),
+  [2237] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_baseline_diagram_header, 2, 0, 2),
+  [2239] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_baseline_diagram_header, 2, 0, 2),
   [2241] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph_statement, 2, 0, 0),
   [2243] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph_statement, 2, 0, 0),
   [2245] = {.entry = {.count = 2, .reusable = true}}, REDUCE(sym_event_modeling_statement, 2, 0, 3), REDUCE(sym_wardley_keyword_statement, 2, 0, 3),
@@ -67310,7 +67310,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2265] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_wardley_keyword_statement, 2, 0, 3),
   [2267] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tree_item_statement, 2, 0, 4),
   [2269] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tree_item_statement, 2, 0, 4),
-  [2271] = {.entry = {.count = 2, .reusable = false}}, REDUCE(sym_flow_node, 1, 0, 1), REDUCE(aux_sym_generic_statement_repeat1, 1, 0, 0),
+  [2271] = {.entry = {.count = 2, .reusable = false}}, REDUCE(sym_flow_node, 1, 0, 1), REDUCE(aux_sym_unknown_statement_repeat1, 1, 0, 0),
   [2274] = {.entry = {.count = 1, .reusable = false}}, SHIFT(1015),
   [2276] = {.entry = {.count = 1, .reusable = false}}, SHIFT(583),
   [2278] = {.entry = {.count = 1, .reusable = false}}, SHIFT(595),
@@ -67328,7 +67328,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2302] = {.entry = {.count = 1, .reusable = false}}, SHIFT(1091),
   [2304] = {.entry = {.count = 1, .reusable = false}}, SHIFT(1040),
   [2306] = {.entry = {.count = 1, .reusable = false}}, SHIFT(1045),
-  [2308] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_generic_statement_repeat1, 1, 0, 0),
+  [2308] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_unknown_statement_repeat1, 1, 0, 0),
   [2310] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_flow_node, 2, 0, 1),
   [2312] = {.entry = {.count = 1, .reusable = true}}, SHIFT(597),
   [2314] = {.entry = {.count = 1, .reusable = true}}, SHIFT(598),
@@ -67594,8 +67594,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [2864] = {.entry = {.count = 1, .reusable = false}}, SHIFT(780),
   [2866] = {.entry = {.count = 1, .reusable = false}}, SHIFT(253),
   [2868] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_call_action, 3, 0, 58),
-  [2870] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_generic_statement_repeat1, 2, 0, 0), SHIFT_REPEAT(521),
-  [2873] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_generic_statement_repeat1, 2, 0, 0),
+  [2870] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_unknown_statement_repeat1, 2, 0, 0), SHIFT_REPEAT(521),
+  [2873] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_unknown_statement_repeat1, 2, 0, 0),
   [2875] = {.entry = {.count = 1, .reusable = true}}, SHIFT(201),
   [2877] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_argument_list, 3, 0, 0),
   [2879] = {.entry = {.count = 1, .reusable = true}}, SHIFT(1115),

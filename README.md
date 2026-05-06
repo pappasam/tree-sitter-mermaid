@@ -2,7 +2,7 @@
 
 A tolerant Tree-sitter grammar for Mermaid diagrams.
 
-The parser is designed for editor tooling first: highlighting, navigation, folding, and indentation should keep working when a diagram contains newer or partially-supported Mermaid syntax. Stable statement families are parsed with structure, baseline diagrams are recognized by header, and unknown lines remain as `generic_statement` nodes instead of poisoning the whole tree.
+The parser is designed for editor tooling first: highlighting, navigation, folding, and indentation should keep working when a diagram contains newer or partially-supported Mermaid syntax. Stable statement families are parsed with structure, baseline diagrams are recognized by header, and unknown lines remain as `unknown_statement` nodes instead of poisoning the whole tree.
 
 Project scope: this grammar aims to provide structured support for Mermaid diagram types that are not experimental in Mermaid itself. Experimental diagram types may be recognized and kept recoverable, but they should be expected to receive only baseline parsing and highlighting until they stabilize upstream.
 
