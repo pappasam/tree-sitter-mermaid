@@ -8,335 +8,392 @@ title: Highlighting Samples
 ---
 
 architecture-beta
-group api(cloud)[API Gateway]
-service web(server)[Web App] in api
-service db(database)[Primary DB] in api
-junction edge in api
-web:R--L:edge
-edge:R--L:db
+  group api(cloud)[API Gateway]
+  service web(server)[Web App] in api
+  service db(database)[Primary DB] in api
+  junction edge in api
+  web:R--L:edge
+  edge:R--L:db
 
 block
-title Block Diagram
-columns 3
-Frontend
-Backend
-Database
-Frontend --> Backend
-Backend --> Database
+  title Block Diagram
+  columns 3
+  Frontend
+  Backend
+  Database
+  Frontend --> Backend
+  Backend --> Database
 
 block-beta
-title Block Beta Diagram
-columns 4
-User
-API
-Queue
-API --> Queue
+  title Block Beta Diagram
+  columns 4
+  User
+  API
+  Queue
+  API --> Queue
 
 c4
-title C4 Landscape
-Person customer Customer
-System web WebApp
-Rel customer web Browses
+  title C4 Landscape
+  Person customer Customer
+  System web WebApp
+  Rel customer web Browses
 
 C4Component
-title Component View
-Component router Router
-Component worker Worker
-Rel router worker QueuesWork
+  title Component View
+  Component router Router
+  Component worker Worker
+  Rel router worker QueuesWork
 
 C4Container
-title Container View
-Container ui ReactApp
-Container api GoService
-ContainerDb database PostgreSQL
-ui --> api
-api --> database
+  title Container View
+  Container ui ReactApp
+  Container api GoService
+  ContainerDb database PostgreSQL
+  ui --> api
+  api --> database
 
 C4Context
-title Context View
-Person admin Admin
-System portal Portal
-SystemExt mail EmailProvider
-portal --> mail
+  title Context View
+  Person admin Admin
+  System portal Portal
+  SystemExt mail EmailProvider
+  portal --> mail
 
 C4Deployment
-title Deployment View
-DeploymentNode cloud Cloud
-DeploymentNode cluster Cluster
-Container api Service
+  title Deployment View
+  DeploymentNode cloud Cloud
+  DeploymentNode cluster Cluster
+  Container api Service
 
 classDiagram
-note "From Duck till Zebra"
-Animal <|-- Duck
-note for Duck "can fly<br>can swim<br>can dive<br>can help in debugging"
-Animal <|-- Fish
-Animal <|-- Zebra
-Animal : +int age
-Animal : +String gender
-Animal: +isMammal()
-Animal: +mate()
-class Duck{
+  note "From Duck till Zebra"
+  Animal <|-- Duck
+  note for Duck "can fly<br>can swim<br>can dive<br>can help in debugging"
+  Animal <|-- Fish
+  Animal <|-- Zebra
+  Animal : +int age
+  Animal : +String gender
+  Animal: +isMammal()
+  Animal: +mate()
+  class Duck{
     +String beakColor
     +swim()
     +quack()
-}
-class Fish{
+  }
+  class Fish{
     -int sizeInFeet
     -canEat()
-}
-class Zebra{
+  }
+  class Zebra{
     +bool is_wild
     +run()
-}
+  }
 
 classDiagram-v2
-title Class Diagram V2
-Order
-Invoice
-Order --> Invoice
+  title Class Diagram V2
+  Order
+  Invoice
+  Order --> Invoice
 
 cynefin-beta
-clear
-complicated
-complex --> complicated: "analyze"
-chaotic --> confusion: "stabilize"
+  clear
+  complicated
+  complex --> complicated: "analyze"
+  chaotic --> confusion: "stabilize"
 
 erDiagram
-title Entity Relationship
-CUSTOMER places ORDER
-ORDER contains LINE_ITEM
-CUSTOMER id email
-ORDER id created_at
+  title Entity Relationship
+  CUSTOMER places ORDER
+  ORDER contains LINE_ITEM
+  CUSTOMER id email
+  ORDER id created_at
 
 eventmodeling
-title Event Model
-entity User
-data Profile
-gwt Given registered user
-tf Login flow
-note Capture failed attempts
+  title Event Model
+  entity User
+  data Profile
+  gwt Given registered user
+  tf Login flow
+  note Capture failed attempts
 
 flowchart TD
-subgraph ingress[Ingress]
-  Proxy[Load<br>Balancer]
-  WAF{Allowed?}
-end
-Proxy --> WAF
-WAF -->|yes| App[Application]
-WAF -->|no| Reject((Rejected))
-classDef hot fill:#ffe0b2,stroke:#ef6c00,color:#111
-class Proxy,App hot
+  subgraph ingress[Ingress]
+    Proxy[Load<br>Balancer]
+    WAF{Allowed?}
+  end
+  Proxy --> WAF
+  WAF -->|yes| App[Application]
+  WAF -->|no| Reject((Rejected))
+  classDef hot fill:#ffe0b2,stroke:#ef6c00,color:#111
+  class Proxy,App hot
 
 flowchart-elk LR
-A[Client] --> B{Route}
-B --> C[Fast Path]
-B --> D[Slow Path]
+  A[Client] --> B{Route}
+  B --> C[Fast Path]
+  B --> D[Slow Path]
 
 flowchart-v2 BT
-Start([Start]) --> Check{Ready?}
-Check -->|yes| Done([Done])
-Check -->|no| Wait[Wait]
+  Start([Start]) --> Check{Ready?}
+  Check -->|yes| Done([Done])
+  Check -->|no| Wait[Wait]
 
 gantt
-title Release Plan
-dateFormat YYYY-MM-DD
-section Build
-Parser updates done a1 2026-05-01 2d
-Highlight QA active a2 after a1 3d
-section Ship
-Release milestone 2026-05-08 0d
+  title Release Plan
+  dateFormat YYYY-MM-DD
+  section Build
+  Parser updates done a1 2026-05-01 2d
+  Highlight QA active a2 after a1 3d
+  section Ship
+  Release milestone 2026-05-08 0d
 
 gitGraph LR:
-commit id: "a1" tag: "start"
-branch feature order: 2
-checkout feature
-commit id: "b1"
-checkout main
-merge feature tag: "v1"
+  commit id: "a1" tag: "start"
+  branch feature order: 2
+  checkout feature
+  commit id: "b1"
+  checkout main
+  merge feature tag: "v1"
 
 graph LR
-User --> API
-API --> Cache[(Cache)]
-API --> DB[(Database)]
+  User --> API
+  API --> Cache[(Cache)]
+  API --> DB[(Database)]
 
 info
-showInfo
+  showInfo
 
 journey
-title Checkout Journey
-section Browse
-Find product 5 Customer
-section Buy
-Pay 3 Customer Gateway
-Confirm 4 Customer
+  title Checkout Journey
+  section Browse
+  Find product 5 Customer
+  section Buy
+  Pay 3 Customer Gateway
+  Confirm 4 Customer
 
 kanban
-todo Todo
-task1 WriteExamples
-doing Doing
-task2 CheckHighlights
-done Done
-task3 GenerateParser
+  todo Todo
+  task1 WriteExamples
+  doing Doing
+  task2 CheckHighlights
+  done Done
+  task3 GenerateParser
 
 kanban-beta
-todo Todo
-docs Docs
-review Review
-syntax SyntaxCaptures
-done Done
-tests Tests
+  todo Todo
+  docs Docs
+  review Review
+  syntax SyntaxCaptures
+  done Done
+  tests Tests
 
 mindmap
-root Mermaid
-Flow Nodes Edges
-Text Labels Tags
+  root Mermaid
+  Flow Nodes Edges
+  Text Labels Tags
 
 packet
-0-3: "Version"
-4-7: "Type"
-8-15: "Flags"
-16-31: "Length"
-+32: "Payload"
+  0-3: "Version"
+  4-7: "Type"
+  8-15: "Flags"
+  16-31: "Length"
+  +32: "Payload"
 
 packet-beta
-0-7: "Header"
-8-15: "Command"
-16-31: "Checksum"
-+32: "Body"
+  0-7: "Header"
+  8-15: "Command"
+  16-31: "Checksum"
+  +32: "Body"
 
 pie showData
-title Traffic Split
-"Web": 62
-"API": 25
-"Jobs": 13
+  title Traffic Split
+  "Web": 62
+  "API": 25
+  "Jobs": 13
 
 quadrantChart
-    title Reach and engagement of campaigns
-    x-axis Low Reach --> High Reach
-    y-axis Low Engagement --> High Engagement
-    quadrant-1 We should expand
-    quadrant-2 Need to promote
-    quadrant-3 Re-evaluate
-    quadrant-4 May be improved
-    Campaign A: [0.3, 0.6]
-    Campaign B: [0.45, 0.23]
-    Campaign C: [0.57, 0.69]
-    Campaign D: [0.78, 0.34]
-    Campaign E: [0.40, 0.34]
-    Campaign F: [0.35, 0.78]
+  title Reach and engagement of campaigns
+  x-axis Low Reach --> High Reach
+  y-axis Low Engagement --> High Engagement
+  quadrant-1 We should expand
+  quadrant-2 Need to promote
+  quadrant-3 Re-evaluate
+  quadrant-4 May be improved
+  Campaign A: [0.3, 0.6]
+  Campaign B: [0.45, 0.23]
+  Campaign C: [0.57, 0.69]
+  Campaign D: [0.78, 0.34]
+  Campaign E: [0.40, 0.34]
+  Campaign F: [0.35, 0.78]
 
 radar-beta
-title Capability Radar
-axis Syntax, Queries, Tests, Docs
-curve Current{3,4,3,2}
-curve Target{4,5,4,4}
-max 5
-ticks 5
-showLegend true
+  title Capability Radar
+  axis Syntax, Queries, Tests, Docs
+  curve Current{3,4,3,2}
+  curve Target{4,5,4,4}
+  max 5
+  ticks 5
+  showLegend true
 
 requirementDiagram
-title Requirements
-requirement parser_req
-id 1
-text Parser recognizes flow nodes
-risk medium
-verifymethod test
-functionalRequirement highlight_req
-parser_req satisfies highlight_req
+  requirement test_req {
+    id: 1
+    text: the test text.
+    risk: high
+    verifymethod: test
+  }
+
+  functionalRequirement test_req2 {
+    id: 1.1
+    text: the second test text.
+    risk: low
+    verifymethod: inspection
+  }
+
+  performanceRequirement test_req3 {
+    id: 1.2
+    text: the third test text.
+    risk: medium
+    verifymethod: demonstration
+  }
+
+  interfaceRequirement test_req4 {
+    id: 1.2.1
+    text: the fourth test text.
+    risk: medium
+    verifymethod: analysis
+  }
+
+  physicalRequirement test_req5 {
+    id: 1.2.2
+    text: the fifth test text.
+    risk: medium
+    verifymethod: analysis
+  }
+
+  designConstraint test_req6 {
+    id: 1.2.3
+    text: the sixth test text.
+    risk: medium
+    verifymethod: analysis
+  }
+
+  element test_entity {
+    type: simulation
+  }
+
+  element test_entity2 {
+    type: word doc
+    docRef: reqs/test_entity
+  }
+
+  element test_entity3 {
+    type: "test suite"
+    docRef: github.com/all_the_tests
+  }
+
+
+  test_entity - satisfies -> test_req2
+  test_req - traces -> test_req2
+  test_req - contains -> test_req3
+  test_req3 - contains -> test_req4
+  test_req4 - derives -> test_req5
+  test_req5 - refines -> test_req6
+  test_entity3 - verifies -> test_req5
+  test_req <- copies - test_entity2
 
 sequenceDiagram
-autonumber
-Alice->>John: Hello John, how are you?
-loop HealthCheck
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop HealthCheck
     John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
 
 stateDiagram
-direction TB
+  direction TB
 
-accTitle: This is the accessible title
-accDescr: This is an accessible description
+  accTitle: This is the accessible title
+  accDescr: This is an accessible description
 
-classDef notMoving fill:white
-classDef movement font-style:italic
-classDef badBadEvent fill:#f00,color:white,font-weight:bold,stroke-width:2px,stroke:yellow
+  classDef notMoving fill:white
+  classDef movement font-style:italic
+  classDef badBadEvent fill:#f00,color:white,font-weight:bold,stroke-width:2px,stroke:yellow
 
-[*]--> Still
-Still --> [*]
-Still --> Moving
-Moving --> Still
-Moving --> Crash
-Crash --> [*]
+  [*]--> Still
+  Still --> [*]
+  Still --> Moving
+  Moving --> Still
+  Moving --> Crash
+  Crash --> [*]
 
-class Still notMoving
-class Moving, Crash movement
-class Crash badBadEvent
-class end badBadEvent
+  class Still notMoving
+  class Moving, Crash movement
+  class Crash badBadEvent
+  class end badBadEvent
 
 stateDiagram-v2
-state Draft
-state Review
-Draft --> Review
-Review --> Published
-Review --> Draft
+  state Draft
+  state Review
+  Draft --> Review
+  Review --> Published
+  Review --> Draft
 
 timeline
-title Project Timeline
-section Parser
-2026-05-01 Grammar update
-2026-05-02 Corpus coverage
-section Highlighting
-2026-05-03 Query review
-2026-05-04 Manual QA
+  title Project Timeline
+  section Parser
+  2026-05-01 Grammar update
+  2026-05-02 Corpus coverage
+  section Highlighting
+  2026-05-03 Query review
+  2026-05-04 Manual QA
 
 treeView-beta
-"Project"
-"grammar.js":::source
-"queries"
-"highlights.scm":::query
-"examples"
-"all-diagram-types.mmd":::sample
+  "Project"
+  "grammar.js":::source
+  "queries"
+  "highlights.scm":::query
+  "examples"
+  "all-diagram-types.mmd":::sample
 
 treemap
-title Repository Focus
-"grammar": 45
-"queries": 30
-"tests": 15
-"examples": 10
+  title Repository Focus
+  "grammar": 45
+  "queries": 30
+  "tests": 15
+  "examples": 10
 
 treemap-beta
-title Highlight Captures
-"keywords": 18
-"strings": 22
-"variables": 16
-"operators": 10
-"tags": 4
+  title Highlight Captures
+  "keywords": 18
+  "strings": 22
+  "variables": 16
+  "operators": 10
+  "tags": 4
 
 wardley-beta
-title Wardley Map
-anchor User [0.95, 0.63]
-component Portal [0.82, 0.55]
-component API [0.68, 0.42]
-component Database [0.45, 0.25]
-User->Portal
-Portal->API
-API->Database
-evolve API 0.72
+  title Wardley Map
+  anchor User [0.95, 0.63]
+  component Portal [0.82, 0.55]
+  component API [0.68, 0.42]
+  component Database [0.45, 0.25]
+  User->Portal
+  Portal->API
+  API->Database
+  evolve API 0.72
 
 xychart-beta
-title Parse Speed
-x-axis small medium large
-y-axis bytesms 0 10000
-bar 7200 5600 4100
-line 7000 6100 5000
+  title Parse Speed
+  x-axis small medium large
+  y-axis bytesms 0 10000
+  bar 7200 5600 4100
+  line 7000 6100 5000
 
 zenuml
-title Login
-Browser API POST login
-API Auth validate credentials
-Auth API token
-API Browser OK
+  title Login
+  Browser API POST login
+  API Auth validate credentials
+  Auth API token
+  API Browser OK

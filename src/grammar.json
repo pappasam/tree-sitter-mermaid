@@ -30,52 +30,250 @@
           "name": "diagram"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "flow_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "flow_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "flow_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "architecture_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "architecture_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "architecture_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "cynefin_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "cynefin_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "cynefin_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "event_modeling_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "event_modeling_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "event_modeling_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "git_graph_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "git_graph_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "git_graph_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "info_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "info_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "info_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "packet_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "packet_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "packet_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "pie_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "pie_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "pie_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "radar_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "radar_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "radar_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
           "name": "tree_statement"
         },
         {
-          "type": "SYMBOL",
-          "name": "wardley_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "wardley_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "wardley_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -493,21 +691,40 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
-        },
-        {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "flow_statement"
                 }
               ]
             },
@@ -600,12 +817,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "architecture_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "architecture_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "architecture_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -699,28 +952,90 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "class_note_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "class_relationship_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "class_member_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "class_block"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "class_entity_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_note_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_relationship_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_member_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_block"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_entity_statement"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "class_note_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "class_relationship_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "class_member_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "class_block"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "class_entity_statement"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -805,12 +1120,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "cynefin_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "cynefin_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "cynefin_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -895,16 +1246,66 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "er_relationship_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "er_attribute_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "er_relationship_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "er_attribute_statement"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "er_relationship_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "er_attribute_statement"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -989,12 +1390,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "event_modeling_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "event_modeling_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "event_modeling_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1079,20 +1516,74 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "gantt_date_format_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "gantt_section_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "gantt_task_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "gantt_date_format_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "gantt_section_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "gantt_task_statement"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "gantt_date_format_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "gantt_section_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "gantt_task_statement"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1193,12 +1684,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "git_graph_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "git_graph_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "git_graph_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1283,12 +1810,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "info_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "info_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "info_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1373,16 +1936,66 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "journey_section_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "journey_task_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "journey_section_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "journey_task_statement"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "journey_section_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "journey_task_statement"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1476,12 +2089,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "packet_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "packet_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "packet_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1578,12 +2227,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "pie_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "pie_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "pie_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1668,17 +2353,18 @@
           "name": "comment"
         },
         {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "common_statement"
                 }
               ]
             },
@@ -1689,17 +2375,18 @@
           ]
         },
         {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "quadrant_axis_statement"
                 }
               ]
             },
@@ -1710,17 +2397,18 @@
           ]
         },
         {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "quadrant_section_statement"
                 }
               ]
             },
@@ -1731,17 +2419,18 @@
           ]
         },
         {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "quadrant_point_statement"
                 }
               ]
             },
@@ -1834,12 +2523,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "radar_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "radar_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "radar_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -1924,21 +2649,61 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
-        },
-        {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "sequence_autonumber_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "sequence_loop_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "sequence_note_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "sequence_message_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "end_statement"
+                    }
+                  ]
                 }
               ]
             },
@@ -2061,21 +2826,61 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
-        },
-        {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
                   "type": "SYMBOL",
                   "name": "indentation"
                 },
                 {
-                  "type": "BLANK"
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "flow_direction_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_def_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "class_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "state_declaration_statement"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "state_transition_statement"
+                    }
+                  ]
                 }
               ]
             },
@@ -2189,8 +2994,26 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -2279,12 +3102,48 @@
           "name": "comment"
         },
         {
-          "type": "SYMBOL",
-          "name": "common_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "wardley_statement"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "wardley_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "wardley_statement"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -6579,6 +7438,19 @@
       }
     },
     "wardley_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "wardley_keyword_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "wardley_edge_statement"
+        }
+      ]
+    },
+    "wardley_keyword_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -6656,9 +7528,83 @@
         }
       ]
     },
+    "wardley_edge_statement": {
+      "type": "PREC",
+      "value": 2,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "source",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "wardley_arrow"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "target",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_line_remainder"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_terminator"
+          }
+        ]
+      }
+    },
+    "wardley_arrow": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "->"
+        },
+        {
+          "type": "STRING",
+          "value": "-->"
+        }
+      ]
+    },
     "generic_statement": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "indentation"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "REPEAT1",
           "content": {
@@ -6905,8 +7851,12 @@
     "indentation": {
       "type": "TOKEN",
       "content": {
-        "type": "PATTERN",
-        "value": "[ \\t]+"
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "[ \\t]+"
+        }
       }
     },
     "_line_remainder": {
@@ -6954,7 +7904,7 @@
   "conflicts": [
     [
       "event_modeling_statement",
-      "wardley_statement"
+      "wardley_keyword_statement"
     ],
     [
       "standalone_flow_node",

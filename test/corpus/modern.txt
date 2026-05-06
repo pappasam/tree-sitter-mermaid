@@ -172,6 +172,46 @@ ORDER id created_at
         (identifier)))))
 
 ==================
+indented er diagram body
+==================
+
+erDiagram
+  title Entity Relationship
+  CUSTOMER places ORDER
+  ORDER contains LINE_ITEM
+  CUSTOMER id email
+  ORDER id created_at
+
+---
+
+(source_file
+  (diagram
+    (er_diagram
+      (er_diagram_header
+        (diagram_type))
+      (common_statement
+        (title_statement
+          (line_text)))
+      (er_relationship_statement
+        (identifier)
+        (er_relationship_label)
+        (identifier))
+      (indentation)
+      (er_relationship_statement
+        (identifier)
+        (er_relationship_label)
+        (identifier))
+      (er_attribute_statement
+        (identifier)
+        (identifier)
+        (identifier))
+      (indentation)
+      (er_attribute_statement
+        (identifier)
+        (identifier)
+        (identifier)))))
+
+==================
 gantt shorthand
 ==================
 

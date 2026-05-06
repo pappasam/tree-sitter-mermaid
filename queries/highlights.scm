@@ -172,14 +172,16 @@
   name: (identifier) @function
   parameters: (class_parameter_list))
 
-(er_relationship_statement
+((er_relationship_statement
   source: (identifier) @type
   relationship: (er_relationship_label) @keyword
   target: (identifier) @type)
+ (#set! priority 110))
 
-(er_attribute_statement
+((er_attribute_statement
   entity: (identifier) @type
   attribute: (identifier) @property)
+ (#set! priority 110))
 
 (gantt_date_format_statement format: (gantt_date_format) @string.special)
 (gantt_section_statement name: (gantt_section_name) @namespace)
@@ -263,5 +265,3 @@
   "@"
   "|"
 ] @punctuation.delimiter
-
-(generic_statement) @none

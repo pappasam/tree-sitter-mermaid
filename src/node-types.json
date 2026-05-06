@@ -68,6 +68,10 @@
         {
           "type": "directive",
           "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
         }
       ]
     }
@@ -496,6 +500,10 @@
         {
           "type": "directive",
           "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
         }
       ]
     }
@@ -868,6 +876,10 @@
         {
           "type": "directive",
           "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
         }
       ]
     }
@@ -1157,6 +1169,10 @@
         {
           "type": "er_relationship_statement",
           "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
         }
       ]
     }
@@ -1244,6 +1260,10 @@
         },
         {
           "type": "event_modeling_statement",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         }
       ]
@@ -1682,6 +1702,10 @@
         {
           "type": "gantt_task_statement",
           "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
         }
       ]
     }
@@ -1867,6 +1891,10 @@
           "named": true
         },
         {
+          "type": "indentation",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -1903,6 +1931,10 @@
         },
         {
           "type": "git_graph_statement",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         }
       ]
@@ -2104,6 +2136,10 @@
           "named": true
         },
         {
+          "type": "indentation",
+          "named": true
+        },
+        {
           "type": "info_diagram_header",
           "named": true
         },
@@ -2153,6 +2189,10 @@
         },
         {
           "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         },
         {
@@ -2385,6 +2425,10 @@
           "named": true
         },
         {
+          "type": "indentation",
+          "named": true
+        },
+        {
           "type": "packet_diagram_header",
           "named": true
         },
@@ -2463,6 +2507,10 @@
         },
         {
           "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         },
         {
@@ -2790,6 +2838,10 @@
         },
         {
           "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         },
         {
@@ -3230,6 +3282,10 @@
           "named": true
         },
         {
+          "type": "indentation",
+          "named": true
+        },
+        {
           "type": "info_statement",
           "named": true
         },
@@ -3641,6 +3697,10 @@
           "named": true
         },
         {
+          "type": "indentation",
+          "named": true
+        },
+        {
           "type": "tree_diagram_header",
           "named": true
         },
@@ -3737,6 +3797,11 @@
     }
   },
   {
+    "type": "wardley_arrow",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "wardley_diagram",
     "named": true,
     "fields": {},
@@ -3754,6 +3819,10 @@
         },
         {
           "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         },
         {
@@ -3784,7 +3853,43 @@
     }
   },
   {
-    "type": "wardley_statement",
+    "type": "wardley_edge_statement",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "wardley_arrow",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "wardley_keyword_statement",
     "named": true,
     "fields": {
       "keyword": {
@@ -3841,6 +3946,25 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "wardley_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "wardley_edge_statement",
+          "named": true
+        },
+        {
+          "type": "wardley_keyword_statement",
+          "named": true
+        }
+      ]
     }
   },
   {

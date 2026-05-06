@@ -90,6 +90,7 @@ const genericDiagramTypes = diagramTypes.filter(
 );
 
 const typeChoice = (types) => (types.length === 1 ? types[0] : choice(...types));
+const bodyItem = ($, rule) => choice(seq($.indentation, rule), rule);
 
 module.exports = grammar({
   name: 'mermaid',
@@ -99,7 +100,7 @@ module.exports = grammar({
   word: ($) => $.identifier,
 
   conflicts: ($) => [
-    [$.event_modeling_statement, $.wardley_statement],
+    [$.event_modeling_statement, $.wardley_keyword_statement],
     [$.standalone_flow_node, $.flow_node],
     [$.generic_statement, $.flow_node],
   ],
@@ -113,18 +114,18 @@ module.exports = grammar({
         $.directive,
         $.comment,
         $.diagram,
-        $.common_statement,
-        $.flow_statement,
-        $.architecture_statement,
-        $.cynefin_statement,
-        $.event_modeling_statement,
-        $.git_graph_statement,
-        $.info_statement,
-        $.packet_statement,
-        $.pie_statement,
-        $.radar_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.flow_statement),
+        bodyItem($, $.architecture_statement),
+        bodyItem($, $.cynefin_statement),
+        bodyItem($, $.event_modeling_statement),
+        bodyItem($, $.git_graph_statement),
+        bodyItem($, $.info_statement),
+        bodyItem($, $.packet_statement),
+        bodyItem($, $.pie_statement),
+        bodyItem($, $.radar_statement),
         $.tree_statement,
-        $.wardley_statement,
+        bodyItem($, $.wardley_statement),
         $.generic_statement,
         $._terminator,
       ),
@@ -176,8 +177,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        seq(optional($.indentation), $.flow_statement),
+        bodyItem($, $.common_statement),
+        bodyItem($, $.flow_statement),
         $._terminator,
       ),
 
@@ -192,8 +193,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.architecture_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.architecture_statement),
         $._terminator,
       ),
 
@@ -208,12 +209,14 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.class_note_statement,
-        $.class_relationship_statement,
-        $.class_member_statement,
-        $.class_block,
-        $.class_entity_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, choice(
+          $.class_note_statement,
+          $.class_relationship_statement,
+          $.class_member_statement,
+          $.class_block,
+          $.class_entity_statement,
+        )),
         $._terminator,
       ),
 
@@ -228,8 +231,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.cynefin_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.cynefin_statement),
         $._terminator,
       ),
 
@@ -244,9 +247,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.er_relationship_statement,
-        $.er_attribute_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, choice($.er_relationship_statement, $.er_attribute_statement)),
         $._terminator,
       ),
 
@@ -261,8 +263,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.event_modeling_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.event_modeling_statement),
         $._terminator,
       ),
 
@@ -277,10 +279,12 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.gantt_date_format_statement,
-        $.gantt_section_statement,
-        $.gantt_task_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, choice(
+          $.gantt_date_format_statement,
+          $.gantt_section_statement,
+          $.gantt_task_statement,
+        )),
         $._terminator,
       ),
 
@@ -300,8 +304,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.git_graph_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.git_graph_statement),
         $._terminator,
       ),
 
@@ -316,8 +320,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.info_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.info_statement),
         $._terminator,
       ),
 
@@ -332,9 +336,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.journey_section_statement,
-        $.journey_task_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, choice($.journey_section_statement, $.journey_task_statement)),
         $._terminator,
       ),
 
@@ -349,8 +352,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.packet_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.packet_statement),
         $._terminator,
       ),
 
@@ -370,8 +373,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.pie_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.pie_statement),
         $._terminator,
       ),
 
@@ -386,10 +389,10 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        seq(optional($.indentation), $.common_statement),
-        seq(optional($.indentation), $.quadrant_axis_statement),
-        seq(optional($.indentation), $.quadrant_section_statement),
-        seq(optional($.indentation), $.quadrant_point_statement),
+        bodyItem($, $.common_statement),
+        bodyItem($, $.quadrant_axis_statement),
+        bodyItem($, $.quadrant_section_statement),
+        bodyItem($, $.quadrant_point_statement),
         $._terminator,
       ),
 
@@ -404,8 +407,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.radar_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.radar_statement),
         $._terminator,
       ),
 
@@ -420,17 +423,14 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        seq(
-          optional($.indentation),
-          choice(
-            $.sequence_autonumber_statement,
-            $.sequence_loop_statement,
-            $.sequence_note_statement,
-            $.sequence_message_statement,
-            $.end_statement,
-          ),
-        ),
+        bodyItem($, $.common_statement),
+        bodyItem($, choice(
+          $.sequence_autonumber_statement,
+          $.sequence_loop_statement,
+          $.sequence_note_statement,
+          $.sequence_message_statement,
+          $.end_statement,
+        )),
         $._terminator,
       ),
 
@@ -445,17 +445,14 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        seq(
-          optional($.indentation),
-          choice(
-            $.flow_direction_statement,
-            $.class_def_statement,
-            $.class_statement,
-            $.state_declaration_statement,
-            $.state_transition_statement,
-          ),
-        ),
+        bodyItem($, $.common_statement),
+        bodyItem($, choice(
+          $.flow_direction_statement,
+          $.class_def_statement,
+          $.class_statement,
+          $.state_declaration_statement,
+          $.state_transition_statement,
+        )),
         $._terminator,
       ),
 
@@ -470,7 +467,7 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
+        bodyItem($, $.common_statement),
         $.tree_statement,
         $._terminator,
       ),
@@ -486,8 +483,8 @@ module.exports = grammar({
       choice(
         $.directive,
         $.comment,
-        $.common_statement,
-        $.wardley_statement,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.wardley_statement),
         $._terminator,
       ),
 
@@ -1061,6 +1058,12 @@ module.exports = grammar({
     bare_tree_name: (_) => token(prec(PREC.remainder, /[^ \t\n\r"'#:,{][^\n\r:,{]*/)),
 
     wardley_statement: ($) =>
+      choice(
+        $.wardley_keyword_statement,
+        $.wardley_edge_statement,
+      ),
+
+    wardley_keyword_statement: ($) =>
       seq(
         field(
           'keyword',
@@ -1083,7 +1086,18 @@ module.exports = grammar({
         $._terminator,
       ),
 
-    generic_statement: ($) => seq(repeat1(choice($.identifier, $.number, $.quoted_string, $.generic_token)), $._terminator),
+    wardley_edge_statement: ($) =>
+      prec(PREC.flow_statement, seq(
+        field('source', $.identifier),
+        field('operator', $.wardley_arrow),
+        field('target', $.identifier),
+        optional($._line_remainder),
+        $._terminator,
+      )),
+
+    wardley_arrow: (_) => choice('->', '-->'),
+
+    generic_statement: ($) => seq(optional($.indentation), repeat1(choice($.identifier, $.number, $.quoted_string, $.generic_token)), $._terminator),
 
     identifier_list: ($) => seq($.identifier, repeat(seq(',', $.identifier))),
 
@@ -1107,7 +1121,7 @@ module.exports = grammar({
 
     boolean: (_) => choice('true', 'false'),
 
-    indentation: (_) => token(/[ \t]+/),
+    indentation: (_) => token(prec(1, /[ \t]+/)),
 
     _line_remainder: (_) => token(prec(PREC.remainder, /[^\n\r;]+/)),
 
