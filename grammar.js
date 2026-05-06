@@ -7,6 +7,14 @@ const PREC = {
 const typeChoice = (types) => (types.length === 1 ? types[0] : choice(...types));
 const bodyItem = ($, rule) => choice(prec(1, seq($.indentation, rule)), rule);
 
+const SUPPORT = {
+  baseline: 'baseline',
+  structured: 'structured',
+};
+
+// Diagram support is intentionally tiered:
+// - structured diagrams have diagram-scoped body rules;
+// - baseline diagrams recognize the header and recover body lines through generic_statement.
 const diagramDefinitions = [
   {
     name: 'architecture',
@@ -14,8 +22,8 @@ const diagramDefinitions = [
     statements: ($) => [$.architecture_statement],
     topLevelStatements: ($) => [$.architecture_statement],
   },
-  {name: 'block', types: ['block', 'block-beta'], support: 'baseline'},
-  {name: 'c4', types: ['c4', 'C4Component', 'C4Container', 'C4Context', 'C4Deployment'], support: 'baseline'},
+  {name: 'block', types: ['block', 'block-beta'], support: SUPPORT.baseline},
+  {name: 'c4', types: ['c4', 'C4Component', 'C4Container', 'C4Context', 'C4Deployment'], support: SUPPORT.baseline},
   {
     name: 'class',
     types: ['classDiagram', 'classDiagram-v2'],
@@ -82,7 +90,7 @@ const diagramDefinitions = [
     types: ['journey'],
     statements: ($) => [choice($.journey_section_statement, $.journey_task_statement)],
   },
-  {name: 'kanban', types: ['kanban', 'kanban-beta'], support: 'baseline'},
+  {name: 'kanban', types: ['kanban', 'kanban-beta'], support: SUPPORT.baseline},
   {
     name: 'mindmap',
     types: ['mindmap'],
@@ -155,15 +163,15 @@ const diagramDefinitions = [
     indentStatements: false,
     topLevelStatements: ($) => [$.tree_statement],
   },
-  {name: 'treemap', types: ['treemap', 'treemap-beta'], support: 'baseline'},
+  {name: 'treemap', types: ['treemap', 'treemap-beta'], support: SUPPORT.baseline},
   {
     name: 'wardley',
     types: ['wardley-beta'],
     statements: ($) => [$.wardley_statement],
     topLevelStatements: ($) => [$.wardley_statement],
   },
-  {name: 'xychart', types: ['xychart-beta'], support: 'baseline'},
-  {name: 'zenuml', types: ['zenuml'], support: 'baseline'},
+  {name: 'xychart', types: ['xychart-beta'], support: SUPPORT.baseline},
+  {name: 'zenuml', types: ['zenuml'], support: SUPPORT.baseline},
 ];
 
 const diagramParseOrder = [
@@ -190,13 +198,13 @@ const diagramParseOrder = [
   'wardley',
 ];
 
+const diagramSupport = (definition) => definition.support ?? SUPPORT.structured;
 const scopedDiagramDefinitions = diagramParseOrder.map((name) =>
   diagramDefinitions.find((definition) => definition.name === name)
 );
+const baselineDiagramDefinitions = diagramDefinitions.filter((definition) => diagramSupport(definition) === SUPPORT.baseline);
 const diagramTypes = diagramDefinitions.flatMap((definition) => definition.types);
-const genericDiagramTypes = diagramDefinitions
-  .filter((definition) => definition.support === 'baseline')
-  .flatMap((definition) => definition.types);
+const baselineDiagramTypes = baselineDiagramDefinitions.flatMap((definition) => definition.types);
 
 const diagramRuleName = (definition) => `${definition.name}_diagram`;
 const diagramHeaderRuleName = (definition) => `${definition.name}_diagram_header`;
@@ -309,7 +317,7 @@ module.exports = grammar({
         $._terminator,
       ),
 
-    generic_diagram_type: (_) => token(prec(20, typeChoice(genericDiagramTypes))),
+    generic_diagram_type: (_) => token(prec(20, typeChoice(baselineDiagramTypes))),
 
     direction: (_) => choice('TB', 'TD', 'BT', 'RL', 'LR', 'BR', '<', '>', '^', 'v'),
 
