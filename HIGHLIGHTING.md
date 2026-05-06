@@ -20,7 +20,7 @@ Highlight captures should describe Mermaid concepts consistently across diagram 
 - `@attribute`: annotations, directives, icons, and metadata
 - `@tag`: inline HTML tags inside Mermaid labels
 - `@comment`: Mermaid comments and comment-like annotations
-- `@preproc`: frontmatter
+- `@preproc`: frontmatter delimiters; frontmatter content is injected as YAML
 - `@punctuation.*`: delimiters, brackets, and special punctuation
 
 ## Guidelines

@@ -14,7 +14,7 @@
 
 (directive) @attribute
 (comment) @comment
-(frontmatter) @preproc
+(frontmatter_delimiter) @preproc
 
 [
   "direction"

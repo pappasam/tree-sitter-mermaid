@@ -1760,6 +1760,59 @@
     }
   },
   {
+    "type": "frontmatter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "frontmatter_body",
+          "named": true
+        },
+        {
+          "type": "frontmatter_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "frontmatter_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "frontmatter_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "frontmatter_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "frontmatter_content",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "gantt_date_format_statement",
     "named": true,
     "fields": {
@@ -5000,7 +5053,11 @@
     "named": false
   },
   {
-    "type": "frontmatter",
+    "type": "frontmatter_content",
+    "named": true
+  },
+  {
+    "type": "frontmatter_delimiter",
     "named": true
   },
   {

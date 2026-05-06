@@ -304,7 +304,21 @@ module.exports = grammar({
         $.baseline_diagram,
       ),
 
-    frontmatter: (_) => token(/---[\s\S]*---/),
+    frontmatter: ($) =>
+      seq(
+        $.frontmatter_delimiter,
+        $._terminator,
+        optional($.frontmatter_body),
+        $.frontmatter_delimiter,
+      ),
+
+    frontmatter_delimiter: (_) => '---',
+
+    frontmatter_body: ($) => repeat1(choice($.frontmatter_line, $._terminator)),
+
+    frontmatter_line: ($) => seq(optional($.indentation), $.frontmatter_content),
+
+    frontmatter_content: (_) => token(prec(-1, /[^\n\r]+/)),
 
     directive: (_) => token(seq('%%{', /[^%]*(%+[^}%][^%]*)*/, '}%%')),
 

@@ -1,2 +1,5 @@
-;; Mermaid does not currently inject nested languages on its own.
-;; Markdown parsers should inject this parser for ```mermaid fences.
+((frontmatter
+  (frontmatter_body) @injection.content)
+ (#set! injection.language "yaml")
+ (#set! injection.include-children)
+)
