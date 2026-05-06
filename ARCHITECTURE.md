@@ -11,7 +11,7 @@ This project prioritizes:
 - broad diagram recognition
 - recoverable parsing for unknown or newer syntax
 - diagram-scoped body rules
-- consistent semantic highlight captures
+- consistent semantic highlight captures; see [HIGHLIGHTING.md](HIGHLIGHTING.md)
 - incremental structure as diagram support matures
 
 The rejected alternative prioritizes deeper parsing for a smaller set of older diagram families.
