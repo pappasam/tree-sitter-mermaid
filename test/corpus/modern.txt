@@ -325,3 +325,76 @@ Confirm 4 Customer
           (identifier))
         (number)
         (identifier)))))
+
+==================
+sequence diagram details
+==================
+
+sequenceDiagram
+autonumber
+Alice->>John: Hello John, how are you?
+loop HealthCheck
+    John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
+
+---
+
+(source_file
+  (diagram
+    (sequence_diagram
+      (sequence_diagram_header
+        (diagram_type))
+      (sequence_autonumber_statement
+        (sequence_autonumber_keyword))
+      (sequence_message_statement
+        (sequence_actor
+          (identifier))
+        (sequence_arrow)
+        (sequence_actor
+          (identifier))
+        (sequence_message_text))
+      (sequence_loop_statement
+        (sequence_loop_keyword)
+        (sequence_message_text))
+      (indentation)
+      (sequence_message_statement
+        (sequence_actor
+          (identifier))
+        (sequence_arrow)
+        (sequence_actor
+          (identifier))
+        (sequence_message_text))
+      (end_statement)
+      (sequence_note_statement
+        (sequence_note_keyword)
+        (sequence_note_position)
+        (sequence_of_keyword)
+        (sequence_actor_list
+          (sequence_actor
+            (identifier)))
+        (sequence_message_text))
+      (sequence_message_statement
+        (sequence_actor
+          (identifier))
+        (sequence_arrow)
+        (sequence_actor
+          (identifier))
+        (sequence_message_text))
+      (sequence_message_statement
+        (sequence_actor
+          (identifier))
+        (sequence_arrow)
+        (sequence_actor
+          (identifier))
+        (sequence_message_text))
+      (sequence_message_statement
+        (sequence_actor
+          (identifier))
+        (sequence_arrow)
+        (sequence_actor
+          (identifier))
+        (sequence_message_text)))))

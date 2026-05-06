@@ -60,6 +60,7 @@ const journeyDiagramTypes = ['journey'];
 const packetDiagramTypes = ['packet', 'packet-beta'];
 const pieDiagramTypes = ['pie'];
 const radarDiagramTypes = ['radar-beta'];
+const sequenceDiagramTypes = ['sequenceDiagram'];
 const treeDiagramTypes = ['treeView-beta'];
 const wardleyDiagramTypes = ['wardley-beta'];
 const genericDiagramTypes = diagramTypes.filter(
@@ -78,6 +79,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...packetDiagramTypes,
       ...pieDiagramTypes,
       ...radarDiagramTypes,
+      ...sequenceDiagramTypes,
       ...treeDiagramTypes,
       ...wardleyDiagramTypes,
     ].includes(type),
@@ -108,7 +110,6 @@ module.exports = grammar({
         $.comment,
         $.diagram,
         $.common_statement,
-        $.sequence_message_statement,
         $.flow_statement,
         $.architecture_statement,
         $.cynefin_statement,
@@ -139,6 +140,7 @@ module.exports = grammar({
         $.packet_diagram,
         $.pie_diagram,
         $.radar_diagram,
+        $.sequence_diagram,
         $.tree_diagram,
         $.wardley_diagram,
         $.generic_diagram,
@@ -169,7 +171,7 @@ module.exports = grammar({
         $.directive,
         $.comment,
         $.common_statement,
-        $.flow_statement,
+        seq(optional($.indentation), $.flow_statement),
         $._terminator,
       ),
 
@@ -383,6 +385,31 @@ module.exports = grammar({
         $._terminator,
       ),
 
+    sequence_diagram: ($) => prec.right(seq($.sequence_diagram_header, repeat($._sequence_diagram_item))),
+
+    sequence_diagram_header: ($) =>
+      seq(field('type', alias($.sequence_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    sequence_diagram_type: (_) => token(prec(20, typeChoice(sequenceDiagramTypes))),
+
+    _sequence_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        seq(
+          optional($.indentation),
+          choice(
+            $.sequence_autonumber_statement,
+            $.sequence_loop_statement,
+            $.sequence_note_statement,
+            $.sequence_message_statement,
+            $.end_statement,
+          ),
+        ),
+        $._terminator,
+      ),
+
     tree_diagram: ($) => prec.right(seq($.tree_diagram_header, repeat($._tree_diagram_item))),
 
     tree_diagram_header: ($) =>
@@ -465,7 +492,58 @@ module.exports = grammar({
         $.flow_node_statement,
       ),
 
-    sequence_message_statement: ($) => seq(token(prec(5, /[^\n\r;]*(<<->>|<<-->>|->>|-->>|-[x)]|--[x)])[^\n\r;]*/)), $._terminator),
+    sequence_message_statement: ($) =>
+      prec(5, seq(
+        field('source', $.sequence_actor),
+        field('arrow', $.sequence_arrow),
+        field('target', $.sequence_actor),
+        optional(seq(':', field('message', optional($.sequence_message_text)))),
+        $._terminator,
+      )),
+
+    sequence_autonumber_statement: ($) => seq($.sequence_autonumber_keyword, $._terminator),
+
+    sequence_loop_statement: ($) =>
+      seq($.sequence_loop_keyword, field('label', optional($.sequence_message_text)), $._terminator),
+
+    sequence_note_statement: ($) =>
+      seq(
+        $.sequence_note_keyword,
+        field('position', $.sequence_note_position),
+        $.sequence_of_keyword,
+        field('target', $.sequence_actor_list),
+        ':',
+        field('message', optional($.sequence_message_text)),
+        $._terminator,
+      ),
+
+    sequence_autonumber_keyword: (_) => token(prec(5, 'autonumber')),
+
+    sequence_loop_keyword: (_) => token(prec(5, 'loop')),
+
+    sequence_note_keyword: (_) => token(prec(5, 'Note')),
+
+    sequence_of_keyword: (_) => token(prec(5, 'of')),
+
+    sequence_note_position: (_) => choice('left', 'right', 'over'),
+
+    sequence_actor_list: ($) => seq($.sequence_actor, repeat(seq(',', $.sequence_actor))),
+
+    sequence_actor: ($) => $.identifier,
+
+    sequence_arrow: (_) =>
+      choice(
+        '<<->>',
+        '<<-->>',
+        '->>',
+        '-->>',
+        '-x',
+        '--x',
+        '-)',
+        '--)',
+      ),
+
+    sequence_message_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
     flow_direction_statement: ($) => seq('direction', field('direction', $.direction), $._terminator),
 
@@ -916,7 +994,7 @@ module.exports = grammar({
 
     label_text_fragment: (_) => token(prec(PREC.remainder, /[^<\]\)\}\|\n\r;]+|</)),
 
-    identifier: (_) => token(/[A-Za-z_][A-Za-z0-9_-]*/),
+    identifier: (_) => token(/[A-Za-z_][A-Za-z0-9_]*/),
 
     number: (_) => token(/-?(0|[1-9][0-9]*)(\.[0-9]+)?/),
 

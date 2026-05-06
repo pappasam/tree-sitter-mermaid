@@ -90,6 +90,7 @@ end
           (square_label
             (label_text
               (label_text_fragment)))))
+      (indentation)
       (flow_statement
         (flow_edge_statement
           (flow_node
@@ -124,6 +125,7 @@ end
           (square_label
             (label_text
               (label_text_fragment)))))
+      (indentation)
       (flow_statement
         (flow_node_statement
           (standalone_flow_node

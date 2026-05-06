@@ -983,6 +983,10 @@
           "named": true
         },
         {
+          "type": "sequence_diagram",
+          "named": true
+        },
+        {
           "type": "tree_diagram",
           "named": true
         },
@@ -1302,6 +1306,10 @@
         },
         {
           "type": "flow_statement",
+          "named": true
+        },
+        {
+          "type": "indentation",
           "named": true
         }
       ]
@@ -2684,9 +2692,253 @@
     }
   },
   {
-    "type": "sequence_message_statement",
+    "type": "sequence_actor",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_actor_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_actor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_arrow",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "sequence_autonumber_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_autonumber_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "end_statement",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "sequence_autonumber_statement",
+          "named": true
+        },
+        {
+          "type": "sequence_diagram_header",
+          "named": true
+        },
+        {
+          "type": "sequence_loop_statement",
+          "named": true
+        },
+        {
+          "type": "sequence_message_statement",
+          "named": true
+        },
+        {
+          "type": "sequence_note_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "sequence_loop_statement",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sequence_message_text",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_loop_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_message_statement",
+    "named": true,
+    "fields": {
+      "arrow": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sequence_arrow",
+            "named": true
+          }
+        ]
+      },
+      "message": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sequence_message_text",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sequence_actor",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sequence_actor",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "sequence_message_text",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sequence_note_position",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sequence_note_statement",
+    "named": true,
+    "fields": {
+      "message": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sequence_message_text",
+            "named": true
+          }
+        ]
+      },
+      "position": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sequence_note_position",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sequence_actor_list",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_note_keyword",
+          "named": true
+        },
+        {
+          "type": "sequence_of_keyword",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "shape_data",
@@ -2770,10 +3022,6 @@
         },
         {
           "type": "radar_statement",
-          "named": true
-        },
-        {
-          "type": "sequence_message_statement",
           "named": true
         },
         {
@@ -3269,7 +3517,31 @@
     "named": false
   },
   {
+    "type": "-)",
+    "named": false
+  },
+  {
+    "type": "--)",
+    "named": false
+  },
+  {
     "type": "-->",
+    "named": false
+  },
+  {
+    "type": "-->>",
+    "named": false
+  },
+  {
+    "type": "--x",
+    "named": false
+  },
+  {
+    "type": "->>",
+    "named": false
+  },
+  {
+    "type": "-x",
     "named": false
   },
   {
@@ -3290,6 +3562,14 @@
   },
   {
     "type": "<",
+    "named": false
+  },
+  {
+    "type": "<<-->>",
+    "named": false
+  },
+  {
+    "type": "<<->>",
     "named": false
   },
   {
@@ -3657,6 +3937,10 @@
     "named": true
   },
   {
+    "type": "left",
+    "named": false
+  },
+  {
     "type": "linkStyle",
     "named": false
   },
@@ -3693,6 +3977,10 @@
     "named": false
   },
   {
+    "type": "over",
+    "named": false
+  },
+  {
     "type": "owns",
     "named": false
   },
@@ -3725,8 +4013,28 @@
     "named": false
   },
   {
+    "type": "right",
+    "named": false
+  },
+  {
     "type": "section",
     "named": false
+  },
+  {
+    "type": "sequence_autonumber_keyword",
+    "named": true
+  },
+  {
+    "type": "sequence_loop_keyword",
+    "named": true
+  },
+  {
+    "type": "sequence_note_keyword",
+    "named": true
+  },
+  {
+    "type": "sequence_of_keyword",
+    "named": true
   },
   {
     "type": "service",

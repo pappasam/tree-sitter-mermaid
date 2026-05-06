@@ -202,6 +202,22 @@
 (radar_curve name: (identifier) @function)
 (radar_option value: (_) @constant)
 
+(sequence_message_statement
+  source: (sequence_actor) @variable
+  arrow: (sequence_arrow) @operator
+  target: (sequence_actor) @variable
+  message: (sequence_message_text) @string)
+
+(sequence_autonumber_keyword) @keyword
+(sequence_loop_keyword) @keyword
+(sequence_note_keyword) @keyword
+(sequence_of_keyword) @keyword
+(sequence_loop_statement label: (sequence_message_text) @string)
+(sequence_note_statement
+  position: (sequence_note_position) @keyword
+  target: (sequence_actor_list (sequence_actor) @variable)
+  message: (sequence_message_text) @string)
+
 (tree_item_statement name: (quoted_string) @string)
 (tree_icon_annotation) @attribute
 (tree_description_annotation) @comment

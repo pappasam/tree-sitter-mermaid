@@ -240,13 +240,14 @@ parser_req satisfies highlight_req
 
 sequenceDiagram
 autonumber
-participant Browser
-participant API
-participant DB
-Browser->>API: GET /items
-API-->>DB: SELECT *
-DB-->>API: rows
-API-->>Browser: 200 OK
+Alice->>John: Hello John, how are you?
+loop HealthCheck
+    John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
 
 stateDiagram
 state Idle
