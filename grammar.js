@@ -61,6 +61,7 @@ const packetDiagramTypes = ['packet', 'packet-beta'];
 const pieDiagramTypes = ['pie'];
 const quadrantDiagramTypes = ['quadrantChart'];
 const radarDiagramTypes = ['radar-beta'];
+const requirementDiagramTypes = ['requirementDiagram'];
 const sequenceDiagramTypes = ['sequenceDiagram'];
 const stateDiagramTypes = ['stateDiagram', 'stateDiagram-v2'];
 const treeDiagramTypes = ['treeView-beta'];
@@ -82,6 +83,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...pieDiagramTypes,
       ...quadrantDiagramTypes,
       ...radarDiagramTypes,
+      ...requirementDiagramTypes,
       ...sequenceDiagramTypes,
       ...stateDiagramTypes,
       ...treeDiagramTypes,
@@ -146,6 +148,7 @@ module.exports = grammar({
         $.pie_diagram,
         $.quadrant_diagram,
         $.radar_diagram,
+        $.requirement_diagram,
         $.sequence_diagram,
         $.state_diagram,
         $.tree_diagram,
@@ -409,6 +412,22 @@ module.exports = grammar({
         $.comment,
         bodyItem($, $.common_statement),
         bodyItem($, $.radar_statement),
+        $._terminator,
+      ),
+
+    requirement_diagram: ($) => prec.right(seq($.requirement_diagram_header, repeat($._requirement_diagram_item))),
+
+    requirement_diagram_header: ($) =>
+      seq(field('type', alias($.requirement_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    requirement_diagram_type: (_) => token(prec(20, typeChoice(requirementDiagramTypes))),
+
+    _requirement_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.requirement_statement),
         $._terminator,
       ),
 
@@ -1041,6 +1060,64 @@ module.exports = grammar({
         field('name', choice('showLegend', 'ticks', 'max', 'min', 'graticule')),
         field('value', choice($.boolean, $.number, 'circle', 'polygon')),
       ),
+
+    requirement_statement: ($) =>
+      choice(
+        $.requirement_block,
+        $.requirement_relationship_statement,
+      ),
+
+    requirement_block: ($) =>
+      seq(
+        field('kind', $.requirement_kind),
+        field('name', $.identifier),
+        '{',
+        $._terminator,
+        repeat(choice(bodyItem($, $.requirement_property_statement), $.comment, $._terminator)),
+        bodyItem($, '}'),
+        $._terminator,
+      ),
+
+    requirement_kind: (_) =>
+      choice(
+        'requirement',
+        'functionalRequirement',
+        'performanceRequirement',
+        'interfaceRequirement',
+        'physicalRequirement',
+        'designConstraint',
+        'element',
+      ),
+
+    requirement_property_statement: ($) =>
+      seq(
+        field('name', $.requirement_property_name),
+        ':',
+        field('value', choice($.quoted_string, $.requirement_id, $.requirement_property_value)),
+        $._terminator,
+      ),
+
+    requirement_property_name: (_) =>
+      choice('id', 'text', 'risk', 'verifymethod', 'type', 'docRef'),
+
+    requirement_id: (_) => token(/[0-9]+(?:\.[0-9]+)*/),
+
+    requirement_property_value: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+
+    requirement_relationship_statement: ($) =>
+      seq(
+        field('source', $.identifier),
+        field('operator', $.requirement_relationship_operator),
+        field('relationship', $.requirement_relationship_type),
+        field('operator', $.requirement_relationship_operator),
+        field('target', $.identifier),
+        $._terminator,
+      ),
+
+    requirement_relationship_operator: (_) => choice('-', '->', '<-'),
+
+    requirement_relationship_type: (_) =>
+      choice('contains', 'copies', 'derives', 'refines', 'satisfies', 'traces', 'verifies'),
 
     tree_statement: ($) => $.tree_item_statement,
 

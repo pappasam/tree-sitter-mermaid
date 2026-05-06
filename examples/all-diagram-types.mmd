@@ -146,13 +146,28 @@ gantt
   section Ship
   Release milestone 2026-05-08 0d
 
-gitGraph LR:
-  commit id: "a1" tag: "start"
-  branch feature order: 2
-  checkout feature
-  commit id: "b1"
+gitGraph
+  commit id: "1"
+  commit id: "2"
+  branch nice_feature
+  checkout nice_feature
+  commit id: "3"
   checkout main
-  merge feature tag: "v1"
+  commit id: "4"
+  checkout nice_feature
+  branch very_nice_feature
+  checkout very_nice_feature
+  commit id: "5"
+  checkout main
+  commit id: "6"
+  checkout nice_feature
+  commit id: "7"
+  checkout main
+  merge nice_feature id: "customID" tag: "customTag" type: REVERSE
+  checkout very_nice_feature
+  commit id: "8"
+  checkout main
+  commit id: "9"
 
 graph LR
   User --> API
@@ -187,9 +202,22 @@ kanban-beta
   tests Tests
 
 mindmap
-  root Mermaid
-  Flow Nodes Edges
-  Text Labels Tags
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        British popular psychology author Tony Buzan
+    Research
+      On effectiveness<br/>and features
+      On Automatic creation
+        Uses
+            Creative techniques
+            Strategic planning
+            Argument mapping
+    Tools
+      Pen and paper
+      Mermaid
 
 packet
   0-3: "Version"

@@ -346,6 +346,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "requirement_diagram"
+        },
+        {
+          "type": "SYMBOL",
           "name": "sequence_diagram"
         },
         {
@@ -2572,6 +2576,132 @@
         }
       ]
     },
+    "requirement_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "requirement_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_requirement_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "requirement_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "requirement_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "requirement_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "requirementDiagram"
+        }
+      }
+    },
+    "_requirement_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "common_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "requirement_statement"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "requirement_statement"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
     "sequence_diagram": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -3261,10 +3391,6 @@
             {
               "type": "STRING",
               "value": "mindmap"
-            },
-            {
-              "type": "STRING",
-              "value": "requirementDiagram"
             },
             {
               "type": "STRING",
@@ -7280,6 +7406,333 @@
               }
             ]
           }
+        }
+      ]
+    },
+    "requirement_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "requirement_block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "requirement_relationship_statement"
+        }
+      ]
+    },
+    "requirement_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "kind",
+          "content": {
+            "type": "SYMBOL",
+            "name": "requirement_kind"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "indentation"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "requirement_property_statement"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "requirement_property_statement"
+                  }
+                ]
+              },
+              {
+                "type": "SYMBOL",
+                "name": "comment"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_terminator"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "STRING",
+                  "value": "}"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": "}"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "requirement_kind": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "requirement"
+        },
+        {
+          "type": "STRING",
+          "value": "functionalRequirement"
+        },
+        {
+          "type": "STRING",
+          "value": "performanceRequirement"
+        },
+        {
+          "type": "STRING",
+          "value": "interfaceRequirement"
+        },
+        {
+          "type": "STRING",
+          "value": "physicalRequirement"
+        },
+        {
+          "type": "STRING",
+          "value": "designConstraint"
+        },
+        {
+          "type": "STRING",
+          "value": "element"
+        }
+      ]
+    },
+    "requirement_property_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "requirement_property_name"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "quoted_string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "requirement_id"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "requirement_property_value"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "requirement_property_name": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "id"
+        },
+        {
+          "type": "STRING",
+          "value": "text"
+        },
+        {
+          "type": "STRING",
+          "value": "risk"
+        },
+        {
+          "type": "STRING",
+          "value": "verifymethod"
+        },
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "STRING",
+          "value": "docRef"
+        }
+      ]
+    },
+    "requirement_id": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[0-9]+(?:\\.[0-9]+)*"
+      }
+    },
+    "requirement_property_value": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -5,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^ \\t\\f\\n\\r;][^\\n\\r;]*"
+        }
+      }
+    },
+    "requirement_relationship_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "source",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "operator",
+          "content": {
+            "type": "SYMBOL",
+            "name": "requirement_relationship_operator"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "relationship",
+          "content": {
+            "type": "SYMBOL",
+            "name": "requirement_relationship_type"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "operator",
+          "content": {
+            "type": "SYMBOL",
+            "name": "requirement_relationship_operator"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "target",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "requirement_relationship_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "->"
+        },
+        {
+          "type": "STRING",
+          "value": "<-"
+        }
+      ]
+    },
+    "requirement_relationship_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "contains"
+        },
+        {
+          "type": "STRING",
+          "value": "copies"
+        },
+        {
+          "type": "STRING",
+          "value": "derives"
+        },
+        {
+          "type": "STRING",
+          "value": "refines"
+        },
+        {
+          "type": "STRING",
+          "value": "satisfies"
+        },
+        {
+          "type": "STRING",
+          "value": "traces"
+        },
+        {
+          "type": "STRING",
+          "value": "verifies"
         }
       ]
     },

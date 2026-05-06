@@ -212,6 +212,83 @@ erDiagram
         (identifier)))))
 
 ==================
+requirement diagram details
+==================
+
+requirementDiagram
+  requirement test_req {
+    id: 1
+    text: the test text.
+    risk: high
+    verifymethod: test
+  }
+
+  element test_entity {
+    type: simulation
+    docRef: reqs/test_entity
+  }
+
+  test_entity - satisfies -> test_req
+  test_req <- copies - test_entity
+
+---
+
+(source_file
+  (diagram
+    (requirement_diagram
+      (requirement_diagram_header
+        (diagram_type))
+      (requirement_statement
+        (requirement_block
+          (requirement_kind)
+          (identifier)
+          (indentation)
+          (requirement_property_statement
+            (requirement_property_name)
+            (requirement_id))
+          (indentation)
+          (requirement_property_statement
+            (requirement_property_name)
+            (requirement_property_value))
+          (indentation)
+          (requirement_property_statement
+            (requirement_property_name)
+            (requirement_property_value))
+          (indentation)
+          (requirement_property_statement
+            (requirement_property_name)
+            (requirement_property_value))
+          (indentation)))
+      (indentation)
+      (requirement_statement
+        (requirement_block
+          (requirement_kind)
+          (identifier)
+          (indentation)
+          (requirement_property_statement
+            (requirement_property_name)
+            (requirement_property_value))
+          (indentation)
+          (requirement_property_statement
+            (requirement_property_name)
+            (requirement_property_value))
+          (indentation)))
+      (requirement_statement
+        (requirement_relationship_statement
+          (identifier)
+          (requirement_relationship_operator)
+          (requirement_relationship_type)
+          (requirement_relationship_operator)
+          (identifier)))
+      (requirement_statement
+        (requirement_relationship_statement
+          (identifier)
+          (requirement_relationship_operator)
+          (requirement_relationship_type)
+          (requirement_relationship_operator)
+          (identifier))))))
+
+==================
 gantt shorthand
 ==================
 

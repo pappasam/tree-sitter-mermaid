@@ -1020,6 +1020,10 @@
           "named": true
         },
         {
+          "type": "requirement_diagram",
+          "named": true
+        },
+        {
           "type": "sequence_diagram",
           "named": true
         },
@@ -2949,6 +2953,225 @@
     }
   },
   {
+    "type": "requirement_block",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "requirement_kind",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "requirement_property_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "requirement_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "requirement_diagram_header",
+          "named": true
+        },
+        {
+          "type": "requirement_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "requirement_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "requirement_kind",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "requirement_property_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "requirement_property_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "requirement_property_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          },
+          {
+            "type": "requirement_id",
+            "named": true
+          },
+          {
+            "type": "requirement_property_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "requirement_property_value",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "requirement_relationship_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "requirement_relationship_statement",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "requirement_relationship_operator",
+            "named": true
+          }
+        ]
+      },
+      "relationship": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "requirement_relationship_type",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "requirement_relationship_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "requirement_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "requirement_block",
+          "named": true
+        },
+        {
+          "type": "requirement_relationship_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "round_label",
     "named": true,
     "fields": {
@@ -4072,6 +4295,10 @@
     "named": false
   },
   {
+    "type": "<-",
+    "named": false
+  },
+  {
     "type": "<<-->>",
     "named": false
   },
@@ -4300,6 +4527,10 @@
     "named": false
   },
   {
+    "type": "copies",
+    "named": false
+  },
+  {
     "type": "crit",
     "named": false
   },
@@ -4324,6 +4555,14 @@
     "named": false
   },
   {
+    "type": "derives",
+    "named": false
+  },
+  {
+    "type": "designConstraint",
+    "named": false
+  },
+  {
     "type": "diagram_type",
     "named": true
   },
@@ -4336,7 +4575,15 @@
     "named": true
   },
   {
+    "type": "docRef",
+    "named": false
+  },
+  {
     "type": "done",
+    "named": false
+  },
+  {
+    "type": "element",
     "named": false
   },
   {
@@ -4366,6 +4613,10 @@
   {
     "type": "frontmatter",
     "named": true
+  },
+  {
+    "type": "functionalRequirement",
+    "named": false
   },
   {
     "type": "gantt_date",
@@ -4426,6 +4677,10 @@
   {
     "type": "indentation",
     "named": true
+  },
+  {
+    "type": "interfaceRequirement",
+    "named": false
   },
   {
     "type": "interpolate",
@@ -4500,6 +4755,14 @@
     "named": false
   },
   {
+    "type": "performanceRequirement",
+    "named": false
+  },
+  {
+    "type": "physicalRequirement",
+    "named": false
+  },
+  {
     "type": "pipeline",
     "named": false
   },
@@ -4528,6 +4791,18 @@
     "named": true
   },
   {
+    "type": "refines",
+    "named": false
+  },
+  {
+    "type": "requirement",
+    "named": false
+  },
+  {
+    "type": "requirement_id",
+    "named": true
+  },
+  {
     "type": "resetframe",
     "named": false
   },
@@ -4537,6 +4812,14 @@
   },
   {
     "type": "right",
+    "named": false
+  },
+  {
+    "type": "risk",
+    "named": false
+  },
+  {
+    "type": "satisfies",
     "named": false
   },
   {
@@ -4612,6 +4895,10 @@
     "named": false
   },
   {
+    "type": "text",
+    "named": false
+  },
+  {
     "type": "tf",
     "named": false
   },
@@ -4625,6 +4912,10 @@
   },
   {
     "type": "title",
+    "named": false
+  },
+  {
+    "type": "traces",
     "named": false
   },
   {
@@ -4649,6 +4940,14 @@
   },
   {
     "type": "v",
+    "named": false
+  },
+  {
+    "type": "verifies",
+    "named": false
+  },
+  {
+    "type": "verifymethod",
     "named": false
   },
   {

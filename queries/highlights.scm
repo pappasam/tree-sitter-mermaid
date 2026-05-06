@@ -224,6 +224,33 @@
 (radar_curve name: (identifier) @function)
 (radar_option value: (_) @constant)
 
+((requirement_block
+  kind: (requirement_kind) @keyword
+  name: (identifier) @type)
+ (#set! priority 110))
+
+((requirement_property_statement
+  name: (requirement_property_name) @property
+  ":" @punctuation.delimiter
+  value: [
+    (requirement_id)
+    (requirement_property_value)
+    (quoted_string)
+  ] @string)
+ (#set! priority 110))
+
+((requirement_property_statement
+  name: (requirement_property_name) @property
+  value: (requirement_id) @number)
+ (#set! priority 111))
+
+((requirement_relationship_statement
+  source: (identifier) @variable
+  operator: (requirement_relationship_operator) @operator
+  relationship: (requirement_relationship_type) @keyword
+  target: (identifier) @variable)
+ (#set! priority 110))
+
 (sequence_message_statement
   source: (sequence_actor) @variable
   arrow: (sequence_arrow) @operator
