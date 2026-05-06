@@ -1,0 +1,2371 @@
+[
+  {
+    "type": "accessibility_description_statement",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "brace_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "accessibility_title_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "architecture_edge_statement",
+    "named": true,
+    "fields": {
+      "edge": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "architecture_arrow",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "architecture_group_marker",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "architecture_group_statement",
+    "named": true,
+    "fields": {
+      "icon": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "architecture_icon",
+            "named": true
+          }
+        ]
+      },
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "architecture_title",
+            "named": true
+          }
+        ]
+      },
+      "parent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "architecture_junction_statement",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "architecture_service_statement",
+    "named": true,
+    "fields": {
+      "icon": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "architecture_icon",
+            "named": true
+          }
+        ]
+      },
+      "icon_text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "architecture_title",
+            "named": true
+          }
+        ]
+      },
+      "parent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "architecture_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "architecture_edge_statement",
+          "named": true
+        },
+        {
+          "type": "architecture_group_statement",
+          "named": true
+        },
+        {
+          "type": "architecture_junction_statement",
+          "named": true
+        },
+        {
+          "type": "architecture_service_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "architecture_title",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "label_text",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "argument_list",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "brace_text",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "call_action",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "argument_list",
+            "named": true
+          }
+        ]
+      },
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "circle_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "class_annotation",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "class_def_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "style_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_statement",
+    "named": true,
+    "fields": {
+      "class_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "targets": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "click_statement",
+    "named": true,
+    "fields": {
+      "callback": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "link_target": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "_blank",
+            "named": false
+          },
+          {
+            "type": "_parent",
+            "named": false
+          },
+          {
+            "type": "_self",
+            "named": false
+          },
+          {
+            "type": "_top",
+            "named": false
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "call_action",
+          "named": true
+        },
+        {
+          "type": "href_action",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "common_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "accessibility_description_statement",
+          "named": true
+        },
+        {
+          "type": "accessibility_title_statement",
+          "named": true
+        },
+        {
+          "type": "title_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cylinder_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cynefin_domain",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "cynefin_statement",
+    "named": true,
+    "fields": {
+      "domain": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "cynefin_domain",
+            "named": true
+          }
+        ]
+      },
+      "from": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "cynefin_domain",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "to": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "cynefin_domain",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "diagram_header",
+    "named": true,
+    "fields": {
+      "direction": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "direction",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "diamond_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "direction",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "double_circle_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "edge_id",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "edge_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "end_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "event_modeling_statement",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "data",
+            "named": false
+          },
+          {
+            "type": "entity",
+            "named": false
+          },
+          {
+            "type": "gwt",
+            "named": false
+          },
+          {
+            "type": "note",
+            "named": false
+          },
+          {
+            "type": "resetframe",
+            "named": false
+          },
+          {
+            "type": "rf",
+            "named": false
+          },
+          {
+            "type": "tf",
+            "named": false
+          },
+          {
+            "type": "timeframe",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "flow_direction_statement",
+    "named": true,
+    "fields": {
+      "direction": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "direction",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "flow_edge",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arrow",
+            "named": true
+          },
+          {
+            "type": "arrow_start",
+            "named": true
+          }
+        ]
+      },
+      "operator_end": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "arrow",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "edge_id",
+          "named": true
+        },
+        {
+          "type": "edge_label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "flow_edge_statement",
+    "named": true,
+    "fields": {
+      "edge": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "flow_edge",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "flow_node",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "flow_node",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "flow_node",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "shape": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "flow_shape",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "class_annotation",
+          "named": true
+        },
+        {
+          "type": "shape_data",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "flow_node_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "standalone_flow_node",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "flow_shape",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "circle_label",
+          "named": true
+        },
+        {
+          "type": "cylinder_label",
+          "named": true
+        },
+        {
+          "type": "diamond_label",
+          "named": true
+        },
+        {
+          "type": "double_circle_label",
+          "named": true
+        },
+        {
+          "type": "hexagon_label",
+          "named": true
+        },
+        {
+          "type": "lean_left_label",
+          "named": true
+        },
+        {
+          "type": "lean_right_label",
+          "named": true
+        },
+        {
+          "type": "round_label",
+          "named": true
+        },
+        {
+          "type": "square_label",
+          "named": true
+        },
+        {
+          "type": "stadium_label",
+          "named": true
+        },
+        {
+          "type": "subroutine_label",
+          "named": true
+        },
+        {
+          "type": "trapezoid_label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "flow_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "class_def_statement",
+          "named": true
+        },
+        {
+          "type": "class_statement",
+          "named": true
+        },
+        {
+          "type": "click_statement",
+          "named": true
+        },
+        {
+          "type": "end_statement",
+          "named": true
+        },
+        {
+          "type": "flow_direction_statement",
+          "named": true
+        },
+        {
+          "type": "flow_edge_statement",
+          "named": true
+        },
+        {
+          "type": "flow_node_statement",
+          "named": true
+        },
+        {
+          "type": "link_style_statement",
+          "named": true
+        },
+        {
+          "type": "style_statement",
+          "named": true
+        },
+        {
+          "type": "subgraph_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "generic_token",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "git_graph_statement",
+    "named": true,
+    "fields": {
+      "branch": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "git_option",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "git_option",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "id",
+            "named": false
+          },
+          {
+            "type": "msg",
+            "named": false
+          },
+          {
+            "type": "order",
+            "named": false
+          },
+          {
+            "type": "parent",
+            "named": false
+          },
+          {
+            "type": "tag",
+            "named": false
+          },
+          {
+            "type": "type",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "hexagon_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "href_action",
+    "named": true,
+    "fields": {
+      "url": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "identifier_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "info_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "lean_left_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lean_right_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "link_style_statement",
+    "named": true,
+    "fields": {
+      "interpolation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "number_list",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "style_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "number_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "packet_statement",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "range": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pie_statement",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "radar_axis",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "square_label",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "radar_curve",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "square_label",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "brace_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "radar_option",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "graticule",
+            "named": false
+          },
+          {
+            "type": "max",
+            "named": false
+          },
+          {
+            "type": "min",
+            "named": false
+          },
+          {
+            "type": "showLegend",
+            "named": false
+          },
+          {
+            "type": "ticks",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "circle",
+            "named": false
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "polygon",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "radar_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "radar_axis",
+          "named": true
+        },
+        {
+          "type": "radar_curve",
+          "named": true
+        },
+        {
+          "type": "radar_option",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "round_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "sequence_message_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "shape_data",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "brace_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "architecture_statement",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "cynefin_statement",
+          "named": true
+        },
+        {
+          "type": "diagram_header",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "event_modeling_statement",
+          "named": true
+        },
+        {
+          "type": "flow_statement",
+          "named": true
+        },
+        {
+          "type": "frontmatter",
+          "named": true
+        },
+        {
+          "type": "generic_statement",
+          "named": true
+        },
+        {
+          "type": "git_graph_statement",
+          "named": true
+        },
+        {
+          "type": "info_statement",
+          "named": true
+        },
+        {
+          "type": "packet_statement",
+          "named": true
+        },
+        {
+          "type": "pie_statement",
+          "named": true
+        },
+        {
+          "type": "radar_statement",
+          "named": true
+        },
+        {
+          "type": "sequence_message_statement",
+          "named": true
+        },
+        {
+          "type": "tree_statement",
+          "named": true
+        },
+        {
+          "type": "wardley_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "square_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "stadium_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "standalone_flow_node",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "shape": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "flow_shape",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "class_annotation",
+          "named": true
+        },
+        {
+          "type": "shape_data",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "style_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "style_property",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "style_property",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "style_property_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "style_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "style_statement",
+    "named": true,
+    "fields": {
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "style_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "subgraph_statement",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          },
+          {
+            "type": "square_label",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "subroutine_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "title_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "trapezoid_label",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "tree_item_statement",
+    "named": true,
+    "fields": {
+      "indent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "indentation",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "class_annotation",
+          "named": true
+        },
+        {
+          "type": "tree_description_annotation",
+          "named": true
+        },
+        {
+          "type": "tree_icon_annotation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tree_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tree_item_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "wardley_statement",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "accelerator",
+            "named": false
+          },
+          {
+            "type": "anchor",
+            "named": false
+          },
+          {
+            "type": "annotation",
+            "named": false
+          },
+          {
+            "type": "annotations",
+            "named": false
+          },
+          {
+            "type": "component",
+            "named": false
+          },
+          {
+            "type": "deaccelerator",
+            "named": false
+          },
+          {
+            "type": "evolution",
+            "named": false
+          },
+          {
+            "type": "evolve",
+            "named": false
+          },
+          {
+            "type": "label",
+            "named": false
+          },
+          {
+            "type": "note",
+            "named": false
+          },
+          {
+            "type": "pipeline",
+            "named": false
+          },
+          {
+            "type": "size",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": "((",
+    "named": false
+  },
+  {
+    "type": "(((",
+    "named": false
+  },
+  {
+    "type": "([",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "))",
+    "named": false
+  },
+  {
+    "type": ")))",
+    "named": false
+  },
+  {
+    "type": ")]",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "-->",
+    "named": false
+  },
+  {
+    "type": "/]",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ":::",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "BR",
+    "named": false
+  },
+  {
+    "type": "BT",
+    "named": false
+  },
+  {
+    "type": "LR",
+    "named": false
+  },
+  {
+    "type": "RL",
+    "named": false
+  },
+  {
+    "type": "TB",
+    "named": false
+  },
+  {
+    "type": "TD",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "[(",
+    "named": false
+  },
+  {
+    "type": "[/",
+    "named": false
+  },
+  {
+    "type": "[[",
+    "named": false
+  },
+  {
+    "type": "[\\",
+    "named": false
+  },
+  {
+    "type": "\\]",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "])",
+    "named": false
+  },
+  {
+    "type": "]]",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "_blank",
+    "named": false
+  },
+  {
+    "type": "_parent",
+    "named": false
+  },
+  {
+    "type": "_self",
+    "named": false
+  },
+  {
+    "type": "_top",
+    "named": false
+  },
+  {
+    "type": "accDescr",
+    "named": false
+  },
+  {
+    "type": "accTitle",
+    "named": false
+  },
+  {
+    "type": "accelerator",
+    "named": false
+  },
+  {
+    "type": "anchor",
+    "named": false
+  },
+  {
+    "type": "annotation",
+    "named": false
+  },
+  {
+    "type": "annotations",
+    "named": false
+  },
+  {
+    "type": "architecture_arrow",
+    "named": true
+  },
+  {
+    "type": "architecture_group_marker",
+    "named": true
+  },
+  {
+    "type": "architecture_icon",
+    "named": true
+  },
+  {
+    "type": "arrow",
+    "named": true
+  },
+  {
+    "type": "arrow_start",
+    "named": true
+  },
+  {
+    "type": "axis",
+    "named": false
+  },
+  {
+    "type": "branch",
+    "named": false
+  },
+  {
+    "type": "call",
+    "named": false
+  },
+  {
+    "type": "chaotic",
+    "named": false
+  },
+  {
+    "type": "checkout",
+    "named": false
+  },
+  {
+    "type": "cherry-pick",
+    "named": false
+  },
+  {
+    "type": "circle",
+    "named": false
+  },
+  {
+    "type": "class",
+    "named": false
+  },
+  {
+    "type": "classDef",
+    "named": false
+  },
+  {
+    "type": "clear",
+    "named": false
+  },
+  {
+    "type": "click",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "commit",
+    "named": false
+  },
+  {
+    "type": "complex",
+    "named": false
+  },
+  {
+    "type": "complicated",
+    "named": false
+  },
+  {
+    "type": "component",
+    "named": false
+  },
+  {
+    "type": "confusion",
+    "named": false
+  },
+  {
+    "type": "curve",
+    "named": false
+  },
+  {
+    "type": "data",
+    "named": false
+  },
+  {
+    "type": "deaccelerator",
+    "named": false
+  },
+  {
+    "type": "default",
+    "named": false
+  },
+  {
+    "type": "diagram_type",
+    "named": true
+  },
+  {
+    "type": "direction",
+    "named": false
+  },
+  {
+    "type": "directive",
+    "named": true
+  },
+  {
+    "type": "end",
+    "named": false
+  },
+  {
+    "type": "entity",
+    "named": false
+  },
+  {
+    "type": "evolution",
+    "named": false
+  },
+  {
+    "type": "evolve",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "frontmatter",
+    "named": true
+  },
+  {
+    "type": "generic_token",
+    "named": true
+  },
+  {
+    "type": "graticule",
+    "named": false
+  },
+  {
+    "type": "group",
+    "named": false
+  },
+  {
+    "type": "gwt",
+    "named": false
+  },
+  {
+    "type": "href",
+    "named": false
+  },
+  {
+    "type": "id",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
+    "type": "indentation",
+    "named": true
+  },
+  {
+    "type": "interpolate",
+    "named": false
+  },
+  {
+    "type": "junction",
+    "named": false
+  },
+  {
+    "type": "label",
+    "named": false
+  },
+  {
+    "type": "label_text",
+    "named": true
+  },
+  {
+    "type": "linkStyle",
+    "named": false
+  },
+  {
+    "type": "max",
+    "named": false
+  },
+  {
+    "type": "merge",
+    "named": false
+  },
+  {
+    "type": "min",
+    "named": false
+  },
+  {
+    "type": "msg",
+    "named": false
+  },
+  {
+    "type": "note",
+    "named": false
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "order",
+    "named": false
+  },
+  {
+    "type": "parent",
+    "named": false
+  },
+  {
+    "type": "pipeline",
+    "named": false
+  },
+  {
+    "type": "polygon",
+    "named": false
+  },
+  {
+    "type": "quoted_string",
+    "named": true
+  },
+  {
+    "type": "resetframe",
+    "named": false
+  },
+  {
+    "type": "rf",
+    "named": false
+  },
+  {
+    "type": "service",
+    "named": false
+  },
+  {
+    "type": "showData",
+    "named": false
+  },
+  {
+    "type": "showInfo",
+    "named": false
+  },
+  {
+    "type": "showLegend",
+    "named": false
+  },
+  {
+    "type": "size",
+    "named": false
+  },
+  {
+    "type": "style",
+    "named": false
+  },
+  {
+    "type": "style_property_name",
+    "named": true
+  },
+  {
+    "type": "style_value",
+    "named": true
+  },
+  {
+    "type": "subgraph",
+    "named": false
+  },
+  {
+    "type": "switch",
+    "named": false
+  },
+  {
+    "type": "tag",
+    "named": false
+  },
+  {
+    "type": "tf",
+    "named": false
+  },
+  {
+    "type": "ticks",
+    "named": false
+  },
+  {
+    "type": "timeframe",
+    "named": false
+  },
+  {
+    "type": "title",
+    "named": false
+  },
+  {
+    "type": "tree_description_annotation",
+    "named": true
+  },
+  {
+    "type": "tree_icon_annotation",
+    "named": true
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "type",
+    "named": false
+  },
+  {
+    "type": "v",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "{{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "}}",
+    "named": false
+  }
+]
