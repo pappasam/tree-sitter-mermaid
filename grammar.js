@@ -1004,10 +1004,12 @@ module.exports = grammar({
 
     git_option: ($) =>
       seq(
-        field('name', choice('id', 'msg', 'tag', 'type', 'order', 'parent')),
+        field('name', $.git_option_name),
         ':',
         field('value', choice($.quoted_string, $.identifier, $.number)),
       ),
+
+    git_option_name: (_) => choice('id', 'msg', 'tag', 'type', 'order', 'parent'),
 
     info_statement: ($) => seq('showInfo', $._terminator),
 
@@ -1140,9 +1142,11 @@ module.exports = grammar({
 
     radar_option: ($) =>
       seq(
-        field('name', choice('showLegend', 'ticks', 'max', 'min', 'graticule')),
+        field('name', $.radar_option_name),
         field('value', choice($.boolean, $.number, 'circle', 'polygon')),
       ),
+
+    radar_option_name: (_) => choice('showLegend', 'ticks', 'max', 'min', 'graticule'),
 
     requirement_statement: ($) =>
       choice(

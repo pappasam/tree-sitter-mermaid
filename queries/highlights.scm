@@ -192,6 +192,7 @@
 (gantt_task_statement duration: (gantt_duration) @number)
 (gantt_task_statement dependency: (identifier) @label)
 
+(git_option name: (git_option_name) @property)
 (git_option ":" @punctuation.delimiter)
 (git_option value: (quoted_string) @string)
 (git_option value: (identifier) @variable)
@@ -230,6 +231,7 @@
 
 (radar_axis name: (identifier) @variable)
 (radar_curve name: (identifier) @variable)
+(radar_option name: (radar_option_name) @property)
 (radar_option value: (_) @constant)
 
 ((requirement_block

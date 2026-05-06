@@ -80,12 +80,15 @@ checkout feature
         direction: (direction))
       (git_graph_statement
         (git_option
+          name: (git_option_name)
           value: (quoted_string))
         (git_option
+          name: (git_option_name)
           value: (quoted_string)))
       (git_graph_statement
         name: (identifier)
         (git_option
+          name: (git_option_name)
           value: (number)))
       (git_graph_statement
         branch: (identifier)))))
@@ -124,6 +127,7 @@ pie showData
         (direction))
       (git_graph_statement
         (git_option
+          (git_option_name)
           (quoted_string)))))
   (diagram
     (pie_diagram

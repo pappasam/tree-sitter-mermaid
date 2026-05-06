@@ -7187,33 +7187,8 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "id"
-              },
-              {
-                "type": "STRING",
-                "value": "msg"
-              },
-              {
-                "type": "STRING",
-                "value": "tag"
-              },
-              {
-                "type": "STRING",
-                "value": "type"
-              },
-              {
-                "type": "STRING",
-                "value": "order"
-              },
-              {
-                "type": "STRING",
-                "value": "parent"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "git_option_name"
           }
         },
         {
@@ -7240,6 +7215,35 @@
               }
             ]
           }
+        }
+      ]
+    },
+    "git_option_name": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "id"
+        },
+        {
+          "type": "STRING",
+          "value": "msg"
+        },
+        {
+          "type": "STRING",
+          "value": "tag"
+        },
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "STRING",
+          "value": "order"
+        },
+        {
+          "type": "STRING",
+          "value": "parent"
         }
       ]
     },
@@ -8060,29 +8064,8 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "showLegend"
-              },
-              {
-                "type": "STRING",
-                "value": "ticks"
-              },
-              {
-                "type": "STRING",
-                "value": "max"
-              },
-              {
-                "type": "STRING",
-                "value": "min"
-              },
-              {
-                "type": "STRING",
-                "value": "graticule"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "radar_option_name"
           }
         },
         {
@@ -8109,6 +8092,31 @@
               }
             ]
           }
+        }
+      ]
+    },
+    "radar_option_name": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "showLegend"
+        },
+        {
+          "type": "STRING",
+          "value": "ticks"
+        },
+        {
+          "type": "STRING",
+          "value": "max"
+        },
+        {
+          "type": "STRING",
+          "value": "min"
+        },
+        {
+          "type": "STRING",
+          "value": "graticule"
         }
       ]
     },
