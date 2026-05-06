@@ -36,9 +36,11 @@
 (flow_node id: (identifier) @variable)
 (standalone_flow_node id: (identifier) @variable)
 (class_def_statement name: (identifier) @type)
-(class_statement
-  targets: (identifier_list (identifier) @variable)
-  class_name: (identifier) @type)
+(flow_diagram
+  (flow_statement
+    (class_statement
+      targets: (identifier_list (identifier) @variable)
+      class_name: (identifier) @type)))
 (style_statement target: (identifier) @variable)
 (link_style_statement target: (number_list (number) @number))
 (link_style_statement target: "default" @constant)
@@ -169,13 +171,12 @@
 (class_member_statement class: (identifier) @type)
 (class_block name: (identifier) @type)
 (class_entity_statement name: (identifier) @type)
-(class_member visibility: (class_visibility) @operator)
-(class_member type: (identifier) @type)
-(class_member name: (identifier) @property)
-((class_member
-  name: (identifier) @function
-  parameters: (class_parameter_list))
- (#set! priority 110))
+(class_property visibility: (class_visibility) @operator)
+(class_property type: (identifier) @type)
+(class_property name: (identifier) @property)
+(class_method visibility: (class_visibility) @operator)
+(class_method type: (identifier) @type)
+(class_method name: (identifier) @function)
 
 ((er_relationship_statement
   source: (identifier) @type
@@ -199,22 +200,25 @@
 
 (git_option name: (git_option_name) @property)
 (git_option ":" @punctuation.delimiter)
-(git_option value: (quoted_string) @string)
-(git_option value: (identifier) @variable)
-(git_option value: (number) @number)
 ((git_option
-  name: (git_option_name) @property
+  name: (git_option_name) @_git_option_name
+  value: (quoted_string) @string)
+ (#eq? @_git_option_name "msg"))
+((git_option
+  name: (git_option_name) @_git_option_name
+  value: (number) @number)
+ (#eq? @_git_option_name "order"))
+((git_option
+  name: (git_option_name) @_git_option_name
   value: [
     (identifier)
     (quoted_string)
   ] @label)
- (#match? @property "^(id|tag|parent)$")
- (#set! priority 110))
+ (#match? @_git_option_name "^(id|tag|parent)$"))
 ((git_option
-  name: (git_option_name) @property
+  name: (git_option_name) @_git_option_name
   value: (identifier) @constant)
- (#eq? @property "type")
- (#set! priority 110))
+ (#eq? @_git_option_name "type"))
 ((git_graph_statement name: (identifier) @label)
  (#set! priority 110))
 ((git_graph_statement name: (quoted_string) @label)
@@ -260,8 +264,7 @@
 (radar_option name: (radar_option_name) @property)
 (radar_option value: (number) @number)
 (radar_option value: (boolean) @boolean)
-((radar_option value: (_) @constant)
- (#match? @constant "^(circle|polygon)$"))
+(radar_option value: ["circle" "polygon"] @constant)
 
 ((requirement_block
   kind: (requirement_kind) @keyword
@@ -313,10 +316,10 @@
 (state_transition_statement
   arrow: (state_arrow) @operator)
 
-((state_diagram
+(state_diagram
   (class_statement
-    targets: (identifier_list (identifier) @type)))
- (#set! priority 120))
+    targets: (identifier_list (identifier) @type)
+    class_name: (identifier) @type))
 
 (timeline_section_statement name: (timeline_section_name) @namespace)
 (timeline_event_statement time: (timeline_time) @variable)

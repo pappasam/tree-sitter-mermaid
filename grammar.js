@@ -681,12 +681,21 @@ module.exports = grammar({
     class_block_member_statement: ($) => terminated($, field('member', $.class_member)),
 
     class_member: ($) =>
+      choice($.class_property, $.class_method),
+
+    class_property: ($) =>
       seq(
         optional(field('visibility', $.class_visibility)),
-        choice(
-          seq(field('type', $.identifier), field('name', $.identifier), optional(field('parameters', $.class_parameter_list))),
-          seq(field('name', $.identifier), optional(field('parameters', $.class_parameter_list))),
-        ),
+        optional(field('type', $.identifier)),
+        field('name', $.identifier),
+      ),
+
+    class_method: ($) =>
+      seq(
+        optional(field('visibility', $.class_visibility)),
+        optional(field('type', $.identifier)),
+        field('name', $.identifier),
+        field('parameters', $.class_parameter_list),
       ),
 
     class_visibility: (_) => choice('+', '-', '#', '~'),

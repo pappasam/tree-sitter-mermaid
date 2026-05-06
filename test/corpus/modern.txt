@@ -472,27 +472,31 @@ class Duck{
       (class_member_statement
         (identifier)
         (class_member
-          (class_visibility)
-          (identifier)
-          (identifier)))
+          (class_property
+            (class_visibility)
+            (identifier)
+            (identifier))))
       (class_member_statement
         (identifier)
         (class_member
-          (class_visibility)
-          (identifier)
-          (class_parameter_list)))
+          (class_method
+            (class_visibility)
+            (identifier)
+            (class_parameter_list))))
       (class_block
         (identifier)
         (class_block_member_statement
           (class_member
-            (class_visibility)
-            (identifier)
-            (identifier)))
+            (class_property
+              (class_visibility)
+              (identifier)
+              (identifier))))
         (class_block_member_statement
           (class_member
-            (class_visibility)
-            (identifier)
-            (class_parameter_list)))))))
+            (class_method
+              (class_visibility)
+              (identifier)
+              (class_parameter_list))))))))
 
 ==================
 journey shorthand
