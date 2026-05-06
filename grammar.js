@@ -512,16 +512,16 @@ module.exports = grammar({
         $.accessibility_description_statement,
       ),
 
-    title_statement: ($) => seq('title', optional(':'), optional(field('text', $._line_remainder)), $._terminator),
+    title_statement: ($) => seq('title', optional(':'), optional(field('text', alias($._line_remainder, $.line_text))), $._terminator),
 
     accessibility_title_statement: ($) =>
-      seq('accTitle', ':', optional(field('text', $._line_remainder)), $._terminator),
+      seq('accTitle', ':', optional(field('text', alias($._line_remainder, $.line_text))), $._terminator),
 
     accessibility_description_statement: ($) =>
       seq(
         'accDescr',
         choice(
-          seq(':', optional(field('text', $._line_remainder))),
+          seq(':', optional(field('text', alias($._line_remainder, $.line_text)))),
           field('block', $.brace_text),
         ),
         $._terminator,

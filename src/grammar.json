@@ -2519,8 +2519,13 @@
               "type": "FIELD",
               "name": "text",
               "content": {
-                "type": "SYMBOL",
-                "name": "_line_remainder"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_line_remainder"
+                },
+                "named": true,
+                "value": "line_text"
               }
             },
             {
@@ -2552,8 +2557,13 @@
               "type": "FIELD",
               "name": "text",
               "content": {
-                "type": "SYMBOL",
-                "name": "_line_remainder"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_line_remainder"
+                },
+                "named": true,
+                "value": "line_text"
               }
             },
             {
@@ -2591,8 +2601,13 @@
                       "type": "FIELD",
                       "name": "text",
                       "content": {
-                        "type": "SYMBOL",
-                        "name": "_line_remainder"
+                        "type": "ALIAS",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_line_remainder"
+                        },
+                        "named": true,
+                        "value": "line_text"
                       }
                     },
                     {

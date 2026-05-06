@@ -12,13 +12,34 @@
             "named": true
           }
         ]
+      },
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "line_text",
+            "named": true
+          }
+        ]
       }
     }
   },
   {
     "type": "accessibility_title_statement",
     "named": true,
-    "fields": {}
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "line_text",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "architecture_diagram",
@@ -3570,7 +3591,18 @@
   {
     "type": "title_statement",
     "named": true,
-    "fields": {}
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "line_text",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "trapezoid_label",
@@ -4290,6 +4322,10 @@
   {
     "type": "left",
     "named": false
+  },
+  {
+    "type": "line_text",
+    "named": true
   },
   {
     "type": "linkStyle",

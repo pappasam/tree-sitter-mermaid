@@ -7,6 +7,9 @@
   "accDescr"
 ] @keyword
 
+(title_statement text: (line_text) @string)
+(accessibility_title_statement text: (line_text) @string)
+(accessibility_description_statement text: (line_text) @string)
 (accessibility_description_statement block: (brace_text) @string)
 
 (directive) @attribute
