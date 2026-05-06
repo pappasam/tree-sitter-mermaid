@@ -632,6 +632,10 @@
           "named": true
         },
         {
+          "type": "er_diagram",
+          "named": true
+        },
+        {
           "type": "event_modeling_diagram",
           "named": true
         },
@@ -747,6 +751,124 @@
     "type": "end_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "er_attribute_statement",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "entity": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "er_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "er_attribute_statement",
+          "named": true
+        },
+        {
+          "type": "er_diagram_header",
+          "named": true
+        },
+        {
+          "type": "er_relationship_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "er_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "er_relationship_label",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "er_relationship_statement",
+    "named": true,
+    "fields": {
+      "relationship": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "er_relationship_label",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "event_modeling_diagram",
@@ -2747,6 +2869,10 @@
     "named": false
   },
   {
+    "type": "contains",
+    "named": false
+  },
+  {
     "type": "curve",
     "named": false
   },
@@ -2815,6 +2941,10 @@
     "named": false
   },
   {
+    "type": "has",
+    "named": false
+  },
+  {
     "type": "href",
     "named": false
   },
@@ -2832,6 +2962,10 @@
   },
   {
     "type": "in",
+    "named": false
+  },
+  {
+    "type": "includes",
     "named": false
   },
   {
@@ -2887,11 +3021,19 @@
     "named": false
   },
   {
+    "type": "owns",
+    "named": false
+  },
+  {
     "type": "parent",
     "named": false
   },
   {
     "type": "pipeline",
+    "named": false
+  },
+  {
+    "type": "places",
     "named": false
   },
   {
@@ -2984,6 +3126,10 @@
   },
   {
     "type": "type",
+    "named": false
+  },
+  {
+    "type": "uses",
     "named": false
   },
   {

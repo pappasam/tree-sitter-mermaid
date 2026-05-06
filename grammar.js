@@ -50,6 +50,7 @@ const diagramTypes = [
 const flowDiagramTypes = ['flowchart', 'flowchart-elk', 'flowchart-v2', 'graph'];
 const architectureDiagramTypes = ['architecture-beta'];
 const cynefinDiagramTypes = ['cynefin-beta'];
+const erDiagramTypes = ['erDiagram'];
 const eventModelingDiagramTypes = ['eventmodeling'];
 const gitGraphDiagramTypes = ['gitGraph'];
 const infoDiagramTypes = ['info'];
@@ -64,6 +65,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...flowDiagramTypes,
       ...architectureDiagramTypes,
       ...cynefinDiagramTypes,
+      ...erDiagramTypes,
       ...eventModelingDiagramTypes,
       ...gitGraphDiagramTypes,
       ...infoDiagramTypes,
@@ -121,6 +123,7 @@ module.exports = grammar({
         $.flow_diagram,
         $.architecture_diagram,
         $.cynefin_diagram,
+        $.er_diagram,
         $.event_modeling_diagram,
         $.git_graph_diagram,
         $.info_diagram,
@@ -190,6 +193,23 @@ module.exports = grammar({
         $.comment,
         $.common_statement,
         $.cynefin_statement,
+        $._terminator,
+      ),
+
+    er_diagram: ($) => prec.right(seq($.er_diagram_header, repeat($._er_diagram_item))),
+
+    er_diagram_header: ($) =>
+      seq(field('type', alias($.er_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    er_diagram_type: (_) => token(prec(20, typeChoice(erDiagramTypes))),
+
+    _er_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.er_relationship_statement,
+        $.er_attribute_statement,
         $._terminator,
       ),
 
@@ -588,6 +608,31 @@ module.exports = grammar({
       ),
 
     cynefin_domain: (_) => choice('complex', 'complicated', 'clear', 'chaotic', 'confusion'),
+
+    er_relationship_statement: ($) =>
+      seq(
+        field('source', $.identifier),
+        field('relationship', $.er_relationship_label),
+        field('target', $.identifier),
+        $._terminator,
+      ),
+
+    er_relationship_label: (_) =>
+      choice(
+        'places',
+        'contains',
+        'owns',
+        'has',
+        'includes',
+        'uses',
+      ),
+
+    er_attribute_statement: ($) =>
+      seq(
+        field('entity', $.identifier),
+        repeat1(field('attribute', $.identifier)),
+        $._terminator,
+      ),
 
     event_modeling_statement: ($) =>
       seq(

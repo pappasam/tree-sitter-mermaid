@@ -92,6 +92,8 @@
   "clear"
   "chaotic"
   "confusion"
+  "places"
+  "contains"
   "entity"
   "data"
   "gwt"
@@ -139,6 +141,15 @@
 (architecture_icon) @attribute
 (architecture_group_marker) @attribute
 (architecture_title) @string
+
+(er_relationship_statement
+  source: (identifier) @type
+  relationship: (er_relationship_label) @keyword
+  target: (identifier) @type)
+
+(er_attribute_statement
+  entity: (identifier) @type
+  attribute: (identifier) @property)
 
 (git_option value: (_) @string)
 
