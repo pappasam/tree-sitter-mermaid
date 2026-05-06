@@ -148,6 +148,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "state_diagram"
+        },
+        {
+          "type": "SYMBOL",
           "name": "tree_diagram"
         },
         {
@@ -1801,6 +1805,143 @@
         }
       ]
     },
+    "state_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "state_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_state_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "state_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "state_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "state_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "stateDiagram"
+            },
+            {
+              "type": "STRING",
+              "value": "stateDiagram-v2"
+            }
+          ]
+        }
+      }
+    },
+    "_state_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "indentation"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "flow_direction_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "class_def_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "class_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "state_declaration_statement"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "state_transition_statement"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
     "tree_diagram": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -2099,14 +2240,6 @@
             {
               "type": "STRING",
               "value": "requirementDiagram"
-            },
-            {
-              "type": "STRING",
-              "value": "stateDiagram"
-            },
-            {
-              "type": "STRING",
-              "value": "stateDiagram-v2"
             },
             {
               "type": "STRING",
@@ -2657,6 +2790,142 @@
       ]
     },
     "sequence_message_text": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -5,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^ \\t\\f\\n\\r;][^\\n\\r;]*"
+        }
+      }
+    },
+    "state_declaration_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "state"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "state_transition_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "source",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "state_marker"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "arrow",
+          "content": {
+            "type": "SYMBOL",
+            "name": "state_arrow"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "target",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "state_marker"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ":"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "label",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "state_transition_label"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "state_marker": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "[*]"
+      }
+    },
+    "state_arrow": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "-->"
+        },
+        {
+          "type": "STRING",
+          "value": "->"
+        }
+      ]
+    },
+    "state_transition_label": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",

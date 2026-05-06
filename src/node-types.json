@@ -987,6 +987,10 @@
           "named": true
         },
         {
+          "type": "state_diagram",
+          "named": true
+        },
+        {
           "type": "tree_diagram",
           "named": true
         },
@@ -3108,6 +3112,153 @@
     }
   },
   {
+    "type": "state_arrow",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "state_declaration_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "state_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "class_def_statement",
+          "named": true
+        },
+        {
+          "type": "class_statement",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "flow_direction_statement",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "state_declaration_statement",
+          "named": true
+        },
+        {
+          "type": "state_diagram_header",
+          "named": true
+        },
+        {
+          "type": "state_transition_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "state_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "state_transition_label",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "state_transition_statement",
+    "named": true,
+    "fields": {
+      "arrow": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "state_arrow",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "state_transition_label",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "state_marker",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "state_marker",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "style_list",
     "named": true,
     "fields": {},
@@ -3534,6 +3685,10 @@
   },
   {
     "type": "--x",
+    "named": false
+  },
+  {
+    "type": "->",
     "named": false
   },
   {
@@ -4055,6 +4210,14 @@
   {
     "type": "size",
     "named": false
+  },
+  {
+    "type": "state",
+    "named": false
+  },
+  {
+    "type": "state_marker",
+    "named": true
   },
   {
     "type": "style",

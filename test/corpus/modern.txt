@@ -398,3 +398,114 @@ Bob-->>John: Jolly good!
         (sequence_actor
           (identifier))
         (sequence_message_text)))))
+
+==================
+state diagram details
+==================
+
+stateDiagram
+direction TB
+
+accTitle: This is the accessible title
+accDescr: This is an accessible description
+
+classDef notMoving fill:white
+classDef movement font-style:italic
+classDef badBadEvent fill:#f00,color:white,font-weight:bold,stroke-width:2px,stroke:yellow
+
+[*] --> Still
+Still --> [*]
+Still --> Moving
+Moving --> Still
+Moving --> Crash
+Crash --> [*]
+
+class Still notMoving
+class Moving, Crash movement
+class Crash badBadEvent
+class end badBadEvent
+
+---
+
+(source_file
+  (diagram
+    (state_diagram
+      (state_diagram_header
+        (diagram_type))
+      (flow_direction_statement
+        (direction))
+      (common_statement
+        (accessibility_title_statement))
+      (common_statement
+        (accessibility_description_statement))
+      (class_def_statement
+        (identifier)
+        (style_list
+          (style_property
+            (style_property_name)
+            (style_value))))
+      (class_def_statement
+        (identifier)
+        (style_list
+          (style_property
+            (style_property_name)
+            (style_value))))
+      (class_def_statement
+        (identifier)
+        (style_list
+          (style_property
+            (style_property_name)
+            (style_value))
+          (style_property
+            (style_property_name)
+            (style_value))
+          (style_property
+            (style_property_name)
+            (style_value))
+          (style_property
+            (style_property_name)
+            (style_value))
+          (style_property
+            (style_property_name)
+            (style_value))))
+      (state_transition_statement
+        (state_marker)
+        (state_arrow)
+        (identifier))
+      (state_transition_statement
+        (identifier)
+        (state_arrow)
+        (state_marker))
+      (state_transition_statement
+        (identifier)
+        (state_arrow)
+        (identifier))
+      (state_transition_statement
+        (identifier)
+        (state_arrow)
+        (identifier))
+      (state_transition_statement
+        (identifier)
+        (state_arrow)
+        (identifier))
+      (state_transition_statement
+        (identifier)
+        (state_arrow)
+        (state_marker))
+      (class_statement
+        (identifier_list
+          (identifier))
+        (identifier))
+      (class_statement
+        (identifier_list
+          (identifier)
+          (identifier))
+        (identifier))
+      (class_statement
+        (identifier_list
+          (identifier))
+        (identifier))
+      (class_statement
+        (identifier_list
+          (identifier))
+        (identifier)))))

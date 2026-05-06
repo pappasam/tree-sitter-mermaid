@@ -19,6 +19,7 @@
   "end"
   "classDef"
   "class"
+  "state"
   "note"
   "for"
   "style"
@@ -217,6 +218,14 @@
   position: (sequence_note_position) @keyword
   target: (sequence_actor_list (sequence_actor) @variable)
   message: (sequence_message_text) @string)
+
+(state_declaration_statement name: (identifier) @type)
+(state_marker) @constant
+(state_transition_statement source: (identifier) @type)
+(state_transition_statement target: (identifier) @type)
+(state_transition_statement label: (state_transition_label) @string)
+(state_transition_statement
+  arrow: (state_arrow) @operator)
 
 (tree_item_statement name: (quoted_string) @string)
 (tree_icon_annotation) @attribute

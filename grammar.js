@@ -61,6 +61,7 @@ const packetDiagramTypes = ['packet', 'packet-beta'];
 const pieDiagramTypes = ['pie'];
 const radarDiagramTypes = ['radar-beta'];
 const sequenceDiagramTypes = ['sequenceDiagram'];
+const stateDiagramTypes = ['stateDiagram', 'stateDiagram-v2'];
 const treeDiagramTypes = ['treeView-beta'];
 const wardleyDiagramTypes = ['wardley-beta'];
 const genericDiagramTypes = diagramTypes.filter(
@@ -80,6 +81,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...pieDiagramTypes,
       ...radarDiagramTypes,
       ...sequenceDiagramTypes,
+      ...stateDiagramTypes,
       ...treeDiagramTypes,
       ...wardleyDiagramTypes,
     ].includes(type),
@@ -141,6 +143,7 @@ module.exports = grammar({
         $.pie_diagram,
         $.radar_diagram,
         $.sequence_diagram,
+        $.state_diagram,
         $.tree_diagram,
         $.wardley_diagram,
         $.generic_diagram,
@@ -410,6 +413,31 @@ module.exports = grammar({
         $._terminator,
       ),
 
+    state_diagram: ($) => prec.right(seq($.state_diagram_header, repeat($._state_diagram_item))),
+
+    state_diagram_header: ($) =>
+      seq(field('type', alias($.state_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    state_diagram_type: (_) => token(prec(20, typeChoice(stateDiagramTypes))),
+
+    _state_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        seq(
+          optional($.indentation),
+          choice(
+            $.flow_direction_statement,
+            $.class_def_statement,
+            $.class_statement,
+            $.state_declaration_statement,
+            $.state_transition_statement,
+          ),
+        ),
+        $._terminator,
+      ),
+
     tree_diagram: ($) => prec.right(seq($.tree_diagram_header, repeat($._tree_diagram_item))),
 
     tree_diagram_header: ($) =>
@@ -544,6 +572,24 @@ module.exports = grammar({
       ),
 
     sequence_message_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+
+    state_declaration_statement: ($) =>
+      seq('state', field('name', $.identifier), $._terminator),
+
+    state_transition_statement: ($) =>
+      seq(
+        field('source', choice($.state_marker, $.identifier)),
+        field('arrow', $.state_arrow),
+        field('target', choice($.state_marker, $.identifier)),
+        optional(seq(':', field('label', optional($.state_transition_label)))),
+        $._terminator,
+      ),
+
+    state_marker: (_) => token('[*]'),
+
+    state_arrow: (_) => choice('-->', '->'),
+
+    state_transition_label: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
 
     flow_direction_statement: ($) => seq('direction', field('direction', $.direction), $._terminator),
 
