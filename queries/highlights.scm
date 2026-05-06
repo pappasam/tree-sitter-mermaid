@@ -1,0 +1,171 @@
+(diagram_type) @type
+(direction) @constant
+
+[
+  "title"
+  "accTitle"
+  "accDescr"
+] @keyword
+
+(accessibility_description_statement block: (brace_text) @string)
+
+(directive) @attribute
+(comment) @comment
+(frontmatter) @preproc
+
+[
+  "direction"
+  "subgraph"
+  "end"
+  "classDef"
+  "class"
+  "style"
+  "linkStyle"
+  "interpolate"
+  "click"
+  "href"
+  "call"
+] @keyword
+
+(flow_node id: (identifier) @variable)
+(class_def_statement name: (identifier) @type)
+(class_statement
+  targets: (identifier_list (identifier) @variable)
+  class_name: (identifier) @type)
+(style_statement target: (identifier) @variable)
+(link_style_statement target: (_) @number)
+(click_statement target: (identifier) @variable)
+(subgraph_statement id: (identifier) @namespace)
+
+(class_annotation
+  ":::" @punctuation.special
+  name: (identifier) @type)
+
+(style_property
+  name: (style_property_name) @property
+  ":" @punctuation.delimiter
+  value: (style_value) @string.special)
+
+(flow_edge operator: (arrow) @operator)
+(flow_edge
+  operator: (arrow_start) @operator
+  operator_end: (arrow) @operator)
+(edge_id id: (identifier) @label)
+(edge_label text: (_) @string)
+
+(shape_data) @attribute
+
+[
+  "["
+  "]"
+  "("
+  ")"
+  "{"
+  "}"
+  "[["
+  "]]"
+  "(("
+  "))"
+  "((("
+  ")))"
+  "(["
+  "])"
+  "[("
+  ")]"
+  "{{"
+  "}}"
+  "[/"
+  "/]"
+  "[\\"
+  "\\]"
+  ">"
+] @punctuation.bracket
+
+[
+  "group"
+  "service"
+  "junction"
+  "in"
+  "complex"
+  "complicated"
+  "clear"
+  "chaotic"
+  "confusion"
+  "entity"
+  "data"
+  "gwt"
+  "tf"
+  "timeframe"
+  "rf"
+  "resetframe"
+  "commit"
+  "branch"
+  "merge"
+  "checkout"
+  "switch"
+  "cherry-pick"
+  "showInfo"
+  "showData"
+  "axis"
+  "curve"
+  "showLegend"
+  "ticks"
+  "max"
+  "min"
+  "graticule"
+  "size"
+  "evolution"
+  "anchor"
+  "component"
+  "label"
+  "evolve"
+  "pipeline"
+  "note"
+  "annotations"
+  "annotation"
+  "accelerator"
+  "deaccelerator"
+] @keyword
+
+(architecture_group_statement id: (identifier) @namespace)
+(architecture_service_statement id: (identifier) @variable)
+(architecture_junction_statement id: (identifier) @variable)
+(architecture_edge_statement
+  source: (identifier) @variable
+  edge: (architecture_arrow) @operator
+  target: (identifier) @variable)
+
+(architecture_icon) @attribute
+(architecture_group_marker) @attribute
+(architecture_title) @string
+
+(git_option value: (_) @string)
+
+(packet_statement label: (quoted_string) @string)
+
+(pie_statement
+  label: (quoted_string) @string
+  value: (number) @number)
+
+(radar_axis name: (identifier) @variable)
+(radar_curve name: (identifier) @function)
+(radar_option value: (_) @constant)
+
+(tree_item_statement name: (quoted_string) @string)
+(tree_icon_annotation) @attribute
+(tree_description_annotation) @comment
+
+(quoted_string) @string
+(number) @number
+(boolean) @boolean
+(label_text) @string
+
+[
+  ":"
+  ","
+  ";"
+  "@"
+  "|"
+] @punctuation.delimiter
+
+(generic_statement) @none
