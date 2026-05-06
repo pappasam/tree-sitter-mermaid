@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "mermaid",
+      "camelcase": "Mermaid",
+      "scope": "source.mermaid",
+      "path": ".",
+      "file-types": [
+        "mmd",
+        "mermaid"
+      ],
+      "injection-regex": "^(mermaid|mmd)$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A tolerant Tree-sitter grammar for Mermaid diagrams.",
+    "authors": [
+      {
+        "name": "pappasam"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/pappasam/tree-sitter-mermaid"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "node": false,
+    "rust": false,
+    "python": false,
+    "swift": false,
+    "go": false
+  }
+}

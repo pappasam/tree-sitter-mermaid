@@ -1,0 +1,35 @@
+{
+  "name": "tree-sitter-mermaid",
+  "version": "0.1.0",
+  "description": "A tolerant Tree-sitter grammar for Mermaid diagrams.",
+  "keywords": [
+    "tree-sitter",
+    "mermaid",
+    "parser"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "files": [
+    "grammar.js",
+    "queries",
+    "src"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.8"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.mermaid",
+      "file-types": [
+        "mmd",
+        "mermaid"
+      ],
+      "injection-regex": "^(mermaid|mmd)$"
+    }
+  ]
+}
