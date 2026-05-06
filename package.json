@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "generate": "tree-sitter generate",
-    "test": "TREE_SITTER_CACHE_DIR=${TREE_SITTER_CACHE_DIR:-/tmp/tree-sitter-cache} tree-sitter test",
-    "parse": "tree-sitter parse"
+    "test": "XDG_CACHE_HOME=${XDG_CACHE_HOME:-/tmp/tree-sitter-xdg-cache} TREE_SITTER_CACHE_DIR=${TREE_SITTER_CACHE_DIR:-/tmp/tree-sitter-cache} tree-sitter test --config-path tree-sitter.config.json",
+    "parse": "tree-sitter parse --config-path tree-sitter.config.json"
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.26.8"
