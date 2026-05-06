@@ -1,0 +1,302 @@
+%% Mermaid highlighting sample suite.
+%% Covers every diagram type listed in grammar.js.
+%% This file is tuned for this repository's tolerant grammar.
+
+%%{init: {"theme": "base"}}%%
+---
+title: Highlighting Samples
+---
+
+architecture-beta
+group api(cloud)[API Gateway]
+service web(server)[Web App] in api
+service db(database)[Primary DB] in api
+junction edge in api
+web:R--L:edge
+edge:R--L:db
+
+block
+title Block Diagram
+columns 3
+Frontend
+Backend
+Database
+Frontend --> Backend
+Backend --> Database
+
+block-beta
+title Block Beta Diagram
+columns 4
+User
+API
+Queue
+API --> Queue
+
+c4
+title C4 Landscape
+Person customer Customer
+System web WebApp
+Rel customer web Browses
+
+C4Component
+title Component View
+Component router Router
+Component worker Worker
+Rel router worker QueuesWork
+
+C4Container
+title Container View
+Container ui ReactApp
+Container api GoService
+ContainerDb database PostgreSQL
+ui --> api
+api --> database
+
+C4Context
+title Context View
+Person admin Admin
+System portal Portal
+SystemExt mail EmailProvider
+portal --> mail
+
+C4Deployment
+title Deployment View
+DeploymentNode cloud Cloud
+DeploymentNode cluster Cluster
+Container api Service
+
+classDiagram
+title Class Diagram
+User
+Session
+User --> Session
+
+classDiagram-v2
+title Class Diagram V2
+Order
+Invoice
+Order --> Invoice
+
+cynefin-beta
+clear
+complicated
+complex --> complicated: "analyze"
+chaotic --> confusion: "stabilize"
+
+erDiagram
+title Entity Relationship
+CUSTOMER places ORDER
+ORDER contains LINE_ITEM
+CUSTOMER id email
+ORDER id created_at
+
+eventmodeling
+title Event Model
+entity User
+data Profile
+gwt Given registered user
+tf Login flow
+note Capture failed attempts
+
+flowchart TD
+subgraph ingress[Ingress]
+  Proxy[Load<br>Balancer]
+  WAF{Allowed?}
+end
+Proxy --> WAF
+WAF -->|yes| App[Application]
+WAF -->|no| Reject((Rejected))
+classDef hot fill:#ffe0b2,stroke:#ef6c00,color:#111
+class Proxy,App hot
+
+flowchart-elk LR
+A[Client] --> B{Route}
+B --> C[Fast Path]
+B --> D[Slow Path]
+
+flowchart-v2 BT
+Start([Start]) --> Check{Ready?}
+Check -->|yes| Done([Done])
+Check -->|no| Wait[Wait]
+
+gantt
+title Release Plan
+dateFormat YYYY-MM-DD
+section Build
+Parser updates done a1 2026-05-01 2d
+Highlight QA active a2 after a1 3d
+section Ship
+Release milestone 2026-05-08 0d
+
+gitGraph LR:
+commit id: "a1" tag: "start"
+branch feature order: 2
+checkout feature
+commit id: "b1"
+checkout main
+merge feature tag: "v1"
+
+graph LR
+User --> API
+API --> Cache[(Cache)]
+API --> DB[(Database)]
+
+info
+showInfo
+
+journey
+title Checkout Journey
+section Browse
+Find product 5 Customer
+section Buy
+Pay 3 Customer Gateway
+Confirm 4 Customer
+
+kanban
+todo Todo
+task1 WriteExamples
+doing Doing
+task2 CheckHighlights
+done Done
+task3 GenerateParser
+
+kanban-beta
+todo Todo
+docs Docs
+review Review
+syntax SyntaxCaptures
+done Done
+tests Tests
+
+mindmap
+root Mermaid
+Flow Nodes Edges
+Text Labels Tags
+
+packet
+0-3: "Version"
+4-7: "Type"
+8-15: "Flags"
+16-31: "Length"
++32: "Payload"
+
+packet-beta
+0-7: "Header"
+8-15: "Command"
+16-31: "Checksum"
++32: "Body"
+
+pie showData
+title Traffic Split
+"Web": 62
+"API": 25
+"Jobs": 13
+
+quadrantChart
+title Prioritization
+x-axis Low Effort High Effort
+y-axis Low Impact High Impact
+quadrant-1 Quick Wins
+quadrant-2 Big Bets
+Parser 0.35 0.82
+Queries 0.22 0.74
+
+radar-beta
+title Capability Radar
+axis Syntax, Queries, Tests, Docs
+curve Current{3,4,3,2}
+curve Target{4,5,4,4}
+max 5
+ticks 5
+showLegend true
+
+requirementDiagram
+title Requirements
+requirement parser_req
+id 1
+text Parser recognizes flow nodes
+risk medium
+verifymethod test
+functionalRequirement highlight_req
+parser_req satisfies highlight_req
+
+sequenceDiagram
+autonumber
+participant Browser
+participant API
+participant DB
+Browser->>API: GET /items
+API-->>DB: SELECT *
+DB-->>API: rows
+API-->>Browser: 200 OK
+
+stateDiagram
+state Idle
+state Loading
+Idle --> Loading
+Loading --> Ready
+Loading --> Error
+
+stateDiagram-v2
+state Draft
+state Review
+Draft --> Review
+Review --> Published
+Review --> Draft
+
+timeline
+title Project Timeline
+section Parser
+2026-05-01 Grammar update
+2026-05-02 Corpus coverage
+section Highlighting
+2026-05-03 Query review
+2026-05-04 Manual QA
+
+treeView-beta
+"Project"
+"grammar.js":::source
+"queries"
+"highlights.scm":::query
+"examples"
+"all-diagram-types.mmd":::sample
+
+treemap
+title Repository Focus
+"grammar": 45
+"queries": 30
+"tests": 15
+"examples": 10
+
+treemap-beta
+title Highlight Captures
+"keywords": 18
+"strings": 22
+"variables": 16
+"operators": 10
+"tags": 4
+
+wardley-beta
+title Wardley Map
+anchor User [0.95, 0.63]
+component Portal [0.82, 0.55]
+component API [0.68, 0.42]
+component Database [0.45, 0.25]
+User->Portal
+Portal->API
+API->Database
+evolve API 0.72
+
+xychart-beta
+title Parse Speed
+x-axis small medium large
+y-axis bytesms 0 10000
+bar 7200 5600 4100
+line 7000 6100 5000
+
+zenuml
+title Login
+Browser API POST login
+API Auth validate credentials
+Auth API token
+API Browser OK
