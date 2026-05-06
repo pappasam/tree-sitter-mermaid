@@ -967,6 +967,10 @@
           "named": true
         },
         {
+          "type": "journey_diagram",
+          "named": true
+        },
+        {
           "type": "packet_diagram",
           "named": true
         },
@@ -1662,6 +1666,11 @@
     }
   },
   {
+    "type": "gantt_section_name",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "gantt_section_statement",
     "named": true,
     "fields": {
@@ -2088,6 +2097,129 @@
     "type": "info_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "journey_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "journey_diagram_header",
+          "named": true
+        },
+        {
+          "type": "journey_section_statement",
+          "named": true
+        },
+        {
+          "type": "journey_task_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "journey_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "journey_section_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "journey_section_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "journey_section_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "journey_task_label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "journey_task_statement",
+    "named": true,
+    "fields": {
+      "actor": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "journey_task_label",
+            "named": true
+          }
+        ]
+      },
+      "score": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "label_text",
@@ -3458,10 +3590,6 @@
   },
   {
     "type": "gantt_duration",
-    "named": true
-  },
-  {
-    "type": "gantt_section_name",
     "named": true
   },
   {

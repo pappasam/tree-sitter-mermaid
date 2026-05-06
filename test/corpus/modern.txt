@@ -282,3 +282,46 @@ class Duck{
             (class_visibility)
             (identifier)
             (class_parameter_list)))))))
+
+==================
+journey shorthand
+==================
+
+journey
+title Checkout Journey
+section Browse
+Find product 5 Customer
+section Buy
+Pay 3 Customer Gateway
+Confirm 4 Customer
+
+---
+
+(source_file
+  (diagram
+    (journey_diagram
+      (journey_diagram_header
+        (diagram_type))
+      (common_statement
+        (title_statement))
+      (journey_section_statement
+        (journey_section_name))
+      (journey_task_statement
+        (journey_task_label
+          (identifier)
+          (identifier))
+        (number)
+        (identifier))
+      (journey_section_statement
+        (journey_section_name))
+      (journey_task_statement
+        (journey_task_label
+          (identifier))
+        (number)
+        (identifier)
+        (identifier))
+      (journey_task_statement
+        (journey_task_label
+          (identifier))
+        (number)
+        (identifier)))))

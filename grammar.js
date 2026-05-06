@@ -56,6 +56,7 @@ const eventModelingDiagramTypes = ['eventmodeling'];
 const ganttDiagramTypes = ['gantt'];
 const gitGraphDiagramTypes = ['gitGraph'];
 const infoDiagramTypes = ['info'];
+const journeyDiagramTypes = ['journey'];
 const packetDiagramTypes = ['packet', 'packet-beta'];
 const pieDiagramTypes = ['pie'];
 const radarDiagramTypes = ['radar-beta'];
@@ -73,6 +74,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...ganttDiagramTypes,
       ...gitGraphDiagramTypes,
       ...infoDiagramTypes,
+      ...journeyDiagramTypes,
       ...packetDiagramTypes,
       ...pieDiagramTypes,
       ...radarDiagramTypes,
@@ -133,6 +135,7 @@ module.exports = grammar({
         $.gantt_diagram,
         $.git_graph_diagram,
         $.info_diagram,
+        $.journey_diagram,
         $.packet_diagram,
         $.pie_diagram,
         $.radar_diagram,
@@ -307,6 +310,23 @@ module.exports = grammar({
         $.comment,
         $.common_statement,
         $.info_statement,
+        $._terminator,
+      ),
+
+    journey_diagram: ($) => prec.right(seq($.journey_diagram_header, repeat($._journey_diagram_item))),
+
+    journey_diagram_header: ($) =>
+      seq(field('type', alias($.journey_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    journey_diagram_type: (_) => token(prec(20, typeChoice(journeyDiagramTypes))),
+
+    _journey_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.journey_section_statement,
+        $.journey_task_statement,
         $._terminator,
       ),
 
@@ -791,6 +811,23 @@ module.exports = grammar({
       ),
 
     info_statement: ($) => seq('showInfo', $._terminator),
+
+    journey_section_statement: ($) =>
+      seq('section', field('name', optional($.journey_section_name)), $._terminator),
+
+    journey_section_name: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+
+    journey_task_statement: ($) =>
+      seq(
+        field('label', $.journey_task_label),
+        optional(':'),
+        field('score', $.number),
+        optional(':'),
+        repeat1(field('actor', $.identifier)),
+        $._terminator,
+      ),
+
+    journey_task_label: ($) => repeat1($.identifier),
 
     packet_statement: ($) =>
       seq(

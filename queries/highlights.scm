@@ -187,6 +187,11 @@
 
 (git_option value: (_) @string)
 
+(journey_section_statement name: (journey_section_name) @namespace)
+(journey_task_statement label: (journey_task_label) @string)
+(journey_task_statement score: (number) @number)
+(journey_task_statement actor: (identifier) @variable)
+
 (packet_statement label: (quoted_string) @string)
 
 (pie_statement

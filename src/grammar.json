@@ -132,6 +132,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "journey_diagram"
+        },
+        {
+          "type": "SYMBOL",
           "name": "packet_diagram"
         },
         {
@@ -1267,6 +1271,100 @@
         }
       ]
     },
+    "journey_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "journey_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_journey_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "journey_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "journey_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "journey_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "journey"
+        }
+      }
+    },
+    "_journey_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "journey_section_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "journey_task_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
     "packet_diagram": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -1836,10 +1934,6 @@
             {
               "type": "STRING",
               "value": "C4Deployment"
-            },
-            {
-              "type": "STRING",
-              "value": "journey"
             },
             {
               "type": "STRING",
@@ -4834,6 +4928,113 @@
           "name": "_terminator"
         }
       ]
+    },
+    "journey_section_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "section"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "journey_section_name"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "journey_section_name": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -5,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^ \\t\\f\\n\\r;][^\\n\\r;]*"
+        }
+      }
+    },
+    "journey_task_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "label",
+          "content": {
+            "type": "SYMBOL",
+            "name": "journey_task_label"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "score",
+          "content": {
+            "type": "SYMBOL",
+            "name": "number"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "FIELD",
+            "name": "actor",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "journey_task_label": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      }
     },
     "packet_statement": {
       "type": "SEQ",
