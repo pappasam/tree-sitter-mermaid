@@ -40,7 +40,8 @@
   targets: (identifier_list (identifier) @variable)
   class_name: (identifier) @type)
 (style_statement target: (identifier) @variable)
-(link_style_statement target: (_) @number)
+(link_style_statement target: (number_list (number) @number))
+(link_style_statement target: "default" @constant)
 (click_statement target: (identifier) @variable)
 (subgraph_statement id: (identifier) @namespace)
 
@@ -141,8 +142,11 @@
 ] @keyword
 
 (architecture_group_statement id: (identifier) @namespace)
+(architecture_group_statement parent: (identifier) @namespace)
 (architecture_service_statement id: (identifier) @variable)
+(architecture_service_statement parent: (identifier) @namespace)
 (architecture_junction_statement id: (identifier) @variable)
+(architecture_junction_statement parent: (identifier) @namespace)
 (architecture_edge_statement
   source: (identifier) @variable
   edge: (architecture_arrow) @operator
@@ -154,7 +158,7 @@
 
 (class_note_statement
   target: (identifier) @type)
-(class_note_text "\"" @string)
+(class_note_text "\"" @punctuation.delimiter)
 (class_note_text_fragment) @string
 
 (class_relationship_statement
@@ -168,9 +172,10 @@
 (class_member visibility: (class_visibility) @operator)
 (class_member type: (identifier) @type)
 (class_member name: (identifier) @property)
-(class_member
+((class_member
   name: (identifier) @function
   parameters: (class_parameter_list))
+ (#set! priority 110))
 
 ((er_relationship_statement
   source: (identifier) @type
@@ -197,6 +202,27 @@
 (git_option value: (quoted_string) @string)
 (git_option value: (identifier) @variable)
 (git_option value: (number) @number)
+((git_option
+  name: (git_option_name) @property
+  value: [
+    (identifier)
+    (quoted_string)
+  ] @label)
+ (#match? @property "^(id|tag|parent)$")
+ (#set! priority 110))
+((git_option
+  name: (git_option_name) @property
+  value: (identifier) @constant)
+ (#eq? @property "type")
+ (#set! priority 110))
+((git_graph_statement name: (identifier) @label)
+ (#set! priority 110))
+((git_graph_statement name: (quoted_string) @label)
+ (#set! priority 110))
+((git_graph_statement branch: (identifier) @label)
+ (#set! priority 110))
+((git_graph_statement branch: (quoted_string) @label)
+ (#set! priority 110))
 
 (journey_section_statement name: (journey_section_name) @namespace)
 (journey_task_statement label: (journey_task_label) @string)
@@ -232,18 +258,20 @@
 (radar_axis name: (identifier) @variable)
 (radar_curve name: (identifier) @variable)
 (radar_option name: (radar_option_name) @property)
-(radar_option value: (_) @constant)
+(radar_option value: (number) @number)
+(radar_option value: (boolean) @boolean)
+((radar_option value: (_) @constant)
+ (#match? @constant "^(circle|polygon)$"))
 
 ((requirement_block
   kind: (requirement_kind) @keyword
-  name: (identifier) @variable)
+  name: (identifier) @label)
  (#set! priority 110))
 
 ((requirement_property_statement
   name: (requirement_property_name) @property
   ":" @punctuation.delimiter
   value: [
-    (requirement_id)
     (requirement_property_value)
     (quoted_string)
   ] @string)
@@ -255,10 +283,10 @@
  (#set! priority 111))
 
 ((requirement_relationship_statement
-  source: (identifier) @variable
+  source: (identifier) @label
   operator: (requirement_relationship_operator) @operator
   relationship: (requirement_relationship_type) @keyword
-  target: (identifier) @variable)
+  target: (identifier) @label)
  (#set! priority 110))
 
 (sequence_message_statement
@@ -284,6 +312,11 @@
 (state_transition_statement label: (state_transition_label) @string)
 (state_transition_statement
   arrow: (state_arrow) @operator)
+
+((state_diagram
+  (class_statement
+    targets: (identifier_list (identifier) @type)))
+ (#set! priority 120))
 
 (timeline_section_statement name: (timeline_section_name) @namespace)
 (timeline_event_statement time: (timeline_time) @variable)
