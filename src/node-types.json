@@ -644,6 +644,10 @@
           "named": true
         },
         {
+          "type": "gantt_diagram",
+          "named": true
+        },
+        {
           "type": "generic_diagram",
           "named": true
         },
@@ -1278,6 +1282,179 @@
         }
       ]
     }
+  },
+  {
+    "type": "gantt_date_format_statement",
+    "named": true,
+    "fields": {
+      "format": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gantt_date_format",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "gantt_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "gantt_date_format_statement",
+          "named": true
+        },
+        {
+          "type": "gantt_diagram_header",
+          "named": true
+        },
+        {
+          "type": "gantt_section_statement",
+          "named": true
+        },
+        {
+          "type": "gantt_task_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gantt_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "gantt_section_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "gantt_section_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "gantt_task_label",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gantt_task_statement",
+    "named": true,
+    "fields": {
+      "date": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "gantt_date",
+            "named": true
+          }
+        ]
+      },
+      "dependency": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "duration": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "gantt_duration",
+            "named": true
+          }
+        ]
+      },
+      "id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gantt_task_label",
+            "named": true
+          }
+        ]
+      },
+      "status": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "gantt_task_status",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "gantt_task_status",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "generic_diagram",
@@ -2769,6 +2946,14 @@
     "named": false
   },
   {
+    "type": "active",
+    "named": false
+  },
+  {
+    "type": "after",
+    "named": false
+  },
+  {
     "type": "anchor",
     "named": false
   },
@@ -2873,11 +3058,19 @@
     "named": false
   },
   {
+    "type": "crit",
+    "named": false
+  },
+  {
     "type": "curve",
     "named": false
   },
   {
     "type": "data",
+    "named": false
+  },
+  {
+    "type": "dateFormat",
     "named": false
   },
   {
@@ -2901,6 +3094,10 @@
     "named": true
   },
   {
+    "type": "done",
+    "named": false
+  },
+  {
     "type": "end",
     "named": false
   },
@@ -2922,6 +3119,22 @@
   },
   {
     "type": "frontmatter",
+    "named": true
+  },
+  {
+    "type": "gantt_date",
+    "named": true
+  },
+  {
+    "type": "gantt_date_format",
+    "named": true
+  },
+  {
+    "type": "gantt_duration",
+    "named": true
+  },
+  {
+    "type": "gantt_section_name",
     "named": true
   },
   {
@@ -3001,6 +3214,10 @@
     "named": false
   },
   {
+    "type": "milestone",
+    "named": false
+  },
+  {
     "type": "min",
     "named": false
   },
@@ -3050,6 +3267,10 @@
   },
   {
     "type": "rf",
+    "named": false
+  },
+  {
+    "type": "section",
     "named": false
   },
   {

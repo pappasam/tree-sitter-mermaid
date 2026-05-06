@@ -52,6 +52,7 @@ const architectureDiagramTypes = ['architecture-beta'];
 const cynefinDiagramTypes = ['cynefin-beta'];
 const erDiagramTypes = ['erDiagram'];
 const eventModelingDiagramTypes = ['eventmodeling'];
+const ganttDiagramTypes = ['gantt'];
 const gitGraphDiagramTypes = ['gitGraph'];
 const infoDiagramTypes = ['info'];
 const packetDiagramTypes = ['packet', 'packet-beta'];
@@ -67,6 +68,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...cynefinDiagramTypes,
       ...erDiagramTypes,
       ...eventModelingDiagramTypes,
+      ...ganttDiagramTypes,
       ...gitGraphDiagramTypes,
       ...infoDiagramTypes,
       ...packetDiagramTypes,
@@ -125,6 +127,7 @@ module.exports = grammar({
         $.cynefin_diagram,
         $.er_diagram,
         $.event_modeling_diagram,
+        $.gantt_diagram,
         $.git_graph_diagram,
         $.info_diagram,
         $.packet_diagram,
@@ -226,6 +229,24 @@ module.exports = grammar({
         $.comment,
         $.common_statement,
         $.event_modeling_statement,
+        $._terminator,
+      ),
+
+    gantt_diagram: ($) => prec.right(seq($.gantt_diagram_header, repeat($._gantt_diagram_item))),
+
+    gantt_diagram_header: ($) =>
+      seq(field('type', alias($.gantt_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    gantt_diagram_type: (_) => token(prec(20, typeChoice(ganttDiagramTypes))),
+
+    _gantt_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.gantt_date_format_statement,
+        $.gantt_section_statement,
+        $.gantt_task_statement,
         $._terminator,
       ),
 
@@ -640,6 +661,33 @@ module.exports = grammar({
         optional($._line_remainder),
         $._terminator,
       ),
+
+    gantt_date_format_statement: ($) =>
+      seq('dateFormat', field('format', $.gantt_date_format), $._terminator),
+
+    gantt_date_format: (_) => token(/[A-Za-z0-9_:/.-]+/),
+
+    gantt_section_statement: ($) =>
+      seq('section', field('name', optional($.gantt_section_name)), $._terminator),
+
+    gantt_section_name: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+
+    gantt_task_statement: ($) =>
+      seq(
+        field('label', $.gantt_task_label),
+        field('status', $.gantt_task_status),
+        optional(field('id', $.identifier)),
+        repeat(choice(field('date', $.gantt_date), field('duration', $.gantt_duration), seq('after', field('dependency', $.identifier)))),
+        $._terminator,
+      ),
+
+    gantt_task_label: ($) => repeat1($.identifier),
+
+    gantt_task_status: (_) => choice('active', 'crit', 'done', 'milestone'),
+
+    gantt_date: (_) => token(/[0-9]{4}-[0-9]{2}-[0-9]{2}/),
+
+    gantt_duration: (_) => token(/[0-9]+[dhms]/),
 
     git_graph_statement: ($) =>
       choice(

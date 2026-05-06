@@ -169,3 +169,54 @@ ORDER id created_at
         (identifier)
         (identifier)
         (identifier)))))
+
+==================
+gantt shorthand
+==================
+
+gantt
+title Release Plan
+dateFormat YYYY-MM-DD
+section Build
+Parser updates done a1 2026-05-01 2d
+Highlight QA active a2 after a1 3d
+section Ship
+Release milestone 2026-05-08 0d
+
+---
+
+(source_file
+  (diagram
+    (gantt_diagram
+      (gantt_diagram_header
+        (diagram_type))
+      (common_statement
+        (title_statement))
+      (gantt_date_format_statement
+        (gantt_date_format))
+      (gantt_section_statement
+        (gantt_section_name))
+      (gantt_task_statement
+        (gantt_task_label
+          (identifier)
+          (identifier))
+        (gantt_task_status)
+        (identifier)
+        (gantt_date)
+        (gantt_duration))
+      (gantt_task_statement
+        (gantt_task_label
+          (identifier)
+          (identifier))
+        (gantt_task_status)
+        (identifier)
+        (identifier)
+        (gantt_duration))
+      (gantt_section_statement
+        (gantt_section_name))
+      (gantt_task_statement
+        (gantt_task_label
+          (identifier))
+        (gantt_task_status)
+        (gantt_date)
+        (gantt_duration)))))

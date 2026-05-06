@@ -96,6 +96,9 @@
   "contains"
   "entity"
   "data"
+  "dateFormat"
+  "section"
+  "after"
   "gwt"
   "tf"
   "timeframe"
@@ -150,6 +153,15 @@
 (er_attribute_statement
   entity: (identifier) @type
   attribute: (identifier) @property)
+
+(gantt_date_format_statement format: (gantt_date_format) @string.special)
+(gantt_section_statement name: (gantt_section_name) @namespace)
+(gantt_task_statement label: (gantt_task_label) @string)
+(gantt_task_statement status: (gantt_task_status) @keyword)
+(gantt_task_statement id: (identifier) @label)
+(gantt_task_statement date: (gantt_date) @number)
+(gantt_task_statement duration: (gantt_duration) @number)
+(gantt_task_statement dependency: (identifier) @label)
 
 (git_option value: (_) @string)
 
