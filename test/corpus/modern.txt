@@ -329,6 +329,54 @@ mindmap
               (mindmap_label_fragment))))))))
 
 ==================
+timeline details
+==================
+
+timeline
+  title England's History Timeline
+  section Stone Age
+    7600 BC : Britain's oldest known house was built in Orkney, Scotland
+    6000 BC : Sea levels rise and Britain becomes an island.<br> The people who live here are hunter-gatherers.
+  section Bronze Age
+            : New styles of pottery and ways of burying the dead appear.
+
+---
+
+(source_file
+  (diagram
+    (timeline_diagram
+      (timeline_diagram_header
+        (diagram_type))
+      (common_statement
+        (title_statement
+          (line_text)))
+      (timeline_statement
+        (timeline_section_statement
+          (timeline_section_name)))
+      (indentation)
+      (timeline_statement
+        (timeline_event_statement
+          (timeline_time)
+          (timeline_text
+            (timeline_text_fragment))))
+      (indentation)
+      (timeline_statement
+        (timeline_event_statement
+          (timeline_time)
+          (timeline_text
+            (timeline_text_fragment)
+            (html_tag)
+            (timeline_text_fragment))))
+      (timeline_statement
+        (timeline_section_statement
+          (timeline_section_name)))
+      (indentation)
+      (timeline_statement
+        (timeline_event_statement
+          (timeline_text
+            (timeline_text_fragment)))))))
+
+==================
 gantt shorthand
 ==================
 

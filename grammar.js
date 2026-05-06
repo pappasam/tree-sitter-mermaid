@@ -65,6 +65,7 @@ const radarDiagramTypes = ['radar-beta'];
 const requirementDiagramTypes = ['requirementDiagram'];
 const sequenceDiagramTypes = ['sequenceDiagram'];
 const stateDiagramTypes = ['stateDiagram', 'stateDiagram-v2'];
+const timelineDiagramTypes = ['timeline'];
 const treeDiagramTypes = ['treeView-beta'];
 const wardleyDiagramTypes = ['wardley-beta'];
 const genericDiagramTypes = diagramTypes.filter(
@@ -88,6 +89,7 @@ const genericDiagramTypes = diagramTypes.filter(
       ...requirementDiagramTypes,
       ...sequenceDiagramTypes,
       ...stateDiagramTypes,
+      ...timelineDiagramTypes,
       ...treeDiagramTypes,
       ...wardleyDiagramTypes,
     ].includes(type),
@@ -154,6 +156,7 @@ module.exports = grammar({
         $.requirement_diagram,
         $.sequence_diagram,
         $.state_diagram,
+        $.timeline_diagram,
         $.tree_diagram,
         $.wardley_diagram,
         $.generic_diagram,
@@ -491,6 +494,22 @@ module.exports = grammar({
           $.state_declaration_statement,
           $.state_transition_statement,
         )),
+        $._terminator,
+      ),
+
+    timeline_diagram: ($) => prec.right(seq($.timeline_diagram_header, repeat($._timeline_diagram_item))),
+
+    timeline_diagram_header: ($) =>
+      seq(field('type', alias($.timeline_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    timeline_diagram_type: (_) => token(prec(20, typeChoice(timelineDiagramTypes))),
+
+    _timeline_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        bodyItem($, $.common_statement),
+        bodyItem($, $.timeline_statement),
         $._terminator,
       ),
 
@@ -1182,6 +1201,31 @@ module.exports = grammar({
 
     requirement_relationship_type: (_) =>
       choice('contains', 'copies', 'derives', 'refines', 'satisfies', 'traces', 'verifies'),
+
+    timeline_statement: ($) =>
+      choice(
+        $.timeline_section_statement,
+        $.timeline_event_statement,
+      ),
+
+    timeline_section_statement: ($) =>
+      seq('section', field('name', optional($.timeline_section_name)), $._terminator),
+
+    timeline_section_name: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+
+    timeline_event_statement: ($) =>
+      seq(
+        optional(field('time', $.timeline_time)),
+        ':',
+        field('text', optional($.timeline_text)),
+        $._terminator,
+      ),
+
+    timeline_time: (_) => token(/[0-9]+(?:\s+[A-Za-z]+)?/),
+
+    timeline_text: ($) => repeat1(choice($.html_tag, $.timeline_text_fragment)),
+
+    timeline_text_fragment: (_) => token(prec(PREC.remainder, /[^<\n\r;]+|</)),
 
     tree_statement: ($) => $.tree_item_statement,
 

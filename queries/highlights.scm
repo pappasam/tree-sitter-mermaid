@@ -280,6 +280,11 @@
 (state_transition_statement
   arrow: (state_arrow) @operator)
 
+(timeline_section_statement name: (timeline_section_name) @namespace)
+(timeline_event_statement time: (timeline_time) @variable)
+(timeline_event_statement ":" @punctuation.delimiter)
+(timeline_text_fragment) @string
+
 (tree_item_statement name: (quoted_string) @string)
 (tree_icon_annotation) @attribute
 (tree_description_annotation) @comment

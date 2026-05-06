@@ -1036,6 +1036,10 @@
           "named": true
         },
         {
+          "type": "timeline_diagram",
+          "named": true
+        },
+        {
           "type": "tree_diagram",
           "named": true
         },
@@ -4088,6 +4092,142 @@
     }
   },
   {
+    "type": "timeline_diagram",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "common_statement",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        },
+        {
+          "type": "timeline_diagram_header",
+          "named": true
+        },
+        {
+          "type": "timeline_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "timeline_diagram_header",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "diagram_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "timeline_event_statement",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "timeline_text",
+            "named": true
+          }
+        ]
+      },
+      "time": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "timeline_time",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "timeline_section_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "timeline_section_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "timeline_section_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "timeline_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "timeline_event_statement",
+          "named": true
+        },
+        {
+          "type": "timeline_section_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "timeline_text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "html_tag",
+          "named": true
+        },
+        {
+          "type": "timeline_text_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "title_statement",
     "named": true,
     "fields": {
@@ -5145,6 +5285,14 @@
   {
     "type": "timeframe",
     "named": false
+  },
+  {
+    "type": "timeline_text_fragment",
+    "named": true
+  },
+  {
+    "type": "timeline_time",
+    "named": true
   },
   {
     "type": "title",

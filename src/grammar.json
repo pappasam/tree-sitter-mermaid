@@ -406,6 +406,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "timeline_diagram"
+        },
+        {
+          "type": "SYMBOL",
           "name": "tree_diagram"
         },
         {
@@ -3373,6 +3377,140 @@
         }
       ]
     },
+    "timeline_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "timeline_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_timeline_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "timeline_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "timeline_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "timeline_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "timeline"
+        }
+      }
+    },
+    "_timeline_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "indentation"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "common_statement"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "common_statement"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "indentation"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "timeline_statement"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "timeline_statement"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
     "tree_diagram": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -3725,10 +3863,6 @@
             {
               "type": "STRING",
               "value": "kanban-beta"
-            },
-            {
-              "type": "STRING",
-              "value": "timeline"
             },
             {
               "type": "STRING",
@@ -8312,6 +8446,138 @@
           "value": "verifies"
         }
       ]
+    },
+    "timeline_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "timeline_section_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "timeline_event_statement"
+        }
+      ]
+    },
+    "timeline_section_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "section"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "timeline_section_name"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "timeline_section_name": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -5,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^ \\t\\f\\n\\r;][^\\n\\r;]*"
+        }
+      }
+    },
+    "timeline_event_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "time",
+              "content": {
+                "type": "SYMBOL",
+                "name": "timeline_time"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "text",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "timeline_text"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "timeline_time": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[0-9]+(?:\\s+[A-Za-z]+)?"
+      }
+    },
+    "timeline_text": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "html_tag"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "timeline_text_fragment"
+          }
+        ]
+      }
+    },
+    "timeline_text_fragment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -5,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^<\\n\\r;]+|<"
+        }
+      }
     },
     "tree_statement": {
       "type": "SYMBOL",
