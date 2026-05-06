@@ -1,0 +1,77 @@
+==================
+langium backed diagrams
+==================
+
+architecture-beta
+group api(cloud)[API]
+service web(server)[Web] in api
+junction j1 in api
+web:R--L:j1
+
+pie showData
+"Dogs": 42
+"Cats": 13
+
+packet-beta
+0-7: "Version"
++16: "Payload"
+
+gitGraph LR:
+commit id: "a1" tag: "v1"
+branch feature order: 2
+checkout feature
+
+---
+
+(source_file
+  (diagram_header
+    type: (diagram_type))
+  (architecture_statement
+    (architecture_group_statement
+      id: (identifier)
+      icon: (architecture_icon)
+      label: (architecture_title
+        (label_text))))
+  (architecture_statement
+    (architecture_service_statement
+      id: (identifier)
+      icon: (architecture_icon)
+      label: (architecture_title
+        (label_text))
+      parent: (identifier)))
+  (architecture_statement
+    (architecture_junction_statement
+      id: (identifier)
+      parent: (identifier)))
+  (generic_statement
+    (generic_token))
+  (diagram_header
+    type: (diagram_type))
+  (generic_statement
+    (generic_token)
+    (generic_token))
+  (generic_statement
+    (generic_token)
+    (generic_token))
+  (diagram_header
+    type: (diagram_type))
+  (generic_statement
+    (generic_token)
+    (generic_token))
+  (generic_statement
+    (generic_token)
+    (generic_token))
+  (diagram_header
+    type: (diagram_type)
+    direction: (direction))
+  (git_graph_statement
+    (git_option
+      value: (quoted_string))
+    (git_option
+      value: (quoted_string)))
+  (git_graph_statement
+    name: (identifier)
+    (git_option
+      value: (number)))
+  (git_graph_statement
+    branch: (identifier)))

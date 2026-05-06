@@ -1,0 +1,88 @@
+==================
+flowchart styling
+==================
+
+flowchart TD
+classDef services fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#000
+class AIR,Personas,CRM,Chat services
+style AIR fill:#fff,stroke:#333
+AIR[AI Router] --> CRM[(CRM)]
+
+---
+
+(source_file
+  (diagram_header
+    (diagram_type)
+    (direction))
+  (flow_statement
+    (class_def_statement
+      (identifier)
+      (style_list
+        (style_property
+          (style_property_name)
+          (style_value))
+        (style_property
+          (style_property_name)
+          (style_value))
+        (style_property
+          (style_property_name)
+          (style_value))
+        (style_property
+          (style_property_name)
+          (style_value)))))
+  (flow_statement
+    (class_statement
+      (identifier_list
+        (identifier)
+        (identifier)
+        (identifier)
+        (identifier))
+      (identifier)))
+  (flow_statement
+    (style_statement
+      (identifier)
+      (style_list
+        (style_property
+          (style_property_name)
+          (style_value))
+        (style_property
+          (style_property_name)
+          (style_value)))))
+  (generic_statement
+    (generic_token)
+    (identifier)
+    (generic_token)
+    (generic_token)
+    (identifier)
+    (generic_token)))
+
+==================
+subgraph
+==================
+
+graph LR;
+subgraph services[Services]
+  A --> B
+end
+
+---
+
+(source_file
+  (diagram_header
+    (diagram_type)
+    (direction))
+  (flow_statement
+    (subgraph_statement
+      (identifier)
+      (square_label
+        (label_text))))
+  (flow_statement
+    (flow_edge_statement
+      (flow_node
+        (identifier))
+      (flow_edge
+        (arrow))
+      (flow_node
+        (identifier))))
+  (flow_statement
+    (end_statement)))
