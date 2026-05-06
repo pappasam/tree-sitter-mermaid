@@ -137,6 +137,7 @@ const diagramDefinitions = [
     types: ['sequenceDiagram'],
     statements: ($) => [
       choice(
+        $.sequence_participant_statement,
         $.sequence_autonumber_statement,
         $.sequence_loop_statement,
         $.sequence_note_statement,
@@ -388,6 +389,14 @@ module.exports = grammar({
         $._terminator,
       )),
 
+    sequence_participant_statement: ($) =>
+      seq(
+        $.sequence_participant_keyword,
+        field('name', $.sequence_actor),
+        optional(seq($.sequence_as_keyword, field('alias', $.sequence_message_text))),
+        $._terminator,
+      ),
+
     sequence_autonumber_statement: ($) => terminated($, $.sequence_autonumber_keyword),
 
     sequence_loop_statement: ($) =>
@@ -396,8 +405,10 @@ module.exports = grammar({
     sequence_note_statement: ($) =>
       seq(
         $.sequence_note_keyword,
-        field('position', $.sequence_note_position),
-        $.sequence_of_keyword,
+        choice(
+          seq(field('position', $.sequence_note_side_position), $.sequence_of_keyword),
+          field('position', $.sequence_note_over_position),
+        ),
         field('target', $.sequence_actor_list),
         ':',
         field('message', optional($.sequence_message_text)),
@@ -406,13 +417,19 @@ module.exports = grammar({
 
     sequence_autonumber_keyword: (_) => token(prec(5, 'autonumber')),
 
+    sequence_participant_keyword: (_) => token(prec(5, choice('participant', 'actor'))),
+
+    sequence_as_keyword: (_) => token(prec(5, 'as')),
+
     sequence_loop_keyword: (_) => token(prec(5, 'loop')),
 
     sequence_note_keyword: (_) => token(prec(5, 'Note')),
 
     sequence_of_keyword: (_) => token(prec(5, 'of')),
 
-    sequence_note_position: (_) => choice('left', 'right', 'over'),
+    sequence_note_side_position: (_) => choice('left', 'right'),
+
+    sequence_note_over_position: (_) => 'over',
 
     sequence_actor_list: ($) => seq($.sequence_actor, repeat(seq(',', $.sequence_actor))),
 
@@ -430,7 +447,9 @@ module.exports = grammar({
         '--)',
       ),
 
-    sequence_message_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+    sequence_message_text: ($) => repeat1(choice($.html_tag, $.sequence_message_text_fragment)),
+
+    sequence_message_text_fragment: (_) => token(prec(PREC.remainder, /[^<\n\r;]+|</)),
 
     state_declaration_statement: ($) =>
       keywordStatement($, 'state', field('name', $.identifier)),

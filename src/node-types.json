@@ -3559,6 +3559,10 @@
         {
           "type": "sequence_note_statement",
           "named": true
+        },
+        {
+          "type": "sequence_participant_statement",
+          "named": true
         }
       ]
     }
@@ -3654,10 +3658,29 @@
   {
     "type": "sequence_message_text",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "html_tag",
+          "named": true
+        },
+        {
+          "type": "sequence_message_text_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_message_text_fragment",
+    "named": true,
     "fields": {}
   },
   {
-    "type": "sequence_note_position",
+    "type": "sequence_note_side_position",
     "named": true,
     "fields": {}
   },
@@ -3680,7 +3703,11 @@
         "required": true,
         "types": [
           {
-            "type": "sequence_note_position",
+            "type": "sequence_note_over_position",
+            "named": true
+          },
+          {
+            "type": "sequence_note_side_position",
             "named": true
           }
         ]
@@ -3706,6 +3733,46 @@
         },
         {
           "type": "sequence_of_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequence_participant_statement",
+    "named": true,
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sequence_message_text",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sequence_actor",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "sequence_as_keyword",
+          "named": true
+        },
+        {
+          "type": "sequence_participant_keyword",
           "named": true
         }
       ]
@@ -4277,6 +4344,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "timeline_text_fragment",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "title_statement",
@@ -5201,10 +5273,6 @@
     "named": false
   },
   {
-    "type": "over",
-    "named": false
-  },
-  {
     "type": "owns",
     "named": false
   },
@@ -5285,6 +5353,10 @@
     "named": false
   },
   {
+    "type": "sequence_as_keyword",
+    "named": true
+  },
+  {
     "type": "sequence_autonumber_keyword",
     "named": true
   },
@@ -5297,7 +5369,15 @@
     "named": true
   },
   {
+    "type": "sequence_note_over_position",
+    "named": true
+  },
+  {
     "type": "sequence_of_keyword",
+    "named": true
+  },
+  {
+    "type": "sequence_participant_keyword",
     "named": true
   },
   {
@@ -5367,10 +5447,6 @@
   {
     "type": "timeframe",
     "named": false
-  },
-  {
-    "type": "timeline_text_fragment",
-    "named": true
   },
   {
     "type": "timeline_time",

@@ -295,18 +295,20 @@
 (sequence_message_statement
   source: (sequence_actor) @variable
   arrow: (sequence_arrow) @operator
-  target: (sequence_actor) @variable
-  message: (sequence_message_text) @string)
+  target: (sequence_actor) @variable)
 
+(sequence_participant_keyword) @keyword
+(sequence_participant_statement name: (sequence_actor) @variable)
+(sequence_as_keyword) @keyword
 (sequence_autonumber_keyword) @keyword
 (sequence_loop_keyword) @keyword
 (sequence_note_keyword) @keyword
 (sequence_of_keyword) @keyword
-(sequence_loop_statement label: (sequence_message_text) @string)
+(sequence_message_text_fragment) @string
 (sequence_note_statement
-  position: (sequence_note_position) @keyword
-  target: (sequence_actor_list (sequence_actor) @variable)
-  message: (sequence_message_text) @string)
+  target: (sequence_actor_list (sequence_actor) @variable))
+(sequence_note_side_position) @keyword
+(sequence_note_over_position) @keyword
 
 (state_declaration_statement name: (identifier) @type)
 (state_marker) @constant
