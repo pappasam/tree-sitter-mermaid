@@ -27,7 +27,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "diagram_header"
+          "name": "diagram"
         },
         {
           "type": "SYMBOL",
@@ -91,6 +91,59 @@
         }
       ]
     },
+    "diagram": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "flow_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "architecture_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "cynefin_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_modeling_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "git_graph_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "info_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "packet_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pie_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "radar_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tree_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "wardley_diagram"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "generic_diagram"
+        }
+      ]
+    },
     "frontmatter": {
       "type": "TOKEN",
       "content": {
@@ -133,60 +186,6 @@
           }
         ]
       }
-    },
-    "diagram_header": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "type",
-          "content": {
-            "type": "SYMBOL",
-            "name": "diagram_type"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "FIELD",
-                  "name": "direction",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "direction"
-                  }
-                },
-                {
-                  "type": "STRING",
-                  "value": "showData"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ":"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_terminator"
-        }
-      ]
     },
     "diagram_type": {
       "type": "TOKEN",
@@ -347,6 +346,1241 @@
             {
               "type": "STRING",
               "value": "wardley-beta"
+            },
+            {
+              "type": "STRING",
+              "value": "xychart-beta"
+            },
+            {
+              "type": "STRING",
+              "value": "zenuml"
+            }
+          ]
+        }
+      }
+    },
+    "flow_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "flow_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_flow_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "flow_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "flow_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "direction",
+              "content": {
+                "type": "SYMBOL",
+                "name": "direction"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "flow_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "flowchart"
+            },
+            {
+              "type": "STRING",
+              "value": "flowchart-elk"
+            },
+            {
+              "type": "STRING",
+              "value": "flowchart-v2"
+            },
+            {
+              "type": "STRING",
+              "value": "graph"
+            }
+          ]
+        }
+      }
+    },
+    "_flow_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "flow_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "architecture_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "architecture_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_architecture_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "architecture_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "architecture_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "architecture_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "architecture-beta"
+        }
+      }
+    },
+    "_architecture_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "architecture_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "cynefin_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "cynefin_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_cynefin_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "cynefin_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "cynefin_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "cynefin_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "cynefin-beta"
+        }
+      }
+    },
+    "_cynefin_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "cynefin_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "event_modeling_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "event_modeling_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_event_modeling_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "event_modeling_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "event_modeling_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "event_modeling_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "eventmodeling"
+        }
+      }
+    },
+    "_event_modeling_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_modeling_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "git_graph_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "git_graph_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_git_graph_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "git_graph_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "git_graph_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "direction",
+              "content": {
+                "type": "SYMBOL",
+                "name": "direction"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "git_graph_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "gitGraph"
+        }
+      }
+    },
+    "_git_graph_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "git_graph_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "info_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "info_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_info_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "info_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "info_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "info_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "info"
+        }
+      }
+    },
+    "_info_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "info_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "packet_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "packet_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_packet_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "packet_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "packet_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "packet_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "packet"
+            },
+            {
+              "type": "STRING",
+              "value": "packet-beta"
+            }
+          ]
+        }
+      }
+    },
+    "_packet_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "packet_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "pie_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "pie_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_pie_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "pie_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "pie_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "showData"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "pie_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "pie"
+        }
+      }
+    },
+    "_pie_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pie_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "radar_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "radar_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_radar_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "radar_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "radar_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "radar_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "radar-beta"
+        }
+      }
+    },
+    "_radar_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "radar_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "tree_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "tree_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_tree_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "tree_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "tree_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "tree_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "treeView-beta"
+        }
+      }
+    },
+    "_tree_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tree_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "wardley_diagram": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "wardley_diagram_header"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_wardley_diagram_item"
+            }
+          }
+        ]
+      }
+    },
+    "wardley_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "wardley_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "wardley_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "STRING",
+          "value": "wardley-beta"
+        }
+      }
+    },
+    "_wardley_diagram_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "common_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "wardley_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "generic_diagram": {
+      "type": "SYMBOL",
+      "name": "generic_diagram_header"
+    },
+    "generic_diagram_header": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "generic_diagram_type"
+            },
+            "named": true,
+            "value": "diagram_type"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "direction",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "direction"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": "showData"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "generic_diagram_type": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 20,
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "block"
+            },
+            {
+              "type": "STRING",
+              "value": "block-beta"
+            },
+            {
+              "type": "STRING",
+              "value": "c4"
+            },
+            {
+              "type": "STRING",
+              "value": "C4Component"
+            },
+            {
+              "type": "STRING",
+              "value": "C4Container"
+            },
+            {
+              "type": "STRING",
+              "value": "C4Context"
+            },
+            {
+              "type": "STRING",
+              "value": "C4Deployment"
+            },
+            {
+              "type": "STRING",
+              "value": "classDiagram"
+            },
+            {
+              "type": "STRING",
+              "value": "classDiagram-v2"
+            },
+            {
+              "type": "STRING",
+              "value": "erDiagram"
+            },
+            {
+              "type": "STRING",
+              "value": "gantt"
+            },
+            {
+              "type": "STRING",
+              "value": "journey"
+            },
+            {
+              "type": "STRING",
+              "value": "kanban"
+            },
+            {
+              "type": "STRING",
+              "value": "kanban-beta"
+            },
+            {
+              "type": "STRING",
+              "value": "mindmap"
+            },
+            {
+              "type": "STRING",
+              "value": "quadrantChart"
+            },
+            {
+              "type": "STRING",
+              "value": "requirementDiagram"
+            },
+            {
+              "type": "STRING",
+              "value": "sequenceDiagram"
+            },
+            {
+              "type": "STRING",
+              "value": "stateDiagram"
+            },
+            {
+              "type": "STRING",
+              "value": "stateDiagram-v2"
+            },
+            {
+              "type": "STRING",
+              "value": "timeline"
+            },
+            {
+              "type": "STRING",
+              "value": "treemap"
+            },
+            {
+              "type": "STRING",
+              "value": "treemap-beta"
             },
             {
               "type": "STRING",
@@ -1017,7 +2251,7 @@
     },
     "flow_edge_statement": {
       "type": "PREC",
-      "value": 1,
+      "value": 2,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1061,17 +2295,21 @@
       }
     },
     "flow_node_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "standalone_flow_node"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_terminator"
-        }
-      ]
+      "type": "PREC",
+      "value": 2,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "standalone_flow_node"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_terminator"
+          }
+        ]
+      }
     },
     "standalone_flow_node": {
       "type": "SEQ",
@@ -3167,6 +4405,14 @@
               },
               {
                 "type": "SYMBOL",
+                "name": "number"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "quoted_string"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "generic_token"
               }
             ]
@@ -3327,13 +4573,40 @@
       }
     },
     "label_text": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "html_tag"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "label_text_fragment"
+          }
+        ]
+      }
+    },
+    "html_tag": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "<\\/?[A-Za-z][A-Za-z0-9-]*(?:[ \\t\\f]+[^<>\\n\\r;]*)?[ \\t\\f]*\\/?>"
+        }
+      }
+    },
+    "label_text_fragment": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",
         "value": -5,
         "content": {
           "type": "PATTERN",
-          "value": "[^\\]\\)\\}\\|\\n\\r;]+"
+          "value": "[^<\\]\\)\\}\\|\\n\\r;]+|<"
         }
       }
     },
@@ -3389,7 +4662,7 @@
         "value": -10,
         "content": {
           "type": "PATTERN",
-          "value": "[^ \\t\\n\\r;]+"
+          "value": "[^A-Za-z_0-9\"'+ \\t\\n\\r;][^ \\t\\n\\r;]*"
         }
       }
     },

@@ -28,6 +28,7 @@
 ] @keyword
 
 (flow_node id: (identifier) @variable)
+(standalone_flow_node id: (identifier) @variable)
 (class_def_statement name: (identifier) @type)
 (class_statement
   targets: (identifier_list (identifier) @variable)
@@ -158,7 +159,8 @@
 (quoted_string) @string
 (number) @number
 (boolean) @boolean
-(label_text) @string
+(label_text_fragment) @string
+(html_tag) @tag
 
 [
   ":"

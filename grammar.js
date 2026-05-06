@@ -1,6 +1,7 @@
 const PREC = {
   generic: -10,
   remainder: -5,
+  flow_statement: 2,
 };
 
 const diagramTypes = [
@@ -46,6 +47,36 @@ const diagramTypes = [
   'zenuml',
 ];
 
+const flowDiagramTypes = ['flowchart', 'flowchart-elk', 'flowchart-v2', 'graph'];
+const architectureDiagramTypes = ['architecture-beta'];
+const cynefinDiagramTypes = ['cynefin-beta'];
+const eventModelingDiagramTypes = ['eventmodeling'];
+const gitGraphDiagramTypes = ['gitGraph'];
+const infoDiagramTypes = ['info'];
+const packetDiagramTypes = ['packet', 'packet-beta'];
+const pieDiagramTypes = ['pie'];
+const radarDiagramTypes = ['radar-beta'];
+const treeDiagramTypes = ['treeView-beta'];
+const wardleyDiagramTypes = ['wardley-beta'];
+const genericDiagramTypes = diagramTypes.filter(
+  (type) =>
+    ![
+      ...flowDiagramTypes,
+      ...architectureDiagramTypes,
+      ...cynefinDiagramTypes,
+      ...eventModelingDiagramTypes,
+      ...gitGraphDiagramTypes,
+      ...infoDiagramTypes,
+      ...packetDiagramTypes,
+      ...pieDiagramTypes,
+      ...radarDiagramTypes,
+      ...treeDiagramTypes,
+      ...wardleyDiagramTypes,
+    ].includes(type),
+);
+
+const typeChoice = (types) => (types.length === 1 ? types[0] : choice(...types));
+
 module.exports = grammar({
   name: 'mermaid',
 
@@ -67,7 +98,7 @@ module.exports = grammar({
         $.frontmatter,
         $.directive,
         $.comment,
-        $.diagram_header,
+        $.diagram,
         $.common_statement,
         $.sequence_message_statement,
         $.flow_statement,
@@ -85,21 +116,232 @@ module.exports = grammar({
         $._terminator,
       ),
 
+    diagram: ($) =>
+      choice(
+        $.flow_diagram,
+        $.architecture_diagram,
+        $.cynefin_diagram,
+        $.event_modeling_diagram,
+        $.git_graph_diagram,
+        $.info_diagram,
+        $.packet_diagram,
+        $.pie_diagram,
+        $.radar_diagram,
+        $.tree_diagram,
+        $.wardley_diagram,
+        $.generic_diagram,
+      ),
+
     frontmatter: (_) => token(/---[\s\S]*---/),
 
     directive: (_) => token(seq('%%{', /[^%]*(%+[^}%][^%]*)*/, '}%%')),
 
     comment: (_) => token(seq('%%', /[^\n\r]*/)),
 
-    diagram_header: ($) =>
+    diagram_type: (_) => token(prec(20, typeChoice(diagramTypes))),
+
+    flow_diagram: ($) => prec.right(seq($.flow_diagram_header, repeat($._flow_diagram_item))),
+
+    flow_diagram_header: ($) =>
       seq(
-        field('type', $.diagram_type),
+        field('type', alias($.flow_diagram_type, $.diagram_type)),
+        optional(field('direction', $.direction)),
+        optional(':'),
+        $._terminator,
+      ),
+
+    flow_diagram_type: (_) => token(prec(20, typeChoice(flowDiagramTypes))),
+
+    _flow_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.flow_statement,
+        $._terminator,
+      ),
+
+    architecture_diagram: ($) => prec.right(seq($.architecture_diagram_header, repeat($._architecture_diagram_item))),
+
+    architecture_diagram_header: ($) =>
+      seq(field('type', alias($.architecture_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    architecture_diagram_type: (_) => token(prec(20, typeChoice(architectureDiagramTypes))),
+
+    _architecture_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.architecture_statement,
+        $._terminator,
+      ),
+
+    cynefin_diagram: ($) => prec.right(seq($.cynefin_diagram_header, repeat($._cynefin_diagram_item))),
+
+    cynefin_diagram_header: ($) =>
+      seq(field('type', alias($.cynefin_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    cynefin_diagram_type: (_) => token(prec(20, typeChoice(cynefinDiagramTypes))),
+
+    _cynefin_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.cynefin_statement,
+        $._terminator,
+      ),
+
+    event_modeling_diagram: ($) => prec.right(seq($.event_modeling_diagram_header, repeat($._event_modeling_diagram_item))),
+
+    event_modeling_diagram_header: ($) =>
+      seq(field('type', alias($.event_modeling_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    event_modeling_diagram_type: (_) => token(prec(20, typeChoice(eventModelingDiagramTypes))),
+
+    _event_modeling_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.event_modeling_statement,
+        $._terminator,
+      ),
+
+    git_graph_diagram: ($) => prec.right(seq($.git_graph_diagram_header, repeat($._git_graph_diagram_item))),
+
+    git_graph_diagram_header: ($) =>
+      seq(
+        field('type', alias($.git_graph_diagram_type, $.diagram_type)),
+        optional(field('direction', $.direction)),
+        optional(':'),
+        $._terminator,
+      ),
+
+    git_graph_diagram_type: (_) => token(prec(20, typeChoice(gitGraphDiagramTypes))),
+
+    _git_graph_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.git_graph_statement,
+        $._terminator,
+      ),
+
+    info_diagram: ($) => prec.right(seq($.info_diagram_header, repeat($._info_diagram_item))),
+
+    info_diagram_header: ($) =>
+      seq(field('type', alias($.info_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    info_diagram_type: (_) => token(prec(20, typeChoice(infoDiagramTypes))),
+
+    _info_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.info_statement,
+        $._terminator,
+      ),
+
+    packet_diagram: ($) => prec.right(seq($.packet_diagram_header, repeat($._packet_diagram_item))),
+
+    packet_diagram_header: ($) =>
+      seq(field('type', alias($.packet_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    packet_diagram_type: (_) => token(prec(20, typeChoice(packetDiagramTypes))),
+
+    _packet_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.packet_statement,
+        $._terminator,
+      ),
+
+    pie_diagram: ($) => prec.right(seq($.pie_diagram_header, repeat($._pie_diagram_item))),
+
+    pie_diagram_header: ($) =>
+      seq(
+        field('type', alias($.pie_diagram_type, $.diagram_type)),
+        optional('showData'),
+        optional(':'),
+        $._terminator,
+      ),
+
+    pie_diagram_type: (_) => token(prec(20, typeChoice(pieDiagramTypes))),
+
+    _pie_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.pie_statement,
+        $._terminator,
+      ),
+
+    radar_diagram: ($) => prec.right(seq($.radar_diagram_header, repeat($._radar_diagram_item))),
+
+    radar_diagram_header: ($) =>
+      seq(field('type', alias($.radar_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    radar_diagram_type: (_) => token(prec(20, typeChoice(radarDiagramTypes))),
+
+    _radar_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.radar_statement,
+        $._terminator,
+      ),
+
+    tree_diagram: ($) => prec.right(seq($.tree_diagram_header, repeat($._tree_diagram_item))),
+
+    tree_diagram_header: ($) =>
+      seq(field('type', alias($.tree_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    tree_diagram_type: (_) => token(prec(20, typeChoice(treeDiagramTypes))),
+
+    _tree_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.tree_statement,
+        $._terminator,
+      ),
+
+    wardley_diagram: ($) => prec.right(seq($.wardley_diagram_header, repeat($._wardley_diagram_item))),
+
+    wardley_diagram_header: ($) =>
+      seq(field('type', alias($.wardley_diagram_type, $.diagram_type)), optional(':'), $._terminator),
+
+    wardley_diagram_type: (_) => token(prec(20, typeChoice(wardleyDiagramTypes))),
+
+    _wardley_diagram_item: ($) =>
+      choice(
+        $.directive,
+        $.comment,
+        $.common_statement,
+        $.wardley_statement,
+        $._terminator,
+      ),
+
+    generic_diagram: ($) => $.generic_diagram_header,
+
+    generic_diagram_header: ($) =>
+      seq(
+        field('type', alias($.generic_diagram_type, $.diagram_type)),
         optional(choice(field('direction', $.direction), 'showData')),
         optional(':'),
         $._terminator,
       ),
 
-    diagram_type: (_) => token(prec(20, choice(...diagramTypes))),
+    generic_diagram_type: (_) => token(prec(20, typeChoice(genericDiagramTypes))),
 
     direction: (_) => choice('TB', 'TD', 'BT', 'RL', 'LR', 'BR', '<', '>', '^', 'v'),
 
@@ -206,13 +448,13 @@ module.exports = grammar({
       ),
 
     flow_edge_statement: ($) =>
-      prec(1, seq(
+      prec(PREC.flow_statement, seq(
         field('source', $.flow_node),
         repeat1(seq(field('edge', $.flow_edge), field('target', $.flow_node))),
         $._terminator,
       )),
 
-    flow_node_statement: ($) => seq($.standalone_flow_node, $._terminator),
+    flow_node_statement: ($) => prec(PREC.flow_statement, seq($.standalone_flow_node, $._terminator)),
 
     standalone_flow_node: ($) =>
       seq(
@@ -441,7 +683,7 @@ module.exports = grammar({
         $._terminator,
       ),
 
-    generic_statement: ($) => seq(repeat1(choice($.identifier, $.generic_token)), $._terminator),
+    generic_statement: ($) => seq(repeat1(choice($.identifier, $.number, $.quoted_string, $.generic_token)), $._terminator),
 
     identifier_list: ($) => seq($.identifier, repeat(seq(',', $.identifier))),
 
@@ -453,7 +695,11 @@ module.exports = grammar({
 
     quoted_string: (_) => token(choice(seq('"', /([^"\\]|\\.)*/, '"'), seq("'", /([^'\\]|\\.)*/, "'"))),
 
-    label_text: (_) => token(prec(PREC.remainder, /[^\]\)\}\|\n\r;]+/)),
+    label_text: ($) => repeat1(choice($.html_tag, $.label_text_fragment)),
+
+    html_tag: (_) => token(prec(1, /<\/?[A-Za-z][A-Za-z0-9-]*(?:[ \t\f]+[^<>\n\r;]*)?[ \t\f]*\/?>/)),
+
+    label_text_fragment: (_) => token(prec(PREC.remainder, /[^<\]\)\}\|\n\r;]+|</)),
 
     identifier: (_) => token(/[A-Za-z_][A-Za-z0-9_-]*/),
 
@@ -465,7 +711,7 @@ module.exports = grammar({
 
     _line_remainder: (_) => token(prec(PREC.remainder, /[^\n\r;]+/)),
 
-    generic_token: (_) => token(prec(PREC.generic, /[^ \t\n\r;]+/)),
+    generic_token: (_) => token(prec(PREC.generic, /[^A-Za-z_0-9"'+ \t\n\r;][^ \t\n\r;]*/)),
 
     _terminator: (_) => choice(/\r?\n/, ';'),
   },

@@ -24,54 +24,111 @@ checkout feature
 ---
 
 (source_file
-  (diagram_header
-    type: (diagram_type))
-  (architecture_statement
-    (architecture_group_statement
-      id: (identifier)
-      icon: (architecture_icon)
-      label: (architecture_title
-        (label_text))))
-  (architecture_statement
-    (architecture_service_statement
-      id: (identifier)
-      icon: (architecture_icon)
-      label: (architecture_title
-        (label_text))
-      parent: (identifier)))
-  (architecture_statement
-    (architecture_junction_statement
-      id: (identifier)
-      parent: (identifier)))
-  (generic_statement
-    (generic_token))
-  (diagram_header
-    type: (diagram_type))
-  (generic_statement
-    (generic_token)
-    (generic_token))
-  (generic_statement
-    (generic_token)
-    (generic_token))
-  (diagram_header
-    type: (diagram_type))
-  (generic_statement
-    (generic_token)
-    (generic_token))
-  (generic_statement
-    (generic_token)
-    (generic_token))
-  (diagram_header
-    type: (diagram_type)
-    direction: (direction))
-  (git_graph_statement
-    (git_option
-      value: (quoted_string))
-    (git_option
-      value: (quoted_string)))
-  (git_graph_statement
-    name: (identifier)
-    (git_option
-      value: (number)))
-  (git_graph_statement
-    branch: (identifier)))
+  (diagram
+    (architecture_diagram
+      (architecture_diagram_header
+        type: (diagram_type))
+      (architecture_statement
+        (architecture_group_statement
+          id: (identifier)
+          icon: (architecture_icon)
+          label: (architecture_title
+            (label_text
+              (label_text_fragment)))))
+      (architecture_statement
+        (architecture_service_statement
+          id: (identifier)
+          icon: (architecture_icon)
+          label: (architecture_title
+            (label_text
+              (label_text_fragment)))
+          parent: (identifier)))
+      (architecture_statement
+        (architecture_junction_statement
+          id: (identifier)
+          parent: (identifier)))
+      (architecture_statement
+        (architecture_edge_statement
+          source: (identifier)
+          edge: (architecture_arrow)
+          target: (identifier)))))
+  (diagram
+    (pie_diagram
+      (pie_diagram_header
+        type: (diagram_type))
+      (pie_statement
+        label: (quoted_string)
+        value: (number))
+      (pie_statement
+        label: (quoted_string)
+        value: (number))))
+  (diagram
+    (packet_diagram
+      (packet_diagram_header
+        type: (diagram_type))
+      (packet_statement
+        range: (number)
+        range: (number)
+        label: (quoted_string))
+      (packet_statement
+        range: (number)
+        label: (quoted_string))))
+  (diagram
+    (git_graph_diagram
+      (git_graph_diagram_header
+        type: (diagram_type)
+        direction: (direction))
+      (git_graph_statement
+        (git_option
+          value: (quoted_string))
+        (git_option
+          value: (quoted_string)))
+      (git_graph_statement
+        name: (identifier)
+        (git_option
+          value: (number)))
+      (git_graph_statement
+        branch: (identifier)))))
+
+==================
+adjacent scoped diagrams
+==================
+
+flowchart TD
+A --> B
+gitGraph LR:
+commit id: "a1"
+pie showData
+"Dogs": 42
+
+---
+
+(source_file
+  (diagram
+    (flow_diagram
+      (flow_diagram_header
+        (diagram_type)
+        (direction))
+      (flow_statement
+        (flow_edge_statement
+          (flow_node
+            (identifier))
+          (flow_edge
+            (arrow))
+          (flow_node
+            (identifier))))))
+  (diagram
+    (git_graph_diagram
+      (git_graph_diagram_header
+        (diagram_type)
+        (direction))
+      (git_graph_statement
+        (git_option
+          (quoted_string)))))
+  (diagram
+    (pie_diagram
+      (pie_diagram_header
+        (diagram_type))
+      (pie_statement
+        (quoted_string)
+        (number)))))
