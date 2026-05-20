@@ -53,7 +53,7 @@ const diagramDefinitions = [
   {
     name: 'er',
     types: ['erDiagram'],
-    statements: ($) => [choice($.er_relationship_statement, $.er_attribute_statement)],
+    statements: ($) => [choice($.er_entity_block, $.er_relationship_statement, $.er_attribute_statement)],
   },
   {
     name: 'event_modeling',
@@ -747,11 +747,20 @@ module.exports = grammar({
     cynefin_domain: (_) => choice('complex', 'complicated', 'clear', 'chaotic', 'confusion'),
 
     er_relationship_statement: ($) =>
-      seq(
-        field('source', $.identifier),
-        field('relationship', $.er_relationship_label),
-        field('target', $.identifier),
-        $._terminator,
+      choice(
+        seq(
+          field('source', $.identifier),
+          field('relationship', $.er_relationship_label),
+          field('target', $.identifier),
+          $._terminator,
+        ),
+        seq(
+          field('source', $.identifier),
+          field('operator', $.er_relationship_operator),
+          field('target', $.identifier),
+          optional(seq(':', field('label', $.er_relationship_text))),
+          $._terminator,
+        ),
       ),
 
     er_relationship_label: (_) =>
@@ -763,6 +772,38 @@ module.exports = grammar({
         'includes',
         'uses',
       ),
+
+    er_relationship_operator: (_) =>
+      token(/(?:\|\||\|o|}\||}o)(?:--|\.\.)(?:\|\||o\||\|\{|o\{)/),
+
+    er_relationship_text: (_) => token(prec(PREC.remainder, /[^ \t\f\n\r;][^\n\r;]*/)),
+
+    er_entity_block: ($) =>
+      seq(
+        field('name', $.identifier),
+        optional(field('alias', $.er_entity_alias)),
+        '{',
+        $._terminator,
+        repeat(choice(bodyItem($, $.er_entity_attribute_statement), $._terminator)),
+        optional($.indentation),
+        '}',
+        $._terminator,
+      ),
+
+    er_entity_alias: ($) => seq('[', field('text', choice($.quoted_string, $.label_text)), ']'),
+
+    er_entity_attribute_statement: ($) =>
+      seq(
+        field('type', $.identifier),
+        field('name', $.identifier),
+        optional(field('keys', $.er_attribute_key_list)),
+        optional(field('comment', $.quoted_string)),
+        $._terminator,
+      ),
+
+    er_attribute_key_list: ($) => seq($.er_attribute_key, repeat(seq(',', $.er_attribute_key))),
+
+    er_attribute_key: (_) => choice('PK', 'FK', 'UK'),
 
     er_attribute_statement: ($) =>
       seq(

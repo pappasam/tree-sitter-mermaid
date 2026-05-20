@@ -1221,6 +1221,26 @@
     "fields": {}
   },
   {
+    "type": "er_attribute_key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "er_attribute_key_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "er_attribute_key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "er_attribute_statement",
     "named": true,
     "fields": {
@@ -1275,6 +1295,10 @@
           "named": true
         },
         {
+          "type": "er_entity_block",
+          "named": true
+        },
+        {
           "type": "er_relationship_statement",
           "named": true
         },
@@ -1302,6 +1326,112 @@
     }
   },
   {
+    "type": "er_entity_alias",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "label_text",
+            "named": true
+          },
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "er_entity_attribute_statement",
+    "named": true,
+    "fields": {
+      "comment": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quoted_string",
+            "named": true
+          }
+        ]
+      },
+      "keys": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "er_attribute_key_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "er_entity_block",
+    "named": true,
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "er_entity_alias",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "er_entity_attribute_statement",
+          "named": true
+        },
+        {
+          "type": "indentation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "er_relationship_label",
     "named": true,
     "fields": {}
@@ -1310,9 +1440,29 @@
     "type": "er_relationship_statement",
     "named": true,
     "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "er_relationship_text",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "er_relationship_operator",
+            "named": true
+          }
+        ]
+      },
       "relationship": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "er_relationship_label",
@@ -1341,6 +1491,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "er_relationship_text",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "event_modeling_diagram",
@@ -4837,7 +4992,15 @@
     "named": false
   },
   {
+    "type": "FK",
+    "named": false
+  },
+  {
     "type": "LR",
+    "named": false
+  },
+  {
+    "type": "PK",
     "named": false
   },
   {
@@ -4850,6 +5013,10 @@
   },
   {
     "type": "TD",
+    "named": false
+  },
+  {
+    "type": "UK",
     "named": false
   },
   {
@@ -5107,6 +5274,10 @@
   {
     "type": "entity",
     "named": false
+  },
+  {
+    "type": "er_relationship_operator",
+    "named": true
   },
   {
     "type": "evolution",

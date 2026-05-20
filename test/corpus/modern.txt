@@ -256,6 +256,68 @@ erDiagram
         (identifier)))))
 
 ==================
+er diagram entity blocks
+==================
+
+erDiagram
+  Executive["Executive"] {
+    role_a Person_A
+  }
+  Product["Product"] {
+    role_b Person_B
+    role_c Person_C "50%"
+    id employee_id PK,FK "external id"
+  }
+  Executive ||--|{ Product : oversees
+
+---
+
+(source_file
+  (diagram
+    (er_diagram
+      (er_diagram_header
+        (diagram_type))
+      (indentation)
+      (er_entity_block
+        (identifier)
+        (er_entity_alias
+          (quoted_string))
+        (indentation)
+        (er_entity_attribute_statement
+          (identifier)
+          (identifier))
+        (indentation))
+      (indentation)
+      (er_entity_block
+        (identifier)
+        (er_entity_alias
+          (quoted_string))
+        (indentation)
+        (er_entity_attribute_statement
+          (identifier)
+          (identifier))
+        (indentation)
+        (er_entity_attribute_statement
+          (identifier)
+          (identifier)
+          (quoted_string))
+        (indentation)
+        (er_entity_attribute_statement
+          (identifier)
+          (identifier)
+          (er_attribute_key_list
+            (er_attribute_key)
+            (er_attribute_key))
+          (quoted_string))
+        (indentation))
+      (indentation)
+      (er_relationship_statement
+        (identifier)
+        (er_relationship_operator)
+        (identifier)
+        (er_relationship_text)))))
+
+==================
 requirement diagram details
 ==================
 

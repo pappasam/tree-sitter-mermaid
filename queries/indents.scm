@@ -1,5 +1,6 @@
 [
   (subgraph_statement)
+  (er_entity_block)
 ] @indent.begin
 
 [

@@ -184,6 +184,23 @@
   target: (identifier) @type)
  (#set! priority 110))
 
+((er_relationship_statement
+  source: (identifier) @type
+  operator: (er_relationship_operator) @operator
+  target: (identifier) @type)
+ (#set! priority 110))
+(er_relationship_statement label: (_) @string)
+
+(er_entity_block
+  name: (identifier) @type)
+(er_entity_alias text: (_) @string)
+(er_entity_attribute_statement
+  type: (identifier) @type
+  name: (identifier) @property)
+(er_attribute_key) @constant
+(er_entity_attribute_statement
+  comment: (quoted_string) @string)
+
 ((er_attribute_statement
   entity: (identifier) @type
   attribute: (identifier) @property)
