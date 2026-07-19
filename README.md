@@ -24,9 +24,7 @@ Neovim can consume the generated `src/parser.c` and the `queries/` directory.
 
 ## Usage in Neovim
 
-Neovim's treesitter ecosystem was upended on April 3rd, 2026 when [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) was [archived](https://github.com/nvim-treesitter/nvim-treesitter/discussions/8627#discussioncomment-16440673). That said, as of May 6, 2026, there is no clear alternative for parser installation / query management. [neovim-treesitter](https://github.com/neovim-treesitter) is one org trying to step in, but it hasn't reached a level of traction that would make me conclude its role as successor. So, for the time being, I'm just going to continue using `nvim-treesitter`; it's not broken.
-
-To use this specific parser for `mermaid`, add the following to your `init.lua`:
+To use this parser with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter), add the following to your `init.lua`:
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
